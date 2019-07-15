@@ -17,76 +17,9 @@ namespace FlavorsOfTheHouse.Vista
             InitializeComponent();
         }
 
-        private void UbicacionBotones()
-        {
-            BtnAdministracion.Location = new Point(0, 38);
-            BtnInventario.Location = new Point(0, 87);
-            BtnVentas.Location = new Point(0, 136);         
-        }
-
-        private void EstadoPaneles()
-        {
-            //paneles
-            PanelAdministracion.Visible = false;
-            PanelReporte.Visible = false;
-            PanelVentas.Visible = false;
-        }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-            PanelSidebar.Width = 236;
-            //Barra de titulo
-            BtnMaximizar.Visible = true;
-            //Estados de paneles
-            PanelAdministracion.Visible = false;
-            PanelReporte.Visible = false;
-            //Ubicacion Inicial de botones
-            UbicacionBotones();
-        }
-
-        private void BtnAdministracion_Click(object sender, EventArgs e)
-        {
-            if (PanelAdministracion.Visible == true)
-            {
-                EstadoPaneles();
-            }
-            else
-            {
-                //Ocultamos panel para que el efecto sea visible
-                AnimacionAdministracion.Show(PanelAdministracion);
-                PanelAdministracion.Visible = true;
-                PanelAdministracion.Location = new Point(0,86);             
-                BtnInventario.Location = new Point(0,226);
-                PanelReporte.Visible = false;
-            }
-
-            if (PanelAdministracion.Visible == false)
-            {
-                BtnAdministracion.Location = new Point(0,38);
-                BtnInventario.Location = new Point(0,87);
-            }
-        }
-
-        private void BtnInventario_Click(object sender, EventArgs e)
-        {
-            if (PanelReporte.Visible == true)
-            {
-                EstadoPaneles();
-            }
-            else
-	        {
-                PanelAdministracion.Visible = false;
-                AnimacionInventario.Show(PanelReporte);
-                PanelReporte.Visible = true;
-                BtnInventario.Location = new Point(0, 87);
-                PanelReporte.Location = new Point(0, 136);
-                BtnVentas.Location = new Point(0,142);
-            }           
-        }
-
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro de querer cerrar el programa?\nConsidere que si tiene información en edición no podrá recuperarla.","Confirmación de cierre",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro de querer cerrar el programa?\nConsidere que si tiene información en edición no podrá recuperarla.", "Confirmación de cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -113,6 +46,109 @@ namespace FlavorsOfTheHouse.Vista
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void UbicacionBotones()
+        {
+            BtnAdministracion.Location = new Point(0, 128);
+            BtnInventario.Location = new Point(0, 177);
+            BtnVentas.Location = new Point(0, 226);         
+        }
+
+        private void EstadoPaneles()
+        {
+            //paneles
+            PanelAdministracion.Visible = false;
+            PanelVentas.Visible = false;
+            PanelInventario.Visible = false;
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            PanelSidebar.Width = 236;
+            //Barra de titulo
+            BtnMaximizar.Visible = true;
+            //Estados de paneles
+            EstadoPaneles();
+            //Ubicacion Inicial de botones
+            UbicacionBotones();
+        }
+
+        private void BtnAdministracion_Click(object sender, EventArgs e)
+        {
+            if (PanelAdministracion.Visible == true)
+            {
+                EstadoPaneles();
+                UbicacionBotones();
+            }
+            else
+            {
+                //Ocultamiento de todos los paneles
+                EstadoPaneles();
+                //Mostramos el panel requerido
+                PanelAdministracion.Visible = true;
+                PanelAdministracion.Location = new Point(0,176);
+                BtnAdministracion.Location = new Point(0, 128);
+                //Nueva ubicación de botones            
+                BtnInventario.Location = new Point(0,313);
+                BtnVentas.Location = new Point(0,362);
+                
+            }
+
+            if (PanelAdministracion.Visible == false)
+            {
+                UbicacionBotones();
+            }
+        }
+
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+            if (PanelInventario.Visible == true)
+            {
+                EstadoPaneles();
+                UbicacionBotones();
+            }
+            else
+	        {
+                //Ocultamiento de todos los paneles
+                EstadoPaneles();
+                //Mostrando panel requerido
+                PanelInventario.Visible = true;
+                PanelInventario.Location = new Point(0, 226);
+                BtnInventario.Location = new Point(0, 177);
+                //Ubicación de botones
+                BtnAdministracion.Location = new Point(0, 128);
+                BtnVentas.Location = new Point(0,362);
+            }
+            if (PanelInventario.Visible == false)
+            {
+                UbicacionBotones();
+            }
+        }
+
+        private void BtnVentas_Click(object sender, EventArgs e)
+        {
+            if (PanelVentas.Visible == true)
+            {
+                EstadoPaneles();
+                UbicacionBotones();
+            }
+            else
+            {
+                //Ocultar todos los paneles
+                EstadoPaneles();
+                //Mostrar el panel requerido
+                PanelVentas.Visible = true;
+                PanelVentas.Location = new Point(0,275);
+                BtnVentas.Location = new Point(0,226);
+                //Ubicación de botones
+                BtnAdministracion.Location = new Point(0, 128);
+                BtnInventario.Location = new Point(0, 177);
+            }
+            if (PanelVentas.Visible == false)
+            {
+                UbicacionBotones();
+            }
         }
     }
 }

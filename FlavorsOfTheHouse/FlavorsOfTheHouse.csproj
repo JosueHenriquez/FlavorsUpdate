@@ -173,6 +173,63 @@
   <ItemGroup>
     <None Include="Resources\books.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-paste-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_day_view_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin-dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventario_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventario_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ingresos_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarperfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\29302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\293021.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
