@@ -22,3 +22,16 @@ C:\Users\Josue Henriquez\Documents\Visual Studio 2015\Projects\FlavorsHouse\Flav
 C:\Users\Josue Henriquez\Documents\Visual Studio 2015\Projects\FlavorsHouse\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csproj.GenerateResource.Cache
 C:\Users\Josue Henriquez\Documents\Visual Studio 2015\Projects\FlavorsHouse\FlavorsOfTheHouse\bin\Debug\FlavorsOfTheHouse.pdb
 C:\Users\Josue Henriquez\Documents\Visual Studio 2015\Projects\FlavorsHouse\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmInventario.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\bin\Debug\FlavorsOfTheHouse.exe.config
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.exe
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.pdb
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\bin\Debug\FlavorsOfTheHouse.exe
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\bin\Debug\FlavorsOfTheHouse.pdb
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csprojResolveAssemblyReference.cache
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Properties.Resources.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmInventario.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmLogin.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmPrincipal.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmSplashScreen.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csproj.GenerateResource.Cache
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmPrimerUso.resources

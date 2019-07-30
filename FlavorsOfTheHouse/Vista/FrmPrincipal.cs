@@ -185,12 +185,14 @@ namespace FlavorsOfTheHouse.Vista
         {
             if (PanelSidebar.Width == 236)
             {
-                PanelSidebar.Width = 56;
+                PanelSidebar.Width = 63;
+                LineaSidebar.Width = 52;
                 BtnMenu.Text = "Expandir Menú";
             }
             else
             {
                 PanelSidebar.Width = 236;
+                LineaSidebar.Width = 222;
                 BtnMenu.Text = "Contraer Menú";
             }
         }

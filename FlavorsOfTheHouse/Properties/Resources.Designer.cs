@@ -103,6 +103,16 @@ namespace FlavorsOfTheHouse.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajustes {
+            get {
+                object obj = ResourceManager.GetObject("ajustes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap birthday_cake {
             get {
                 object obj = ResourceManager.GetObject("birthday-cake", resourceCulture);
@@ -416,6 +426,16 @@ namespace FlavorsOfTheHouse.Properties {
         internal static System.Drawing.Bitmap list_of_three_elements_on_black_background {
             get {
                 object obj = ResourceManager.GetObject("list-of-three-elements-on-black-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sabores_de_la_casa {
+            get {
+                object obj = ResourceManager.GetObject("sabores de la casa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

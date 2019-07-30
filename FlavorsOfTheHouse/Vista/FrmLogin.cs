@@ -34,7 +34,7 @@ namespace FlavorsOfTheHouse.Vista
                 lblUsuario.Visible = false;
                 lblUsuario.Text = txtUsuario.Text;
                 txtUsuario.Text = "";
-                lblUsuario.ForeColor = Color.FromArgb(0, 122, 204);
+                lblUsuario.ForeColor = Color.FromArgb(252, 179, 30);
                 lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Bold);
                 animacionUsuario.Show(lblUsuario);
             }
@@ -63,7 +63,7 @@ namespace FlavorsOfTheHouse.Vista
                 lblContra.Visible = false;
                 lblContra.Text = txtContrasena.Text;
                 txtContrasena.Text = "";
-                lblContra.ForeColor = Color.FromArgb(0, 122, 204);
+                lblContra.ForeColor = Color.FromArgb(252, 179, 30);
                 lblContra.Font = new Font(lblContra.Font, FontStyle.Bold);
                 txtContrasena.UseSystemPasswordChar = true;
                 animacionContra.Show(lblContra);

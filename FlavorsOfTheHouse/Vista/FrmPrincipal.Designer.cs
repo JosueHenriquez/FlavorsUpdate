@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.PanelSidebar = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnLibros = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PanelInventario = new System.Windows.Forms.Panel();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -73,6 +74,10 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.AnimacionAdministracion = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.AnimacionInventario = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblusuario = new System.Windows.Forms.Label();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.PanelSidebar.SuspendLayout();
             this.PanelInventario.SuspendLayout();
             this.PanelVentas.SuspendLayout();
@@ -80,11 +85,17 @@
             this.PanelLibros.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelSidebar
             // 
-            this.PanelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.PanelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(179)))), ((int)(((byte)(30)))));
+            this.PanelSidebar.Controls.Add(this.LineaSidebar);
+            this.PanelSidebar.Controls.Add(this.lblNivel);
+            this.PanelSidebar.Controls.Add(this.lblusuario);
+            this.PanelSidebar.Controls.Add(this.pictureBox1);
+            this.PanelSidebar.Controls.Add(this.bunifuFlatButton7);
             this.PanelSidebar.Controls.Add(this.BtnLibros);
             this.PanelSidebar.Controls.Add(this.PanelInventario);
             this.PanelSidebar.Controls.Add(this.PanelVentas);
@@ -101,10 +112,46 @@
             this.PanelSidebar.Size = new System.Drawing.Size(774, 636);
             this.PanelSidebar.TabIndex = 1;
             // 
+            // bunifuFlatButton7
+            // 
+            this.bunifuFlatButton7.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.bunifuFlatButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton7.BorderRadius = 0;
+            this.bunifuFlatButton7.ButtonText = "      Configuración de Sistema";
+            this.bunifuFlatButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnimacionInventario.SetDecoration(this.bunifuFlatButton7, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionAdministracion.SetDecoration(this.bunifuFlatButton7, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuFlatButton7.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton7.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton7.Iconimage = global::FlavorsOfTheHouse.Properties.Resources.ajustes;
+            this.bunifuFlatButton7.Iconimage_right = null;
+            this.bunifuFlatButton7.Iconimage_right_Selected = null;
+            this.bunifuFlatButton7.Iconimage_Selected = null;
+            this.bunifuFlatButton7.IconMarginLeft = 0;
+            this.bunifuFlatButton7.IconMarginRight = 0;
+            this.bunifuFlatButton7.IconRightVisible = true;
+            this.bunifuFlatButton7.IconRightZoom = 0D;
+            this.bunifuFlatButton7.IconVisible = true;
+            this.bunifuFlatButton7.IconZoom = 45D;
+            this.bunifuFlatButton7.IsTab = false;
+            this.bunifuFlatButton7.Location = new System.Drawing.Point(0, 563);
+            this.bunifuFlatButton7.Name = "bunifuFlatButton7";
+            this.bunifuFlatButton7.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton7.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.bunifuFlatButton7.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton7.selected = false;
+            this.bunifuFlatButton7.Size = new System.Drawing.Size(236, 48);
+            this.bunifuFlatButton7.TabIndex = 9;
+            this.bunifuFlatButton7.Text = "      Configuración de Sistema";
+            this.bunifuFlatButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton7.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton7.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // BtnLibros
             // 
-            this.BtnLibros.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(167)))), ((int)(((byte)(233)))));
-            this.BtnLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
+            this.BtnLibros.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
             this.BtnLibros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnLibros.BorderRadius = 0;
             this.BtnLibros.ButtonText = "      Libros de compra y venta";
@@ -126,8 +173,8 @@
             this.BtnLibros.IsTab = false;
             this.BtnLibros.Location = new System.Drawing.Point(0, 275);
             this.BtnLibros.Name = "BtnLibros";
-            this.BtnLibros.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
-            this.BtnLibros.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(234)))));
+            this.BtnLibros.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
+            this.BtnLibros.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
             this.BtnLibros.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnLibros.selected = false;
             this.BtnLibros.Size = new System.Drawing.Size(236, 48);
@@ -154,7 +201,7 @@
             // bunifuFlatButton6
             // 
             this.bunifuFlatButton6.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton6.BorderRadius = 0;
             this.bunifuFlatButton6.ButtonText = "bunifuFlatButton6";
@@ -176,7 +223,7 @@
             this.bunifuFlatButton6.IsTab = false;
             this.bunifuFlatButton6.Location = new System.Drawing.Point(0, 89);
             this.bunifuFlatButton6.Name = "bunifuFlatButton6";
-            this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton6.selected = false;
@@ -190,7 +237,7 @@
             // bunifuFlatButton3
             // 
             this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton3.BorderRadius = 0;
             this.bunifuFlatButton3.ButtonText = "      Inventario General";
@@ -212,7 +259,7 @@
             this.bunifuFlatButton3.IsTab = false;
             this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 44);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton3.selected = false;
@@ -226,7 +273,7 @@
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton2.BorderRadius = 0;
             this.bunifuFlatButton2.ButtonText = "      Registro de productos";
@@ -248,7 +295,7 @@
             this.bunifuFlatButton2.IsTab = false;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(0, -1);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.selected = false;
@@ -275,7 +322,7 @@
             // bunifuFlatButton5
             // 
             this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton5.BorderRadius = 0;
             this.bunifuFlatButton5.ButtonText = "      Ings, Egrs, Ganancias";
@@ -297,7 +344,7 @@
             this.bunifuFlatButton5.IsTab = false;
             this.bunifuFlatButton5.Location = new System.Drawing.Point(0, 89);
             this.bunifuFlatButton5.Name = "bunifuFlatButton5";
-            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton5.selected = false;
@@ -311,7 +358,7 @@
             // BtnReportes
             // 
             this.BtnReportes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.BtnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnReportes.BorderRadius = 0;
             this.BtnReportes.ButtonText = "      Reporte de Ventas";
@@ -333,7 +380,7 @@
             this.BtnReportes.IsTab = false;
             this.BtnReportes.Location = new System.Drawing.Point(0, 45);
             this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnReportes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnReportes.OnHovercolor = System.Drawing.Color.Silver;
             this.BtnReportes.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnReportes.selected = false;
@@ -347,7 +394,7 @@
             // BtnGraficos
             // 
             this.BtnGraficos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.BtnGraficos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnGraficos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnGraficos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnGraficos.BorderRadius = 0;
             this.BtnGraficos.ButtonText = "      Gráficos de ventas";
@@ -369,7 +416,7 @@
             this.BtnGraficos.IsTab = false;
             this.BtnGraficos.Location = new System.Drawing.Point(0, 0);
             this.BtnGraficos.Name = "BtnGraficos";
-            this.BtnGraficos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnGraficos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnGraficos.OnHovercolor = System.Drawing.Color.Silver;
             this.BtnGraficos.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnGraficos.selected = false;
@@ -396,7 +443,7 @@
             // BtnAlumnos
             // 
             this.BtnAlumnos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.BtnAlumnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnAlumnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnAlumnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAlumnos.BorderRadius = 0;
             this.BtnAlumnos.ButtonText = "      Registro de Empresas";
@@ -418,7 +465,7 @@
             this.BtnAlumnos.IsTab = false;
             this.BtnAlumnos.Location = new System.Drawing.Point(0, 90);
             this.BtnAlumnos.Name = "BtnAlumnos";
-            this.BtnAlumnos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnAlumnos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnAlumnos.OnHovercolor = System.Drawing.Color.Silver;
             this.BtnAlumnos.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnAlumnos.selected = false;
@@ -432,7 +479,7 @@
             // BtnEmpresas
             // 
             this.BtnEmpresas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.BtnEmpresas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnEmpresas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnEmpresas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnEmpresas.BorderRadius = 0;
             this.BtnEmpresas.ButtonText = "      Tipos de usuario";
@@ -454,7 +501,7 @@
             this.BtnEmpresas.IsTab = false;
             this.BtnEmpresas.Location = new System.Drawing.Point(0, 45);
             this.BtnEmpresas.Name = "BtnEmpresas";
-            this.BtnEmpresas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnEmpresas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnEmpresas.OnHovercolor = System.Drawing.Color.Silver;
             this.BtnEmpresas.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnEmpresas.selected = false;
@@ -468,7 +515,7 @@
             // BtnUsuarios
             // 
             this.BtnUsuarios.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.BtnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnUsuarios.BorderRadius = 0;
             this.BtnUsuarios.ButtonText = "      Usuarios";
@@ -490,7 +537,7 @@
             this.BtnUsuarios.IsTab = false;
             this.BtnUsuarios.Location = new System.Drawing.Point(0, 0);
             this.BtnUsuarios.Name = "BtnUsuarios";
-            this.BtnUsuarios.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.BtnUsuarios.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.BtnUsuarios.OnHovercolor = System.Drawing.Color.Silver;
             this.BtnUsuarios.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnUsuarios.selected = false;
@@ -516,7 +563,7 @@
             // bunifuFlatButton4
             // 
             this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton4.BorderRadius = 0;
             this.bunifuFlatButton4.ButtonText = "      Libro de Ventas";
@@ -538,7 +585,7 @@
             this.bunifuFlatButton4.IsTab = false;
             this.bunifuFlatButton4.Location = new System.Drawing.Point(1, 45);
             this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton4.selected = false;
@@ -552,7 +599,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "      Libro de Compras";
@@ -574,7 +621,7 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(1, 0);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(125)))), ((int)(((byte)(229)))));
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(94)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
@@ -587,8 +634,8 @@
             // 
             // BtnVentas
             // 
-            this.BtnVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(167)))), ((int)(((byte)(233)))));
-            this.BtnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
+            this.BtnVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
             this.BtnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVentas.BorderRadius = 0;
             this.BtnVentas.ButtonText = "       Reportes";
@@ -610,8 +657,8 @@
             this.BtnVentas.IsTab = false;
             this.BtnVentas.Location = new System.Drawing.Point(0, 226);
             this.BtnVentas.Name = "BtnVentas";
-            this.BtnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
-            this.BtnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(234)))));
+            this.BtnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
+            this.BtnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
             this.BtnVentas.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnVentas.selected = false;
             this.BtnVentas.Size = new System.Drawing.Size(236, 48);
@@ -624,8 +671,8 @@
             // 
             // BtnInventario
             // 
-            this.BtnInventario.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(167)))), ((int)(((byte)(233)))));
-            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
+            this.BtnInventario.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
             this.BtnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnInventario.BorderRadius = 0;
             this.BtnInventario.ButtonText = "      Inventario";
@@ -647,8 +694,8 @@
             this.BtnInventario.IsTab = false;
             this.BtnInventario.Location = new System.Drawing.Point(0, 177);
             this.BtnInventario.Name = "BtnInventario";
-            this.BtnInventario.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
-            this.BtnInventario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(234)))));
+            this.BtnInventario.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
+            this.BtnInventario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
             this.BtnInventario.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnInventario.selected = false;
             this.BtnInventario.Size = new System.Drawing.Size(236, 48);
@@ -661,8 +708,8 @@
             // 
             // BtnAdministracion
             // 
-            this.BtnAdministracion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(167)))), ((int)(((byte)(233)))));
-            this.BtnAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
+            this.BtnAdministracion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
             this.BtnAdministracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAdministracion.BorderRadius = 0;
             this.BtnAdministracion.ButtonText = "      Administración";
@@ -684,8 +731,8 @@
             this.BtnAdministracion.IsTab = false;
             this.BtnAdministracion.Location = new System.Drawing.Point(0, 128);
             this.BtnAdministracion.Name = "BtnAdministracion";
-            this.BtnAdministracion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(74)))), ((int)(((byte)(190)))));
-            this.BtnAdministracion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(234)))));
+            this.BtnAdministracion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
+            this.BtnAdministracion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
             this.BtnAdministracion.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnAdministracion.selected = false;
             this.BtnAdministracion.Size = new System.Drawing.Size(236, 48);
@@ -794,7 +841,7 @@
             // 
             // PanelLinea
             // 
-            this.PanelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(74)))), ((int)(((byte)(132)))));
+            this.PanelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(179)))), ((int)(((byte)(30)))));
             this.AnimacionInventario.SetDecoration(this.PanelLinea, BunifuAnimatorNS.DecorationType.None);
             this.AnimacionAdministracion.SetDecoration(this.PanelLinea, BunifuAnimatorNS.DecorationType.None);
             this.PanelLinea.Dock = System.Windows.Forms.DockStyle.Top;
@@ -881,43 +928,91 @@
             // 
             this.AnimacionAdministracion.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.AnimacionAdministracion.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 1;
-            animation4.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 2F;
-            animation4.TransparencyCoeff = 0F;
-            this.AnimacionAdministracion.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 1;
+            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 2F;
+            animation2.TransparencyCoeff = 0F;
+            this.AnimacionAdministracion.DefaultAnimation = animation2;
             // 
             // AnimacionInventario
             // 
             this.AnimacionInventario.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.AnimacionInventario.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 1;
-            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 2F;
-            animation3.TransparencyCoeff = 0F;
-            this.AnimacionInventario.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.AnimacionInventario.DefaultAnimation = animation1;
+            // 
+            // pictureBox1
+            // 
+            this.AnimacionAdministracion.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionInventario.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox1.Image = global::FlavorsOfTheHouse.Properties.Resources.sabores_de_la_casa;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.AnimacionAdministracion.SetDecoration(this.lblusuario, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionInventario.SetDecoration(this.lblusuario, BunifuAnimatorNS.DecorationType.None);
+            this.lblusuario.Location = new System.Drawing.Point(60, 41);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(49, 15);
+            this.lblusuario.TabIndex = 11;
+            this.lblusuario.Text = "Usuario";
+            // 
+            // lblNivel
+            // 
+            this.lblNivel.AutoSize = true;
+            this.AnimacionAdministracion.SetDecoration(this.lblNivel, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionInventario.SetDecoration(this.lblNivel, BunifuAnimatorNS.DecorationType.None);
+            this.lblNivel.Location = new System.Drawing.Point(60, 59);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(35, 15);
+            this.lblNivel.TabIndex = 11;
+            this.lblNivel.Text = "Nivel";
+            // 
+            // LineaSidebar
+            // 
+            this.LineaSidebar.BackColor = System.Drawing.Color.Transparent;
+            this.AnimacionInventario.SetDecoration(this.LineaSidebar, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionAdministracion.SetDecoration(this.LineaSidebar, BunifuAnimatorNS.DecorationType.None);
+            this.LineaSidebar.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.LineaSidebar.LineThickness = 1;
+            this.LineaSidebar.Location = new System.Drawing.Point(6, 107);
+            this.LineaSidebar.Name = "LineaSidebar";
+            this.LineaSidebar.Size = new System.Drawing.Size(223, 10);
+            this.LineaSidebar.TabIndex = 12;
+            this.LineaSidebar.Transparency = 255;
+            this.LineaSidebar.Vertical = false;
             // 
             // FrmPrincipal
             // 
@@ -939,6 +1034,7 @@
             this.Text = "FrmPrincipal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.PanelSidebar.ResumeLayout(false);
+            this.PanelSidebar.PerformLayout();
             this.PanelInventario.ResumeLayout(false);
             this.PanelVentas.ResumeLayout(false);
             this.PanelAdministracion.ResumeLayout(false);
@@ -947,6 +1043,7 @@
             this.BarraTitulo.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -994,5 +1091,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton BtnLibros;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.Label lblusuario;
+        private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
     }
 }
