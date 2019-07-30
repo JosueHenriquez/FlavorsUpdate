@@ -17,6 +17,43 @@ namespace FlavorsOfTheHouse.Vista
             InitializeComponent();
         }
 
+        Form currentForm;
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = PanelContenedor.Controls.OfType<MiForm>().FirstOrDefault();
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+
+                if (currentForm != null)
+                {
+                    currentForm.Close();
+                    PanelContenedor.Controls.Remove(currentForm);
+                }
+                currentForm = formulario;
+                PanelContenedor.Controls.Add(formulario);
+                PanelContenedor.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+
+        private void CloseForms(object sender, FormClosedEventArgs e)
+        {
+            foreach (var control in PanelContenedor.Controls)
+            {
+
+            }
+        }
+
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Esta seguro de querer cerrar el programa?\nConsidere que si tiene información en edición no podrá recuperarla.", "Confirmación de cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -32,7 +69,7 @@ namespace FlavorsOfTheHouse.Vista
             Screen screen = Screen.PrimaryScreen;
             int Height = screen.Bounds.Height;
             int Width = screen.Bounds.Width;
-            this.MaximumSize = new System.Drawing.Size(Width, Height - 40);
+            this.MaximumSize = new Size(Width, Height - 37);
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -74,6 +111,7 @@ namespace FlavorsOfTheHouse.Vista
             EstadoPaneles();
             //Ubicacion Inicial de botones
             UbicacionBotones();
+            AbrirFormulario<FrmInicio>();
         }
 
         private void BtnAdministracion_Click(object sender, EventArgs e)
