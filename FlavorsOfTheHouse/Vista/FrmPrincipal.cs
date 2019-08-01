@@ -64,8 +64,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnMaximizar_Click(object sender, EventArgs e)
         {
-            BtnMaximizar.Visible = false;
-            BtnNormal.Visible = true;
+
             Screen screen = Screen.PrimaryScreen;
             int Height = screen.Bounds.Height;
             int Width = screen.Bounds.Width;
@@ -75,8 +74,6 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnNormal_Click(object sender, EventArgs e)
         {
-            BtnNormal.Visible = false;
-            BtnMaximizar.Visible = true;
             this.WindowState = FormWindowState.Normal;
         }
 
@@ -105,8 +102,6 @@ namespace FlavorsOfTheHouse.Vista
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             PanelSidebar.Width = 236;
-            //Barra de titulo
-            BtnMaximizar.Visible = true;
             //Estados de paneles
             EstadoPaneles();
             //Ubicacion Inicial de botones
@@ -225,13 +220,13 @@ namespace FlavorsOfTheHouse.Vista
             {
                 PanelSidebar.Width = 63;
                 LineaSidebar.Width = 52;
-                BtnMenu.Text = "Expandir Menú";
+                //BtnMenu.Text = "Expandir Menú";
             }
             else
             {
                 PanelSidebar.Width = 236;
                 LineaSidebar.Width = 222;
-                BtnMenu.Text = "Contraer Menú";
+                //BtnMenu.Text = "Contraer Menú";
             }
         }
     }

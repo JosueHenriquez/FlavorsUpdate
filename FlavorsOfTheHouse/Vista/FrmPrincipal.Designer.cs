@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
+            BunifuAnimatorNS.Animation animation10 = new BunifuAnimatorNS.Animation();
             this.PanelSidebar = new System.Windows.Forms.Panel();
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblNivel = new System.Windows.Forms.Label();
@@ -57,17 +57,6 @@
             this.BtnVentas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnInventario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnAdministracion = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.BarraTitulo = new System.Windows.Forms.ToolStrip();
-            this.BtnMenu = new System.Windows.Forms.ToolStripButton();
-            this.BtnCerrar = new System.Windows.Forms.ToolStripButton();
-            this.BtnMaximizar = new System.Windows.Forms.ToolStripButton();
-            this.BtnNormal = new System.Windows.Forms.ToolStripButton();
-            this.BtnMinimizar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.PanelLinea = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.LblUsuarioConectado = new System.Windows.Forms.ToolStripLabel();
             this.lblConectado = new System.Windows.Forms.ToolStripLabel();
@@ -77,6 +66,16 @@
             this.BtnAcercaDe = new System.Windows.Forms.ToolStripButton();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.AnimacionAdministracion = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.BarraTitulo = new System.Windows.Forms.ToolStrip();
+            this.BtnMenu = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.BtnCerrar = new System.Windows.Forms.ToolStripButton();
+            this.BtnMaximizar = new System.Windows.Forms.ToolStripButton();
+            this.BtnNormal = new System.Windows.Forms.ToolStripButton();
+            this.BtnMinimizar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.AnimacionInventario = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.PanelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,8 +83,8 @@
             this.PanelVentas.SuspendLayout();
             this.PanelAdministracion.SuspendLayout();
             this.PanelLibros.SuspendLayout();
-            this.BarraTitulo.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.BarraTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelSidebar
@@ -109,7 +108,7 @@
             this.PanelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelSidebar.Location = new System.Drawing.Point(0, 25);
             this.PanelSidebar.Name = "PanelSidebar";
-            this.PanelSidebar.Size = new System.Drawing.Size(237, 636);
+            this.PanelSidebar.Size = new System.Drawing.Size(751, 636);
             this.PanelSidebar.TabIndex = 1;
             // 
             // LineaSidebar
@@ -792,113 +791,6 @@
             this.BtnAdministracion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdministracion.Click += new System.EventHandler(this.BtnAdministracion_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
-            this.toolStripLabel1.Text = "Ricaldone";
-            // 
-            // BarraTitulo
-            // 
-            this.AnimacionInventario.SetDecoration(this.BarraTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionAdministracion.SetDecoration(this.BarraTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.BarraTitulo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnMenu,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.BtnCerrar,
-            this.BtnMaximizar,
-            this.BtnNormal,
-            this.BtnMinimizar,
-            this.toolStripSeparator2,
-            this.toolStripLabel2});
-            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1284, 25);
-            this.BarraTitulo.TabIndex = 0;
-            this.BarraTitulo.Text = "toolStrip1";
-            // 
-            // BtnMenu
-            // 
-            this.BtnMenu.Image = global::FlavorsOfTheHouse.Properties.Resources.list_button_with_3_elements;
-            this.BtnMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMenu.Name = "BtnMenu";
-            this.BtnMenu.Size = new System.Drawing.Size(107, 22);
-            this.BtnMenu.Text = "Contraer Menú";
-            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
-            // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnCerrar.Image = global::FlavorsOfTheHouse.Properties.Resources.cancel_button;
-            this.BtnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(23, 22);
-            this.BtnCerrar.Text = "Cerrar Programa";
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // BtnMaximizar
-            // 
-            this.BtnMaximizar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnMaximizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnMaximizar.Image = global::FlavorsOfTheHouse.Properties.Resources.crop_button;
-            this.BtnMaximizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMaximizar.Name = "BtnMaximizar";
-            this.BtnMaximizar.Size = new System.Drawing.Size(23, 22);
-            this.BtnMaximizar.Text = "Maximizar";
-            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
-            // 
-            // BtnNormal
-            // 
-            this.BtnNormal.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnNormal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnNormal.Image = global::FlavorsOfTheHouse.Properties.Resources.full_screen_exit;
-            this.BtnNormal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnNormal.Name = "BtnNormal";
-            this.BtnNormal.Size = new System.Drawing.Size(23, 22);
-            this.BtnNormal.Text = "Restaurar a tamaño normal";
-            this.BtnNormal.Visible = false;
-            this.BtnNormal.Click += new System.EventHandler(this.BtnNormal_Click);
-            // 
-            // BtnMinimizar
-            // 
-            this.BtnMinimizar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnMinimizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMinimizar.Image")));
-            this.BtnMinimizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(23, 22);
-            this.BtnMinimizar.Text = "Minimizar";
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(102, 22);
-            this.toolStripLabel2.Text = "Sabores de la casa";
-            // 
-            // PanelLinea
-            // 
-            this.PanelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(179)))), ((int)(((byte)(30)))));
-            this.AnimacionInventario.SetDecoration(this.PanelLinea, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionAdministracion.SetDecoration(this.PanelLinea, BunifuAnimatorNS.DecorationType.None);
-            this.PanelLinea.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLinea.Location = new System.Drawing.Point(237, 25);
-            this.PanelLinea.Name = "PanelLinea";
-            this.PanelLinea.Size = new System.Drawing.Size(1047, 3);
-            this.PanelLinea.TabIndex = 2;
-            // 
             // toolStrip1
             // 
             this.AnimacionInventario.SetDecoration(this.toolStrip1, BunifuAnimatorNS.DecorationType.None);
@@ -911,9 +803,9 @@
             this.LblFrmActual,
             this.LblFActual,
             this.BtnAcercaDe});
-            this.toolStrip1.Location = new System.Drawing.Point(237, 636);
+            this.toolStrip1.Location = new System.Drawing.Point(751, 636);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1047, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(533, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -968,52 +860,152 @@
             this.AnimacionInventario.SetDecoration(this.PanelContenedor, BunifuAnimatorNS.DecorationType.None);
             this.AnimacionAdministracion.SetDecoration(this.PanelContenedor, BunifuAnimatorNS.DecorationType.None);
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(237, 28);
+            this.PanelContenedor.Location = new System.Drawing.Point(751, 25);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1047, 608);
+            this.PanelContenedor.Size = new System.Drawing.Size(533, 611);
             this.PanelContenedor.TabIndex = 4;
             // 
             // AnimacionAdministracion
             // 
             this.AnimacionAdministracion.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.AnimacionAdministracion.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 1;
-            animation4.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 2F;
-            animation4.TransparencyCoeff = 0F;
-            this.AnimacionAdministracion.DefaultAnimation = animation4;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 1;
+            animation9.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 2F;
+            animation9.TransparencyCoeff = 0F;
+            this.AnimacionAdministracion.DefaultAnimation = animation9;
+            // 
+            // BarraTitulo
+            // 
+            this.BarraTitulo.BackColor = System.Drawing.Color.ForestGreen;
+            this.AnimacionInventario.SetDecoration(this.BarraTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionAdministracion.SetDecoration(this.BarraTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.BarraTitulo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnMenu,
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.BtnCerrar,
+            this.BtnMaximizar,
+            this.BtnNormal,
+            this.BtnMinimizar,
+            this.toolStripSeparator2,
+            this.toolStripLabel2});
+            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.Size = new System.Drawing.Size(1284, 25);
+            this.BarraTitulo.TabIndex = 0;
+            this.BarraTitulo.Text = "toolStrip1";
+            // 
+            // BtnMenu
+            // 
+            this.BtnMenu.ForeColor = System.Drawing.Color.White;
+            this.BtnMenu.Image = global::FlavorsOfTheHouse.Properties.Resources.list_button_with_3_elements;
+            this.BtnMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMenu.Name = "BtnMenu";
+            this.BtnMenu.Size = new System.Drawing.Size(107, 22);
+            this.BtnMenu.Text = "Contraer Menú";
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.ForeColor = System.Drawing.Color.White;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel1.Text = "Ricaldone";
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnCerrar.Image = global::FlavorsOfTheHouse.Properties.Resources.cancel_button;
+            this.BtnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(23, 22);
+            this.BtnCerrar.Text = "Cerrar Programa";
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
+            // BtnMaximizar
+            // 
+            this.BtnMaximizar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnMaximizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnMaximizar.Image = global::FlavorsOfTheHouse.Properties.Resources.crop_button;
+            this.BtnMaximizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMaximizar.Name = "BtnMaximizar";
+            this.BtnMaximizar.Size = new System.Drawing.Size(23, 22);
+            this.BtnMaximizar.Text = "Maximizar";
+            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
+            // 
+            // BtnNormal
+            // 
+            this.BtnNormal.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnNormal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnNormal.Image = global::FlavorsOfTheHouse.Properties.Resources.full_screen_exit;
+            this.BtnNormal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnNormal.Name = "BtnNormal";
+            this.BtnNormal.Size = new System.Drawing.Size(23, 22);
+            this.BtnNormal.Text = "Restaurar a tamaño normal";
+            this.BtnNormal.Visible = false;
+            this.BtnNormal.Click += new System.EventHandler(this.BtnNormal_Click);
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnMinimizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMinimizar.Image")));
+            this.BtnMinimizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(23, 22);
+            this.BtnMinimizar.Text = "Minimizar";
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.ForeColor = System.Drawing.Color.White;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(102, 22);
+            this.toolStripLabel2.Text = "Sabores de la casa";
             // 
             // AnimacionInventario
             // 
             this.AnimacionInventario.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.AnimacionInventario.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 1;
-            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 2F;
-            animation3.TransparencyCoeff = 0F;
-            this.AnimacionInventario.DefaultAnimation = animation3;
+            animation10.AnimateOnlyDifferences = true;
+            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
+            animation10.LeafCoeff = 0F;
+            animation10.MaxTime = 1F;
+            animation10.MinTime = 0F;
+            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
+            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
+            animation10.MosaicSize = 1;
+            animation10.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation10.RotateCoeff = 0F;
+            animation10.RotateLimit = 0F;
+            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
+            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
+            animation10.TimeCoeff = 2F;
+            animation10.TransparencyCoeff = 0F;
+            this.AnimacionInventario.DefaultAnimation = animation10;
             // 
             // FrmPrincipal
             // 
@@ -1022,7 +1014,6 @@
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.PanelLinea);
             this.Controls.Add(this.PanelSidebar);
             this.Controls.Add(this.BarraTitulo);
             this.AnimacionAdministracion.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -1041,10 +1032,10 @@
             this.PanelVentas.ResumeLayout(false);
             this.PanelAdministracion.ResumeLayout(false);
             this.PanelLibros.ResumeLayout(false);
-            this.BarraTitulo.ResumeLayout(false);
-            this.BarraTitulo.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.BarraTitulo.ResumeLayout(false);
+            this.BarraTitulo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1052,15 +1043,6 @@
 
         #endregion
         private System.Windows.Forms.Panel PanelSidebar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton BtnCerrar;
-        private System.Windows.Forms.ToolStripButton BtnNormal;
-        private System.Windows.Forms.ToolStripButton BtnMinimizar;
-        private System.Windows.Forms.ToolStrip BarraTitulo;
-        private System.Windows.Forms.Panel PanelLinea;
-        private System.Windows.Forms.ToolStripButton BtnMenu;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel LblUsuarioConectado;
         private System.Windows.Forms.ToolStripLabel lblConectado;
@@ -1068,13 +1050,11 @@
         private System.Windows.Forms.ToolStripLabel LblFrmActual;
         private System.Windows.Forms.ToolStripLabel LblFActual;
         private System.Windows.Forms.Panel PanelContenedor;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private Bunifu.Framework.UI.BunifuFlatButton BtnAdministracion;
         private Bunifu.Framework.UI.BunifuFlatButton BtnInventario;
         private System.Windows.Forms.Panel PanelAdministracion;
         private BunifuAnimatorNS.BunifuTransition AnimacionInventario;
         private BunifuAnimatorNS.BunifuTransition AnimacionAdministracion;
-        private System.Windows.Forms.ToolStripButton BtnMaximizar;
         private Bunifu.Framework.UI.BunifuFlatButton BtnEmpresas;
         private Bunifu.Framework.UI.BunifuFlatButton BtnUsuarios;
         private Bunifu.Framework.UI.BunifuFlatButton BtnVentas;
@@ -1097,5 +1077,15 @@
         private System.Windows.Forms.Label lblNivel;
         private System.Windows.Forms.Label lblusuario;
         private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
+        private System.Windows.Forms.ToolStripButton BtnMenu;
+        private System.Windows.Forms.ToolStrip BarraTitulo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton BtnCerrar;
+        private System.Windows.Forms.ToolStripButton BtnMaximizar;
+        private System.Windows.Forms.ToolStripButton BtnNormal;
+        private System.Windows.Forms.ToolStripButton BtnMinimizar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }
