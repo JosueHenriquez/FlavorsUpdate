@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FlavorsOfTheHouse.Modelo;
 
 namespace FlavorsOfTheHouse.Vista
 {
@@ -15,70 +16,49 @@ namespace FlavorsOfTheHouse.Vista
     {
         public FrmLogin()
         {
-            Thread t = new Thread(new ThreadStart(StarForm));
-            t.Start();
-            Thread.Sleep(3000);
-            InitializeComponent();
-            t.Abort();
-        }
-
-        public void StarForm()
-        {
-            Application.Run(new FrmSplashScreen());
-        }
-
-        private void txtUsuario_Enter(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text.Trim() == "Usuario")
-            {
-                lblUsuario.Visible = false;
-                lblUsuario.Text = txtUsuario.Text;
-                txtUsuario.Text = "";
-                lblUsuario.ForeColor = Color.FromArgb(252, 179, 30);
-                lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Bold);
-                animacionUsuario.Show(lblUsuario);
-            }
+            InitializeComponent();            
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Bold);
-        }
-
-        private void txtUsuario_Leave(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text.Trim() == "")
+            if (PrimerUso_Modelo.Existencia_Empresa() == true)
             {
-                txtUsuario.Text = lblUsuario.Text;
-                lblUsuario.Visible = false;
-                lblUsuario.ForeColor = Color.FromArgb(0, 0, 0);
-                lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Bold);
+                bool dat = ObtenerDatos_Modelo.ObtenerUsuario();
+                if (dat == true)
+                {
+                    //ocultar campos primer uso
+                    BtnPrimerUso.Visible = false;
+                    lbl1.Visible = false;
+                    lbl2.Visible = false;
+                }
+                else
+                {
+                    //ocultar campos de login
+                    lbllogin.Visible = false;
+                    txtContrasena.Visible = false;
+                    txtUsuario.Visible = false;
+                    btnAcceder.Visible = false;
+                    BtnCancelar.Visible = false;
+                    picImagen.Visible = false;
+                    lnkRecuperacion.Visible = false;
+                    lblUsuario.Visible = false;
+                    lblContra.Visible = false;
+                    BtnPrimerUso.LabelText = "Crear primer usuario";
+                }
             }
-        }
-
-        private void txtContrasena_Enter(object sender, EventArgs e)
-        {
-            if (txtContrasena.Text == "Contraseña")
+            else
             {
-                lblContra.Visible = false;
-                lblContra.Text = txtContrasena.Text;
-                txtContrasena.Text = "";
-                lblContra.ForeColor = Color.FromArgb(252, 179, 30);
-                lblContra.Font = new Font(lblContra.Font, FontStyle.Bold);
-                txtContrasena.UseSystemPasswordChar = true;
-                animacionContra.Show(lblContra);
-            }            
-        }
-
-        private void txtContrasena_Leave(object sender, EventArgs e)
-        {
-            if (txtContrasena.Text.Trim() == "")
-            {
-                txtContrasena.Text = lblContra.Text;
-                lblContra.Visible = false;
-                lblContra.ForeColor = Color.FromArgb(0, 0, 0);
-                lblContra.Font = new Font(lblContra.Font, FontStyle.Bold);
-                txtContrasena.UseSystemPasswordChar = false;
+                
+                    //ocultar campos de login
+                    lbllogin.Visible = false;
+                    txtContrasena.Visible = false;
+                    txtUsuario.Visible = false;
+                    btnAcceder.Visible = false;
+                    BtnCancelar.Visible = false;
+                    picImagen.Visible = false;
+                    lnkRecuperacion.Visible = false;
+                    lblUsuario.Visible = false;
+                    lblContra.Visible = false;
             }
         }
 
@@ -87,6 +67,37 @@ namespace FlavorsOfTheHouse.Vista
             FrmPrincipal principal = new FrmPrincipal();
             principal.Show();
             this.Hide();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnPrimerUso_Click(object sender, EventArgs e)
+        {
+            if (BtnPrimerUso.LabelText == "Crear primer usuario")
+            {
+                FrmPrimerUsuario primerusuario = new FrmPrimerUsuario();
+                primerusuario.Show();
+                this.Hide();
+            }
+            else
+            {
+                FrmPrimerUso pu = new FrmPrimerUso();
+                pu.Show();
+                this.Hide();
+            }            
+        }
+
+        private void btnAcceder_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -64,7 +64,8 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnMaximizar_Click(object sender, EventArgs e)
         {
-
+            BtnMaximizar.Visible = false;
+            BtnNormal.Visible = true;
             Screen screen = Screen.PrimaryScreen;
             int Height = screen.Bounds.Height;
             int Width = screen.Bounds.Width;
@@ -74,6 +75,8 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnNormal_Click(object sender, EventArgs e)
         {
+            BtnNormal.Visible = false;
+            BtnMaximizar.Visible = true;
             this.WindowState = FormWindowState.Normal;
         }
 
@@ -87,7 +90,8 @@ namespace FlavorsOfTheHouse.Vista
             BtnAdministracion.Location = new Point(0, 128);
             BtnInventario.Location = new Point(0, 177);
             BtnVentas.Location = new Point(0, 226);
-            BtnLibros.Location = new Point(0,275);     
+            BtnLibros.Location = new Point(0,275);
+            //BtnConfiguracion.Location = new Point(0,563);    
         }
 
         private void EstadoPaneles()
@@ -97,6 +101,7 @@ namespace FlavorsOfTheHouse.Vista
             PanelVentas.Visible = false;
             PanelInventario.Visible = false;
             PanelLibros.Visible = false;
+            PanelAjustes.Visible = false;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -218,7 +223,7 @@ namespace FlavorsOfTheHouse.Vista
         {
             if (PanelSidebar.Width == 236)
             {
-                PanelSidebar.Width = 63;
+                PanelSidebar.Width = 59;
                 LineaSidebar.Width = 52;
                 //BtnMenu.Text = "Expandir Menú";
             }
@@ -227,6 +232,38 @@ namespace FlavorsOfTheHouse.Vista
                 PanelSidebar.Width = 236;
                 LineaSidebar.Width = 222;
                 //BtnMenu.Text = "Contraer Menú";
+            }
+        }
+
+        private void BtnAjustes_Click(object sender, EventArgs e)
+        {
+
+            if (PanelAjustes.Visible == true)
+            {
+                EstadoPaneles();
+                UbicacionBotones();
+            }
+            else
+            {
+                //Ocultar todos los paneles
+                EstadoPaneles();
+                //Mostrar Panel requerido
+                PanelAjustes.Visible = true;
+                if (BtnMaximizar.Visible == false)
+                {
+                    PanelAjustes.Location = new Point(0, 542);
+                }
+                else
+                {
+                    PanelAjustes.Location = new Point(0, 508);
+                }
+
+                //Moviendo Botones a posiciones originales
+                UbicacionBotones();
+            }
+            if (PanelAjustes.Visible == false)
+            {
+                UbicacionBotones();
             }
         }
     }

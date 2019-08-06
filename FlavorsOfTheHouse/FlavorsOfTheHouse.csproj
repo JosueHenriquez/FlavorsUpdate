@@ -37,6 +37,7 @@
       <HintPath>E:\Programas\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -51,6 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Conexion_Config.cs" />
+    <Compile Include="Config\Validaciones.cs" />
+    <Compile Include="Controlador\ConstructorEmpresa_Controlador.cs" />
+    <Compile Include="Controlador\Constructor_PrimerUsuario.cs" />
+    <Compile Include="Modelo\ControlEmpresas_Modelo.cs" />
+    <Compile Include="Modelo\ControlUsuarios_Modelo.cs" />
+    <Compile Include="Modelo\ObtenerDatos_Modelo.cs" />
+    <Compile Include="Modelo\PrimerUso_Modelo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\FrmAcercaDe.cs">
@@ -119,6 +128,12 @@
     <Compile Include="Vista\FrmPrimerUso.Designer.cs">
       <DependentUpon>FrmPrimerUso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmPrimerUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmPrimerUsuario.Designer.cs">
+      <DependentUpon>FrmPrimerUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +168,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vista\FrmControlUsuarios.resx">
+      <DependentUpon>FrmControlUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,8 +183,14 @@
     <EmbeddedResource Include="Vista\FrmPrimerUso.resx">
       <DependentUpon>FrmPrimerUso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmPrimerUsuario.resx">
+      <DependentUpon>FrmPrimerUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRegistroEmpresas.resx">
+      <DependentUpon>FrmRegistroEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmSplashScreen.resx">
       <DependentUpon>FrmSplashScreen.cs</DependentUpon>
@@ -185,10 +209,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\" />
-    <Folder Include="Controlador\" />
     <Folder Include="Graficos\" />
-    <Folder Include="Modelo\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +346,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ajustes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administración.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarperfil1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ganancias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresasdependientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarperfil2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
