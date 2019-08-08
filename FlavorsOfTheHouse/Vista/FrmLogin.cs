@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FlavorsOfTheHouse.Modelo;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 
 namespace FlavorsOfTheHouse.Vista
 {
@@ -20,6 +21,10 @@ namespace FlavorsOfTheHouse.Vista
         {
             InitializeComponent();            
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -139,6 +144,18 @@ namespace FlavorsOfTheHouse.Vista
         private void btnAcceder_Click_1(object sender, EventArgs e)
         {
             ValidarLog(txtUsuario.Text, txtContrasena.Text);
+        }
+
+        private void PanelLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void toolStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
