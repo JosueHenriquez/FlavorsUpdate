@@ -62,8 +62,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Insertar_Empresa();
-            
+            Insertar_Empresa();            
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

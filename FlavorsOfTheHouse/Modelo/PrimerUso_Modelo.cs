@@ -58,9 +58,9 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 return retorno;                      
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error en la transmisión de datos, verifique su conexión a Internet y si el problema persite consulte con el administrador", "Error de registro en empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error en la transmisión de datos, verifique su conexión a Internet y si el problema persite consulte con el administrador " + ex.Message, "Error de registro en empresa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return retorno;
             }
         }
