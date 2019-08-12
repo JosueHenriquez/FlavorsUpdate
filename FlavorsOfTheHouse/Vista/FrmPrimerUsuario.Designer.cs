@@ -31,6 +31,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.BtnSalir = new System.Windows.Forms.ToolStripButton();
+            this.txtId = new System.Windows.Forms.ToolStripTextBox();
+            this.lblIdusuario = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,16 +62,17 @@
             this.BtnExaminar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.txtRespuesta1 = new System.Windows.Forms.TextBox();
             this.txtRespuesta2 = new System.Windows.Forms.TextBox();
             this.txtRespuesta3 = new System.Windows.Forms.TextBox();
             this.txtRespuesta4 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cmbPregunta1 = new System.Windows.Forms.ComboBox();
+            this.cmbPregunta2 = new System.Windows.Forms.ComboBox();
+            this.cmbPregunta3 = new System.Windows.Forms.ComboBox();
+            this.cmbPregunta4 = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +82,9 @@
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.BtnSalir});
+            this.BtnSalir,
+            this.txtId,
+            this.lblIdusuario});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(892, 25);
@@ -102,6 +107,19 @@
             this.BtnSalir.Size = new System.Drawing.Size(23, 22);
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 25);
+            this.txtId.Visible = false;
+            // 
+            // lblIdusuario
+            // 
+            this.lblIdusuario.Name = "lblIdusuario";
+            this.lblIdusuario.Size = new System.Drawing.Size(69, 22);
+            this.lblIdusuario.Text = "ID Usuario";
+            this.lblIdusuario.Visible = false;
             // 
             // label1
             // 
@@ -126,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 255);
+            this.label3.Location = new System.Drawing.Point(376, 202);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 16);
@@ -159,7 +177,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(84, 274);
+            this.txtUsuario.Location = new System.Drawing.Point(379, 221);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(268, 22);
             this.txtUsuario.TabIndex = 8;
@@ -167,7 +185,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(376, 202);
+            this.label11.Location = new System.Drawing.Point(81, 255);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 16);
@@ -176,7 +194,7 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(379, 221);
+            this.txtClave.Location = new System.Drawing.Point(84, 274);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(268, 22);
             this.txtClave.TabIndex = 9;
@@ -351,7 +369,7 @@
             this.BtnExaminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.BtnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExaminar.ForeColor = System.Drawing.Color.White;
-            this.BtnExaminar.Location = new System.Drawing.Point(704, 242);
+            this.BtnExaminar.Location = new System.Drawing.Point(704, 249);
             this.BtnExaminar.Name = "BtnExaminar";
             this.BtnExaminar.Size = new System.Drawing.Size(161, 35);
             this.BtnExaminar.TabIndex = 15;
@@ -384,72 +402,32 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(79, 348);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(262, 16);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "1. ¿Cual de mis nombres prefiero cambiar?";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(79, 374);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(192, 16);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "2. ¿Cual es su comida favorita?";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(79, 400);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(227, 16);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "3. ¿A que edad tuvo su primer novia?";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(79, 426);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(305, 16);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "4. ¿Cual son los ultimos dos numeros de su movil?";
-            // 
             // txtRespuesta1
             // 
-            this.txtRespuesta1.Location = new System.Drawing.Point(389, 348);
+            this.txtRespuesta1.Location = new System.Drawing.Point(502, 348);
             this.txtRespuesta1.Name = "txtRespuesta1";
-            this.txtRespuesta1.Size = new System.Drawing.Size(456, 22);
+            this.txtRespuesta1.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta1.TabIndex = 11;
             // 
             // txtRespuesta2
             // 
-            this.txtRespuesta2.Location = new System.Drawing.Point(389, 374);
+            this.txtRespuesta2.Location = new System.Drawing.Point(502, 374);
             this.txtRespuesta2.Name = "txtRespuesta2";
-            this.txtRespuesta2.Size = new System.Drawing.Size(456, 22);
+            this.txtRespuesta2.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta2.TabIndex = 12;
             // 
             // txtRespuesta3
             // 
-            this.txtRespuesta3.Location = new System.Drawing.Point(389, 400);
+            this.txtRespuesta3.Location = new System.Drawing.Point(502, 400);
             this.txtRespuesta3.Name = "txtRespuesta3";
-            this.txtRespuesta3.Size = new System.Drawing.Size(456, 22);
+            this.txtRespuesta3.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta3.TabIndex = 13;
             // 
             // txtRespuesta4
             // 
-            this.txtRespuesta4.Location = new System.Drawing.Point(389, 426);
+            this.txtRespuesta4.Location = new System.Drawing.Point(502, 426);
             this.txtRespuesta4.Name = "txtRespuesta4";
-            this.txtRespuesta4.Size = new System.Drawing.Size(456, 22);
+            this.txtRespuesta4.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta4.TabIndex = 14;
             // 
             // label18
@@ -467,11 +445,63 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label19.Location = new System.Drawing.Point(727, 233);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(119, 13);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Imagen de 4Mb máximo";
+            // 
+            // cmbPregunta1
+            // 
+            this.cmbPregunta1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPregunta1.FormattingEnabled = true;
+            this.cmbPregunta1.Location = new System.Drawing.Point(84, 346);
+            this.cmbPregunta1.Name = "cmbPregunta1";
+            this.cmbPregunta1.Size = new System.Drawing.Size(396, 24);
+            this.cmbPregunta1.TabIndex = 17;
+            // 
+            // cmbPregunta2
+            // 
+            this.cmbPregunta2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPregunta2.FormattingEnabled = true;
+            this.cmbPregunta2.Location = new System.Drawing.Point(84, 372);
+            this.cmbPregunta2.Name = "cmbPregunta2";
+            this.cmbPregunta2.Size = new System.Drawing.Size(396, 24);
+            this.cmbPregunta2.TabIndex = 17;
+            // 
+            // cmbPregunta3
+            // 
+            this.cmbPregunta3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPregunta3.FormattingEnabled = true;
+            this.cmbPregunta3.Location = new System.Drawing.Point(84, 398);
+            this.cmbPregunta3.Name = "cmbPregunta3";
+            this.cmbPregunta3.Size = new System.Drawing.Size(396, 24);
+            this.cmbPregunta3.TabIndex = 17;
+            // 
+            // cmbPregunta4
+            // 
+            this.cmbPregunta4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPregunta4.FormattingEnabled = true;
+            this.cmbPregunta4.Location = new System.Drawing.Point(84, 424);
+            this.cmbPregunta4.Name = "cmbPregunta4";
+            this.cmbPregunta4.Size = new System.Drawing.Size(396, 24);
+            this.cmbPregunta4.TabIndex = 17;
+            // 
             // FrmPrimerUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 522);
+            this.Controls.Add(this.cmbPregunta4);
+            this.Controls.Add(this.cmbPregunta3);
+            this.Controls.Add(this.cmbPregunta2);
+            this.Controls.Add(this.cmbPregunta1);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnExaminar);
             this.Controls.Add(this.cmbTipoUsuario);
@@ -493,12 +523,9 @@
             this.Controls.Add(this.txtCarne);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.label13);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label11);
@@ -513,7 +540,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrimerUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrimerUsuario";
@@ -560,15 +587,18 @@
         private System.Windows.Forms.Button BtnExaminar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtRespuesta1;
         private System.Windows.Forms.TextBox txtRespuesta2;
         private System.Windows.Forms.TextBox txtRespuesta3;
         private System.Windows.Forms.TextBox txtRespuesta4;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cmbPregunta1;
+        private System.Windows.Forms.ComboBox cmbPregunta2;
+        private System.Windows.Forms.ComboBox cmbPregunta3;
+        private System.Windows.Forms.ComboBox cmbPregunta4;
+        private System.Windows.Forms.ToolStripTextBox txtId;
+        private System.Windows.Forms.ToolStripLabel lblIdusuario;
     }
 }

@@ -7,6 +7,7 @@ using FlavorsOfTheHouse.Controlador;
 using MySql.Data.MySqlClient;
 using FlavorsOfTheHouse.Config;
 using System.Windows.Forms;
+using System.Data;
 
 namespace FlavorsOfTheHouse.Modelo
 {
@@ -29,7 +30,7 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 else
                 {
-                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbusuario (usuario, clave, nombres, apellidos, documento, nacimiento, intentos, primer_uso, id_empresa, id_estado, id_tipousuario, foto, respuesta1, respuesta2, respuesta3, respuesta4) VALUES ('"+cpri.usuario+"','"+cpri.clave+"','"+cpri.nombres+ "','" + cpri.apellidos + "','" + cpri.documento + "','" + cpri.nacimiento + "','" + cpri.intentos + "','" + cpri.primer_uso + "','" + cpri.id_empresa + "','" + cpri.id_estado + "','" + cpri.id_tipo_usuario + "','" + cpri.imagen + "','" + cpri.respuesta1 + "','" + cpri.respuesta2 + "','" + cpri.respuesta3 + "','" + cpri.respuesta4 + "')"),Conexion_Config.ObtenerConexion());
+                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbusuario (usuario, clave, nombres, apellidos, documento, nacimiento, intentos, primer_uso, id_empresa, id_estado, id_tipousuario, foto) VALUES ('"+cpri.usuario+"','"+cpri.clave+"','"+cpri.nombres+ "','" + cpri.apellidos + "','" + cpri.documento + "','" + cpri.nacimiento + "','" + cpri.intentos + "','" + cpri.primer_uso + "','" + cpri.id_empresa + "','" + cpri.id_estado + "','" + cpri.id_tipo_usuario + "','" + cpri.imagen + "')"),Conexion_Config.ObtenerConexion());
                     retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                     if (retorno >= 1)
                     {
@@ -46,6 +47,55 @@ namespace FlavorsOfTheHouse.Modelo
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error en la inserción de un nuevo usuario, verifique su conexión a internet, si el problema persiste consulte al administrador." + ex.Message, "Error critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return retorno;
+            }
+            finally
+            {
+                Conexion_Config.ObtenerConexion().Close();
+            }
+        }
+        public static List<Constructor_PrimerUsuario> Buscar_usuario(string user)
+        {
+            List<Constructor_PrimerUsuario> lista = new List<Constructor_PrimerUsuario>();
+            string query = "SELECT MAX(id_usuario) FROM tbusuario WHERE usuario = ?usuario";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
+                cmdselect.Parameters.Add(new MySqlParameter("usuario", user));
+                MySqlDataReader reader = cmdselect.ExecuteReader();
+                while (reader.Read())
+                {
+                    int usuario = reader.GetInt16(0);
+                    Constructor_PrimerUsuario.id_usuario = usuario;
+                }
+                return lista;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo obtener el ID del usuario, consulte con el administrador","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return lista;
+            }
+            finally
+            {
+                Conexion_Config.ObtenerConexion().Close();
+            }
+        }
+        public static int Ingresar_Respuesta(Constructor_Respuestas cres, int iduser)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbrespuesta (respuesta, id_pregunta, id_usuario)VALUES('"+cres.respuesta+"','"+cres.id_pregunta+"','"+iduser+"')"),Conexion_Config.ObtenerConexion());
+                retorno = cmdinsert.ExecuteNonQuery();
+                if (retorno<=0)
+                {
+                    MessageBox.Show("Las respuesta de seguridad no pudieron ser registradas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Las respuesta de seguridad no pudieron ser registradas debido a un fallo de conexión.","Error critico",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return retorno;
             }
             finally

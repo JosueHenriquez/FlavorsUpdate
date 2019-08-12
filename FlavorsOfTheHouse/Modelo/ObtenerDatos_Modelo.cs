@@ -77,5 +77,26 @@ namespace FlavorsOfTheHouse.Modelo
             }
         }
 
+        public static DataTable ObtenerPreguntas()
+        {
+            DataTable data = new DataTable();
+            string query = "SELECT * FROM tbpregunta";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmdselect);
+                adapter.Fill(data);
+                return data;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error critico al cargar las preguntas de seguridad, verifique su conexión a internet o consulte con el administrador.", "Error critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+            finally
+            {
+                Conexion_Config.ObtenerConexion().Close();
+            }
+        }
     }
 }
