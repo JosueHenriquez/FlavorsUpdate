@@ -237,7 +237,6 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnAjustes_Click(object sender, EventArgs e)
         {
-
             if (PanelAjustes.Visible == true)
             {
                 EstadoPaneles();
@@ -251,7 +250,7 @@ namespace FlavorsOfTheHouse.Vista
                 PanelAjustes.Visible = true;
                 if (BtnMaximizar.Visible == false)
                 {
-                    PanelAjustes.Location = new Point(0, 542);
+                    PanelAjustes.Location = new Point(0, Height-189);
                 }
                 else
                 {
