@@ -103,27 +103,39 @@ namespace FlavorsOfTheHouse.Vista
             }            
         }
 
-        protected void ValidarLog(string usuario, string clave)
+        void Log_In(string usuario, string clave)
         {
-            if (usuario.Trim() != "" || clave.Trim() != "")
+            Constructor_Login log = new Constructor_Login();
+            Constructor_Login.usuario = usuario;
+            log.clave = Validaciones.md5(txtContrasena.Text);
+            bool resultado = Validar_Login_Modelo.Validar_Acceso(log);
+            if (resultado == true && Constructor_Login.primer_uso == 0)
             {
-                Constructor_Login log = new Constructor_Login();
-                Constructor_Login.usuario = usuario;
-                log.clave = Validaciones.md5(txtContrasena.Text);
-                MessageBox.Show(log.clave);
-                bool resultado = Validar_Login_Modelo.Validar_Acceso(log);
-                if (resultado == true && Constructor_Login.primer_uso == 0)
+                FrmPrimerUsoClave pu = new FrmPrimerUsoClave();
+                pu.Show();
+                this.Hide();
+            }
+            else if (resultado == true)
+            {
+                FrmPrincipal main = new FrmPrincipal();
+                main.Show();
+                this.Hide();
+            }
+        }
+
+        protected void ValidarLog()
+        {
+            if (txtUsuario.Text.Trim() != "" || txtContrasena.Text.Trim() != "")
+            {    
+                if (txtContrasena.Text.Trim() == txtUsuario+"PRIMERUSO")
                 {
-                    FrmPrimerUsoClave pu = new FrmPrimerUsoClave();
-                    pu.Show();
-                    this.Hide();
+                    string clave = Validaciones.md5(txtContrasena.Text + "PRIMERUSO");
+
                 }
-                else if(resultado == true)
+                else
                 {
-                    FrmPrincipal main = new FrmPrincipal();
-                    main.Show();
-                    this.Hide();
-                }
+                    Log_In(txtUsuario.Text, txtContrasena.Text);
+                }                
             }
             else
             {
@@ -133,7 +145,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void btnAcceder_Click_1(object sender, EventArgs e)
         {
-            ValidarLog(txtUsuario.Text, txtContrasena.Text);
+            ValidarLog();
         }
 
         private void PanelLogin_MouseDown(object sender, MouseEventArgs e)
@@ -146,6 +158,14 @@ namespace FlavorsOfTheHouse.Vista
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar==Convert.ToChar(Keys.Enter))
+            {
+                ValidarLog();
+            }
         }
     }
 }

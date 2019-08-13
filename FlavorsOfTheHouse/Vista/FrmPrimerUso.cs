@@ -67,7 +67,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void BtnExaminar_Click(object sender, EventArgs e)

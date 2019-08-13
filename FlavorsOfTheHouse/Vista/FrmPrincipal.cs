@@ -1,4 +1,5 @@
 ﻿using System;
+using FlavorsOfTheHouse.Controlador;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -90,7 +91,7 @@ namespace FlavorsOfTheHouse.Vista
             BtnAdministracion.Location = new Point(0, 128);
             BtnInventario.Location = new Point(0, 177);
             BtnVentas.Location = new Point(0, 226);
-            BtnLibros.Location = new Point(0,275);
+            BtnFacturacion.Location = new Point(0,275);
             //BtnConfiguracion.Location = new Point(0,563);    
         }
 
@@ -100,12 +101,36 @@ namespace FlavorsOfTheHouse.Vista
             PanelAdministracion.Visible = false;
             PanelVentas.Visible = false;
             PanelInventario.Visible = false;
-            PanelLibros.Visible = false;
+            
             PanelAjustes.Visible = false;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            lblusuario.Text = Constructor_Login.usuario;
+            switch (Constructor_Login.nivel)
+            {
+                case 1:
+                    lblNivel.Text = "Administrador General (Root)";
+                    break;
+                case 2:
+                    lblNivel.Text = "Coordinador";
+                    break;
+                case 3:
+                    lblNivel.Text = "Encargado de empresa";
+                    break;
+                case 4:
+                    lblNivel.Text = "Asistente Empresarial";
+                    break;
+                case 5:
+                    lblNivel.Text = "Vendedor";
+                    break;
+                case 6:
+                    lblNivel.Text = "Encargado de Facturación";
+                    break;
+                default:
+                    break;
+            }
             PanelSidebar.Width = 236;
             //Estados de paneles
             EstadoPaneles();
@@ -132,7 +157,7 @@ namespace FlavorsOfTheHouse.Vista
                 //Nueva ubicación de botones            
                 BtnInventario.Location = new Point(0,313);
                 BtnVentas.Location = new Point(0,362);
-                BtnLibros.Location = new Point(0,411);
+                BtnFacturacion.Location = new Point(0,411);
             }
 
             if (PanelAdministracion.Visible == false)
@@ -159,7 +184,7 @@ namespace FlavorsOfTheHouse.Vista
                 //Ubicación de botones
                 BtnAdministracion.Location = new Point(0, 128);
                 BtnVentas.Location = new Point(0,362);
-                BtnLibros.Location = new Point(0, 411);
+                BtnFacturacion.Location = new Point(0, 411);
             }
             if (PanelInventario.Visible == false)
             {
@@ -185,7 +210,7 @@ namespace FlavorsOfTheHouse.Vista
                 //Ubicación de botones
                 BtnAdministracion.Location = new Point(0, 128);
                 BtnInventario.Location = new Point(0, 177);
-                BtnLibros.Location = new Point(0, 411);
+                BtnFacturacion.Location = new Point(0, 500);
             }
             if (PanelVentas.Visible == false)
             {
@@ -195,28 +220,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnLibros_Click(object sender, EventArgs e)
         {
-            if (PanelLibros.Visible == true)
-            {
-                EstadoPaneles();
-                UbicacionBotones();
-            }
-            else
-            {
-                //Ocultar todos los paneles
-                EstadoPaneles();
-                //Mostrar panel requerido
-                PanelLibros.Visible = true;
-                PanelLibros.Location = new Point(0,324);
-                BtnLibros.Location = new Point(0,275);
-                //Mover botones
-                BtnAdministracion.Location = new Point(0, 128);
-                BtnInventario.Location = new Point(0, 177);
-                BtnVentas.Location = new Point(0, 226);
-            }
-            if (PanelLibros.Visible == false)
-            {
-                UbicacionBotones();
-            }
+            
         }
 
         private void BtnMenu_Click(object sender, EventArgs e)
@@ -264,6 +268,31 @@ namespace FlavorsOfTheHouse.Vista
             {
                 UbicacionBotones();
             }
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmControlUsuarios>();
+        }
+
+        private void BtnEmpresas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmRegistroEmpresas>();
+        }
+
+        private void BtnConfUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmPrimerUsuario>();
+        }
+
+        private void BtnEmpresaPpal_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmPrimerUso>();
         }
     }
 }

@@ -63,3 +63,5 @@ C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\D
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmSplashScreen.resources
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csproj.GenerateResource.Cache
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmPrimerUsoClave.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmPrimerUsoClave.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmCambiarClave.resources

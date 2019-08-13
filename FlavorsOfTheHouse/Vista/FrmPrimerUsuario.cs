@@ -48,6 +48,7 @@ namespace FlavorsOfTheHouse.Vista
         {
             txtCarne.Visible = false;
             maskDui.Visible = false;
+            lblMensaje.Visible = false;
             try
             {
                 cmbEmpresa.DataSource = ControlEmpresas_Modelo.ObtenerEmpresa();
@@ -102,19 +103,18 @@ namespace FlavorsOfTheHouse.Vista
             }
         }
 
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        void Registrar_Usuario()
         {
             DateTime hoy = DateTime.Today;
-
-            if (txtNombres.Text.Trim() == "" || 
-                txtApellidos.Text.Trim() == "" || 
-                maskDui.Text.Trim() == "" && txtCarne.Text.Trim() == "" || 
-                dtNacimiento.Value.Date >= hoy || 
+            if (txtNombres.Text.Trim() == "" ||
+                txtApellidos.Text.Trim() == "" ||
+                maskDui.Text.Trim() == "" && txtCarne.Text.Trim() == "" ||
+                dtNacimiento.Value.Date >= hoy ||
                 txtUsuario.Text.Trim() == "" ||
-                txtClave.Text.Trim() == "" || 
+                txtClave.Text.Trim() == "" ||
                 txtConfClave.Text.Trim() == "")
             {
-                MessageBox.Show("Algunos campos de tipo obligatorio están vacíos o la fecha de nacimiento proporcionada no es correcta, por favor rellene todos los campos.","Error de Inserción",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Algunos campos de tipo obligatorio están vacíos o la fecha de nacimiento proporcionada no es correcta, por favor rellene todos los campos.", "Error de Inserción", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (pbFoto.Image == null)
             {
@@ -122,16 +122,16 @@ namespace FlavorsOfTheHouse.Vista
             }
             else if (txtClave.Text != txtConfClave.Text)
             {
-                MessageBox.Show("Las claves no coinciden, vuelva a ingresarlas","Claves no coinciden",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                MessageBox.Show("Las claves no coinciden, vuelva a ingresarlas", "Claves no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 txtClave.Clear();
                 txtConfClave.Clear();
             }
-            else if (cmbPregunta1.SelectedValue == cmbPregunta2.SelectedValue &&
-                    cmbPregunta1.SelectedValue == cmbPregunta3.SelectedValue &&
-                    cmbPregunta1.SelectedValue == cmbPregunta4.SelectedValue &&
-                    cmbPregunta2.SelectedValue == cmbPregunta3.SelectedValue &&
-                    cmbPregunta2.SelectedValue == cmbPregunta4.SelectedValue &&
-                    cmbPregunta3.SelectedValue == cmbPregunta4.SelectedValue)
+            else if (Convert.ToInt16(cmbPregunta1.SelectedValue) == Convert.ToInt16(cmbPregunta2.SelectedValue) ||
+                Convert.ToInt16(cmbPregunta1.SelectedValue) == Convert.ToInt16(cmbPregunta3.SelectedValue)||
+                Convert.ToInt16(cmbPregunta1.SelectedValue) == Convert.ToInt16(cmbPregunta4.SelectedValue)||
+                Convert.ToInt16(cmbPregunta2.SelectedValue) == Convert.ToInt16(cmbPregunta3.SelectedValue)||
+                Convert.ToInt16(cmbPregunta2.SelectedValue) == Convert.ToInt16(cmbPregunta4.SelectedValue)||
+                Convert.ToInt16(cmbPregunta3.SelectedValue) == Convert.ToInt16(cmbPregunta4.SelectedValue))
             {
                 MessageBox.Show("Verique que ha seleccionado y respondido a preguntas diferentes, no esta permitido responder dos veces a la misma pregunta.", "Verificación de pregunta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -160,7 +160,7 @@ namespace FlavorsOfTheHouse.Vista
                 pbFoto.Image.Save(ms, ImageFormat.Jpeg);
                 byte[] aByte = ms.ToArray();
                 string encoded = Convert.ToBase64String(aByte);
-                user.imagen = encoded;                   
+                user.imagen = encoded;
                 int datos = ControlUsuarios_Modelo.Ingresar_Usuario(user);
                 if (datos >= 1)
                 {
@@ -197,16 +197,74 @@ namespace FlavorsOfTheHouse.Vista
                     }
                     MessageBox.Show("Hemos finalizado con la configuración inicial, en este momento te mostrare el Inicio de Sesión para que escribas las credenciales del usuario que acabas de crear.", "Proceso finalizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FrmLogin log = new FrmLogin();
-                    log.Show();
+                    log.Show(); 
                     this.Close();
                 }
             }
         }
-    
+
+        public void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            Registrar_Usuario();
+        }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+        }
+
+        private void txtClave_Enter(object sender, EventArgs e)
+        {
+            if (txtClave.Text.Trim() == "")
+            {
+                txtClave.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtConfClave_Enter(object sender, EventArgs e)
+        {
+            if (txtConfClave.Text.Trim() == "")
+            {
+                txtConfClave.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtConfClave_Leave(object sender, EventArgs e)
+        {
+            if (txtClave.Text != "" && txtConfClave.Text != "" 
+                && txtClave.Text != txtConfClave.Text)
+            {
+                lblMensaje.Visible = true;
+            }
+            else
+            {
+                lblMensaje.Visible = false;
+            }
+        }
+
+        private void txtClave_Leave(object sender, EventArgs e)
+        {
+            if (txtClave.Text != "" && txtConfClave.Text != ""
+                && txtClave.Text != txtConfClave.Text)
+            {
+                lblMensaje.Visible = true;
+            }
+            else
+            {
+                lblMensaje.Visible = false;
+            }
+        }
+
+        private void txtConfClave_TextChanged(object sender, EventArgs e)
+        {
+            if (txtClave.Text != txtConfClave.Text)
+            {
+                lblMensaje.Visible = true;
+            }
+            else
+            {
+                lblMensaje.Visible = false;
+            }
         }
     }
 }

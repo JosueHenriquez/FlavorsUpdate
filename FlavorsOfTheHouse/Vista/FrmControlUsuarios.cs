@@ -21,5 +21,11 @@ namespace FlavorsOfTheHouse.Vista
         {
             this.Close();
         }
+
+        private void BtnReestablecer_Click(object sender, EventArgs e)
+        {
+            DateTime hoy = DateTime.Today;
+            string reestablecer = txtUsuario.Text + "PRIMERUSO";
+        }
     }
 }
