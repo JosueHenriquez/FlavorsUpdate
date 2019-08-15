@@ -56,7 +56,7 @@
     <Compile Include="Config\Validaciones.cs" />
     <Compile Include="Controlador\ConstructorEmpresa_Controlador.cs" />
     <Compile Include="Controlador\Constructor_Login.cs" />
-    <Compile Include="Controlador\Constructor_PrimerUsuario.cs" />
+    <Compile Include="Controlador\Constructor_Usuario.cs" />
     <Compile Include="Modelo\ControlEmpresas_Modelo.cs" />
     <Compile Include="Modelo\ControlUsuarios_Modelo.cs" />
     <Compile Include="Modelo\ObtenerDatos_Modelo.cs" />

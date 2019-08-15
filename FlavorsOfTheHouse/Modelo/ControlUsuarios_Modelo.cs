@@ -13,7 +13,7 @@ namespace FlavorsOfTheHouse.Modelo
 {
     class ControlUsuarios_Modelo
     {
-        public static int Ingresar_Usuario(Constructor_PrimerUsuario cpri)
+        public static int Ingresar_Usuario(Constructor_Usuario cpri)
         {
             int retorno = 0;
             try
@@ -54,9 +54,9 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
-        public static List<Constructor_PrimerUsuario> Buscar_usuario(string user)
+        public static List<Constructor_Usuario> Buscar_usuario(string user)
         {
-            List<Constructor_PrimerUsuario> lista = new List<Constructor_PrimerUsuario>();
+            List<Constructor_Usuario> lista = new List<Constructor_Usuario>();
             string query = "SELECT MAX(id_usuario) FROM tbusuario WHERE usuario = ?usuario";
             try
             {
@@ -66,7 +66,7 @@ namespace FlavorsOfTheHouse.Modelo
                 while (reader.Read())
                 {
                     int usuario = reader.GetInt16(0);
-                    Constructor_PrimerUsuario.id_usuario = usuario;
+                    Constructor_Usuario.id_usuario = usuario;
                 }
                 return lista;
             }
@@ -97,6 +97,29 @@ namespace FlavorsOfTheHouse.Modelo
             {
                 MessageBox.Show("Las respuesta de seguridad no pudieron ser registradas debido a un fallo de conexión.","Error critico",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return retorno;
+            }
+            finally
+            {
+                Conexion_Config.ObtenerConexion().Close();
+            }
+        }
+        public static DataTable ObtenerUsuarios()
+        {
+            DataTable data = new DataTable();
+            int tipousuarios = 2;
+            string query = "SELECT * FROM tbusuario WHERE id_tipousuario >= ?param1";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
+                cmdselect.Parameters.Add(new MySqlParameter("param1",tipousuarios));
+                MySqlDataAdapter _adapter = new MySqlDataAdapter(cmdselect);
+                _adapter.Fill(data);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al cargar el listado de usuarios, consulta con el administrador. "+ ex.Message,"Error de selección",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return data;
             }
             finally
             {

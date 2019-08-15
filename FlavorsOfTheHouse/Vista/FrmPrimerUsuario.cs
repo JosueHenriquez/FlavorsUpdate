@@ -137,7 +137,7 @@ namespace FlavorsOfTheHouse.Vista
             }
             else
             {
-                Constructor_PrimerUsuario user = new Constructor_PrimerUsuario();
+                Constructor_Usuario user = new Constructor_Usuario();
                 user.usuario = txtUsuario.Text;
                 user.clave = Validaciones.md5(txtConfClave.Text);
                 user.nombres = txtNombres.Text;
@@ -165,7 +165,7 @@ namespace FlavorsOfTheHouse.Vista
                 if (datos >= 1)
                 {
                     ControlUsuarios_Modelo.Buscar_usuario(txtUsuario.Text);
-                    txtId.Text = Constructor_PrimerUsuario.id_usuario.ToString();
+                    txtId.Text = Constructor_Usuario.id_usuario.ToString();
                     Constructor_Respuestas res = new Constructor_Respuestas();
                     for (int i = 0; i < 4; i++)
                     {

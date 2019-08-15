@@ -17,9 +17,11 @@ namespace FlavorsOfTheHouse.Config
             string database = "dbflavors";
             string uid = "eMaster";
             string pwd = "123456";
+            //string port = "3306";
             try
             {
                 connect = new MySqlConnection("server =" + server+
+                                              //"; Port = " + port +
                                               "; database = " + database+
                                               "; uid = " + uid+
                                               "; pwd = " + pwd);

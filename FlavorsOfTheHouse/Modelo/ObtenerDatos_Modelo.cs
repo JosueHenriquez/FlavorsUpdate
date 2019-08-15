@@ -34,6 +34,30 @@ namespace FlavorsOfTheHouse.Modelo
             }
         }
 
+        public static DataTable ObtenerTipo_Usuario_SinRoot()
+        {
+            DataTable data = new DataTable();
+            int tipoUsuario = 2;
+            string query = "SELECT * FROM tbtipo_usuario WHERE id_tipo_usuario >= ?param1";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                cmdselect.Parameters.Add(new MySqlParameter("param1",tipoUsuario));
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmdselect);
+                adapter.Fill(data);
+                return data;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudieron cargar los tipos de usuarios, consulte con el administrador.", "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+            finally
+            {
+                Conexion_Config.ObtenerConexion().Close();
+            }
+        }
+
         public static DataTable Obtener_Estados()
         {
             DataTable data = new DataTable();

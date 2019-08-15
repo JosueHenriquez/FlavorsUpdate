@@ -42,17 +42,12 @@
             this.maskDui = new System.Windows.Forms.MaskedTextBox();
             this.radCarne = new System.Windows.Forms.RadioButton();
             this.radDui = new System.Windows.Forms.RadioButton();
-            this.txtConfClave = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
             this.txtCarne = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.lblMensaje = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,16 +56,18 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.grpMantenimientos = new System.Windows.Forms.GroupBox();
+            this.BtnNuevo = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pbFoto = new System.Windows.Forms.PictureBox();
             this.BtnReestablecer = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.OpenCargarImagen = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grpMantenimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.SuspendLayout();
@@ -137,6 +134,7 @@
             this.BtnExaminar.TabIndex = 44;
             this.BtnExaminar.Text = "Cargar Imagen";
             this.BtnExaminar.UseVisualStyleBackColor = false;
+            this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
             // 
             // cmbTipoUsuario
             // 
@@ -198,6 +196,7 @@
             this.radCarne.TabStop = true;
             this.radCarne.Text = "CARNÉ";
             this.radCarne.UseVisualStyleBackColor = true;
+            this.radCarne.CheckedChanged += new System.EventHandler(this.radCarne_CheckedChanged);
             // 
             // radDui
             // 
@@ -210,14 +209,7 @@
             this.radDui.TabStop = true;
             this.radDui.Text = "DUI";
             this.radDui.UseVisualStyleBackColor = true;
-            // 
-            // txtConfClave
-            // 
-            this.txtConfClave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtConfClave.Location = new System.Drawing.Point(586, 206);
-            this.txtConfClave.Name = "txtConfClave";
-            this.txtConfClave.Size = new System.Drawing.Size(259, 24);
-            this.txtConfClave.TabIndex = 40;
+            this.radDui.CheckedChanged += new System.EventHandler(this.radDui_CheckedChanged);
             // 
             // txtApellidos
             // 
@@ -234,15 +226,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(259, 24);
             this.txtUsuario.TabIndex = 38;
-            // 
-            // txtClave
-            // 
-            this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtClave.Location = new System.Drawing.Point(584, 157);
-            this.txtClave.MaxLength = 45;
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(258, 24);
-            this.txtClave.TabIndex = 39;
             // 
             // txtCarne
             // 
@@ -275,29 +258,6 @@
             this.label19.TabIndex = 33;
             this.label19.Text = "Imagen de 4Mb máximo";
             // 
-            // lblMensaje
-            // 
-            this.lblMensaje.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMensaje.Location = new System.Drawing.Point(709, 184);
-            this.lblMensaje.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(136, 17);
-            this.lblMensaje.TabIndex = 31;
-            this.lblMensaje.Text = "Las claves no coinciden";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(583, 184);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 17);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Confirmar clave:";
-            // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -308,17 +268,6 @@
             this.label8.Size = new System.Drawing.Size(82, 17);
             this.label8.TabIndex = 21;
             this.label8.Text = "Tipo Usuario:";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(583, 135);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 17);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Clave:";
             // 
             // label7
             // 
@@ -338,9 +287,9 @@
             this.label3.Location = new System.Drawing.Point(302, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Usuario:";
+            this.label3.Text = "Usuario: *";
             // 
             // label6
             // 
@@ -360,9 +309,9 @@
             this.label5.Location = new System.Drawing.Point(33, 90);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 17);
+            this.label5.Size = new System.Drawing.Size(87, 17);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Nacimiento:";
+            this.label5.Text = "Nacimiento: *";
             // 
             // label4
             // 
@@ -371,9 +320,9 @@
             this.label4.Location = new System.Drawing.Point(581, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Documento:";
+            this.label4.Text = "Documento: *";
             // 
             // label12
             // 
@@ -393,9 +342,9 @@
             this.label2.Location = new System.Drawing.Point(306, 37);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Apellidos:";
+            this.label2.Text = "Apellidos: *";
             // 
             // label1
             // 
@@ -404,32 +353,47 @@
             this.label1.Location = new System.Drawing.Point(31, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Nombres:";
+            this.label1.Text = "Nombres: *";
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(980, 229);
-            this.dataGridView1.TabIndex = 45;
+            this.dgvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Location = new System.Drawing.Point(34, 281);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(980, 229);
+            this.dgvUsuarios.TabIndex = 45;
             // 
             // grpMantenimientos
             // 
             this.grpMantenimientos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grpMantenimientos.Controls.Add(this.BtnNuevo);
             this.grpMantenimientos.Controls.Add(this.button4);
             this.grpMantenimientos.Controls.Add(this.button3);
+            this.grpMantenimientos.Controls.Add(this.BtnReestablecer);
             this.grpMantenimientos.Controls.Add(this.button2);
-            this.grpMantenimientos.Controls.Add(this.button1);
+            this.grpMantenimientos.Controls.Add(this.BtnAgregar);
             this.grpMantenimientos.Location = new System.Drawing.Point(34, 189);
             this.grpMantenimientos.Name = "grpMantenimientos";
-            this.grpMantenimientos.Size = new System.Drawing.Size(534, 86);
+            this.grpMantenimientos.Size = new System.Drawing.Size(809, 86);
             this.grpMantenimientos.TabIndex = 46;
             this.grpMantenimientos.TabStop = false;
             this.grpMantenimientos.Text = "Mantenimientos";
+            // 
+            // BtnNuevo
+            // 
+            this.BtnNuevo.BackColor = System.Drawing.Color.Teal;
+            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNuevo.ForeColor = System.Drawing.Color.White;
+            this.BtnNuevo.Location = new System.Drawing.Point(518, 34);
+            this.BtnNuevo.Name = "BtnNuevo";
+            this.BtnNuevo.Size = new System.Drawing.Size(112, 34);
+            this.BtnNuevo.TabIndex = 0;
+            this.BtnNuevo.Text = "Nuevo";
+            this.BtnNuevo.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -437,7 +401,7 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(383, 34);
+            this.button4.Location = new System.Drawing.Point(400, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(112, 34);
             this.button4.TabIndex = 0;
@@ -450,12 +414,27 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(265, 34);
+            this.button3.Location = new System.Drawing.Point(282, 34);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 34);
             this.button3.TabIndex = 0;
             this.button3.Text = "Actualizar";
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // BtnReestablecer
+            // 
+            this.BtnReestablecer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnReestablecer.BackColor = System.Drawing.Color.Red;
+            this.BtnReestablecer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnReestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReestablecer.ForeColor = System.Drawing.Color.White;
+            this.BtnReestablecer.Location = new System.Drawing.Point(636, 35);
+            this.BtnReestablecer.Name = "BtnReestablecer";
+            this.BtnReestablecer.Size = new System.Drawing.Size(125, 33);
+            this.BtnReestablecer.TabIndex = 44;
+            this.BtnReestablecer.Text = "Reestablecer Clave";
+            this.BtnReestablecer.UseVisualStyleBackColor = false;
+            this.BtnReestablecer.Click += new System.EventHandler(this.BtnReestablecer_Click);
             // 
             // button2
             // 
@@ -463,25 +442,26 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(147, 34);
+            this.button2.Location = new System.Drawing.Point(164, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 34);
             this.button2.TabIndex = 0;
             this.button2.Text = "Mostrar";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // BtnAgregar
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(29, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnAgregar.BackColor = System.Drawing.Color.Teal;
+            this.BtnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.Location = new System.Drawing.Point(46, 34);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(112, 34);
+            this.BtnAgregar.TabIndex = 0;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // pbFoto
             // 
@@ -494,20 +474,9 @@
             this.pbFoto.TabIndex = 41;
             this.pbFoto.TabStop = false;
             // 
-            // BtnReestablecer
+            // OpenCargarImagen
             // 
-            this.BtnReestablecer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnReestablecer.BackColor = System.Drawing.Color.Red;
-            this.BtnReestablecer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.BtnReestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReestablecer.ForeColor = System.Drawing.Color.White;
-            this.BtnReestablecer.Location = new System.Drawing.Point(645, 236);
-            this.BtnReestablecer.Name = "BtnReestablecer";
-            this.BtnReestablecer.Size = new System.Drawing.Size(128, 29);
-            this.BtnReestablecer.TabIndex = 44;
-            this.BtnReestablecer.Text = "Reestablecer Clave";
-            this.BtnReestablecer.UseVisualStyleBackColor = false;
-            this.BtnReestablecer.Click += new System.EventHandler(this.BtnReestablecer_Click);
+            this.OpenCargarImagen.Title = "Cargar Logo";
             // 
             // FrmControlUsuarios
             // 
@@ -515,8 +484,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 522);
             this.Controls.Add(this.grpMantenimientos);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BtnReestablecer);
+            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.BtnExaminar);
             this.Controls.Add(this.cmbTipoUsuario);
             this.Controls.Add(this.cmbEstado);
@@ -526,17 +494,12 @@
             this.Controls.Add(this.radCarne);
             this.Controls.Add(this.radDui);
             this.Controls.Add(this.pbFoto);
-            this.Controls.Add(this.txtConfClave);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtCarne);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.lblMensaje);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
@@ -551,9 +514,10 @@
             this.Name = "FrmControlUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmControlUsuarios";
+            this.Load += new System.EventHandler(this.FrmControlUsuarios_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.grpMantenimientos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.ResumeLayout(false);
@@ -575,17 +539,12 @@
         private System.Windows.Forms.RadioButton radCarne;
         private System.Windows.Forms.RadioButton radDui;
         private System.Windows.Forms.PictureBox pbFoto;
-        private System.Windows.Forms.TextBox txtConfClave;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.TextBox txtCarne;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -596,13 +555,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripTextBox txtId;
         private System.Windows.Forms.ToolStripTextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.GroupBox grpMantenimientos;
         private System.Windows.Forms.ToolStripButton BtnBuscar;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnReestablecer;
+        private System.Windows.Forms.Button BtnNuevo;
+        private System.Windows.Forms.OpenFileDialog OpenCargarImagen;
     }
 }
