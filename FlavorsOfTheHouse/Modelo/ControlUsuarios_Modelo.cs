@@ -107,7 +107,7 @@ namespace FlavorsOfTheHouse.Modelo
         {
             DataTable data = new DataTable();
             int tipousuarios = 2;
-            string query = "SELECT * FROM tbusuario WHERE id_tipousuario >= ?param1";
+            string query = "SELECT tus.id_usuario, tus.usuario, tus.nombres, tus.apellidos,tus.documento, tus.nacimiento, tem.empresa, tes.estado, ttip.tipo_usuario, tus.foto FROM tbusuario tus, tbempresa tem, tbestado tes, tbtipo_usuario ttip WHERE tus.id_empresa = tem.id_empresa AND tus.id_estado = tes.id_estado AND tus.id_tipousuario = ttip.id_tipo_usuario AND tus.id_tipousuario >= ?param1";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());

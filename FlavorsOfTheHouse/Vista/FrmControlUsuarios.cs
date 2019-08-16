@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
+using MySql.Data.MySqlClient;
 
 namespace FlavorsOfTheHouse.Vista
 {
@@ -149,6 +150,27 @@ namespace FlavorsOfTheHouse.Vista
         void Mostrar_Usuarios()
         {
             dgvUsuarios.DataSource = ControlUsuarios_Modelo.ObtenerUsuarios();
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 192, 192);
+            this.dgvUsuarios.EnableHeadersVisualStyles = false;
+            this.dgvUsuarios.Columns[0].Visible = false;
+            this.dgvUsuarios.Columns[1].HeaderText = "Usuario";
+            this.dgvUsuarios.Columns[1].Width = 65;
+            this.dgvUsuarios.Columns[2].HeaderText = "Nombres";
+            this.dgvUsuarios.Columns[2].Width = 90;
+            this.dgvUsuarios.Columns[3].HeaderText = "Apellidos";
+            this.dgvUsuarios.Columns[3].Width = 90;
+            this.dgvUsuarios.Columns[4].HeaderText = "Documento";
+            this.dgvUsuarios.Columns[4].Width = 65;
+            this.dgvUsuarios.Columns[5].HeaderText = "Fecha de Nacimiento";
+            this.dgvUsuarios.Columns[5].Width = 65;
+            this.dgvUsuarios.Columns[6].HeaderText = "Empresa";
+            this.dgvUsuarios.Columns[6].Width = 150;
+            this.dgvUsuarios.Columns[7].HeaderText = "Estado";
+            this.dgvUsuarios.Columns[7].Width = 50;
+            this.dgvUsuarios.Columns[8].HeaderText = "Tipo de Usuario";
+            this.dgvUsuarios.Columns[8].Width = 90;
+            this.dgvUsuarios.Columns[9].Visible = false;
+
         }
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
@@ -180,6 +202,89 @@ namespace FlavorsOfTheHouse.Vista
             if (MessageBox.Show("Está seguro de querer limpiar los campos, tenga en cuenta que perdera los datos ingresados en el formulario.","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 LimpiarCampos();
+                txtUsuario.Enabled = true;
+                BtnAgregar.Enabled = true;
+                BtnActualizar.Enabled = false;
+                BtnEliminar.Enabled = false;
+            }
+        }
+
+        private void BtnMostrar_Click(object sender, EventArgs e)
+        {
+            Mostrar_Usuarios();
+            txtUsuario.Enabled = true;
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int pos;
+            pos = this.dgvUsuarios.CurrentRow.Index;
+            txtId.Text = this.dgvUsuarios[0, pos].Value.ToString();
+            txtUsuario.Enabled = false;
+            txtUsuario.Text = this.dgvUsuarios[1, pos].Value.ToString();
+            txtNombres.Text = this.dgvUsuarios[2, pos].Value.ToString();
+            txtApellidos.Text = this.dgvUsuarios[3, pos].Value.ToString();
+            if (dgvUsuarios[4,pos].Value.ToString().Contains('-'))
+            {
+                maskDui.Text = this.dgvUsuarios[4, pos].Value.ToString();
+                radDui.Checked = true;
+                maskDui.Visible = true;
+                txtCarne.Visible = false;
+                txtCarne.Clear();
+            }
+            else
+            {
+                txtCarne.Text = dgvUsuarios[4, pos].Value.ToString();
+                radCarne.Checked = true;
+                txtCarne.Visible = true;
+                maskDui.Visible = false;
+                maskDui.Clear();
+            }
+            dtNacimiento.Text = this.dgvUsuarios[5,pos].Value.ToString();
+            cmbEmpresa.Text = this.dgvUsuarios[6, pos].Value.ToString();
+            cmbEstado.Text = this.dgvUsuarios[7, pos].Value.ToString();
+            cmbTipoUsuario.Text = this.dgvUsuarios[8, pos].Value.ToString();
+            //RECUPERAR IMAGEN
+            string instruccion;
+            instruccion = "SELECT foto FROM tbusuario WHERE id_usuario = ?param1";
+            MySqlCommand cmd = new MySqlCommand(instruccion, Conexion_Config.ObtenerConexion());
+            cmd.Parameters.Add(new MySqlParameter("param1",txtId.Text));
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                byte[] image = Convert.FromBase64String(reader.GetString(0));
+                MemoryStream ms = new MemoryStream(image);
+                pbFoto.Image = Image.FromStream(ms);
+            }
+            BtnAgregar.Enabled = false;
+            BtnActualizar.Enabled = true;
+            BtnEliminar.Enabled = true;
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea actualizar los datos del usuario?","Confirmación de actualización",MessageBoxButtons.OK,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                Constructor_Usuario actualizacion = new Constructor_Usuario();
+                Constructor_Usuario.id_usuario = int.Parse(txtId.Text);
+                actualizacion.nombres = txtNombres.Text;
+                actualizacion.apellidos = txtApellidos.Text;
+                if (radCarne.Checked == true)
+                {
+                    radDui.Checked = false;
+                    maskDui.Clear();
+                    actualizacion.documento = txtCarne.Text;
+                }
+                else if (radDui.Checked == true)
+                {
+                    radCarne.Checked = false;
+                    txtCarne.Clear();
+                    actualizacion.documento = maskDui.Text;
+                }
+                actualizacion.nacimiento = dtNacimiento.Text;
+                actualizacion.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
+                actualizacion.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                actualizacion.id_tipo_usuario = Convert.ToInt16(cmbTipoUsuario.SelectedValue);
             }
         }
     }
