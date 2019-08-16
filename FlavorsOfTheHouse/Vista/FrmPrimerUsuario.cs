@@ -152,7 +152,6 @@ namespace FlavorsOfTheHouse.Vista
                 }
                 user.nacimiento = dtNacimiento.Text;
                 user.intentos = 0;
-                user.primer_uso = 1;
                 user.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 user.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
                 user.id_tipo_usuario = Convert.ToInt16(cmbTipoUsuario.SelectedValue);

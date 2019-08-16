@@ -10,7 +10,6 @@ namespace FlavorsOfTheHouse.Controlador
     {
         public static string usuario { get; set; }
         public string clave { get; set; }
-        public static int primer_uso { get; set; }
         public Constructor_Login() { }
     }
 

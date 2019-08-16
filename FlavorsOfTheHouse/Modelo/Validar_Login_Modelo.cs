@@ -14,15 +14,16 @@ namespace FlavorsOfTheHouse.Modelo
             try
             {
                 //verificando existencia del usuario
-                string query = "SELECT * FROM tbusuario";
+                string query = "SELECT * FROM tbusuario WHERE usuario = ?param0";
                 MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
+                cmdselect.Parameters.Add(new MySqlParameter("param0",Constructor_Login.usuario));
                 retorno = Convert.ToBoolean(cmdselect.ExecuteScalar());
                 if (retorno == true)
                 {
                     #region
                     int activo = 1;
                     //Verificando estado del usuario
-                    string query2 = "SELECT * FROM tbusuario tu, tbempresa te WHERE tu.usuario = binary ?usuario AND tu.clave = binary ?clave AND tu.id_estado = ?estado";
+                    string query2 = "SELECT * FROM tbusuario tu WHERE tu.usuario = binary ?usuario AND tu.clave = binary ?clave AND tu.id_estado = ?estado";
                     MySqlCommand cmdselect2 = new MySqlCommand(query2,Conexion_Config.ObtenerConexion());
                     cmdselect2.Parameters.Add(new MySqlParameter("usuario",Constructor_Login.usuario));
                     cmdselect2.Parameters.Add(new MySqlParameter("clave", log.clave));
@@ -37,13 +38,16 @@ namespace FlavorsOfTheHouse.Modelo
                         int verificacion = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
                         if (verificacion >= 1)
                         {
-                            MySqlDataReader reader = cmdselect.ExecuteReader();
+                            string query3 = "SELECT * FROM tbusuario WHERE usuario = ?param1";
+                            MySqlCommand cmdselect3 = new MySqlCommand(query3, Conexion_Config.ObtenerConexion());
+                            cmdselect3.Parameters.Add(new MySqlParameter("param1", Constructor_Login.usuario));
+                            MySqlDataReader reader = cmdselect3.ExecuteReader();
                             while (reader.Read())
                             {
                                 Constructor_Login_Datos.empresa = reader.GetInt16(9);
-                                Constructor_Login_Datos.nivel = reader.GetInt16(11);
+                                Constructor_Login_Datos.nivel = reader.GetInt16(10);
                                 Constructor_Login_Datos.nombre = reader.GetString(3) + " " + reader.GetString(4);
-                                Constructor_Login.primer_uso = reader.GetInt16(8);
+                                //Constructor_Login.primer_uso = reader.GetInt16(8);
                             }
                             MessageBox.Show("Bienvenido usuario: " + Constructor_Login.usuario, "Acceso concedido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }

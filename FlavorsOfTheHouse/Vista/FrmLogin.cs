@@ -103,19 +103,20 @@ namespace FlavorsOfTheHouse.Vista
             }            
         }
 
+        Constructor_Login log = new Constructor_Login();
         void Log_In(string usuario, string clave)
         {
-            Constructor_Login log = new Constructor_Login();
             Constructor_Login.usuario = usuario;
             log.clave = Validaciones.md5(txtContrasena.Text);
+            //MessageBox.Show(clave);
             bool resultado = Validar_Login_Modelo.Validar_Acceso(log);
-            if (resultado == true && Constructor_Login.primer_uso == 0)
+            if (resultado == true && txtContrasena.Text == txtUsuario.Text + "primeruso")
             {
                 FrmPrimerUsoClave pu = new FrmPrimerUsoClave();
                 pu.Show();
                 this.Hide();
             }
-            else if (resultado == true)
+            else if (resultado == true && txtContrasena.Text != txtUsuario.Text + "primeruso")
             {
                 FrmPrincipal main = new FrmPrincipal();
                 main.Show();
@@ -127,10 +128,9 @@ namespace FlavorsOfTheHouse.Vista
         {
             if (txtUsuario.Text.Trim() != "" || txtContrasena.Text.Trim() != "")
             {    
-                if (txtContrasena.Text.Trim() == txtUsuario+"PRIMERUSO")
+                if (txtContrasena.Text.Trim() == txtUsuario.Text+"primeruso")
                 {
-                    string clave = Validaciones.md5(txtContrasena.Text + "PRIMERUSO");
-
+                    Log_In(txtUsuario.Text, txtContrasena.Text);
                 }
                 else
                 {

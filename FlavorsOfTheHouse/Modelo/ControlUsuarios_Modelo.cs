@@ -30,7 +30,7 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 else
                 {
-                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbusuario (usuario, clave, nombres, apellidos, documento, nacimiento, intentos, primer_uso, id_empresa, id_estado, id_tipousuario, foto) VALUES ('"+cpri.usuario+"','"+cpri.clave+"','"+cpri.nombres+ "','" + cpri.apellidos + "','" + cpri.documento + "','" + cpri.nacimiento + "','" + cpri.intentos + "','" + cpri.primer_uso + "','" + cpri.id_empresa + "','" + cpri.id_estado + "','" + cpri.id_tipo_usuario + "','" + cpri.imagen + "')"),Conexion_Config.ObtenerConexion());
+                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbusuario (usuario, clave, nombres, apellidos, documento, nacimiento, intentos, id_empresa, id_estado, id_tipousuario, foto) VALUES ('"+cpri.usuario+"','"+cpri.clave+"','"+cpri.nombres+ "','" + cpri.apellidos + "','" + cpri.documento + "','" + cpri.nacimiento + "','" + cpri.intentos + "','" + cpri.id_empresa + "','" + cpri.id_estado + "','" + cpri.id_tipo_usuario + "','" + cpri.imagen + "')"),Conexion_Config.ObtenerConexion());
                     retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                     if (retorno >= 1)
                     {

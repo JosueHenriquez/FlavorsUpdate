@@ -59,10 +59,10 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.grpMantenimientos = new System.Windows.Forms.GroupBox();
             this.BtnNuevo = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnReestablecer = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnMostrar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.OpenCargarImagen = new System.Windows.Forms.OpenFileDialog();
@@ -370,10 +370,10 @@
             // 
             this.grpMantenimientos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.grpMantenimientos.Controls.Add(this.BtnNuevo);
-            this.grpMantenimientos.Controls.Add(this.button4);
-            this.grpMantenimientos.Controls.Add(this.button3);
+            this.grpMantenimientos.Controls.Add(this.BtnEliminar);
+            this.grpMantenimientos.Controls.Add(this.BtnActualizar);
             this.grpMantenimientos.Controls.Add(this.BtnReestablecer);
-            this.grpMantenimientos.Controls.Add(this.button2);
+            this.grpMantenimientos.Controls.Add(this.BtnMostrar);
             this.grpMantenimientos.Controls.Add(this.BtnAgregar);
             this.grpMantenimientos.Location = new System.Drawing.Point(34, 189);
             this.grpMantenimientos.Name = "grpMantenimientos";
@@ -394,32 +394,33 @@
             this.BtnNuevo.TabIndex = 0;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.UseVisualStyleBackColor = false;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
-            // button4
+            // BtnEliminar
             // 
-            this.button4.BackColor = System.Drawing.Color.Teal;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(400, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 34);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.BtnEliminar.BackColor = System.Drawing.Color.Teal;
+            this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Location = new System.Drawing.Point(400, 34);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(112, 34);
+            this.BtnEliminar.TabIndex = 0;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // BtnActualizar
             // 
-            this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(282, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 34);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Actualizar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.BtnActualizar.BackColor = System.Drawing.Color.Teal;
+            this.BtnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Location = new System.Drawing.Point(282, 34);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(112, 34);
+            this.BtnActualizar.TabIndex = 0;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.UseVisualStyleBackColor = false;
             // 
             // BtnReestablecer
             // 
@@ -436,18 +437,18 @@
             this.BtnReestablecer.UseVisualStyleBackColor = false;
             this.BtnReestablecer.Click += new System.EventHandler(this.BtnReestablecer_Click);
             // 
-            // button2
+            // BtnMostrar
             // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(164, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 34);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Mostrar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnMostrar.BackColor = System.Drawing.Color.Teal;
+            this.BtnMostrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMostrar.ForeColor = System.Drawing.Color.White;
+            this.BtnMostrar.Location = new System.Drawing.Point(164, 34);
+            this.BtnMostrar.Name = "BtnMostrar";
+            this.BtnMostrar.Size = new System.Drawing.Size(112, 34);
+            this.BtnMostrar.TabIndex = 0;
+            this.BtnMostrar.Text = "Mostrar";
+            this.BtnMostrar.UseVisualStyleBackColor = false;
             // 
             // BtnAgregar
             // 
@@ -558,9 +559,9 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.GroupBox grpMantenimientos;
         private System.Windows.Forms.ToolStripButton BtnBuscar;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnActualizar;
+        private System.Windows.Forms.Button BtnMostrar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnReestablecer;
         private System.Windows.Forms.Button BtnNuevo;
