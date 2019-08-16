@@ -73,7 +73,6 @@ namespace FlavorsOfTheHouse.Vista
 
         void Agregar_Usuario()
         {
-            MessageBox.Show(maskDui.Text);
             DateTime hoy = DateTime.Today;
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txtNombres.Text) ||
@@ -176,7 +175,6 @@ namespace FlavorsOfTheHouse.Vista
                 txtCarne.Visible = true;
             }
         }
-
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Está seguro de querer limpiar los campos, tenga en cuenta que perdera los datos ingresados en el formulario.","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
