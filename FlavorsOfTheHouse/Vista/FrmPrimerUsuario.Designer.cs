@@ -112,7 +112,6 @@
             // 
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 25);
-            this.txtId.Visible = false;
             // 
             // lblIdusuario
             // 
@@ -162,6 +161,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(267, 22);
             this.txtNombres.TabIndex = 1;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // txtApellidos
             // 
@@ -170,6 +170,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(268, 22);
             this.txtApellidos.TabIndex = 2;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // pbFoto
             // 
@@ -189,6 +190,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(268, 22);
             this.txtUsuario.TabIndex = 8;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // label11
             // 

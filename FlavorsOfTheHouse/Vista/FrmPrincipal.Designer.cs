@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.PanelSidebar = new System.Windows.Forms.Panel();
             this.BtnFacturacion = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -66,8 +66,10 @@
             this.lblConectado = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.LblFrmActual = new System.Windows.Forms.ToolStripLabel();
-            this.LblFActual = new System.Windows.Forms.ToolStripLabel();
+            this.LblFormActual = new System.Windows.Forms.ToolStripLabel();
             this.BtnAcercaDe = new System.Windows.Forms.ToolStripButton();
+            this.lblPleca = new System.Windows.Forms.ToolStripLabel();
+            this.FrmActual = new System.Windows.Forms.ToolStripLabel();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.AnimacionAdministracion = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.BarraTitulo = new System.Windows.Forms.ToolStrip();
@@ -153,6 +155,7 @@
             this.BtnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnFacturacion.Textcolor = System.Drawing.Color.White;
             this.BtnFacturacion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFacturacion.Click += new System.EventHandler(this.BtnFacturacion_Click);
             // 
             // PanelAjustes
             // 
@@ -939,8 +942,10 @@
             this.lblConectado,
             this.toolStripButton1,
             this.LblFrmActual,
-            this.LblFActual,
-            this.BtnAcercaDe});
+            this.LblFormActual,
+            this.BtnAcercaDe,
+            this.lblPleca,
+            this.FrmActual});
             this.toolStrip1.Location = new System.Drawing.Point(751, 672);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(533, 25);
@@ -977,12 +982,12 @@
             this.LblFrmActual.Size = new System.Drawing.Size(108, 22);
             this.LblFrmActual.Text = "Formulario Actual:";
             // 
-            // LblFActual
+            // LblFormActual
             // 
-            this.LblFActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
-            this.LblFActual.Name = "LblFActual";
-            this.LblFActual.Size = new System.Drawing.Size(10, 22);
-            this.LblFActual.Text = ".";
+            this.LblFormActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
+            this.LblFormActual.Name = "LblFormActual";
+            this.LblFormActual.Size = new System.Drawing.Size(10, 22);
+            this.LblFormActual.Text = ".";
             // 
             // BtnAcercaDe
             // 
@@ -992,6 +997,19 @@
             this.BtnAcercaDe.Name = "BtnAcercaDe";
             this.BtnAcercaDe.Size = new System.Drawing.Size(82, 22);
             this.BtnAcercaDe.Text = "Acerca de:";
+            // 
+            // lblPleca
+            // 
+            this.lblPleca.Name = "lblPleca";
+            this.lblPleca.Size = new System.Drawing.Size(12, 22);
+            this.lblPleca.Text = "/";
+            // 
+            // FrmActual
+            // 
+            this.FrmActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
+            this.FrmActual.Name = "FrmActual";
+            this.FrmActual.Size = new System.Drawing.Size(10, 22);
+            this.FrmActual.Text = ".";
             // 
             // PanelContenedor
             // 
@@ -1007,22 +1025,22 @@
             // 
             this.AnimacionAdministracion.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.AnimacionAdministracion.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 0;
-            animation6.Padding = new System.Windows.Forms.Padding(0);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 0F;
-            animation6.TransparencyCoeff = 0F;
-            this.AnimacionAdministracion.DefaultAnimation = animation6;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.AnimacionAdministracion.DefaultAnimation = animation2;
             // 
             // BarraTitulo
             // 
@@ -1128,22 +1146,22 @@
             // 
             this.AnimacionInventario.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.AnimacionInventario.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 0F;
-            this.AnimacionInventario.DefaultAnimation = animation5;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.AnimacionInventario.DefaultAnimation = animation1;
             // 
             // FrmPrincipal
             // 
@@ -1188,7 +1206,7 @@
         private System.Windows.Forms.ToolStripLabel lblConectado;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel LblFrmActual;
-        private System.Windows.Forms.ToolStripLabel LblFActual;
+        private System.Windows.Forms.ToolStripLabel LblFormActual;
         private System.Windows.Forms.Panel PanelContenedor;
         private Bunifu.Framework.UI.BunifuFlatButton BtnAdministracion;
         private Bunifu.Framework.UI.BunifuFlatButton BtnInventario;
@@ -1231,5 +1249,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton BtnConfUsuario;
         private Bunifu.Framework.UI.BunifuFlatButton BtnEmpresaPpal;
         private Bunifu.Framework.UI.BunifuFlatButton BtnFacturacion;
+        private System.Windows.Forms.ToolStripLabel lblPleca;
+        private System.Windows.Forms.ToolStripLabel FrmActual;
     }
 }

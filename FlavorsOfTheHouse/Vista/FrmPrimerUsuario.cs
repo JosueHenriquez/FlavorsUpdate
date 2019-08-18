@@ -109,16 +109,15 @@ namespace FlavorsOfTheHouse.Vista
             if (txtNombres.Text.Trim() == "" ||
                 txtApellidos.Text.Trim() == "" ||
                 maskDui.Text.Trim() == "" && txtCarne.Text.Trim() == "" ||
-                dtNacimiento.Value.Date >= hoy ||
                 txtUsuario.Text.Trim() == "" ||
                 txtClave.Text.Trim() == "" ||
                 txtConfClave.Text.Trim() == "")
             {
-                MessageBox.Show("Algunos campos de tipo obligatorio están vacíos o la fecha de nacimiento proporcionada no es correcta, por favor rellene todos los campos.", "Error de Inserción", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Algunos campos están vacíos.", "Datos faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (pbFoto.Image == null)
             {
-                MessageBox.Show("Ha faltado cargar una foto al perfil del nuevo usurio", "Foto faltante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ha faltado cargar una foto al perfil del nuevo usuario", "Foto faltante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txtClave.Text != txtConfClave.Text)
             {
@@ -135,7 +134,10 @@ namespace FlavorsOfTheHouse.Vista
             {
                 MessageBox.Show("Verique que ha seleccionado y respondido a preguntas diferentes, no esta permitido responder dos veces a la misma pregunta.", "Verificación de pregunta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
+            else if (dtNacimiento.Value.Date >= hoy)
+            {
+                MessageBox.Show("Verifique la fecha seleccionada, ya que es igual o pertenece a una fecha futura","Error en fecha de nacimiento",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }else
             {
                 Constructor_Usuario user = new Constructor_Usuario();
                 user.usuario = txtUsuario.Text;
@@ -146,7 +148,7 @@ namespace FlavorsOfTheHouse.Vista
                 {
                     user.documento = txtCarne.Text;
                 }
-                else
+                else if(radDui.Checked == true)
                 {
                     user.documento = maskDui.Text;
                 }
@@ -264,6 +266,21 @@ namespace FlavorsOfTheHouse.Vista
             {
                 lblMensaje.Visible = false;
             }
+        }
+
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SoloLetras(e);
+        }
+
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SoloLetras(e);
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SoloLetras(e);
         }
     }
 }

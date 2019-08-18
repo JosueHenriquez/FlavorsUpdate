@@ -108,6 +108,7 @@ namespace FlavorsOfTheHouse.Vista
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblusuario.Text = Constructor_Login.usuario;
+            lblConectado.Text = Constructor_Login.nombre;
             switch (Constructor_Login.nivel)
             {
                 case 1:
@@ -141,6 +142,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnAdministracion_Click(object sender, EventArgs e)
         {
+            LblFormActual.Text = BtnAdministracion.Text.Trim();
             if (PanelAdministracion.Visible == true)
             {
                 EstadoPaneles();
@@ -168,6 +170,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnInventario_Click(object sender, EventArgs e)
         {
+            LblFormActual.Text = BtnAdministracion.Text.Trim();
             if (PanelInventario.Visible == true)
             {
                 EstadoPaneles();
@@ -194,6 +197,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
+            LblFormActual.Text = BtnAdministracion.Text.Trim();
             if (PanelVentas.Visible == true)
             {
                 EstadoPaneles();
@@ -241,6 +245,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnAjustes_Click(object sender, EventArgs e)
         {
+            LblFormActual.Text = BtnAjustes.Text.Trim();
             if (PanelAjustes.Visible == true)
             {
                 EstadoPaneles();
@@ -277,22 +282,33 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
+            FrmActual.Text = BtnUsuarios.Text.Trim();
             AbrirFormulario<FrmControlUsuarios>();
+            
         }
 
         private void BtnEmpresas_Click(object sender, EventArgs e)
         {
+            FrmActual.Text = BtnEmpresas.Text.Trim();
             AbrirFormulario<FrmRegistroEmpresas>();
         }
 
         private void BtnConfUsuario_Click(object sender, EventArgs e)
         {
+            FrmActual.Text = BtnConfUsuario.Text.Trim();
             AbrirFormulario<FrmPrimerUsuario>();
         }
 
         private void BtnEmpresaPpal_Click(object sender, EventArgs e)
         {
+            FrmActual.Text = BtnEmpresaPpal.Text.Trim();
             AbrirFormulario<FrmPrimerUso>();
+        }
+
+        private void BtnFacturacion_Click(object sender, EventArgs e)
+        {
+            //FrmActual.Text = BtnUsuarios.Text.Trim();
+            LblFormActual.Text = BtnAdministracion.Text.Trim();
         }
     }
 }

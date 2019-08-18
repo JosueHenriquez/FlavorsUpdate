@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FlavorsOfTheHouse.Config
 {
@@ -18,6 +19,18 @@ namespace FlavorsOfTheHouse.Config
             for (int i = 0; i < data.Length; i++)
                 ret += data[i].ToString("x2").ToLower();
             return ret;
+        }
+
+        public static void SoloLetras(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
         }
     }
 }
