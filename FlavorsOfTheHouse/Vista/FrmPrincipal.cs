@@ -51,7 +51,10 @@ namespace FlavorsOfTheHouse.Vista
         {
             foreach (var control in PanelContenedor.Controls)
             {
+                if (control is FrmControlUsuarios)
+                {
 
+                }
             }
         }
 
@@ -101,7 +104,6 @@ namespace FlavorsOfTheHouse.Vista
             PanelAdministracion.Visible = false;
             PanelVentas.Visible = false;
             PanelInventario.Visible = false;
-            
             PanelAjustes.Visible = false;
         }
 
@@ -222,11 +224,6 @@ namespace FlavorsOfTheHouse.Vista
             }
         }
 
-        private void BtnLibros_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BtnMenu_Click(object sender, EventArgs e)
         {
             if (PanelSidebar.Width == 236)
@@ -257,15 +254,7 @@ namespace FlavorsOfTheHouse.Vista
                 EstadoPaneles();
                 //Mostrar Panel requerido
                 PanelAjustes.Visible = true;
-                if (BtnMaximizar.Visible == false)
-                {
-                    PanelAjustes.Location = new Point(0, Height-189);
-                }
-                else
-                {
-                    PanelAjustes.Location = new Point(0, 508);
-                }
-
+                PanelAjustes.Location = new Point(0, Height - 245);
                 //Moviendo Botones a posiciones originales
                 UbicacionBotones();
             }
@@ -283,8 +272,7 @@ namespace FlavorsOfTheHouse.Vista
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
             FrmActual.Text = BtnUsuarios.Text.Trim();
-            AbrirFormulario<FrmControlUsuarios>();
-            
+            AbrirFormulario<FrmControlUsuarios>();            
         }
 
         private void BtnEmpresas_Click(object sender, EventArgs e)

@@ -66,6 +66,7 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.OpenCargarImagen = new System.Windows.Forms.OpenFileDialog();
+            this.chkVerUsuarios = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grpMantenimientos.SuspendLayout();
@@ -412,6 +413,7 @@
             this.BtnEliminar.TabIndex = 0;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -485,11 +487,24 @@
             // 
             this.OpenCargarImagen.Title = "Cargar Logo";
             // 
+            // chkVerUsuarios
+            // 
+            this.chkVerUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chkVerUsuarios.AutoSize = true;
+            this.chkVerUsuarios.Location = new System.Drawing.Point(584, 159);
+            this.chkVerUsuarios.Name = "chkVerUsuarios";
+            this.chkVerUsuarios.Size = new System.Drawing.Size(199, 21);
+            this.chkVerUsuarios.TabIndex = 47;
+            this.chkVerUsuarios.Text = "Ver usuarios activos e inactivos";
+            this.chkVerUsuarios.UseVisualStyleBackColor = true;
+            this.chkVerUsuarios.CheckedChanged += new System.EventHandler(this.chkVerUsuarios_CheckedChanged);
+            // 
             // FrmControlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 522);
+            this.Controls.Add(this.chkVerUsuarios);
             this.Controls.Add(this.grpMantenimientos);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.BtnExaminar);
@@ -572,5 +587,6 @@
         private System.Windows.Forms.Button BtnReestablecer;
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.OpenFileDialog OpenCargarImagen;
+        private System.Windows.Forms.CheckBox chkVerUsuarios;
     }
 }

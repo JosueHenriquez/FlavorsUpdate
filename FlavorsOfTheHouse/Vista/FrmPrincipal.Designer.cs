@@ -33,6 +33,7 @@
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.PanelSidebar = new System.Windows.Forms.Panel();
+            this.BtnSesion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnFacturacion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PanelAjustes = new System.Windows.Forms.Panel();
             this.BtnConfUsuario = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -97,6 +98,7 @@
             // PanelSidebar
             // 
             this.PanelSidebar.BackColor = System.Drawing.Color.Gainsboro;
+            this.PanelSidebar.Controls.Add(this.BtnSesion);
             this.PanelSidebar.Controls.Add(this.BtnFacturacion);
             this.PanelSidebar.Controls.Add(this.PanelAjustes);
             this.PanelSidebar.Controls.Add(this.BtnAjustes);
@@ -119,6 +121,43 @@
             this.PanelSidebar.Name = "PanelSidebar";
             this.PanelSidebar.Size = new System.Drawing.Size(751, 672);
             this.PanelSidebar.TabIndex = 1;
+            // 
+            // BtnSesion
+            // 
+            this.BtnSesion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnSesion.BackColor = System.Drawing.Color.Teal;
+            this.BtnSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSesion.BorderRadius = 0;
+            this.BtnSesion.ButtonText = "      Cerrar Sesión";
+            this.BtnSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnimacionInventario.SetDecoration(this.BtnSesion, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionAdministracion.SetDecoration(this.BtnSesion, BunifuAnimatorNS.DecorationType.None);
+            this.BtnSesion.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnSesion.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnSesion.Iconimage = global::FlavorsOfTheHouse.Properties.Resources.icons8_shutdown_32;
+            this.BtnSesion.Iconimage_right = null;
+            this.BtnSesion.Iconimage_right_Selected = null;
+            this.BtnSesion.Iconimage_Selected = null;
+            this.BtnSesion.IconMarginLeft = 0;
+            this.BtnSesion.IconMarginRight = 0;
+            this.BtnSesion.IconRightVisible = true;
+            this.BtnSesion.IconRightZoom = 0D;
+            this.BtnSesion.IconVisible = true;
+            this.BtnSesion.IconZoom = 45D;
+            this.BtnSesion.IsTab = false;
+            this.BtnSesion.Location = new System.Drawing.Point(0, 591);
+            this.BtnSesion.Name = "BtnSesion";
+            this.BtnSesion.Normalcolor = System.Drawing.Color.Teal;
+            this.BtnSesion.OnHovercolor = System.Drawing.Color.Red;
+            this.BtnSesion.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnSesion.selected = false;
+            this.BtnSesion.Size = new System.Drawing.Size(241, 48);
+            this.BtnSesion.TabIndex = 17;
+            this.BtnSesion.Text = "      Cerrar Sesión";
+            this.BtnSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSesion.Textcolor = System.Drawing.Color.White;
+            this.BtnSesion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // BtnFacturacion
             // 
@@ -146,7 +185,7 @@
             this.BtnFacturacion.Location = new System.Drawing.Point(0, 275);
             this.BtnFacturacion.Name = "BtnFacturacion";
             this.BtnFacturacion.Normalcolor = System.Drawing.Color.Teal;
-            this.BtnFacturacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnFacturacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnFacturacion.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnFacturacion.selected = false;
             this.BtnFacturacion.Size = new System.Drawing.Size(236, 48);
@@ -154,7 +193,7 @@
             this.BtnFacturacion.Text = "      Facturación";
             this.BtnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnFacturacion.Textcolor = System.Drawing.Color.White;
-            this.BtnFacturacion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFacturacion.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFacturacion.Click += new System.EventHandler(this.BtnFacturacion_Click);
             // 
             // PanelAjustes
@@ -204,7 +243,7 @@
             this.BtnConfUsuario.Text = "      Admon. Usuario Root";
             this.BtnConfUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnConfUsuario.Textcolor = System.Drawing.Color.Black;
-            this.BtnConfUsuario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfUsuario.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfUsuario.Click += new System.EventHandler(this.BtnConfUsuario_Click);
             // 
             // BtnEmpresaPpal
@@ -241,7 +280,7 @@
             this.BtnEmpresaPpal.Text = "      Administración General";
             this.BtnEmpresaPpal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEmpresaPpal.Textcolor = System.Drawing.Color.Black;
-            this.BtnEmpresaPpal.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEmpresaPpal.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEmpresaPpal.Click += new System.EventHandler(this.BtnEmpresaPpal_Click);
             // 
             // BtnAjustes
@@ -266,12 +305,12 @@
             this.BtnAjustes.IconRightVisible = true;
             this.BtnAjustes.IconRightZoom = 0D;
             this.BtnAjustes.IconVisible = true;
-            this.BtnAjustes.IconZoom = 35D;
+            this.BtnAjustes.IconZoom = 45D;
             this.BtnAjustes.IsTab = false;
-            this.BtnAjustes.Location = new System.Drawing.Point(0, 599);
+            this.BtnAjustes.Location = new System.Drawing.Point(0, 542);
             this.BtnAjustes.Name = "BtnAjustes";
             this.BtnAjustes.Normalcolor = System.Drawing.Color.Teal;
-            this.BtnAjustes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnAjustes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnAjustes.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnAjustes.selected = false;
             this.BtnAjustes.Size = new System.Drawing.Size(241, 48);
@@ -279,7 +318,7 @@
             this.BtnAjustes.Text = "      Configuración de Sistema";
             this.BtnAjustes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAjustes.Textcolor = System.Drawing.Color.White;
-            this.BtnAjustes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAjustes.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAjustes.Click += new System.EventHandler(this.BtnAjustes_Click);
             // 
             // PanelConfiguracion
@@ -466,7 +505,7 @@
             this.bunifuFlatButton6.Text = "      Registro de Articulos";
             this.bunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton6.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton3
             // 
@@ -502,7 +541,7 @@
             this.bunifuFlatButton3.Text = "      Inventario General";
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton2
             // 
@@ -538,7 +577,7 @@
             this.bunifuFlatButton2.Text = "      Registro de productos";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // PanelVentas
             // 
@@ -589,7 +628,7 @@
             this.bunifuFlatButton4.Text = "      Libro de Ventas";
             this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton5
             // 
@@ -625,7 +664,7 @@
             this.bunifuFlatButton5.Text = "      Ings, Egrs, Ganancias";
             this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton5.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton1
             // 
@@ -661,7 +700,7 @@
             this.bunifuFlatButton1.Text = "      Libro de Compras";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Black;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // BtnReportes
             // 
@@ -697,7 +736,7 @@
             this.BtnReportes.Text = "      Reporte de Ventas";
             this.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnReportes.Textcolor = System.Drawing.Color.Black;
-            this.BtnReportes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReportes.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // BtnGraficos
             // 
@@ -733,7 +772,7 @@
             this.BtnGraficos.Text = "      Gráficos de ventas";
             this.BtnGraficos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnGraficos.Textcolor = System.Drawing.Color.Black;
-            this.BtnGraficos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGraficos.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // PanelAdministracion
             // 
@@ -781,7 +820,7 @@
             this.BtnEmpresas.Text = "      Registro de Empresas";
             this.BtnEmpresas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEmpresas.Textcolor = System.Drawing.Color.Black;
-            this.BtnEmpresas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEmpresas.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEmpresas.Click += new System.EventHandler(this.BtnEmpresas_Click);
             // 
             // BtnUsuarios
@@ -818,7 +857,7 @@
             this.BtnUsuarios.Text = "      Usuarios";
             this.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnUsuarios.Textcolor = System.Drawing.Color.Black;
-            this.BtnUsuarios.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuarios.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // BtnVentas
@@ -847,7 +886,7 @@
             this.BtnVentas.Location = new System.Drawing.Point(0, 226);
             this.BtnVentas.Name = "BtnVentas";
             this.BtnVentas.Normalcolor = System.Drawing.Color.Teal;
-            this.BtnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnVentas.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnVentas.selected = false;
             this.BtnVentas.Size = new System.Drawing.Size(236, 48);
@@ -855,7 +894,7 @@
             this.BtnVentas.Text = "       Reportes";
             this.BtnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnVentas.Textcolor = System.Drawing.Color.White;
-            this.BtnVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVentas.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // BtnInventario
@@ -884,7 +923,7 @@
             this.BtnInventario.Location = new System.Drawing.Point(0, 177);
             this.BtnInventario.Name = "BtnInventario";
             this.BtnInventario.Normalcolor = System.Drawing.Color.Teal;
-            this.BtnInventario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnInventario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnInventario.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnInventario.selected = false;
             this.BtnInventario.Size = new System.Drawing.Size(236, 48);
@@ -892,7 +931,7 @@
             this.BtnInventario.Text = "      Inventario";
             this.BtnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnInventario.Textcolor = System.Drawing.Color.White;
-            this.BtnInventario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventario.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInventario.Click += new System.EventHandler(this.BtnInventario_Click);
             // 
             // BtnAdministracion
@@ -921,7 +960,7 @@
             this.BtnAdministracion.Location = new System.Drawing.Point(0, 128);
             this.BtnAdministracion.Name = "BtnAdministracion";
             this.BtnAdministracion.Normalcolor = System.Drawing.Color.Teal;
-            this.BtnAdministracion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.BtnAdministracion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnAdministracion.OnHoverTextColor = System.Drawing.Color.White;
             this.BtnAdministracion.selected = false;
             this.BtnAdministracion.Size = new System.Drawing.Size(236, 48);
@@ -929,7 +968,7 @@
             this.BtnAdministracion.Text = "      Administración";
             this.BtnAdministracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdministracion.Textcolor = System.Drawing.Color.White;
-            this.BtnAdministracion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAdministracion.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdministracion.Click += new System.EventHandler(this.BtnAdministracion_Click);
             // 
             // toolStrip1
@@ -1251,5 +1290,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton BtnFacturacion;
         private System.Windows.Forms.ToolStripLabel lblPleca;
         private System.Windows.Forms.ToolStripLabel FrmActual;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnSesion;
     }
 }

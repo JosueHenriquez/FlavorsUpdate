@@ -187,9 +187,6 @@
   <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descarga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ingresos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ingresos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="administración" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\administración.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -204,6 +201,9 @@
   </data>
   <data name="empresa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empresa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inventario_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inventario_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="editarperfil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editarperfil1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +220,8 @@
   <data name="shopping-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-shape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\books.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings-cogwheel-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings-cogwheel-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +253,8 @@
   <data name="ganancias" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ganancias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="libros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\libros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ingresos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingresos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dinero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dinero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,25 +262,28 @@
   <data name="empresasdependientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empresasdependientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="searching-magnifying-glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searching-magnifying-glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Ingresos_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ingresos_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TAMTF-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TAMTF-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="books" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\books.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-shape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ingresos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ingresos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inventario_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inventario_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="libros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\libros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_settings_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_settings_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="searching-magnifying-glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searching-magnifying-glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_shutdown_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_shutdown_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

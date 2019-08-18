@@ -126,5 +126,43 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
+        public static int Actualizar_Usuario(Constructor_Usuario act)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbusuario SET nombres = '"+act.nombres+ "', apellidos = '"+act.apellidos+ "', documento = '"+act.documento+ "', nacimiento = '"+act.nacimiento+ "', id_empresa = '"+act.id_empresa+ "', id_estado = '"+act.id_estado+ "', id_tipousuario = '"+act.id_tipo_usuario+ "', foto = '"+act.imagen+ "' WHERE id_usuario = '"+Constructor_Usuario.id_usuario+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
+                if (retorno >= 1)
+                {
+                    MessageBox.Show("Los datos han sido actualizados correctamente","Datos actualizados",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error durante la actualización de datos del usuario, revise su conexión a internet y si el error persiste consulte con el administrador. " + ex.Message,"Error de actualización",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+        public static int Eliminar_Usuario(int iduser)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmddelete = new MySqlCommand(string.Format("DELETE FROM tbusuario WHERE id_usuario = '"+Constructor_Usuario.id_usuario+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmddelete.ExecuteNonQuery());
+                if (retorno >= 1)
+                {
+                    MessageBox.Show("Registro Eliminado con exito.","Eliminación completada",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error al intentar eliminar al usuario, verifique su conexión a internet y si el problema persiste consulte con el administrador.","Error crítico",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
     }
 }

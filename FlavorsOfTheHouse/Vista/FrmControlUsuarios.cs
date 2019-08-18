@@ -167,6 +167,13 @@ namespace FlavorsOfTheHouse.Vista
             this.dgvUsuarios.Columns[9].Visible = false;
 
         }
+
+        void activarBotones()
+        {
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnAgregar.Enabled = true;
+        }
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             Agregar_Usuario();
@@ -258,7 +265,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea actualizar los datos del usuario?","Confirmación de actualización",MessageBoxButtons.OK,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("¿Desea actualizar los datos del usuario?","Confirmación de actualización",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 Constructor_Usuario actualizacion = new Constructor_Usuario();
                 Constructor_Usuario.id_usuario = int.Parse(txtId.Text);
@@ -280,7 +287,46 @@ namespace FlavorsOfTheHouse.Vista
                 actualizacion.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 actualizacion.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
                 actualizacion.id_tipo_usuario = Convert.ToInt16(cmbTipoUsuario.SelectedValue);
+                MemoryStream ms = new MemoryStream();
+                pbFoto.Image.Save(ms, ImageFormat.Jpeg);
+                byte[] aByte = ms.ToArray();
+                string decoded = Convert.ToBase64String(aByte);
+                actualizacion.imagen = decoded;
+                int verificar_proceso = ControlUsuarios_Modelo.Actualizar_Usuario(actualizacion);
+                if (verificar_proceso >= 1)
+                {
+                    Mostrar_Usuarios();
+                    LimpiarCampos();
+                    activarBotones();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no pudieron ser actualizados, intentelo nuevamente","Proceso fallido",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que desea eliminar el registro?\n\nConsidere que si el registro posee datos dependientes no podra eliminar el usuario, lo cual se le recomienda cambiarlo de estado.","Confirmación de Eliminación",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                int proceso = ControlUsuarios_Modelo.Eliminar_Usuario(Convert.ToInt16(txtId.Text));
+                if (proceso >= 1)
+                {
+                    Mostrar_Usuarios();
+                    LimpiarCampos();
+                    activarBotones();
+                }
+                else
+                {
+                    MessageBox.Show("El proceso no pudo ser completado, vuelva a intentarlo.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
+        }
+
+        private void chkVerUsuarios_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
