@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.animacionUsuario = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BtnIniciar = new System.Windows.Forms.ToolStripButton();
-            this.BtnCerrar = new System.Windows.Forms.ToolStripButton();
-            this.BtnMinimizar = new System.Windows.Forms.ToolStripButton();
             this.panelusuario = new System.Windows.Forms.Panel();
             this.panelclave = new System.Windows.Forms.Panel();
             this.txtContrasena = new System.Windows.Forms.TextBox();
@@ -45,15 +42,18 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.BtnPrimerUso = new Bunifu.Framework.UI.BunifuTileButton();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.lnkRecuperacion = new System.Windows.Forms.LinkLabel();
             this.lbllogin = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panellogin = new System.Windows.Forms.Panel();
-            this.picImagen = new System.Windows.Forms.PictureBox();
             this.animacionContra = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.picImagen = new System.Windows.Forms.PictureBox();
+            this.BtnPrimerUso = new Bunifu.Framework.UI.BunifuTileButton();
+            this.BtnIniciar = new System.Windows.Forms.ToolStripButton();
+            this.BtnCerrar = new System.Windows.Forms.ToolStripButton();
+            this.BtnMinimizar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panellogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
@@ -63,22 +63,22 @@
             // 
             this.animacionUsuario.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animacionUsuario.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.animacionUsuario.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.animacionUsuario.DefaultAnimation = animation1;
             // 
             // toolStrip1
             // 
@@ -95,38 +95,6 @@
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toolStrip1_MouseDown);
-            // 
-            // BtnIniciar
-            // 
-            this.BtnIniciar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BtnIniciar.ForeColor = System.Drawing.Color.Black;
-            this.BtnIniciar.Image = global::FlavorsOfTheHouse.Properties.Resources.birthday_cake;
-            this.BtnIniciar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnIniciar.Name = "BtnIniciar";
-            this.BtnIniciar.Size = new System.Drawing.Size(93, 22);
-            this.BtnIniciar.Text = "Inicio de Sesión";
-            // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnCerrar.Image = global::FlavorsOfTheHouse.Properties.Resources.close_button;
-            this.BtnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(23, 22);
-            this.BtnCerrar.Text = "toolStripButton2";
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // BtnMinimizar
-            // 
-            this.BtnMinimizar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnMinimizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnMinimizar.Image = global::FlavorsOfTheHouse.Properties.Resources.downwards_arrow_key;
-            this.BtnMinimizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(23, 22);
-            this.BtnMinimizar.Text = "toolStripButton3";
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
             // panelusuario
             // 
@@ -173,6 +141,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(347, 19);
             this.txtUsuario.TabIndex = 26;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // lblContra
             // 
@@ -221,27 +190,6 @@
             this.lbl1.Size = new System.Drawing.Size(489, 18);
             this.lbl1.TabIndex = 25;
             this.lbl1.Text = "Bienvenido, hemos detectado que es primera vez que utilizas nuestro sistema";
-            // 
-            // BtnPrimerUso
-            // 
-            this.BtnPrimerUso.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnPrimerUso.color = System.Drawing.Color.DodgerBlue;
-            this.BtnPrimerUso.colorActive = System.Drawing.Color.DeepSkyBlue;
-            this.BtnPrimerUso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animacionContra.SetDecoration(this.BtnPrimerUso, BunifuAnimatorNS.DecorationType.None);
-            this.animacionUsuario.SetDecoration(this.BtnPrimerUso, BunifuAnimatorNS.DecorationType.None);
-            this.BtnPrimerUso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrimerUso.ForeColor = System.Drawing.Color.White;
-            this.BtnPrimerUso.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrimerUso.Image")));
-            this.BtnPrimerUso.ImagePosition = 18;
-            this.BtnPrimerUso.ImageZoom = 50;
-            this.BtnPrimerUso.LabelPosition = 36;
-            this.BtnPrimerUso.LabelText = "PRIMER USO";
-            this.BtnPrimerUso.Location = new System.Drawing.Point(278, 133);
-            this.BtnPrimerUso.Margin = new System.Windows.Forms.Padding(6);
-            this.BtnPrimerUso.Name = "BtnPrimerUso";
-            this.BtnPrimerUso.Size = new System.Drawing.Size(255, 155);
-            this.BtnPrimerUso.TabIndex = 34;
             // 
             // BtnCancelar
             // 
@@ -293,6 +241,7 @@
             this.lnkRecuperacion.TabIndex = 30;
             this.lnkRecuperacion.TabStop = true;
             this.lnkRecuperacion.Text = "¿Olvidaste tu contraseña?";
+            this.lnkRecuperacion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecuperacion_LinkClicked);
             // 
             // lbllogin
             // 
@@ -328,6 +277,27 @@
             this.panellogin.Size = new System.Drawing.Size(245, 306);
             this.panellogin.TabIndex = 40;
             // 
+            // animacionContra
+            // 
+            this.animacionContra.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.animacionContra.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.animacionContra.DefaultAnimation = animation2;
+            // 
             // picImagen
             // 
             this.animacionUsuario.SetDecoration(this.picImagen, BunifuAnimatorNS.DecorationType.None);
@@ -340,26 +310,59 @@
             this.picImagen.TabIndex = 34;
             this.picImagen.TabStop = false;
             // 
-            // animacionContra
+            // BtnPrimerUso
             // 
-            this.animacionContra.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
-            this.animacionContra.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.animacionContra.DefaultAnimation = animation4;
+            this.BtnPrimerUso.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnPrimerUso.color = System.Drawing.Color.DodgerBlue;
+            this.BtnPrimerUso.colorActive = System.Drawing.Color.DeepSkyBlue;
+            this.BtnPrimerUso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animacionContra.SetDecoration(this.BtnPrimerUso, BunifuAnimatorNS.DecorationType.None);
+            this.animacionUsuario.SetDecoration(this.BtnPrimerUso, BunifuAnimatorNS.DecorationType.None);
+            this.BtnPrimerUso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrimerUso.ForeColor = System.Drawing.Color.White;
+            this.BtnPrimerUso.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrimerUso.Image")));
+            this.BtnPrimerUso.ImagePosition = 18;
+            this.BtnPrimerUso.ImageZoom = 50;
+            this.BtnPrimerUso.LabelPosition = 36;
+            this.BtnPrimerUso.LabelText = "PRIMER USO";
+            this.BtnPrimerUso.Location = new System.Drawing.Point(278, 133);
+            this.BtnPrimerUso.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnPrimerUso.Name = "BtnPrimerUso";
+            this.BtnPrimerUso.Size = new System.Drawing.Size(255, 155);
+            this.BtnPrimerUso.TabIndex = 34;
+            this.BtnPrimerUso.Click += new System.EventHandler(this.BtnPrimerUso_Click_1);
+            // 
+            // BtnIniciar
+            // 
+            this.BtnIniciar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnIniciar.ForeColor = System.Drawing.Color.Black;
+            this.BtnIniciar.Image = global::FlavorsOfTheHouse.Properties.Resources.birthday_cake;
+            this.BtnIniciar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnIniciar.Name = "BtnIniciar";
+            this.BtnIniciar.Size = new System.Drawing.Size(93, 22);
+            this.BtnIniciar.Text = "Inicio de Sesión";
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnCerrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnCerrar.Image = global::FlavorsOfTheHouse.Properties.Resources.close_button;
+            this.BtnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(23, 22);
+            this.BtnCerrar.Text = "toolStripButton2";
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnMinimizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnMinimizar.Image = global::FlavorsOfTheHouse.Properties.Resources.downwards_arrow_key;
+            this.BtnMinimizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(23, 22);
+            this.BtnMinimizar.Text = "toolStripButton3";
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
             // FrmLogin
             // 

@@ -133,6 +133,16 @@ namespace FlavorsOfTheHouse.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_arrow1 {
+            get {
+                object obj = ResourceManager.GetObject("back-arrow1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap birthday_cake {
             get {
                 object obj = ResourceManager.GetObject("birthday-cake", resourceCulture);
@@ -236,6 +246,26 @@ namespace FlavorsOfTheHouse.Properties {
         internal static System.Drawing.Bitmap config_32 {
             get {
                 object obj = ResourceManager.GetObject("config_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap correo {
+            get {
+                object obj = ResourceManager.GetObject("correo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap correo2 {
+            get {
+                object obj = ResourceManager.GetObject("correo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +406,16 @@ namespace FlavorsOfTheHouse.Properties {
         internal static System.Drawing.Bitmap ganancias {
             get {
                 object obj = ResourceManager.GetObject("ganancias", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap guapo {
+            get {
+                object obj = ResourceManager.GetObject("guapo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +596,16 @@ namespace FlavorsOfTheHouse.Properties {
         internal static System.Drawing.Bitmap ojo_ocultar_32 {
             get {
                 object obj = ResourceManager.GetObject("ojo_ocultar_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pregunta {
+            get {
+                object obj = ResourceManager.GetObject("pregunta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

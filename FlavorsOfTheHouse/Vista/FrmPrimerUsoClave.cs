@@ -108,5 +108,12 @@ namespace FlavorsOfTheHouse.Vista
         {
             Application.Exit();
         }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            FrmMetodosRecuperacion met = new FrmMetodosRecuperacion();
+            met.Show();
+            this.Hide();
+        }
     }
 }

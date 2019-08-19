@@ -282,5 +282,25 @@ namespace FlavorsOfTheHouse.Vista
         {
             Validaciones.SoloLetras(e);
         }
+
+        private void txtRespuesta1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SinEspacios(e);
+        }
+
+        private void txtRespuesta2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SinEspacios(e);
+        }
+
+        private void txtRespuesta3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SinEspacios(e);
+        }
+
+        private void txtRespuesta4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SinEspacios(e);
+        }
     }
 }

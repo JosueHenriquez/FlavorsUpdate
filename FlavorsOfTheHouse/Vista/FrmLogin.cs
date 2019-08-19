@@ -86,22 +86,6 @@ namespace FlavorsOfTheHouse.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void BtnPrimerUso_Click(object sender, EventArgs e)
-        {
-            if (BtnPrimerUso.LabelText == "Crear primer usuario")
-            {
-                FrmPrimerUsuario primerusuario = new FrmPrimerUsuario();
-                primerusuario.Show();
-                this.Hide();
-            }
-            else
-            {
-                FrmPrimerUso pu = new FrmPrimerUso();
-                pu.Show();
-                this.Hide();
-            }            
-        }
-
         Constructor_Login log = new Constructor_Login();
         void Log_In(string usuario, string clave)
         {
@@ -127,14 +111,7 @@ namespace FlavorsOfTheHouse.Vista
         {
             if (txtUsuario.Text.Trim() != "" || txtContrasena.Text.Trim() != "")
             {    
-                if (txtContrasena.Text.Trim() == txtUsuario.Text+"primeruso")
-                {
-                    Log_In(txtUsuario.Text, txtContrasena.Text);
-                }
-                else
-                {
-                    Log_In(txtUsuario.Text, txtContrasena.Text);
-                }                
+                Log_In(txtUsuario.Text, txtContrasena.Text);
             }
             else
             {
@@ -159,6 +136,37 @@ namespace FlavorsOfTheHouse.Vista
             {
                 ValidarLog();
             }
+        }
+
+        private void BtnPrimerUso_Click_1(object sender, EventArgs e)
+        {
+            if (BtnPrimerUso.LabelText == "Crear primer usuario")
+            {
+                FrmPrimerUsuario primerusuario = new FrmPrimerUsuario();
+                primerusuario.Show();
+                this.Hide();
+            }
+            else
+            {
+                FrmPrimerUso pu = new FrmPrimerUso();
+                pu.Show();
+                this.Hide();
+            }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                ValidarLog();
+            }
+        }
+
+        private void lnkRecuperacion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmMetodosRecuperacion met = new FrmMetodosRecuperacion();
+            met.Show();
+            this.Hide();
         }
     }
 }

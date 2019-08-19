@@ -32,5 +32,13 @@ namespace FlavorsOfTheHouse.Config
                 e.Handled = false;
             }
         }
+
+        public static void SinEspacios(KeyPressEventArgs e)
+        {
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

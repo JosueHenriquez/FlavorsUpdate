@@ -427,6 +427,7 @@
             this.txtRespuesta1.Name = "txtRespuesta1";
             this.txtRespuesta1.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta1.TabIndex = 11;
+            this.txtRespuesta1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRespuesta1_KeyPress);
             // 
             // txtRespuesta2
             // 
@@ -435,6 +436,7 @@
             this.txtRespuesta2.Name = "txtRespuesta2";
             this.txtRespuesta2.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta2.TabIndex = 12;
+            this.txtRespuesta2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRespuesta2_KeyPress);
             // 
             // txtRespuesta3
             // 
@@ -443,6 +445,7 @@
             this.txtRespuesta3.Name = "txtRespuesta3";
             this.txtRespuesta3.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta3.TabIndex = 13;
+            this.txtRespuesta3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRespuesta3_KeyPress);
             // 
             // txtRespuesta4
             // 
@@ -451,6 +454,7 @@
             this.txtRespuesta4.Name = "txtRespuesta4";
             this.txtRespuesta4.Size = new System.Drawing.Size(343, 22);
             this.txtRespuesta4.TabIndex = 14;
+            this.txtRespuesta4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRespuesta4_KeyPress);
             // 
             // label18
             // 
