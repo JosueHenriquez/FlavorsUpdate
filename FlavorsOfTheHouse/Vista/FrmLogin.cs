@@ -51,30 +51,29 @@ namespace FlavorsOfTheHouse.Vista
                     lnkRecuperacion.Visible = false;
                     lblUsuario.Visible = false;
                     lblContra.Visible = false;
+                    panelusuario.Visible = false;
+                    panelclave.Visible = false;
+                    panellogin.Visible = false;
                     BtnPrimerUso.LabelText = "Crear primer usuario";
                 }
             }
             else
             {
                 
-                    //ocultar campos de login
-                    lbllogin.Visible = false;
-                    txtContrasena.Visible = false;
-                    txtUsuario.Visible = false;
-                    btnAcceder.Visible = false;
-                    BtnCancelar.Visible = false;
-                    picImagen.Visible = false;
-                    lnkRecuperacion.Visible = false;
-                    lblUsuario.Visible = false;
-                    lblContra.Visible = false;
+                //ocultar campos de login
+                lbllogin.Visible = false;
+                txtContrasena.Visible = false;
+                txtUsuario.Visible = false;
+                btnAcceder.Visible = false;
+                BtnCancelar.Visible = false;
+                picImagen.Visible = false;
+                lnkRecuperacion.Visible = false;
+                lblUsuario.Visible = false;
+                lblContra.Visible = false;
+                panelusuario.Visible = false;
+                panelclave.Visible = false;
+                panellogin.Visible = false;
             }
-        }
-
-        private void btnAcceder_Click(object sender, EventArgs e)
-        {
-            FrmPrincipal principal = new FrmPrincipal();
-            principal.Show();
-            this.Hide();
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -143,26 +142,20 @@ namespace FlavorsOfTheHouse.Vista
             }
         }
 
-        private void btnAcceder_Click_1(object sender, EventArgs e)
-        {
-            ValidarLog();
-        }
-
-        private void PanelLogin_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
         private void toolStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnAcceder_Click_2(object sender, EventArgs e)
         {
-            if (e.KeyChar==Convert.ToChar(Keys.Enter))
+            ValidarLog();
+        }
+
+        private void txtContrasena_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 ValidarLog();
             }

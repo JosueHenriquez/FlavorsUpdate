@@ -397,6 +397,15 @@
   <ItemGroup>
     <None Include="Resources\icons8_shutdown_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ojo_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo_ocultar_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -132,7 +132,7 @@
             this.BtnExaminar.Location = new System.Drawing.Point(886, 247);
             this.BtnExaminar.Name = "BtnExaminar";
             this.BtnExaminar.Size = new System.Drawing.Size(128, 29);
-            this.BtnExaminar.TabIndex = 44;
+            this.BtnExaminar.TabIndex = 13;
             this.BtnExaminar.Text = "Cargar Imagen";
             this.BtnExaminar.UseVisualStyleBackColor = false;
             this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
@@ -145,7 +145,7 @@
             this.cmbTipoUsuario.Location = new System.Drawing.Point(584, 109);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(259, 23);
-            this.cmbTipoUsuario.TabIndex = 37;
+            this.cmbTipoUsuario.TabIndex = 9;
             // 
             // cmbEstado
             // 
@@ -155,7 +155,7 @@
             this.cmbEstado.Location = new System.Drawing.Point(34, 157);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(255, 23);
-            this.cmbEstado.TabIndex = 36;
+            this.cmbEstado.TabIndex = 10;
             // 
             // cmbEmpresa
             // 
@@ -165,7 +165,7 @@
             this.cmbEmpresa.Location = new System.Drawing.Point(309, 109);
             this.cmbEmpresa.Name = "cmbEmpresa";
             this.cmbEmpresa.Size = new System.Drawing.Size(257, 23);
-            this.cmbEmpresa.TabIndex = 35;
+            this.cmbEmpresa.TabIndex = 8;
             // 
             // dtNacimiento
             // 
@@ -175,16 +175,16 @@
             this.dtNacimiento.Location = new System.Drawing.Point(36, 110);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(259, 24);
-            this.dtNacimiento.TabIndex = 34;
+            this.dtNacimiento.TabIndex = 7;
             // 
             // maskDui
             // 
             this.maskDui.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.maskDui.Location = new System.Drawing.Point(585, 59);
+            this.maskDui.Location = new System.Drawing.Point(584, 59);
             this.maskDui.Mask = "00000000-0";
             this.maskDui.Name = "maskDui";
             this.maskDui.Size = new System.Drawing.Size(258, 24);
-            this.maskDui.TabIndex = 27;
+            this.maskDui.TabIndex = 5;
             // 
             // radCarne
             // 
@@ -193,7 +193,7 @@
             this.radCarne.Location = new System.Drawing.Point(737, 35);
             this.radCarne.Name = "radCarne";
             this.radCarne.Size = new System.Drawing.Size(65, 21);
-            this.radCarne.TabIndex = 42;
+            this.radCarne.TabIndex = 4;
             this.radCarne.TabStop = true;
             this.radCarne.Text = "CARNÉ";
             this.radCarne.UseVisualStyleBackColor = true;
@@ -206,7 +206,7 @@
             this.radDui.Location = new System.Drawing.Point(669, 33);
             this.radDui.Name = "radDui";
             this.radDui.Size = new System.Drawing.Size(48, 21);
-            this.radDui.TabIndex = 43;
+            this.radDui.TabIndex = 3;
             this.radDui.TabStop = true;
             this.radDui.Text = "DUI";
             this.radDui.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.txtApellidos.Location = new System.Drawing.Point(309, 59);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(259, 24);
-            this.txtApellidos.TabIndex = 24;
+            this.txtApellidos.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -226,7 +226,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(305, 157);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(259, 24);
-            this.txtUsuario.TabIndex = 38;
+            this.txtUsuario.TabIndex = 11;
             // 
             // txtCarne
             // 
@@ -235,7 +235,7 @@
             this.txtCarne.MaxLength = 8;
             this.txtCarne.Name = "txtCarne";
             this.txtCarne.Size = new System.Drawing.Size(258, 24);
-            this.txtCarne.TabIndex = 32;
+            this.txtCarne.TabIndex = 6;
             // 
             // txtNombres
             // 
@@ -244,7 +244,7 @@
             this.txtNombres.MaxLength = 45;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(258, 24);
-            this.txtNombres.TabIndex = 23;
+            this.txtNombres.TabIndex = 1;
             // 
             // label19
             // 
@@ -368,7 +368,7 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.Size = new System.Drawing.Size(980, 229);
-            this.dgvUsuarios.TabIndex = 45;
+            this.dgvUsuarios.TabIndex = 20;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // grpMantenimientos
@@ -389,42 +389,42 @@
             // 
             // BtnNuevo
             // 
-            this.BtnNuevo.BackColor = System.Drawing.Color.Teal;
-            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNuevo.ForeColor = System.Drawing.Color.White;
             this.BtnNuevo.Location = new System.Drawing.Point(518, 34);
             this.BtnNuevo.Name = "BtnNuevo";
             this.BtnNuevo.Size = new System.Drawing.Size(112, 34);
-            this.BtnNuevo.TabIndex = 0;
+            this.BtnNuevo.TabIndex = 18;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.UseVisualStyleBackColor = false;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.Teal;
-            this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
             this.BtnEliminar.Location = new System.Drawing.Point(400, 34);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(112, 34);
-            this.BtnEliminar.TabIndex = 0;
+            this.BtnEliminar.TabIndex = 17;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
-            this.BtnActualizar.BackColor = System.Drawing.Color.Teal;
-            this.BtnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnActualizar.ForeColor = System.Drawing.Color.White;
             this.BtnActualizar.Location = new System.Drawing.Point(282, 34);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(112, 34);
-            this.BtnActualizar.TabIndex = 0;
+            this.BtnActualizar.TabIndex = 16;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = false;
             this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
@@ -439,35 +439,35 @@
             this.BtnReestablecer.Location = new System.Drawing.Point(636, 35);
             this.BtnReestablecer.Name = "BtnReestablecer";
             this.BtnReestablecer.Size = new System.Drawing.Size(125, 33);
-            this.BtnReestablecer.TabIndex = 44;
+            this.BtnReestablecer.TabIndex = 19;
             this.BtnReestablecer.Text = "Reestablecer Clave";
             this.BtnReestablecer.UseVisualStyleBackColor = false;
             this.BtnReestablecer.Click += new System.EventHandler(this.BtnReestablecer_Click);
             // 
             // BtnMostrar
             // 
-            this.BtnMostrar.BackColor = System.Drawing.Color.Teal;
-            this.BtnMostrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnMostrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnMostrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.BtnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMostrar.ForeColor = System.Drawing.Color.White;
             this.BtnMostrar.Location = new System.Drawing.Point(164, 34);
             this.BtnMostrar.Name = "BtnMostrar";
             this.BtnMostrar.Size = new System.Drawing.Size(112, 34);
-            this.BtnMostrar.TabIndex = 0;
+            this.BtnMostrar.TabIndex = 15;
             this.BtnMostrar.Text = "Mostrar";
             this.BtnMostrar.UseVisualStyleBackColor = false;
             this.BtnMostrar.Click += new System.EventHandler(this.BtnMostrar_Click);
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.Teal;
-            this.BtnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
             this.BtnAgregar.Location = new System.Drawing.Point(46, 34);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(112, 34);
-            this.BtnAgregar.TabIndex = 0;
+            this.BtnAgregar.TabIndex = 14;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -493,9 +493,9 @@
             this.chkVerUsuarios.AutoSize = true;
             this.chkVerUsuarios.Location = new System.Drawing.Point(584, 159);
             this.chkVerUsuarios.Name = "chkVerUsuarios";
-            this.chkVerUsuarios.Size = new System.Drawing.Size(199, 21);
-            this.chkVerUsuarios.TabIndex = 47;
-            this.chkVerUsuarios.Text = "Ver usuarios activos e inactivos";
+            this.chkVerUsuarios.Size = new System.Drawing.Size(147, 21);
+            this.chkVerUsuarios.TabIndex = 12;
+            this.chkVerUsuarios.Text = "Ver todos los usuarios";
             this.chkVerUsuarios.UseVisualStyleBackColor = true;
             this.chkVerUsuarios.CheckedChanged += new System.EventHandler(this.chkVerUsuarios_CheckedChanged);
             // 

@@ -25,8 +25,11 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnReestablecer_Click(object sender, EventArgs e)
         {
-            DateTime hoy = DateTime.Today;
-            string reestablecer = txtUsuario.Text + "PRIMERUSO";
+            if (MessageBox.Show("¿Está seguro que quiere reestablecer la contraseña del usuario" + txtUsuario.Text + "?","Confirmar reseteo de clave",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                string reestablecer = txtUsuario.Text + "primeruso";
+                int resultado = ControlUsuarios_Modelo.Reestablecer_Clave(Validaciones.md5(reestablecer), Convert.ToInt16(txtId.Text), txtUsuario.Text);
+            }            
         }
 
         private void FrmControlUsuarios_Load(object sender, EventArgs e)
@@ -50,6 +53,7 @@ namespace FlavorsOfTheHouse.Vista
                 txtCarne.Visible = false;
                 BtnActualizar.Enabled = false;
                 BtnEliminar.Enabled = false;
+                BtnReestablecer.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -145,7 +149,7 @@ namespace FlavorsOfTheHouse.Vista
         void Mostrar_Usuarios()
         {
             dgvUsuarios.DataSource = ControlUsuarios_Modelo.ObtenerUsuarios();
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 192, 192);
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.SkyBlue;
             this.dgvUsuarios.EnableHeadersVisualStyles = false;
             this.dgvUsuarios.Columns[0].Visible = false;
             this.dgvUsuarios.Columns[1].HeaderText = "Usuario";
@@ -261,6 +265,7 @@ namespace FlavorsOfTheHouse.Vista
             BtnAgregar.Enabled = false;
             BtnActualizar.Enabled = true;
             BtnEliminar.Enabled = true;
+            BtnReestablecer.Enabled = true;
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
@@ -284,6 +289,8 @@ namespace FlavorsOfTheHouse.Vista
                     actualizacion.documento = maskDui.Text;
                 }
                 actualizacion.nacimiento = dtNacimiento.Text;
+                int intentos = 0;
+                actualizacion.intentos = intentos;
                 actualizacion.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 actualizacion.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
                 actualizacion.id_tipo_usuario = Convert.ToInt16(cmbTipoUsuario.SelectedValue);
@@ -326,7 +333,14 @@ namespace FlavorsOfTheHouse.Vista
 
         private void chkVerUsuarios_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkVerUsuarios.Checked == true)
+            {
+                this.dgvUsuarios.DataSource = ControlUsuarios_Modelo.Mostrar_Todos_Usuarios();
+            }
+            else
+            {
+                Mostrar_Usuarios();
+            }
         }
     }
 }
