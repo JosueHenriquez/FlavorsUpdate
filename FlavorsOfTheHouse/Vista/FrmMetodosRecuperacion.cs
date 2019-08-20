@@ -23,5 +23,12 @@ namespace FlavorsOfTheHouse.Vista
             log.Show();
             this.Hide();
         }
+
+        private void picCorreo_Click(object sender, EventArgs e)
+        {
+            FrmRecuperacionPorCorreo frmcorreo = new FrmRecuperacionPorCorreo();
+            frmcorreo.Show();
+            this.Hide();
+        }
     }
 }

@@ -77,6 +77,7 @@ namespace FlavorsOfTheHouse.Vista
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txtNombres.Text) ||
                 string.IsNullOrWhiteSpace(txtApellidos.Text)||
+                string.IsNullOrWhiteSpace(txtCorreo.Text) ||
                 string.IsNullOrWhiteSpace(dtNacimiento.Text))
             {
                 MessageBox.Show("No se puede almacenar la información debido que algunos campos estan vacíos.","Campos vacíos",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -119,6 +120,8 @@ namespace FlavorsOfTheHouse.Vista
                     reg.documento = maskDui.Text;
                 }
                 reg.nacimiento = dtNacimiento.Text;
+                reg.email = txtCorreo.Text;
+                MessageBox.Show(txtCorreo.Text);
                 reg.intentos = 0;
                 reg.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 reg.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
@@ -162,14 +165,16 @@ namespace FlavorsOfTheHouse.Vista
             this.dgvUsuarios.Columns[4].Width = 65;
             this.dgvUsuarios.Columns[5].HeaderText = "Fecha de Nacimiento";
             this.dgvUsuarios.Columns[5].Width = 65;
-            this.dgvUsuarios.Columns[6].HeaderText = "Empresa";
-            this.dgvUsuarios.Columns[6].Width = 150;
-            this.dgvUsuarios.Columns[7].HeaderText = "Estado";
-            this.dgvUsuarios.Columns[7].Width = 50;
-            this.dgvUsuarios.Columns[8].HeaderText = "Tipo de Usuario";
-            this.dgvUsuarios.Columns[8].Width = 90;
-            this.dgvUsuarios.Columns[9].Visible = false;
-
+            this.dgvUsuarios.Columns[6].Visible = false;
+            this.dgvUsuarios.Columns[6].HeaderText = "Correo Electronico";
+            this.dgvUsuarios.Columns[6].Width = 80;
+            this.dgvUsuarios.Columns[7].HeaderText = "Empresa";
+            this.dgvUsuarios.Columns[7].Width = 120;
+            this.dgvUsuarios.Columns[8].HeaderText = "Estado";
+            this.dgvUsuarios.Columns[8].Width = 50;
+            this.dgvUsuarios.Columns[9].HeaderText = "Tipo de Usuario";
+            this.dgvUsuarios.Columns[9].Width = 90;
+            this.dgvUsuarios.Columns[10].Visible = false;
         }
 
         void activarBotones()
@@ -247,9 +252,10 @@ namespace FlavorsOfTheHouse.Vista
                 maskDui.Clear();
             }
             dtNacimiento.Text = this.dgvUsuarios[5,pos].Value.ToString();
-            cmbEmpresa.Text = this.dgvUsuarios[6, pos].Value.ToString();
-            cmbEstado.Text = this.dgvUsuarios[7, pos].Value.ToString();
-            cmbTipoUsuario.Text = this.dgvUsuarios[8, pos].Value.ToString();
+            txtCorreo.Text = this.dgvUsuarios[6, pos].Value.ToString();
+            cmbEmpresa.Text = this.dgvUsuarios[7, pos].Value.ToString();
+            cmbEstado.Text = this.dgvUsuarios[8, pos].Value.ToString();
+            cmbTipoUsuario.Text = this.dgvUsuarios[9, pos].Value.ToString();
             //RECUPERAR IMAGEN
             string instruccion;
             instruccion = "SELECT foto FROM tbusuario WHERE id_usuario = ?param1";
@@ -289,6 +295,7 @@ namespace FlavorsOfTheHouse.Vista
                     actualizacion.documento = maskDui.Text;
                 }
                 actualizacion.nacimiento = dtNacimiento.Text;
+                actualizacion.email = txtCorreo.Text;
                 int intentos = 0;
                 actualizacion.intentos = intentos;
                 actualizacion.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);

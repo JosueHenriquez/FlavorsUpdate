@@ -9,6 +9,7 @@
         public string apellidos { get; set; }
         public string documento { get; set; }
         public string nacimiento { get; set; }
+        public string email { get; set; }
         public int intentos { get; set; }
         public int id_empresa { get; set; }
         public int id_estado { get; set; }

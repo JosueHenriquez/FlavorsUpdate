@@ -30,7 +30,7 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 else
                 {
-                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbusuario (usuario, clave, nombres, apellidos, documento, nacimiento, intentos, id_empresa, id_estado, id_tipousuario, foto) VALUES ('"+cpri.usuario+"','"+cpri.clave+"','"+cpri.nombres+ "','" + cpri.apellidos + "','" + cpri.documento + "','" + cpri.nacimiento + "','" + cpri.intentos + "','" + cpri.id_empresa + "','" + cpri.id_estado + "','" + cpri.id_tipo_usuario + "','" + cpri.imagen + "')"),Conexion_Config.ObtenerConexion());
+                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbusuario (usuario, clave, nombres, apellidos, documento, nacimiento, email, intentos, id_empresa, id_estado, id_tipousuario, foto) VALUES ('"+cpri.usuario+"','"+cpri.clave+"','"+cpri.nombres+ "','" + cpri.apellidos + "','" + cpri.documento + "','" + cpri.nacimiento + "','"+cpri.email+"','" + cpri.intentos + "','" + cpri.id_empresa + "','" + cpri.id_estado + "','" + cpri.id_tipo_usuario + "','" + cpri.imagen + "')"),Conexion_Config.ObtenerConexion());
                     retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                     if (retorno >= 1)
                     {
@@ -107,7 +107,7 @@ namespace FlavorsOfTheHouse.Modelo
         {
             DataTable data = new DataTable();
             int tipousuarios = 2;
-            string query = "SELECT tus.id_usuario, tus.usuario, tus.nombres, tus.apellidos,tus.documento, tus.nacimiento, tem.empresa, tes.estado, ttip.tipo_usuario, tus.foto FROM tbusuario tus, tbempresa tem, tbestado tes, tbtipo_usuario ttip WHERE tus.id_empresa = tem.id_empresa AND tus.id_estado = tes.id_estado AND tus.id_tipousuario = ttip.id_tipo_usuario AND tus.id_tipousuario >= ?param1 ORDER BY apellidos ASC";
+            string query = "SELECT tus.id_usuario, tus.usuario, tus.nombres, tus.apellidos,tus.documento, tus.nacimiento, tus.email, tem.empresa, tes.estado, ttip.tipo_usuario, tus.foto FROM tbusuario tus, tbempresa tem, tbestado tes, tbtipo_usuario ttip WHERE tus.id_empresa = tem.id_empresa AND tus.id_estado = tes.id_estado AND tus.id_tipousuario = ttip.id_tipo_usuario AND tus.id_tipousuario >= ?param1 ORDER BY apellidos ASC";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
@@ -131,7 +131,7 @@ namespace FlavorsOfTheHouse.Modelo
             int retorno = 0;
             try
             {
-                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbusuario SET nombres = '"+act.nombres+ "', apellidos = '"+act.apellidos+ "', documento = '"+act.documento+ "', nacimiento = '"+act.nacimiento+ "',intentos  ='"+act.intentos+"', id_empresa = '"+act.id_empresa+ "', id_estado = '"+act.id_estado+ "', id_tipousuario = '"+act.id_tipo_usuario+ "', foto = '"+act.imagen+ "' WHERE id_usuario = '"+Constructor_Usuario.id_usuario+"'"),Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbusuario SET nombres = '"+act.nombres+ "', apellidos = '"+act.apellidos+ "', documento = '"+act.documento+ "', nacimiento = '"+act.nacimiento+ "', email = '"+act.email+"', intentos  ='"+act.intentos+"', id_empresa = '"+act.id_empresa+ "', id_estado = '"+act.id_estado+ "', id_tipousuario = '"+act.id_tipo_usuario+ "', foto = '"+act.imagen+ "' WHERE id_usuario = '"+Constructor_Usuario.id_usuario+"'"),Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
                 if (retorno >= 1)
                 {
@@ -192,7 +192,7 @@ namespace FlavorsOfTheHouse.Modelo
             DataTable data = new DataTable();
             int estado = 1;
             int tipo_usuario = 2;
-            string query = "SELECT tus.id_usuario, tus.usuario, tus.nombres, tus.apellidos,tus.documento, tus.nacimiento, tem.empresa, tes.estado, ttip.tipo_usuario, tus.foto FROM tbusuario tus, tbempresa tem, tbestado tes, tbtipo_usuario ttip WHERE tus.id_empresa = tem.id_empresa AND tus.id_estado = tes.id_estado AND tus.id_tipousuario = ttip.id_tipo_usuario AND tus.id_estado >= ?param1 AND tus.id_tipousuario >= ?param2 ORDER BY tes.estado ASC";
+            string query = "SELECT tus.id_usuario, tus.usuario, tus.nombres, tus.apellidos,tus.documento, tus.nacimiento, tus.email, tem.empresa, tes.estado, ttip.tipo_usuario, tus.foto FROM tbusuario tus, tbempresa tem, tbestado tes, tbtipo_usuario ttip WHERE tus.id_empresa = tem.id_empresa AND tus.id_estado = tes.id_estado AND tus.id_tipousuario = ttip.id_tipo_usuario AND tus.id_estado >= ?param1 AND tus.id_tipousuario >= ?param2 ORDER BY tes.estado ASC";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
