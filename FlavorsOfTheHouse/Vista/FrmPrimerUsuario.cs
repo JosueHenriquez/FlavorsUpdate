@@ -110,6 +110,7 @@ namespace FlavorsOfTheHouse.Vista
                 txtApellidos.Text.Trim() == "" ||
                 maskDui.Text.Trim() == "" && txtCarne.Text.Trim() == "" ||
                 txtUsuario.Text.Trim() == "" ||
+                txtEmail.Text == "" ||
                 txtClave.Text.Trim() == "" ||
                 txtConfClave.Text.Trim() == "")
             {
@@ -153,6 +154,7 @@ namespace FlavorsOfTheHouse.Vista
                     user.documento = maskDui.Text;
                 }
                 user.nacimiento = dtNacimiento.Text;
+                user.email = txtEmail.Text;
                 user.intentos = 0;
                 user.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 user.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);

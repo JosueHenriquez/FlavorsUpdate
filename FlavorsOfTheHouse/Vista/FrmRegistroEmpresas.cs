@@ -16,5 +16,15 @@ namespace FlavorsOfTheHouse.Vista
         {
             InitializeComponent();
         }
+
+        private void BtnExaminar_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivo de imagen (.jpg)|*.jpg|Archivo de imagen (.png)|*.png|Archivo de imagen (.jpeg)|*.jpeg|Archivo de imagen (.tiff)|*.tiff";
+            DialogResult resultado = openFileDialog1.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                pbLogo.Image = Image.FromFile(openFileDialog1.FileName );
+            }
+        }
     }
 }

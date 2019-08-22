@@ -10,6 +10,7 @@ namespace FlavorsOfTheHouse.Controlador
     {
         public string id_empresa { get; set; }
         public string nombre_empresa { get; set; }
+        public string correo { get; set; }
         public string nit { get; set; }
         public string representante { get; set; }
         public string direccion { get; set; }

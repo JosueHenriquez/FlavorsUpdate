@@ -163,6 +163,26 @@ namespace FlavorsOfTheHouse.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap block {
+            get {
+                object obj = ResourceManager.GetObject("block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap block_32 {
+            get {
+                object obj = ResourceManager.GetObject("block_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap books {
             get {
                 object obj = ResourceManager.GetObject("books", resourceCulture);
@@ -186,6 +206,16 @@ namespace FlavorsOfTheHouse.Properties {
         internal static System.Drawing.Bitmap check_32 {
             get {
                 object obj = ResourceManager.GetObject("check_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cierre {
+            get {
+                object obj = ResourceManager.GetObject("cierre", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

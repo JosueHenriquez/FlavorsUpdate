@@ -62,7 +62,7 @@ namespace FlavorsOfTheHouse.Modelo
                         MySqlDataReader reader = cmdselect.ExecuteReader();
                         while (reader.Read())
                         {
-                            int intentos = reader.GetInt16(7) + 1;
+                            int intentos = reader.GetInt16(8) + 1;
                             if (intentos > 5)
                             {
                                 //Bloquear usuario

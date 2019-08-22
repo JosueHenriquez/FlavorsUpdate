@@ -28,7 +28,12 @@ namespace FlavorsOfTheHouse.Vista
 
         void Insertar_Empresa()
         {
-            if (TxtEmpresa.Text.Trim() == "" || TxtDireccion.Text.Trim() == "" || TxtLegal.Text.Trim() == "" || TxtNit.Text.Trim() == "" || pbLogo.Image == null)
+            if (TxtEmpresa.Text.Trim() == "" || 
+                TxtDireccion.Text.Trim() == "" || 
+                TxtLegal.Text.Trim() == "" || 
+                txtCorreo.Text.Trim() == "" || 
+                TxtNit.Text.Trim() == "" || 
+                pbLogo.Image == null)
             {
                 MessageBox.Show("Verique que todos los campos completos o haber asignado el logo de su empresa.", "Informacion Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -38,6 +43,7 @@ namespace FlavorsOfTheHouse.Vista
                 int tipo_empresa = 1;
                 int estado = 1;
                 reg.nombre_empresa = TxtEmpresa.Text;
+                reg.correo = txtCorreo.Text;
                 reg.nit = TxtNit.Text;
                 reg.representante = TxtLegal.Text;
                 reg.direccion = TxtDireccion.Text;

@@ -298,5 +298,15 @@ namespace FlavorsOfTheHouse.Vista
             //FrmActual.Text = BtnUsuarios.Text.Trim();
             LblFormActual.Text = BtnAdministracion.Text.Trim();
         }
+
+        private void BtnSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Cerrar Sesión?","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                FrmLogin log = new FrmLogin();
+                log.Show();
+                this.Hide();
+            }            
+        }
     }
 }

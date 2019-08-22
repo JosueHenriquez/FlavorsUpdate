@@ -52,11 +52,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.grpMantenimientos = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnActualizar = new System.Windows.Forms.Button();
+            this.BtnMostrar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtnNuevo = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.grpMantenimientos.SuspendLayout();
@@ -65,25 +69,27 @@
             // 
             // BtnExaminar
             // 
+            this.BtnExaminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnExaminar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BtnExaminar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnExaminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExaminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExaminar.ForeColor = System.Drawing.Color.White;
-            this.BtnExaminar.Location = new System.Drawing.Point(657, 28);
+            this.BtnExaminar.Location = new System.Drawing.Point(720, 240);
             this.BtnExaminar.Name = "BtnExaminar";
             this.BtnExaminar.Size = new System.Drawing.Size(150, 38);
-            this.BtnExaminar.TabIndex = 20;
+            this.BtnExaminar.TabIndex = 8;
             this.BtnExaminar.Text = "Examinar";
             this.BtnExaminar.UseVisualStyleBackColor = false;
+            this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
             // 
             // pbLogo
             // 
             this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbLogo.BackColor = System.Drawing.Color.White;
-            this.pbLogo.Location = new System.Drawing.Point(719, 64);
+            this.pbLogo.Location = new System.Drawing.Point(728, 64);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(151, 172);
+            this.pbLogo.Size = new System.Drawing.Size(132, 172);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 17;
             this.pbLogo.TabStop = false;
@@ -97,7 +103,7 @@
             this.TxtDireccion.Multiline = true;
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(323, 69);
-            this.TxtDireccion.TabIndex = 18;
+            this.TxtDireccion.TabIndex = 3;
             // 
             // TxtLegal
             // 
@@ -107,7 +113,7 @@
             this.TxtLegal.MaxLength = 75;
             this.TxtLegal.Name = "TxtLegal";
             this.TxtLegal.Size = new System.Drawing.Size(323, 22);
-            this.TxtLegal.TabIndex = 19;
+            this.TxtLegal.TabIndex = 6;
             // 
             // TxtNit
             // 
@@ -117,7 +123,7 @@
             this.TxtNit.MaxLength = 17;
             this.TxtNit.Name = "TxtNit";
             this.TxtNit.Size = new System.Drawing.Size(323, 22);
-            this.TxtNit.TabIndex = 16;
+            this.TxtNit.TabIndex = 2;
             // 
             // TxtEmpresa
             // 
@@ -127,7 +133,7 @@
             this.TxtEmpresa.MaxLength = 45;
             this.TxtEmpresa.Name = "TxtEmpresa";
             this.TxtEmpresa.Size = new System.Drawing.Size(323, 22);
-            this.TxtEmpresa.TabIndex = 15;
+            this.TxtEmpresa.TabIndex = 1;
             // 
             // label4
             // 
@@ -168,7 +174,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(364, 208);
+            this.label6.Location = new System.Drawing.Point(30, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(214, 16);
             this.label6.TabIndex = 10;
@@ -180,7 +186,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(364, 190);
+            this.label7.Location = new System.Drawing.Point(30, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(337, 16);
             this.label7.TabIndex = 11;
@@ -276,7 +282,7 @@
             this.comboBox1.Location = new System.Drawing.Point(367, 111);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(323, 21);
-            this.comboBox1.TabIndex = 23;
+            this.comboBox1.TabIndex = 4;
             // 
             // label10
             // 
@@ -298,87 +304,127 @@
             this.comboBox2.Location = new System.Drawing.Point(367, 159);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(323, 21);
-            this.comboBox2.TabIndex = 23;
+            this.comboBox2.TabIndex = 5;
             // 
             // grpMantenimientos
             // 
             this.grpMantenimientos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.grpMantenimientos.Controls.Add(this.button4);
-            this.grpMantenimientos.Controls.Add(this.button3);
-            this.grpMantenimientos.Controls.Add(this.button2);
-            this.grpMantenimientos.Controls.Add(this.button1);
-            this.grpMantenimientos.Controls.Add(this.BtnExaminar);
-            this.grpMantenimientos.Location = new System.Drawing.Point(28, 242);
+            this.grpMantenimientos.Controls.Add(this.BtnNuevo);
+            this.grpMantenimientos.Controls.Add(this.BtnEliminar);
+            this.grpMantenimientos.Controls.Add(this.BtnActualizar);
+            this.grpMantenimientos.Controls.Add(this.BtnMostrar);
+            this.grpMantenimientos.Controls.Add(this.BtnAgregar);
+            this.grpMantenimientos.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpMantenimientos.Location = new System.Drawing.Point(28, 284);
             this.grpMantenimientos.Name = "grpMantenimientos";
             this.grpMantenimientos.Size = new System.Drawing.Size(842, 86);
             this.grpMantenimientos.TabIndex = 48;
             this.grpMantenimientos.TabStop = false;
             this.grpMantenimientos.Text = "Mantenimientos";
             // 
-            // button4
+            // BtnEliminar
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(501, 28);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 38);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.BtnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Location = new System.Drawing.Point(506, 27);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(150, 38);
+            this.BtnEliminar.TabIndex = 12;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // BtnActualizar
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(345, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 38);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Actualizar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Location = new System.Drawing.Point(350, 27);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(150, 38);
+            this.BtnActualizar.TabIndex = 11;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // BtnMostrar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(189, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 38);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Mostrar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnMostrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnMostrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMostrar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMostrar.ForeColor = System.Drawing.Color.White;
+            this.BtnMostrar.Location = new System.Drawing.Point(194, 27);
+            this.BtnMostrar.Name = "BtnMostrar";
+            this.BtnMostrar.Size = new System.Drawing.Size(150, 38);
+            this.BtnMostrar.TabIndex = 10;
+            this.BtnMostrar.Text = "Mostrar";
+            this.BtnMostrar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // BtnAgregar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(33, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnAgregar.BackColor = System.Drawing.Color.Green;
+            this.BtnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.Location = new System.Drawing.Point(38, 27);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(150, 38);
+            this.BtnAgregar.TabIndex = 9;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 334);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 376);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(842, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(842, 134);
             this.dataGridView1.TabIndex = 47;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(364, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Representante Legal: * ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(367, 205);
+            this.textBox1.MaxLength = 75;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(323, 22);
+            this.textBox1.TabIndex = 7;
+            // 
+            // BtnNuevo
+            // 
+            this.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNuevo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNuevo.ForeColor = System.Drawing.Color.White;
+            this.BtnNuevo.Location = new System.Drawing.Point(662, 27);
+            this.BtnNuevo.Name = "BtnNuevo";
+            this.BtnNuevo.Size = new System.Drawing.Size(150, 38);
+            this.BtnNuevo.TabIndex = 0;
+            this.BtnNuevo.Text = "Nuevo";
+            this.BtnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmRegistroEmpresas
             // 
@@ -389,15 +435,18 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.BtnExaminar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.TxtDireccion);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TxtLegal);
             this.Controls.Add(this.TxtNit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TxtEmpresa);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
@@ -442,10 +491,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox grpMantenimientos;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnActualizar;
+        private System.Windows.Forms.Button BtnMostrar;
+        private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BtnNuevo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

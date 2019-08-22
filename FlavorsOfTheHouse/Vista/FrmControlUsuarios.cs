@@ -121,7 +121,6 @@ namespace FlavorsOfTheHouse.Vista
                 }
                 reg.nacimiento = dtNacimiento.Text;
                 reg.email = txtCorreo.Text;
-                MessageBox.Show(txtCorreo.Text);
                 reg.intentos = 0;
                 reg.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 reg.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
@@ -145,6 +144,7 @@ namespace FlavorsOfTheHouse.Vista
             txtCarne.Clear();
             maskDui.Clear();
             txtUsuario.Clear();
+            txtCorreo.Clear();
             radCarne.Checked = false;
             radDui.Checked = false;
             pbFoto.Image = null;
