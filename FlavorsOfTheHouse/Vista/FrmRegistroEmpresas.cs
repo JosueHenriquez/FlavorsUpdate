@@ -26,5 +26,21 @@ namespace FlavorsOfTheHouse.Vista
                 pbLogo.Image = Image.FromFile(openFileDialog1.FileName );
             }
         }
+        
+        void Agregar_Empresa()
+        {
+            if (TxtEmpresa.Text.Trim() == "" ||
+                TxtNit.Text.Trim() == "" ||
+                TxtDireccion.Text.Trim() == "" ||
+                )
+            {
+
+            }
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

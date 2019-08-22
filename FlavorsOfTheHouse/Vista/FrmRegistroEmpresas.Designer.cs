@@ -31,11 +31,8 @@
             this.BtnExaminar = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
-            this.TxtLegal = new System.Windows.Forms.TextBox();
-            this.TxtNit = new System.Windows.Forms.TextBox();
             this.TxtEmpresa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,19 +45,24 @@
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.BtnBuscar = new System.Windows.Forms.ToolStripButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbTipoEmpresa = new System.Windows.Forms.ComboBox();
             this.grpMantenimientos = new System.Windows.Forms.GroupBox();
+            this.BtnNuevo = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnMostrar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.BtnNuevo = new System.Windows.Forms.Button();
+            this.TxtCorreo = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.TxtNit = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbEncargado = new System.Windows.Forms.ComboBox();
+            this.txtRepresentante = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.grpMantenimientos.SuspendLayout();
@@ -105,26 +107,6 @@
             this.TxtDireccion.Size = new System.Drawing.Size(323, 69);
             this.TxtDireccion.TabIndex = 3;
             // 
-            // TxtLegal
-            // 
-            this.TxtLegal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TxtLegal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtLegal.Location = new System.Drawing.Point(28, 205);
-            this.TxtLegal.MaxLength = 75;
-            this.TxtLegal.Name = "TxtLegal";
-            this.TxtLegal.Size = new System.Drawing.Size(323, 22);
-            this.TxtLegal.TabIndex = 6;
-            // 
-            // TxtNit
-            // 
-            this.TxtNit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TxtNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNit.Location = new System.Drawing.Point(367, 64);
-            this.TxtNit.MaxLength = 17;
-            this.TxtNit.Name = "TxtNit";
-            this.TxtNit.Size = new System.Drawing.Size(323, 22);
-            this.TxtNit.TabIndex = 2;
-            // 
             // TxtEmpresa
             // 
             this.TxtEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -146,17 +128,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Dirección: * ";
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Representante Legal: * ";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -174,7 +145,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(30, 258);
+            this.label6.Location = new System.Drawing.Point(23, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(214, 16);
             this.label6.TabIndex = 10;
@@ -186,7 +157,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(30, 240);
+            this.label7.Location = new System.Drawing.Point(23, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(337, 16);
             this.label7.TabIndex = 11;
@@ -273,16 +244,16 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Estado";
             // 
-            // comboBox1
+            // cmbEstado
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(367, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(323, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(367, 111);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(323, 21);
+            this.cmbEstado.TabIndex = 4;
             // 
             // label10
             // 
@@ -295,16 +266,16 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Tipo de Empresa:";
             // 
-            // comboBox2
+            // cmbTipoEmpresa
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(367, 159);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(323, 21);
-            this.comboBox2.TabIndex = 5;
+            this.cmbTipoEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbTipoEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTipoEmpresa.FormattingEnabled = true;
+            this.cmbTipoEmpresa.Location = new System.Drawing.Point(367, 159);
+            this.cmbTipoEmpresa.Name = "cmbTipoEmpresa";
+            this.cmbTipoEmpresa.Size = new System.Drawing.Size(323, 21);
+            this.cmbTipoEmpresa.TabIndex = 5;
             // 
             // grpMantenimientos
             // 
@@ -321,6 +292,20 @@
             this.grpMantenimientos.TabIndex = 48;
             this.grpMantenimientos.TabStop = false;
             this.grpMantenimientos.Text = "Mantenimientos";
+            // 
+            // BtnNuevo
+            // 
+            this.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            this.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNuevo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNuevo.ForeColor = System.Drawing.Color.White;
+            this.BtnNuevo.Location = new System.Drawing.Point(662, 27);
+            this.BtnNuevo.Name = "BtnNuevo";
+            this.BtnNuevo.Size = new System.Drawing.Size(150, 38);
+            this.BtnNuevo.TabIndex = 0;
+            this.BtnNuevo.Text = "Nuevo";
+            this.BtnNuevo.UseVisualStyleBackColor = false;
             // 
             // BtnEliminar
             // 
@@ -377,6 +362,7 @@
             this.BtnAgregar.TabIndex = 9;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // dataGridView1
             // 
@@ -394,60 +380,100 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(364, 186);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 16);
+            this.label5.Size = new System.Drawing.Size(124, 16);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Representante Legal: * ";
+            this.label5.Text = "Correo Institucional:";
             // 
-            // textBox1
+            // TxtCorreo
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(367, 205);
-            this.textBox1.MaxLength = 75;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(323, 22);
-            this.textBox1.TabIndex = 7;
-            // 
-            // BtnNuevo
-            // 
-            this.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            this.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevo.ForeColor = System.Drawing.Color.White;
-            this.BtnNuevo.Location = new System.Drawing.Point(662, 27);
-            this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(150, 38);
-            this.BtnNuevo.TabIndex = 0;
-            this.BtnNuevo.Text = "Nuevo";
-            this.BtnNuevo.UseVisualStyleBackColor = false;
+            this.TxtCorreo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCorreo.Location = new System.Drawing.Point(367, 205);
+            this.TxtCorreo.MaxLength = 75;
+            this.TxtCorreo.Name = "TxtCorreo";
+            this.TxtCorreo.Size = new System.Drawing.Size(323, 22);
+            this.TxtCorreo.TabIndex = 7;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // TxtNit
+            // 
+            this.TxtNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNit.Location = new System.Drawing.Point(372, 63);
+            this.TxtNit.Mask = "0000-000000-000-0";
+            this.TxtNit.Name = "TxtNit";
+            this.TxtNit.Size = new System.Drawing.Size(312, 23);
+            this.TxtNit.TabIndex = 49;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Representante Legal";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(364, 238);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 16);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Encargado de Empresa";
+            // 
+            // cmbEncargado
+            // 
+            this.cmbEncargado.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbEncargado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEncargado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEncargado.FormattingEnabled = true;
+            this.cmbEncargado.Location = new System.Drawing.Point(367, 257);
+            this.cmbEncargado.Name = "cmbEncargado";
+            this.cmbEncargado.Size = new System.Drawing.Size(323, 21);
+            this.cmbEncargado.TabIndex = 5;
+            // 
+            // txtRepresentante
+            // 
+            this.txtRepresentante.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtRepresentante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepresentante.Location = new System.Drawing.Point(28, 205);
+            this.txtRepresentante.MaxLength = 75;
+            this.txtRepresentante.Name = "txtRepresentante";
+            this.txtRepresentante.Size = new System.Drawing.Size(323, 22);
+            this.txtRepresentante.TabIndex = 7;
             // 
             // FrmRegistroEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 522);
+            this.Controls.Add(this.TxtNit);
             this.Controls.Add(this.grpMantenimientos);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbEncargado);
+            this.Controls.Add(this.cmbTipoEmpresa);
+            this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.BtnExaminar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.TxtDireccion);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.TxtLegal);
-            this.Controls.Add(this.TxtNit);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtRepresentante);
+            this.Controls.Add(this.TxtCorreo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TxtEmpresa);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -470,11 +496,8 @@
         private System.Windows.Forms.Button BtnExaminar;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.TextBox TxtDireccion;
-        private System.Windows.Forms.TextBox TxtLegal;
-        private System.Windows.Forms.TextBox TxtNit;
         private System.Windows.Forms.TextBox TxtEmpresa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -487,9 +510,9 @@
         private System.Windows.Forms.ToolStripTextBox txtBuscar;
         private System.Windows.Forms.ToolStripButton BtnBuscar;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbTipoEmpresa;
         private System.Windows.Forms.GroupBox grpMantenimientos;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnActualizar;
@@ -497,8 +520,13 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtCorreo;
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.MaskedTextBox TxtNit;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbEncargado;
+        private System.Windows.Forms.TextBox txtRepresentante;
     }
 }
