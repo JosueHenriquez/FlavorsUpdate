@@ -30,65 +30,69 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.PanelSidebar = new System.Windows.Forms.Panel();
-            this.PanelAjustes = new System.Windows.Forms.Panel();
-            this.PanelConfiguracion = new System.Windows.Forms.Panel();
-            this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lblNivel = new System.Windows.Forms.Label();
-            this.lblusuario = new System.Windows.Forms.Label();
-            this.PanelInventario = new System.Windows.Forms.Panel();
-            this.PanelVentas = new System.Windows.Forms.Panel();
-            this.PanelAdministracion = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.LblUsuarioConectado = new System.Windows.Forms.ToolStripLabel();
-            this.lblConectado = new System.Windows.Forms.ToolStripLabel();
-            this.LblFrmActual = new System.Windows.Forms.ToolStripLabel();
-            this.LblFormActual = new System.Windows.Forms.ToolStripLabel();
-            this.lblPleca = new System.Windows.Forms.ToolStripLabel();
-            this.FrmActual = new System.Windows.Forms.ToolStripLabel();
-            this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.BarraTitulo = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.BtnAcercaDe = new System.Windows.Forms.ToolStripButton();
             this.BtnSesion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnFacturacion = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PanelAjustes = new System.Windows.Forms.Panel();
             this.BtnConfUsuario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnEmpresaPpal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnAjustes = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PanelConfiguracion = new System.Windows.Forms.Panel();
             this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnEmpresa = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.lblusuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PanelInventario = new System.Windows.Forms.Panel();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PanelVentas = new System.Windows.Forms.Panel();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnReportes = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnGraficos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PanelAdministracion = new System.Windows.Forms.Panel();
             this.BtnEmpresas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnUsuarios = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnVentas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnInventario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnAdministracion = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.LblUsuarioConectado = new System.Windows.Forms.ToolStripLabel();
+            this.lblConectado = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.LblFrmActual = new System.Windows.Forms.ToolStripLabel();
+            this.LblFormActual = new System.Windows.Forms.ToolStripLabel();
+            this.BtnAcercaDe = new System.Windows.Forms.ToolStripButton();
+            this.lblPleca = new System.Windows.Forms.ToolStripLabel();
+            this.FrmActual = new System.Windows.Forms.ToolStripLabel();
+            this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BarraTitulo = new System.Windows.Forms.ToolStrip();
             this.BtnMenu = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.BtnCerrar = new System.Windows.Forms.ToolStripButton();
             this.BtnMaximizar = new System.Windows.Forms.ToolStripButton();
             this.BtnNormal = new System.Windows.Forms.ToolStripButton();
             this.BtnMinimizar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.PanelSidebar.SuspendLayout();
             this.PanelAjustes.SuspendLayout();
             this.PanelConfiguracion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelInventario.SuspendLayout();
             this.PanelVentas.SuspendLayout();
             this.PanelAdministracion.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.PanelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelSidebar
@@ -115,225 +119,6 @@
             this.PanelSidebar.Name = "PanelSidebar";
             this.PanelSidebar.Size = new System.Drawing.Size(751, 672);
             this.PanelSidebar.TabIndex = 1;
-            // 
-            // PanelAjustes
-            // 
-            this.PanelAjustes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PanelAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PanelAjustes.Controls.Add(this.BtnConfUsuario);
-            this.PanelAjustes.Controls.Add(this.BtnEmpresaPpal);
-            this.PanelAjustes.Location = new System.Drawing.Point(494, 195);
-            this.PanelAjustes.Name = "PanelAjustes";
-            this.PanelAjustes.Size = new System.Drawing.Size(247, 89);
-            this.PanelAjustes.TabIndex = 15;
-            // 
-            // PanelConfiguracion
-            // 
-            this.PanelConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PanelConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PanelConfiguracion.Controls.Add(this.bunifuFlatButton7);
-            this.PanelConfiguracion.Controls.Add(this.BtnEmpresa);
-            this.PanelConfiguracion.Location = new System.Drawing.Point(0, 1141);
-            this.PanelConfiguracion.Name = "PanelConfiguracion";
-            this.PanelConfiguracion.Size = new System.Drawing.Size(236, 92);
-            this.PanelConfiguracion.TabIndex = 13;
-            // 
-            // LineaSidebar
-            // 
-            this.LineaSidebar.BackColor = System.Drawing.Color.Transparent;
-            this.LineaSidebar.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.LineaSidebar.LineThickness = 1;
-            this.LineaSidebar.Location = new System.Drawing.Point(6, 107);
-            this.LineaSidebar.Name = "LineaSidebar";
-            this.LineaSidebar.Size = new System.Drawing.Size(223, 10);
-            this.LineaSidebar.TabIndex = 12;
-            this.LineaSidebar.Transparency = 255;
-            this.LineaSidebar.Vertical = false;
-            // 
-            // lblNivel
-            // 
-            this.lblNivel.AutoSize = true;
-            this.lblNivel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivel.ForeColor = System.Drawing.Color.White;
-            this.lblNivel.Location = new System.Drawing.Point(57, 71);
-            this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(35, 15);
-            this.lblNivel.TabIndex = 11;
-            this.lblNivel.Text = "Nivel";
-            // 
-            // lblusuario
-            // 
-            this.lblusuario.AutoSize = true;
-            this.lblusuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(57, 49);
-            this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(59, 19);
-            this.lblusuario.TabIndex = 11;
-            this.lblusuario.Text = "Usuario";
-            // 
-            // PanelInventario
-            // 
-            this.PanelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PanelInventario.Controls.Add(this.bunifuFlatButton6);
-            this.PanelInventario.Controls.Add(this.bunifuFlatButton3);
-            this.PanelInventario.Controls.Add(this.bunifuFlatButton2);
-            this.PanelInventario.Location = new System.Drawing.Point(494, 47);
-            this.PanelInventario.Name = "PanelInventario";
-            this.PanelInventario.Size = new System.Drawing.Size(247, 134);
-            this.PanelInventario.TabIndex = 7;
-            // 
-            // PanelVentas
-            // 
-            this.PanelVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PanelVentas.Controls.Add(this.bunifuFlatButton4);
-            this.PanelVentas.Controls.Add(this.bunifuFlatButton5);
-            this.PanelVentas.Controls.Add(this.bunifuFlatButton1);
-            this.PanelVentas.Controls.Add(this.BtnReportes);
-            this.PanelVentas.Controls.Add(this.BtnGraficos);
-            this.PanelVentas.Location = new System.Drawing.Point(242, 195);
-            this.PanelVentas.Name = "PanelVentas";
-            this.PanelVentas.Size = new System.Drawing.Size(242, 223);
-            this.PanelVentas.TabIndex = 0;
-            // 
-            // PanelAdministracion
-            // 
-            this.PanelAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.PanelAdministracion.Controls.Add(this.BtnEmpresas);
-            this.PanelAdministracion.Controls.Add(this.BtnUsuarios);
-            this.PanelAdministracion.Location = new System.Drawing.Point(242, 46);
-            this.PanelAdministracion.Name = "PanelAdministracion";
-            this.PanelAdministracion.Size = new System.Drawing.Size(236, 135);
-            this.PanelAdministracion.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LblUsuarioConectado,
-            this.lblConectado,
-            this.toolStripButton1,
-            this.LblFrmActual,
-            this.LblFormActual,
-            this.BtnAcercaDe,
-            this.lblPleca,
-            this.FrmActual});
-            this.toolStrip1.Location = new System.Drawing.Point(751, 672);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(533, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // LblUsuarioConectado
-            // 
-            this.LblUsuarioConectado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LblUsuarioConectado.Name = "LblUsuarioConectado";
-            this.LblUsuarioConectado.Size = new System.Drawing.Size(114, 22);
-            this.LblUsuarioConectado.Text = "Usuario Conectado:";
-            // 
-            // lblConectado
-            // 
-            this.lblConectado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblConectado.Name = "lblConectado";
-            this.lblConectado.Size = new System.Drawing.Size(10, 22);
-            this.lblConectado.Text = ".";
-            // 
-            // LblFrmActual
-            // 
-            this.LblFrmActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.LblFrmActual.Name = "LblFrmActual";
-            this.LblFrmActual.Size = new System.Drawing.Size(108, 22);
-            this.LblFrmActual.Text = "Formulario Actual:";
-            // 
-            // LblFormActual
-            // 
-            this.LblFormActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
-            this.LblFormActual.Name = "LblFormActual";
-            this.LblFormActual.Size = new System.Drawing.Size(10, 22);
-            this.LblFormActual.Text = ".";
-            // 
-            // lblPleca
-            // 
-            this.lblPleca.Name = "lblPleca";
-            this.lblPleca.Size = new System.Drawing.Size(12, 22);
-            this.lblPleca.Text = "/";
-            // 
-            // FrmActual
-            // 
-            this.FrmActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
-            this.FrmActual.Name = "FrmActual";
-            this.FrmActual.Size = new System.Drawing.Size(10, 22);
-            this.FrmActual.Text = ".";
-            // 
-            // PanelContenedor
-            // 
-            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(751, 25);
-            this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(533, 647);
-            this.PanelContenedor.TabIndex = 4;
-            // 
-            // BarraTitulo
-            // 
-            this.BarraTitulo.BackColor = System.Drawing.SystemColors.Control;
-            this.BarraTitulo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnMenu,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.BtnCerrar,
-            this.BtnMaximizar,
-            this.BtnNormal,
-            this.BtnMinimizar,
-            this.toolStripSeparator2,
-            this.toolStripLabel2,
-            this.toolStripButton2});
-            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1284, 25);
-            this.BarraTitulo.TabIndex = 0;
-            this.BarraTitulo.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
-            this.toolStripLabel1.Text = "Ricaldone";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(102, 22);
-            this.toolStripLabel2.Text = "Sabores de la casa";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::FlavorsOfTheHouse.Properties.Resources.keyboard_right_arrow_button;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // BtnAcercaDe
-            // 
-            this.BtnAcercaDe.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnAcercaDe.Image = global::FlavorsOfTheHouse.Properties.Resources.developer_mode_for_smartphones_and_tablets;
-            this.BtnAcercaDe.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnAcercaDe.Name = "BtnAcercaDe";
-            this.BtnAcercaDe.Size = new System.Drawing.Size(82, 22);
-            this.BtnAcercaDe.Text = "Acerca de:";
             // 
             // BtnSesion
             // 
@@ -405,6 +190,17 @@
             this.BtnFacturacion.Textcolor = System.Drawing.Color.White;
             this.BtnFacturacion.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFacturacion.Click += new System.EventHandler(this.BtnFacturacion_Click);
+            // 
+            // PanelAjustes
+            // 
+            this.PanelAjustes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PanelAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PanelAjustes.Controls.Add(this.BtnConfUsuario);
+            this.PanelAjustes.Controls.Add(this.BtnEmpresaPpal);
+            this.PanelAjustes.Location = new System.Drawing.Point(494, 195);
+            this.PanelAjustes.Name = "PanelAjustes";
+            this.PanelAjustes.Size = new System.Drawing.Size(247, 89);
+            this.PanelAjustes.TabIndex = 15;
             // 
             // BtnConfUsuario
             // 
@@ -512,6 +308,17 @@
             this.BtnAjustes.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAjustes.Click += new System.EventHandler(this.BtnAjustes_Click);
             // 
+            // PanelConfiguracion
+            // 
+            this.PanelConfiguracion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PanelConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PanelConfiguracion.Controls.Add(this.bunifuFlatButton7);
+            this.PanelConfiguracion.Controls.Add(this.BtnEmpresa);
+            this.PanelConfiguracion.Location = new System.Drawing.Point(0, 1141);
+            this.PanelConfiguracion.Name = "PanelConfiguracion";
+            this.PanelConfiguracion.Size = new System.Drawing.Size(236, 92);
+            this.PanelConfiguracion.TabIndex = 13;
+            // 
             // bunifuFlatButton7
             // 
             this.bunifuFlatButton7.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
@@ -580,6 +387,40 @@
             this.BtnEmpresa.Textcolor = System.Drawing.Color.White;
             this.BtnEmpresa.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // LineaSidebar
+            // 
+            this.LineaSidebar.BackColor = System.Drawing.Color.Transparent;
+            this.LineaSidebar.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.LineaSidebar.LineThickness = 1;
+            this.LineaSidebar.Location = new System.Drawing.Point(6, 107);
+            this.LineaSidebar.Name = "LineaSidebar";
+            this.LineaSidebar.Size = new System.Drawing.Size(223, 10);
+            this.LineaSidebar.TabIndex = 12;
+            this.LineaSidebar.Transparency = 255;
+            this.LineaSidebar.Vertical = false;
+            // 
+            // lblNivel
+            // 
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.Color.White;
+            this.lblNivel.Location = new System.Drawing.Point(57, 71);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(35, 15);
+            this.lblNivel.TabIndex = 11;
+            this.lblNivel.Text = "Nivel";
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.ForeColor = System.Drawing.Color.White;
+            this.lblusuario.Location = new System.Drawing.Point(57, 49);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(59, 19);
+            this.lblusuario.TabIndex = 11;
+            this.lblusuario.Text = "Usuario";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FlavorsOfTheHouse.Properties.Resources.sabores_de_la_casa;
@@ -589,6 +430,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // PanelInventario
+            // 
+            this.PanelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PanelInventario.Controls.Add(this.bunifuFlatButton6);
+            this.PanelInventario.Controls.Add(this.bunifuFlatButton3);
+            this.PanelInventario.Controls.Add(this.bunifuFlatButton2);
+            this.PanelInventario.Location = new System.Drawing.Point(494, 47);
+            this.PanelInventario.Name = "PanelInventario";
+            this.PanelInventario.Size = new System.Drawing.Size(247, 134);
+            this.PanelInventario.TabIndex = 7;
             // 
             // bunifuFlatButton6
             // 
@@ -691,6 +543,19 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // PanelVentas
+            // 
+            this.PanelVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PanelVentas.Controls.Add(this.bunifuFlatButton4);
+            this.PanelVentas.Controls.Add(this.bunifuFlatButton5);
+            this.PanelVentas.Controls.Add(this.bunifuFlatButton1);
+            this.PanelVentas.Controls.Add(this.BtnReportes);
+            this.PanelVentas.Controls.Add(this.BtnGraficos);
+            this.PanelVentas.Location = new System.Drawing.Point(242, 195);
+            this.PanelVentas.Name = "PanelVentas";
+            this.PanelVentas.Size = new System.Drawing.Size(242, 223);
+            this.PanelVentas.TabIndex = 0;
             // 
             // bunifuFlatButton4
             // 
@@ -862,6 +727,16 @@
             this.BtnGraficos.Textcolor = System.Drawing.Color.White;
             this.BtnGraficos.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // PanelAdministracion
+            // 
+            this.PanelAdministracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.PanelAdministracion.Controls.Add(this.BtnEmpresas);
+            this.PanelAdministracion.Controls.Add(this.BtnUsuarios);
+            this.PanelAdministracion.Location = new System.Drawing.Point(242, 46);
+            this.PanelAdministracion.Name = "PanelAdministracion";
+            this.PanelAdministracion.Size = new System.Drawing.Size(236, 135);
+            this.PanelAdministracion.TabIndex = 0;
+            // 
             // BtnEmpresas
             // 
             this.BtnEmpresas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
@@ -883,7 +758,7 @@
             this.BtnEmpresas.IconVisible = true;
             this.BtnEmpresas.IconZoom = 35D;
             this.BtnEmpresas.IsTab = false;
-            this.BtnEmpresas.Location = new System.Drawing.Point(0, 45);
+            this.BtnEmpresas.Location = new System.Drawing.Point(0, 0);
             this.BtnEmpresas.Name = "BtnEmpresas";
             this.BtnEmpresas.Normalcolor = System.Drawing.Color.DeepSkyBlue;
             this.BtnEmpresas.OnHovercolor = System.Drawing.Color.PowderBlue;
@@ -918,7 +793,7 @@
             this.BtnUsuarios.IconVisible = true;
             this.BtnUsuarios.IconZoom = 35D;
             this.BtnUsuarios.IsTab = false;
-            this.BtnUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.BtnUsuarios.Location = new System.Drawing.Point(0, 45);
             this.BtnUsuarios.Name = "BtnUsuarios";
             this.BtnUsuarios.Normalcolor = System.Drawing.Color.DeepSkyBlue;
             this.BtnUsuarios.OnHovercolor = System.Drawing.Color.PowderBlue;
@@ -1037,6 +912,135 @@
             this.BtnAdministracion.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdministracion.Click += new System.EventHandler(this.BtnAdministracion_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LblUsuarioConectado,
+            this.lblConectado,
+            this.toolStripButton1,
+            this.LblFrmActual,
+            this.LblFormActual,
+            this.BtnAcercaDe,
+            this.lblPleca,
+            this.FrmActual});
+            this.toolStrip1.Location = new System.Drawing.Point(751, 672);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(533, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // LblUsuarioConectado
+            // 
+            this.LblUsuarioConectado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LblUsuarioConectado.Name = "LblUsuarioConectado";
+            this.LblUsuarioConectado.Size = new System.Drawing.Size(114, 22);
+            this.LblUsuarioConectado.Text = "Usuario Conectado:";
+            // 
+            // lblConectado
+            // 
+            this.lblConectado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblConectado.Name = "lblConectado";
+            this.lblConectado.Size = new System.Drawing.Size(10, 22);
+            this.lblConectado.Text = ".";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::FlavorsOfTheHouse.Properties.Resources.keyboard_right_arrow_button;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // LblFrmActual
+            // 
+            this.LblFrmActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.LblFrmActual.Name = "LblFrmActual";
+            this.LblFrmActual.Size = new System.Drawing.Size(108, 22);
+            this.LblFrmActual.Text = "Formulario Actual:";
+            // 
+            // LblFormActual
+            // 
+            this.LblFormActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
+            this.LblFormActual.Name = "LblFormActual";
+            this.LblFormActual.Size = new System.Drawing.Size(10, 22);
+            this.LblFormActual.Text = ".";
+            // 
+            // BtnAcercaDe
+            // 
+            this.BtnAcercaDe.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnAcercaDe.Image = global::FlavorsOfTheHouse.Properties.Resources.developer_mode_for_smartphones_and_tablets;
+            this.BtnAcercaDe.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAcercaDe.Name = "BtnAcercaDe";
+            this.BtnAcercaDe.Size = new System.Drawing.Size(82, 22);
+            this.BtnAcercaDe.Text = "Acerca de:";
+            // 
+            // lblPleca
+            // 
+            this.lblPleca.Name = "lblPleca";
+            this.lblPleca.Size = new System.Drawing.Size(12, 22);
+            this.lblPleca.Text = "/";
+            // 
+            // FrmActual
+            // 
+            this.FrmActual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
+            this.FrmActual.Name = "FrmActual";
+            this.FrmActual.Size = new System.Drawing.Size(10, 22);
+            this.FrmActual.Text = ".";
+            // 
+            // PanelContenedor
+            // 
+            this.PanelContenedor.Controls.Add(this.label1);
+            this.PanelContenedor.Controls.Add(this.pictureBox2);
+            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenedor.Location = new System.Drawing.Point(751, 25);
+            this.PanelContenedor.Name = "PanelContenedor";
+            this.PanelContenedor.Size = new System.Drawing.Size(533, 647);
+            this.PanelContenedor.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(181, 467);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Instituto Técnico Ricaldone";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox2.Image = global::FlavorsOfTheHouse.Properties.Resources.sabores_de_la_casa;
+            this.pictureBox2.Location = new System.Drawing.Point(154, 226);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(275, 224);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // BarraTitulo
+            // 
+            this.BarraTitulo.BackColor = System.Drawing.SystemColors.Control;
+            this.BarraTitulo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnMenu,
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.BtnCerrar,
+            this.BtnMaximizar,
+            this.BtnNormal,
+            this.BtnMinimizar,
+            this.toolStripSeparator2,
+            this.toolStripLabel2,
+            this.toolStripButton2});
+            this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.Size = new System.Drawing.Size(1284, 25);
+            this.BarraTitulo.TabIndex = 0;
+            this.BarraTitulo.Text = "toolStrip1";
+            // 
             // BtnMenu
             // 
             this.BtnMenu.ForeColor = System.Drawing.Color.Black;
@@ -1046,6 +1050,18 @@
             this.BtnMenu.Size = new System.Drawing.Size(107, 22);
             this.BtnMenu.Text = "Contraer Menú";
             this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel1.Text = "Ricaldone";
             // 
             // BtnCerrar
             // 
@@ -1092,6 +1108,18 @@
             this.BtnMinimizar.Text = "Minimizar";
             this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(102, 22);
+            this.toolStripLabel2.Text = "Sabores de la casa";
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = global::FlavorsOfTheHouse.Properties.Resources.lock_32;
@@ -1121,14 +1149,17 @@
             this.PanelSidebar.PerformLayout();
             this.PanelAjustes.ResumeLayout(false);
             this.PanelConfiguracion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelInventario.ResumeLayout(false);
             this.PanelVentas.ResumeLayout(false);
             this.PanelAdministracion.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.PanelContenedor.ResumeLayout(false);
+            this.PanelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1186,5 +1217,7 @@
         private System.Windows.Forms.ToolStripLabel FrmActual;
         private Bunifu.Framework.UI.BunifuFlatButton BtnSesion;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

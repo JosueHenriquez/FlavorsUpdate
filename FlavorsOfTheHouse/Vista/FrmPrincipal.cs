@@ -139,7 +139,6 @@ namespace FlavorsOfTheHouse.Vista
             EstadoPaneles();
             //Ubicacion Inicial de botones
             UbicacionBotones();
-            AbrirFormulario<FrmInicio>();
         }
 
         private void BtnAdministracion_Click(object sender, EventArgs e)

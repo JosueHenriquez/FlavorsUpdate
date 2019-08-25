@@ -101,12 +101,6 @@
     <Compile Include="Vista\FrmFacturacion.Designer.cs">
       <DependentUpon>FrmFacturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\FrmInicio.Designer.cs">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\FrmIntervenciondeAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +200,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmControlUsuarios.resx">
       <DependentUpon>FrmControlUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FrmInicio.resx">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmIntervenciondeAdministrador.resx">
       <DependentUpon>FrmIntervenciondeAdministrador.cs</DependentUpon>

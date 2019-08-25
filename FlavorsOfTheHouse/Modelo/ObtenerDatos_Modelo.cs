@@ -33,7 +33,6 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
-
         public static DataTable ObtenerTipo_Usuario_SinRoot()
         {
             DataTable data = new DataTable();
@@ -57,7 +56,6 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
-
         public static DataTable Obtener_Estados()
         {
             DataTable data = new DataTable();
@@ -79,7 +77,6 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
-
         public static bool ObtenerUsuario()
         {
             bool retorno = false;
@@ -100,7 +97,6 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
-
         public static DataTable ObtenerPreguntas()
         {
             DataTable data = new DataTable();
@@ -115,6 +111,27 @@ namespace FlavorsOfTheHouse.Modelo
             catch (Exception)
             {
                 MessageBox.Show("Error critico al cargar las preguntas de seguridad, verifique su conexión a internet o consulte con el administrador.", "Error critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+            finally
+            {
+                Conexion_Config.ObtenerConexion().Close();
+            }
+        }
+        public static DataTable ObtenerTipoEmpresa()
+        {
+            DataTable data = new DataTable();
+            string query = "SELECT * FROM tbtipo_empresa";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmdselect);
+                adapter.Fill(data);
+                return data;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error critico al cargar los tipos de empresa, verifique su conexión a internet o consulte con el administrador.", "Error critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return data;
             }
             finally

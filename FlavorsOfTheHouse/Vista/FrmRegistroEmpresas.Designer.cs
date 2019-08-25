@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnExaminar = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
@@ -54,19 +55,19 @@
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnMostrar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEmpresas = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtCorreo = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.TxtNit = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmbEncargado = new System.Windows.Forms.ComboBox();
             this.txtRepresentante = new System.Windows.Forms.TextBox();
+            this.chkempresas = new System.Windows.Forms.CheckBox();
+            this.chkEmpInactivas = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.grpMantenimientos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnExaminar
@@ -80,7 +81,7 @@
             this.BtnExaminar.Location = new System.Drawing.Point(720, 240);
             this.BtnExaminar.Name = "BtnExaminar";
             this.BtnExaminar.Size = new System.Drawing.Size(150, 38);
-            this.BtnExaminar.TabIndex = 8;
+            this.BtnExaminar.TabIndex = 9;
             this.BtnExaminar.Text = "Examinar";
             this.BtnExaminar.UseVisualStyleBackColor = false;
             this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
@@ -145,7 +146,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(23, 258);
+            this.label6.Location = new System.Drawing.Point(26, 235);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(214, 16);
             this.label6.TabIndex = 10;
@@ -157,7 +158,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(23, 240);
+            this.label7.Location = new System.Drawing.Point(369, 235);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(337, 16);
             this.label7.TabIndex = 11;
@@ -202,8 +203,8 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(110, 22);
-            this.toolStripLabel1.Text = "Control de usuarios";
+            this.toolStripLabel1.Size = new System.Drawing.Size(119, 22);
+            this.toolStripLabel1.Text = "Registro de Empresas";
             // 
             // BtnCerrarFormulario
             // 
@@ -249,10 +250,11 @@
             this.cmbEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEstado.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(367, 111);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(323, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(323, 23);
             this.cmbEstado.TabIndex = 4;
             // 
             // label10
@@ -271,10 +273,11 @@
             this.cmbTipoEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbTipoEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTipoEmpresa.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoEmpresa.FormattingEnabled = true;
             this.cmbTipoEmpresa.Location = new System.Drawing.Point(367, 159);
             this.cmbTipoEmpresa.Name = "cmbTipoEmpresa";
-            this.cmbTipoEmpresa.Size = new System.Drawing.Size(323, 21);
+            this.cmbTipoEmpresa.Size = new System.Drawing.Size(323, 23);
             this.cmbTipoEmpresa.TabIndex = 5;
             // 
             // grpMantenimientos
@@ -306,6 +309,7 @@
             this.BtnNuevo.TabIndex = 0;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.UseVisualStyleBackColor = false;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // BtnEliminar
             // 
@@ -318,8 +322,9 @@
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(150, 38);
             this.BtnEliminar.TabIndex = 12;
-            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.Text = "Cambiar Estado";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -334,6 +339,7 @@
             this.BtnActualizar.TabIndex = 11;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnMostrar
             // 
@@ -348,6 +354,7 @@
             this.BtnMostrar.TabIndex = 10;
             this.BtnMostrar.Text = "Mostrar";
             this.BtnMostrar.UseVisualStyleBackColor = false;
+            this.BtnMostrar.Click += new System.EventHandler(this.BtnMostrar_Click);
             // 
             // BtnAgregar
             // 
@@ -364,14 +371,36 @@
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // dataGridView1
+            // dgvEmpresas
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 376);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(842, 134);
-            this.dataGridView1.TabIndex = 47;
+            this.dgvEmpresas.AllowUserToAddRows = false;
+            this.dgvEmpresas.AllowUserToDeleteRows = false;
+            this.dgvEmpresas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEmpresas.GridColor = System.Drawing.SystemColors.HotTrack;
+            this.dgvEmpresas.Location = new System.Drawing.Point(28, 399);
+            this.dgvEmpresas.Name = "dgvEmpresas";
+            this.dgvEmpresas.ReadOnly = true;
+            this.dgvEmpresas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvEmpresas.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvEmpresas.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEmpresas.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEmpresas.RowTemplate.ReadOnly = true;
+            this.dgvEmpresas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpresas.Size = new System.Drawing.Size(842, 111);
+            this.dgvEmpresas.TabIndex = 47;
+            this.dgvEmpresas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpresas_CellDoubleClick);
             // 
             // label5
             // 
@@ -400,12 +429,13 @@
             // 
             // TxtNit
             // 
+            this.TxtNit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNit.Location = new System.Drawing.Point(372, 63);
             this.TxtNit.Mask = "0000-000000-000-0";
             this.TxtNit.Name = "TxtNit";
             this.TxtNit.Size = new System.Drawing.Size(312, 23);
-            this.TxtNit.TabIndex = 49;
+            this.TxtNit.TabIndex = 2;
             // 
             // label3
             // 
@@ -418,28 +448,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Representante Legal";
             // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(364, 238);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 16);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Encargado de Empresa";
-            // 
-            // cmbEncargado
-            // 
-            this.cmbEncargado.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbEncargado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEncargado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbEncargado.FormattingEnabled = true;
-            this.cmbEncargado.Location = new System.Drawing.Point(367, 257);
-            this.cmbEncargado.Name = "cmbEncargado";
-            this.cmbEncargado.Size = new System.Drawing.Size(323, 21);
-            this.cmbEncargado.TabIndex = 5;
-            // 
             // txtRepresentante
             // 
             this.txtRepresentante.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -448,17 +456,43 @@
             this.txtRepresentante.MaxLength = 75;
             this.txtRepresentante.Name = "txtRepresentante";
             this.txtRepresentante.Size = new System.Drawing.Size(323, 22);
-            this.txtRepresentante.TabIndex = 7;
+            this.txtRepresentante.TabIndex = 6;
+            // 
+            // chkempresas
+            // 
+            this.chkempresas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chkempresas.AutoSize = true;
+            this.chkempresas.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkempresas.Location = new System.Drawing.Point(33, 377);
+            this.chkempresas.Name = "chkempresas";
+            this.chkempresas.Size = new System.Drawing.Size(205, 19);
+            this.chkempresas.TabIndex = 49;
+            this.chkempresas.Text = "Visualizar catálogo de empresas";
+            this.chkempresas.UseVisualStyleBackColor = true;
+            this.chkempresas.CheckedChanged += new System.EventHandler(this.chkempresas_CheckedChanged);
+            // 
+            // chkEmpInactivas
+            // 
+            this.chkEmpInactivas.AutoSize = true;
+            this.chkEmpInactivas.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEmpInactivas.Location = new System.Drawing.Point(244, 377);
+            this.chkEmpInactivas.Name = "chkEmpInactivas";
+            this.chkEmpInactivas.Size = new System.Drawing.Size(191, 19);
+            this.chkEmpInactivas.TabIndex = 50;
+            this.chkEmpInactivas.Text = "Visualizar empresas inactivas";
+            this.chkEmpInactivas.UseVisualStyleBackColor = true;
+            this.chkEmpInactivas.CheckedChanged += new System.EventHandler(this.chkEmpInactivas_CheckedChanged);
             // 
             // FrmRegistroEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 522);
+            this.Controls.Add(this.chkEmpInactivas);
+            this.Controls.Add(this.chkempresas);
             this.Controls.Add(this.TxtNit);
             this.Controls.Add(this.grpMantenimientos);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.cmbEncargado);
+            this.Controls.Add(this.dgvEmpresas);
             this.Controls.Add(this.cmbTipoEmpresa);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.BtnExaminar);
@@ -466,7 +500,6 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.TxtDireccion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtRepresentante);
             this.Controls.Add(this.TxtCorreo);
             this.Controls.Add(this.label10);
@@ -482,11 +515,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistroEmpresas";
             this.Text = "FrmRegistroEmpresas";
+            this.Load += new System.EventHandler(this.FrmRegistroEmpresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.grpMantenimientos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,15 +552,15 @@
         private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.Button BtnMostrar;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmpresas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtCorreo;
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.MaskedTextBox TxtNit;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmbEncargado;
         private System.Windows.Forms.TextBox txtRepresentante;
+        private System.Windows.Forms.CheckBox chkempresas;
+        private System.Windows.Forms.CheckBox chkEmpInactivas;
     }
 }

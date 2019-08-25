@@ -35,7 +35,6 @@ C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheH
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmSplashScreen.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csproj.GenerateResource.Cache
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmPrimerUso.resources
-C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmInicio.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmRegistroEmpresas.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\bin\Debug\MySql.Data.dll
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\bin\Debug\Google.Protobuf.dll

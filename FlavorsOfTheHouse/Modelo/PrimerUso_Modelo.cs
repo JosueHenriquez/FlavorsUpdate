@@ -32,7 +32,6 @@ namespace FlavorsOfTheHouse.Modelo
                 Conexion_Config.ObtenerConexion().Close();
             }
         }
-
         public static int IngresarEmpresa(ConstructorEmpresa_Controlador constemp)
         {
             int retorno = 0;
@@ -49,7 +48,7 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 else
                 {
-                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbempresa (empresa,correo, nit, representate_legal, id_tipo_empresa, id_estado, direccion, logoempresa) VALUES ('" + constemp.nombre_empresa + "','" + constemp.correo + "','" + constemp.nit + "','" + constemp.representante + "','" + constemp.tipo_empresa + "','" + constemp.estado + "','" + constemp.direccion + "','" + constemp.imagen + "')"), Conexion_Config.ObtenerConexion());
+                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbempresa (empresa,correo, nit, representante_legal, id_tipo_empresa, id_estado, direccion, logoempresa) VALUES ('" + constemp.nombre_empresa + "','" + constemp.correo + "','" + constemp.nit + "','" + constemp.representante + "','" + constemp.tipo_empresa + "','" + constemp.estado + "','" + constemp.direccion + "','" + constemp.imagen + "')"), Conexion_Config.ObtenerConexion());
                     retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                     if (retorno >= 1)
                     {
