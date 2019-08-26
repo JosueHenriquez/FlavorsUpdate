@@ -46,7 +46,7 @@
             this.PanelInventario = new System.Windows.Forms.Panel();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnRegProductos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PanelVentas = new System.Windows.Forms.Panel();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -436,7 +436,7 @@
             this.PanelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.PanelInventario.Controls.Add(this.bunifuFlatButton6);
             this.PanelInventario.Controls.Add(this.bunifuFlatButton3);
-            this.PanelInventario.Controls.Add(this.bunifuFlatButton2);
+            this.PanelInventario.Controls.Add(this.BtnRegProductos);
             this.PanelInventario.Location = new System.Drawing.Point(494, 47);
             this.PanelInventario.Name = "PanelInventario";
             this.PanelInventario.Size = new System.Drawing.Size(247, 134);
@@ -510,39 +510,40 @@
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuFlatButton2
+            // BtnRegProductos
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "      Registro de productos";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = global::FlavorsOfTheHouse.Properties.Resources.underline_button;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 35D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, -1);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.PowderBlue;
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.Black;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(250, 46);
-            this.bunifuFlatButton2.TabIndex = 8;
-            this.bunifuFlatButton2.Text = "      Registro de productos";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegProductos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
+            this.BtnRegProductos.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnRegProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRegProductos.BorderRadius = 0;
+            this.BtnRegProductos.ButtonText = "      Registro de productos";
+            this.BtnRegProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRegProductos.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnRegProductos.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnRegProductos.Iconimage = global::FlavorsOfTheHouse.Properties.Resources.underline_button;
+            this.BtnRegProductos.Iconimage_right = null;
+            this.BtnRegProductos.Iconimage_right_Selected = null;
+            this.BtnRegProductos.Iconimage_Selected = null;
+            this.BtnRegProductos.IconMarginLeft = 0;
+            this.BtnRegProductos.IconMarginRight = 0;
+            this.BtnRegProductos.IconRightVisible = true;
+            this.BtnRegProductos.IconRightZoom = 0D;
+            this.BtnRegProductos.IconVisible = true;
+            this.BtnRegProductos.IconZoom = 35D;
+            this.BtnRegProductos.IsTab = false;
+            this.BtnRegProductos.Location = new System.Drawing.Point(0, -1);
+            this.BtnRegProductos.Name = "BtnRegProductos";
+            this.BtnRegProductos.Normalcolor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnRegProductos.OnHovercolor = System.Drawing.Color.PowderBlue;
+            this.BtnRegProductos.OnHoverTextColor = System.Drawing.Color.Black;
+            this.BtnRegProductos.selected = false;
+            this.BtnRegProductos.Size = new System.Drawing.Size(250, 46);
+            this.BtnRegProductos.TabIndex = 8;
+            this.BtnRegProductos.Text = "      Registro de productos";
+            this.BtnRegProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRegProductos.Textcolor = System.Drawing.Color.White;
+            this.BtnRegProductos.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegProductos.Click += new System.EventHandler(this.BtnRegProductos_Click);
             // 
             // PanelVentas
             // 
@@ -1187,7 +1188,7 @@
         private System.Windows.Forms.ToolStripButton BtnAcercaDe;
         private System.Windows.Forms.Panel PanelInventario;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnRegProductos;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;

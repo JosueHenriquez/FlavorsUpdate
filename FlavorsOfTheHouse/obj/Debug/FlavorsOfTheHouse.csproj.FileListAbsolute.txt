@@ -71,3 +71,4 @@ C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\D
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmIntervenciondeAdministrador.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmMetodosRecuperacion.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmRecuperacionPorCorreo.resources
+C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmProductos.resources

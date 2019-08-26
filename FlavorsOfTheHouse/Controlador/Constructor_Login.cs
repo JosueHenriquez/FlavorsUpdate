@@ -8,6 +8,7 @@ namespace FlavorsOfTheHouse.Controlador
 {
     public class Constructor_Login : Constructor_Login_Datos
     {
+        public static int id_usuario { get; set; }
         public static string usuario { get; set; }
         public string clave { get; set; }
         public Constructor_Login() { }

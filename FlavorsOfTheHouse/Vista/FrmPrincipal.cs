@@ -29,7 +29,7 @@ namespace FlavorsOfTheHouse.Vista
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.Dock = DockStyle.Fill;
-
+                formulario.Opacity = 0.75;
                 if (currentForm != null)
                 {
                     currentForm.Close();
@@ -306,6 +306,11 @@ namespace FlavorsOfTheHouse.Vista
                 log.Show();
                 this.Hide();
             }            
+        }
+
+        private void BtnRegProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmProductos>();
         }
     }
 }

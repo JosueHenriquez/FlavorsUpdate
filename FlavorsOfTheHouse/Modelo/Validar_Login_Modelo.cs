@@ -47,7 +47,7 @@ namespace FlavorsOfTheHouse.Modelo
                                 Constructor_Login_Datos.empresa = reader.GetInt16(9);
                                 Constructor_Login_Datos.nivel = reader.GetInt16(10);
                                 Constructor_Login_Datos.nombre = reader.GetString(3) + " " + reader.GetString(4);
-                                //Constructor_Login.primer_uso = reader.GetInt16(8);
+                                Constructor_Login.id_usuario = reader.GetInt16(0);
                             }
                             MessageBox.Show("Bienvenido usuario: " + Constructor_Login.usuario, "Acceso concedido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }
