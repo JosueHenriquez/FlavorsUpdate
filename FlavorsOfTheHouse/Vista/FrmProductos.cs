@@ -57,11 +57,7 @@ namespace FlavorsOfTheHouse.Vista
         {
             if (txtPrecio.Text.Contains('.'))
             {
-                e.Handled = true;
-                if (e.KeyChar != )
-                {
-
-                }
+                
             }
         }
     }
