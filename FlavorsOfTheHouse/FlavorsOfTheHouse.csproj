@@ -60,6 +60,7 @@
     <Compile Include="Controlador\Constructor_Recuperacion_Clave.cs" />
     <Compile Include="Controlador\Constructor_Usuario.cs" />
     <Compile Include="Modelo\ControlEmpresas_Modelo.cs" />
+    <Compile Include="Modelo\ControlProductos.cs" />
     <Compile Include="Modelo\ControlProductos_Modelo.cs" />
     <Compile Include="Modelo\ControlUsuarios_Modelo.cs" />
     <Compile Include="Modelo\ObtenerDatos_Modelo.cs" />

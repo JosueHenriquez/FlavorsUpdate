@@ -1,5 +1,6 @@
 ﻿using System;
 using FlavorsOfTheHouse.Controlador;
+using FlavorsOfTheHouse.Modelo;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,16 +36,22 @@ namespace FlavorsOfTheHouse.Vista
                 if (Constructor_Login.id_usuario <=2)
                 {
                     cmbEmpresa.Enabled = true;
+                    cmbEmpresa.DataSource = ControlProductos.ObtenerEmpresas();
+                    cmbEmpresa.DisplayMember = "empresa";
+                    cmbEmpresa.ValueMember = "Empresa";
                 }
                 else
                 {
                     cmbEmpresa.Enabled = false;
+                    cmbEmpresa.DataSource = ControlProductos.ObtenerEmpresa(Convert.ToInt16(txtIdUsuario.Text));
+                    cmbEmpresa.DisplayMember = "empresa";
+                    cmbEmpresa.ValueMember = "Empresa";
                 }
+               
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Ocurrio un error al cargar la empresas. " +ex ,"Error de proceso",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

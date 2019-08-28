@@ -117,7 +117,7 @@
             this.PanelSidebar.ForeColor = System.Drawing.Color.White;
             this.PanelSidebar.Location = new System.Drawing.Point(0, 25);
             this.PanelSidebar.Name = "PanelSidebar";
-            this.PanelSidebar.Size = new System.Drawing.Size(751, 672);
+            this.PanelSidebar.Size = new System.Drawing.Size(757, 672);
             this.PanelSidebar.TabIndex = 1;
             // 
             // BtnSesion
@@ -925,9 +925,9 @@
             this.BtnAcercaDe,
             this.lblPleca,
             this.FrmActual});
-            this.toolStrip1.Location = new System.Drawing.Point(751, 672);
+            this.toolStrip1.Location = new System.Drawing.Point(757, 672);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(533, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(527, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -995,9 +995,9 @@
             this.PanelContenedor.Controls.Add(this.label1);
             this.PanelContenedor.Controls.Add(this.pictureBox2);
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(751, 25);
+            this.PanelContenedor.Location = new System.Drawing.Point(757, 25);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(533, 647);
+            this.PanelContenedor.Size = new System.Drawing.Size(527, 647);
             this.PanelContenedor.TabIndex = 4;
             // 
             // label1
@@ -1005,7 +1005,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(181, 467);
+            this.label1.Location = new System.Drawing.Point(178, 467);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 23);
             this.label1.TabIndex = 5;
@@ -1015,7 +1015,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = global::FlavorsOfTheHouse.Properties.Resources.sabores_de_la_casa;
-            this.pictureBox2.Location = new System.Drawing.Point(154, 226);
+            this.pictureBox2.Location = new System.Drawing.Point(151, 226);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(275, 224);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

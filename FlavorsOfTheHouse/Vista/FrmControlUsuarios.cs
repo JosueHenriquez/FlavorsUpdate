@@ -28,7 +28,7 @@ namespace FlavorsOfTheHouse.Vista
             if (MessageBox.Show("¿Está seguro que quiere reestablecer la contraseña del usuario" + txtUsuario.Text + "?","Confirmar reseteo de clave",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
             {
                 string reestablecer = txtUsuario.Text + "primeruso";
-                int resultado = ControlUsuarios_Modelo.Reestablecer_Clave(Validaciones.md5(reestablecer), Convert.ToInt16(txtId.Text), txtUsuario.Text);
+                int resultado = ControlUsuarios_Modelo.Reestablecer_Clave(Validaciones.md5(reestablecer),Convert.ToInt16(txtId.Text),txtUsuario.Text);
             }            
         }
 
