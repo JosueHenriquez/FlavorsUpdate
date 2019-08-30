@@ -52,7 +52,6 @@ C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\bin\D
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csprojResolveAssemblyReference.cache
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Properties.Resources.resources
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmControlUsuarios.resources
-C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmInicio.resources
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmInventario.resources
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmLogin.resources
 C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmPrimerUso.resources
@@ -72,3 +71,4 @@ C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheH
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmMetodosRecuperacion.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmRecuperacionPorCorreo.resources
 C:\Users\Josue Henriquez\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmProductos.resources
+C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmProductos.resources
