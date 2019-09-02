@@ -64,6 +64,7 @@
             this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.chkempresas = new System.Windows.Forms.CheckBox();
             this.chkEmpInactivas = new System.Windows.Forms.CheckBox();
+            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.grpMantenimientos.SuspendLayout();
@@ -193,7 +194,8 @@
             this.BtnCerrarFormulario,
             this.txtId,
             this.txtBuscar,
-            this.BtnBuscar});
+            this.BtnBuscar,
+            this.BtnReporte});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(892, 25);
@@ -483,6 +485,15 @@
             this.chkEmpInactivas.UseVisualStyleBackColor = true;
             this.chkEmpInactivas.CheckedChanged += new System.EventHandler(this.chkEmpInactivas_CheckedChanged);
             // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
+            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(112, 22);
+            this.BtnReporte.Text = "Generar Reporte";
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // FrmRegistroEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,5 +574,6 @@
         private System.Windows.Forms.TextBox txtRepresentante;
         private System.Windows.Forms.CheckBox chkempresas;
         private System.Windows.Forms.CheckBox chkEmpInactivas;
+        private System.Windows.Forms.ToolStripButton BtnReporte;
     }
 }

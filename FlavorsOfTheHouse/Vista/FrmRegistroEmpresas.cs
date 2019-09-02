@@ -13,6 +13,7 @@ using System.Drawing.Imaging;
 using FlavorsOfTheHouse.Modelo;
 using MySql.Data.MySqlClient;
 using FlavorsOfTheHouse.Config;
+using FlavorsOfTheHouse.Reportes;
 
 namespace FlavorsOfTheHouse.Vista
 {
@@ -290,6 +291,12 @@ namespace FlavorsOfTheHouse.Vista
             {
                 Mostrar_Empresa_Activas();
             }
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            ReporteEmpresas remp = new ReporteEmpresas();
+            remp.Show();
         }
     }
 }

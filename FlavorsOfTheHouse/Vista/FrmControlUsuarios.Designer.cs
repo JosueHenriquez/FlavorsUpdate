@@ -70,6 +70,7 @@
             this.chkVerUsuarios = new System.Windows.Forms.CheckBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grpMantenimientos.SuspendLayout();
@@ -83,7 +84,8 @@
             this.BtnCerrarFormulario,
             this.txtId,
             this.txtBuscar,
-            this.BtnBuscar});
+            this.BtnBuscar,
+            this.BtnReporte});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1055, 25);
@@ -531,6 +533,15 @@
             this.txtCorreo.Size = new System.Drawing.Size(259, 24);
             this.txtCorreo.TabIndex = 11;
             // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
+            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(174, 22);
+            this.BtnReporte.Text = "Reporte General de usuarios";
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // FrmControlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -625,5 +636,6 @@
         private System.Windows.Forms.CheckBox chkVerUsuarios;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.ToolStripButton BtnReporte;
     }
 }

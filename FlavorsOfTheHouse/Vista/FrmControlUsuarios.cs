@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
 using MySql.Data.MySqlClient;
+using FlavorsOfTheHouse.Reportes;
 
 namespace FlavorsOfTheHouse.Vista
 {
@@ -348,6 +349,12 @@ namespace FlavorsOfTheHouse.Vista
             {
                 Mostrar_Usuarios();
             }
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            ReporteUsuarios rep = new ReporteUsuarios();
+            rep.Show();
         }
     }
 }
