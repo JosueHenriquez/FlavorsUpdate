@@ -55,7 +55,7 @@ namespace FlavorsOfTheHouse.Vista
                 pro.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
                 pro.empacado = dtEmpacado.Text;
                 pro.vencimiento = dtVencimiento.Text;
-                ControlProductos.Ingresar_Producto(pro);
+                //ControlProductos.Ingresar_Producto(pro);
             }
         }
         void Cargar_Productos()
