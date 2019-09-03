@@ -967,9 +967,9 @@ WHERE        temp.id_tipo_empresa = ttip.id_tipo_empresa AND temp.id_estado = te
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        temp.empresa, temp.correo, temp.nit, temp.representante_legal, ttip.tipo_empresa, test.estado
 FROM            tbempresa temp, tbtipo_empresa ttip, tbestado test
-WHERE        temp.id_tipo_empresa = ttip.id_tipo_empresa AND temp.id_estado = test.id_estado AND (temp.id_empresa = ?)";
+WHERE        temp.id_tipo_empresa = ttip.id_tipo_empresa AND temp.id_estado = test.id_estado AND (ttip.id_tipo_empresa = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_empresa", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_empresa", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_tipo_empresa", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_tipo_empresa", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1000,10 +1000,10 @@ WHERE        temp.id_tipo_empresa = ttip.id_tipo_empresa AND temp.id_estado = te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int ConsultaParametrizadadeEmpresas(DataSetEmpresa.tbempresaDataTable dataTable, global::System.Nullable<int> id_empresa) {
+        public virtual int ConsultaParametrizadaEmpresa(DataSetEmpresa.tbempresaDataTable dataTable, global::System.Nullable<int> id_tipo_empresa) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((id_empresa.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_empresa.Value));
+            if ((id_tipo_empresa.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_tipo_empresa.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1019,10 +1019,10 @@ WHERE        temp.id_tipo_empresa = ttip.id_tipo_empresa AND temp.id_estado = te
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSetEmpresa.tbempresaDataTable GetDataBy(global::System.Nullable<int> id_empresa) {
+        public virtual DataSetEmpresa.tbempresaDataTable GetDataBy(global::System.Nullable<int> id_tipo_empresa) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((id_empresa.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_empresa.Value));
+            if ((id_tipo_empresa.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_tipo_empresa.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;

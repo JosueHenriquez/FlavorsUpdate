@@ -353,7 +353,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnReporte_Click(object sender, EventArgs e)
         {
-            ReporteUsuarios rep = new ReporteUsuarios();
+            ReporteUsuario rep = new ReporteUsuario();
             rep.Show();
         }
     }

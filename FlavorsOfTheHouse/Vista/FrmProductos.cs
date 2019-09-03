@@ -55,7 +55,7 @@ namespace FlavorsOfTheHouse.Vista
                 pro.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
                 pro.empacado = dtEmpacado.Text;
                 pro.vencimiento = dtVencimiento.Text;
-                //ControlProductos.Ingresar_Producto(pro);
+                ControlProductos.Ingresar_Producto(pro);
             }
         }
         void Cargar_Productos()
@@ -93,8 +93,8 @@ namespace FlavorsOfTheHouse.Vista
                     cmbEmpresa.ValueMember = "Empresa";
                 }
                 cmbCategoria.DataSource = ControlProductos.Cargar_Tipo_Productos();
-                cmbCategoria.DisplayMember = "tipo_producto";
-                cmbCategoria.ValueMember = "id_tipo_producto";
+                cmbCategoria.DisplayMember = "categoria";
+                cmbCategoria.ValueMember = "id_categoria_producto";
 
                 cmbEstado.DataSource = ControlProductos.Cargar_Estado_Productos();
                 cmbEstado.DisplayMember = "estado_producto";

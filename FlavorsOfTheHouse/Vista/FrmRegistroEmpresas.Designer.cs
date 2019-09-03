@@ -45,6 +45,7 @@
             this.txtId = new System.Windows.Forms.ToolStripTextBox();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.BtnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.chkempresas = new System.Windows.Forms.CheckBox();
             this.chkEmpInactivas = new System.Windows.Forms.CheckBox();
-            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.grpMantenimientos.SuspendLayout();
@@ -235,6 +235,15 @@
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(110, 22);
             this.BtnBuscar.Text = "Buscar Empresa";
+            // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
+            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(112, 22);
+            this.BtnReporte.Text = "Generar Reporte";
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // label9
             // 
@@ -484,15 +493,6 @@
             this.chkEmpInactivas.Text = "Visualizar empresas inactivas";
             this.chkEmpInactivas.UseVisualStyleBackColor = true;
             this.chkEmpInactivas.CheckedChanged += new System.EventHandler(this.chkEmpInactivas_CheckedChanged);
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
-            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(112, 22);
-            this.BtnReporte.Text = "Generar Reporte";
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // FrmRegistroEmpresas
             // 

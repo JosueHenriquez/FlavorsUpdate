@@ -35,6 +35,7 @@
             this.txtId = new System.Windows.Forms.ToolStripTextBox();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.BtnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             this.BtnExaminar = new System.Windows.Forms.Button();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -70,7 +71,6 @@
             this.chkVerUsuarios = new System.Windows.Forms.CheckBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grpMantenimientos.SuspendLayout();
@@ -126,6 +126,15 @@
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(105, 22);
             this.BtnBuscar.Text = "Buscar Usuario";
+            // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
+            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(174, 22);
+            this.BtnReporte.Text = "Reporte General de usuarios";
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // BtnExaminar
             // 
@@ -532,15 +541,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(259, 24);
             this.txtCorreo.TabIndex = 11;
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
-            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(174, 22);
-            this.BtnReporte.Text = "Reporte General de usuarios";
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // FrmControlUsuarios
             // 

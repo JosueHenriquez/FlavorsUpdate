@@ -4,17 +4,17 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbflavorsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbflavorsConnectionString (Settings)" PropertyReference="ApplicationSettings.FlavorsOfTheHouse.Properties.Settings.GlobalReference.Default.dbflavorsConnectionString" Provider="System.Data.Odbc" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.FlavorsOfTheHouse.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.Odbc" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbusuariosTableAdapter" GeneratorDataComponentClassName="tbusuariosTableAdapter" Name="tbusuarios" UserDataComponentName="tbusuariosTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableUsuariosTableAdapter" GeneratorDataComponentClassName="DataTableUsuariosTableAdapter" Name="DataTableUsuarios" UserDataComponentName="DataTableUsuariosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dbflavorsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="VerTodosLosUsuarios" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="VerTodosLosUsuarios" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="VerTodosLosUsuarios">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="VerTodasLosUsuarios" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="VerTodasLosUsuarios" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="VerTodasLosUsuarios">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tu.usuario, tu.nombres, tu.apellidos, tu.email, temp.empresa, test.estado, ttip.tipo_usuario
-FROM            tbusuario tu, tbempresa temp, tbestado test, tbtipo_usuario ttip
-WHERE        tu.id_empresa = temp.id_empresa AND tu.id_estado = test.id_estado AND tu.id_tipousuario = ttip.id_tipo_usuario</CommandText>
+                    <CommandText>SELECT        tu.usuario, tu.nombres, tu.apellidos, tu.email, te.empresa, tes.estado, tt.tipo_usuario
+FROM            tbusuario tu, tbempresa te, tbestado tes, tbtipo_usuario tt
+WHERE        te.id_empresa = tu.id_empresa AND tes.id_estado = tu.id_estado AND tt.id_tipo_usuario = tu.id_tipousuario</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -29,7 +29,20 @@ WHERE        tu.id_empresa = temp.id_empresa AND tu.id_estado = test.id_estado A
               <Mapping SourceColumn="estado" DataSetColumn="estado" />
               <Mapping SourceColumn="tipo_usuario" DataSetColumn="tipo_usuario" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="ConsultaParametrizada" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="ConsultaParametrizada" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ConsultaParametrizada">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tu.usuario, tu.nombres, tu.apellidos, tu.email, te.empresa, tes.estado, tt.tipo_usuario
+FROM            tbusuario tu, tbempresa te, tbestado tes, tbtipo_usuario tt
+WHERE        tu.id_empresa = te.id_empresa AND tu.id_estado = tes.id_estado AND tu.id_tipousuario = tt.id_tipo_usuario AND (tt.id_tipo_usuario = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="id_tipo_usuario" DataSourceName="dbflavors.tbtipo_usuario" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="id_tipo_usuario" Precision="0" Scale="0" Size="0" SourceColumn="id_tipo_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -39,7 +52,7 @@ WHERE        tu.id_empresa = temp.id_empresa AND tu.id_estado = test.id_estado A
   <xs:element name="DataSetUsuarios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetUsuarios" msprop:Generator_UserDSName="DataSetUsuarios">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbusuarios" msprop:Generator_TableClassName="tbusuariosDataTable" msprop:Generator_TableVarName="tabletbusuarios" msprop:Generator_TablePropName="tbusuarios" msprop:Generator_RowDeletingName="tbusuariosRowDeleting" msprop:Generator_RowChangingName="tbusuariosRowChanging" msprop:Generator_RowEvHandlerName="tbusuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbusuariosRowDeleted" msprop:Generator_UserTableName="tbusuarios" msprop:Generator_RowChangedName="tbusuariosRowChanged" msprop:Generator_RowEvArgName="tbusuariosRowChangeEvent" msprop:Generator_RowClassName="tbusuariosRow">
+        <xs:element name="DataTableUsuarios" msprop:Generator_TableClassName="DataTableUsuariosDataTable" msprop:Generator_TableVarName="tableDataTableUsuarios" msprop:Generator_TablePropName="DataTableUsuarios" msprop:Generator_RowDeletingName="DataTableUsuariosRowDeleting" msprop:Generator_RowChangingName="DataTableUsuariosRowChanging" msprop:Generator_RowEvHandlerName="DataTableUsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableUsuariosRowDeleted" msprop:Generator_UserTableName="DataTableUsuarios" msprop:Generator_RowChangedName="DataTableUsuariosRowChanged" msprop:Generator_RowEvArgName="DataTableUsuariosRowChangeEvent" msprop:Generator_RowClassName="DataTableUsuariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" minOccurs="0">

@@ -24,7 +24,7 @@ namespace FlavorsOfTheHouse.Reportes {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSetUsuarios : global::System.Data.DataSet {
         
-        private tbusuariosDataTable tabletbusuarios;
+        private DataTableUsuariosDataTable tableDataTableUsuarios;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace FlavorsOfTheHouse.Reportes {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["tbusuarios"] != null)) {
-                    base.Tables.Add(new tbusuariosDataTable(ds.Tables["tbusuarios"]));
+                if ((ds.Tables["DataTableUsuarios"] != null)) {
+                    base.Tables.Add(new DataTableUsuariosDataTable(ds.Tables["DataTableUsuarios"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace FlavorsOfTheHouse.Reportes {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tbusuariosDataTable tbusuarios {
+        public DataTableUsuariosDataTable DataTableUsuarios {
             get {
-                return this.tabletbusuarios;
+                return this.tableDataTableUsuarios;
             }
         }
         
@@ -152,8 +152,8 @@ namespace FlavorsOfTheHouse.Reportes {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["tbusuarios"] != null)) {
-                    base.Tables.Add(new tbusuariosDataTable(ds.Tables["tbusuarios"]));
+                if ((ds.Tables["DataTableUsuarios"] != null)) {
+                    base.Tables.Add(new DataTableUsuariosDataTable(ds.Tables["DataTableUsuarios"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace FlavorsOfTheHouse.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabletbusuarios = ((tbusuariosDataTable)(base.Tables["tbusuarios"]));
+            this.tableDataTableUsuarios = ((DataTableUsuariosDataTable)(base.Tables["DataTableUsuarios"]));
             if ((initTable == true)) {
-                if ((this.tabletbusuarios != null)) {
-                    this.tabletbusuarios.InitVars();
+                if ((this.tableDataTableUsuarios != null)) {
+                    this.tableDataTableUsuarios.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace FlavorsOfTheHouse.Reportes {
             this.Namespace = "http://tempuri.org/DataSetUsuarios.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabletbusuarios = new tbusuariosDataTable();
-            base.Tables.Add(this.tabletbusuarios);
+            this.tableDataTableUsuarios = new DataTableUsuariosDataTable();
+            base.Tables.Add(this.tableDataTableUsuarios);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetbusuarios() {
+        private bool ShouldSerializeDataTableUsuarios() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace FlavorsOfTheHouse.Reportes {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tbusuariosRowChangeEventHandler(object sender, tbusuariosRowChangeEvent e);
+        public delegate void DataTableUsuariosRowChangeEventHandler(object sender, DataTableUsuariosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tbusuariosDataTable : global::System.Data.TypedTableBase<tbusuariosRow> {
+        public partial class DataTableUsuariosDataTable : global::System.Data.TypedTableBase<DataTableUsuariosRow> {
             
             private global::System.Data.DataColumn columnusuario;
             
@@ -295,8 +295,8 @@ namespace FlavorsOfTheHouse.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbusuariosDataTable() {
-                this.TableName = "tbusuarios";
+            public DataTableUsuariosDataTable() {
+                this.TableName = "DataTableUsuarios";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace FlavorsOfTheHouse.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tbusuariosDataTable(global::System.Data.DataTable table) {
+            internal DataTableUsuariosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,7 +321,7 @@ namespace FlavorsOfTheHouse.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tbusuariosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DataTableUsuariosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -393,34 +393,34 @@ namespace FlavorsOfTheHouse.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbusuariosRow this[int index] {
+            public DataTableUsuariosRow this[int index] {
                 get {
-                    return ((tbusuariosRow)(this.Rows[index]));
+                    return ((DataTableUsuariosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbusuariosRowChangeEventHandler tbusuariosRowChanging;
+            public event DataTableUsuariosRowChangeEventHandler DataTableUsuariosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbusuariosRowChangeEventHandler tbusuariosRowChanged;
+            public event DataTableUsuariosRowChangeEventHandler DataTableUsuariosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbusuariosRowChangeEventHandler tbusuariosRowDeleting;
+            public event DataTableUsuariosRowChangeEventHandler DataTableUsuariosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbusuariosRowChangeEventHandler tbusuariosRowDeleted;
+            public event DataTableUsuariosRowChangeEventHandler DataTableUsuariosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddtbusuariosRow(tbusuariosRow row) {
+            public void AddDataTableUsuariosRow(DataTableUsuariosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbusuariosRow AddtbusuariosRow(string usuario, string nombres, string apellidos, string email, string empresa, string estado, string tipo_usuario) {
-                tbusuariosRow rowtbusuariosRow = ((tbusuariosRow)(this.NewRow()));
+            public DataTableUsuariosRow AddDataTableUsuariosRow(string usuario, string nombres, string apellidos, string email, string empresa, string estado, string tipo_usuario) {
+                DataTableUsuariosRow rowDataTableUsuariosRow = ((DataTableUsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         usuario,
                         nombres,
@@ -429,15 +429,15 @@ namespace FlavorsOfTheHouse.Reportes {
                         empresa,
                         estado,
                         tipo_usuario};
-                rowtbusuariosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtbusuariosRow);
-                return rowtbusuariosRow;
+                rowDataTableUsuariosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDataTableUsuariosRow);
+                return rowDataTableUsuariosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tbusuariosDataTable cln = ((tbusuariosDataTable)(base.Clone()));
+                DataTableUsuariosDataTable cln = ((DataTableUsuariosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,7 +445,7 @@ namespace FlavorsOfTheHouse.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tbusuariosDataTable();
+                return new DataTableUsuariosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -489,28 +489,28 @@ namespace FlavorsOfTheHouse.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbusuariosRow NewtbusuariosRow() {
-                return ((tbusuariosRow)(this.NewRow()));
+            public DataTableUsuariosRow NewDataTableUsuariosRow() {
+                return ((DataTableUsuariosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tbusuariosRow(builder);
+                return new DataTableUsuariosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tbusuariosRow);
+                return typeof(DataTableUsuariosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tbusuariosRowChanged != null)) {
-                    this.tbusuariosRowChanged(this, new tbusuariosRowChangeEvent(((tbusuariosRow)(e.Row)), e.Action));
+                if ((this.DataTableUsuariosRowChanged != null)) {
+                    this.DataTableUsuariosRowChanged(this, new DataTableUsuariosRowChangeEvent(((DataTableUsuariosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -518,8 +518,8 @@ namespace FlavorsOfTheHouse.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tbusuariosRowChanging != null)) {
-                    this.tbusuariosRowChanging(this, new tbusuariosRowChangeEvent(((tbusuariosRow)(e.Row)), e.Action));
+                if ((this.DataTableUsuariosRowChanging != null)) {
+                    this.DataTableUsuariosRowChanging(this, new DataTableUsuariosRowChangeEvent(((DataTableUsuariosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -527,8 +527,8 @@ namespace FlavorsOfTheHouse.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tbusuariosRowDeleted != null)) {
-                    this.tbusuariosRowDeleted(this, new tbusuariosRowChangeEvent(((tbusuariosRow)(e.Row)), e.Action));
+                if ((this.DataTableUsuariosRowDeleted != null)) {
+                    this.DataTableUsuariosRowDeleted(this, new DataTableUsuariosRowChangeEvent(((DataTableUsuariosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -536,14 +536,14 @@ namespace FlavorsOfTheHouse.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tbusuariosRowDeleting != null)) {
-                    this.tbusuariosRowDeleting(this, new tbusuariosRowChangeEvent(((tbusuariosRow)(e.Row)), e.Action));
+                if ((this.DataTableUsuariosRowDeleting != null)) {
+                    this.DataTableUsuariosRowDeleting(this, new DataTableUsuariosRowChangeEvent(((DataTableUsuariosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovetbusuariosRow(tbusuariosRow row) {
+            public void RemoveDataTableUsuariosRow(DataTableUsuariosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -570,7 +570,7 @@ namespace FlavorsOfTheHouse.Reportes {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tbusuariosDataTable";
+                attribute2.FixedValue = "DataTableUsuariosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -614,15 +614,15 @@ namespace FlavorsOfTheHouse.Reportes {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tbusuariosRow : global::System.Data.DataRow {
+        public partial class DataTableUsuariosRow : global::System.Data.DataRow {
             
-            private tbusuariosDataTable tabletbusuarios;
+            private DataTableUsuariosDataTable tableDataTableUsuarios;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tbusuariosRow(global::System.Data.DataRowBuilder rb) : 
+            internal DataTableUsuariosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletbusuarios = ((tbusuariosDataTable)(this.Table));
+                this.tableDataTableUsuarios = ((DataTableUsuariosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -630,14 +630,14 @@ namespace FlavorsOfTheHouse.Reportes {
             public string usuario {
                 get {
                     try {
-                        return ((string)(this[this.tabletbusuarios.usuarioColumn]));
+                        return ((string)(this[this.tableDataTableUsuarios.usuarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usuario\' de la tabla \'tbusuarios\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usuario\' de la tabla \'DataTableUsuarios\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbusuarios.usuarioColumn] = value;
+                    this[this.tableDataTableUsuarios.usuarioColumn] = value;
                 }
             }
             
@@ -646,14 +646,14 @@ namespace FlavorsOfTheHouse.Reportes {
             public string nombres {
                 get {
                     try {
-                        return ((string)(this[this.tabletbusuarios.nombresColumn]));
+                        return ((string)(this[this.tableDataTableUsuarios.nombresColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombres\' de la tabla \'tbusuarios\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombres\' de la tabla \'DataTableUsuarios\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbusuarios.nombresColumn] = value;
+                    this[this.tableDataTableUsuarios.nombresColumn] = value;
                 }
             }
             
@@ -662,14 +662,14 @@ namespace FlavorsOfTheHouse.Reportes {
             public string apellidos {
                 get {
                     try {
-                        return ((string)(this[this.tabletbusuarios.apellidosColumn]));
+                        return ((string)(this[this.tableDataTableUsuarios.apellidosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'apellidos\' de la tabla \'tbusuarios\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'apellidos\' de la tabla \'DataTableUsuarios\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbusuarios.apellidosColumn] = value;
+                    this[this.tableDataTableUsuarios.apellidosColumn] = value;
                 }
             }
             
@@ -678,14 +678,14 @@ namespace FlavorsOfTheHouse.Reportes {
             public string email {
                 get {
                     try {
-                        return ((string)(this[this.tabletbusuarios.emailColumn]));
+                        return ((string)(this[this.tableDataTableUsuarios.emailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'email\' de la tabla \'tbusuarios\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'email\' de la tabla \'DataTableUsuarios\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbusuarios.emailColumn] = value;
+                    this[this.tableDataTableUsuarios.emailColumn] = value;
                 }
             }
             
@@ -694,14 +694,14 @@ namespace FlavorsOfTheHouse.Reportes {
             public string empresa {
                 get {
                     try {
-                        return ((string)(this[this.tabletbusuarios.empresaColumn]));
+                        return ((string)(this[this.tableDataTableUsuarios.empresaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'empresa\' de la tabla \'tbusuarios\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'empresa\' de la tabla \'DataTableUsuarios\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbusuarios.empresaColumn] = value;
+                    this[this.tableDataTableUsuarios.empresaColumn] = value;
                 }
             }
             
@@ -710,14 +710,14 @@ namespace FlavorsOfTheHouse.Reportes {
             public string estado {
                 get {
                     try {
-                        return ((string)(this[this.tabletbusuarios.estadoColumn]));
+                        return ((string)(this[this.tableDataTableUsuarios.estadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estado\' de la tabla \'tbusuarios\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estado\' de la tabla \'DataTableUsuarios\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletbusuarios.estadoColumn] = value;
+                    this[this.tableDataTableUsuarios.estadoColumn] = value;
                 }
             }
             
@@ -725,83 +725,83 @@ namespace FlavorsOfTheHouse.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string tipo_usuario {
                 get {
-                    return ((string)(this[this.tabletbusuarios.tipo_usuarioColumn]));
+                    return ((string)(this[this.tableDataTableUsuarios.tipo_usuarioColumn]));
                 }
                 set {
-                    this[this.tabletbusuarios.tipo_usuarioColumn] = value;
+                    this[this.tableDataTableUsuarios.tipo_usuarioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsusuarioNull() {
-                return this.IsNull(this.tabletbusuarios.usuarioColumn);
+                return this.IsNull(this.tableDataTableUsuarios.usuarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetusuarioNull() {
-                this[this.tabletbusuarios.usuarioColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTableUsuarios.usuarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnombresNull() {
-                return this.IsNull(this.tabletbusuarios.nombresColumn);
+                return this.IsNull(this.tableDataTableUsuarios.nombresColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnombresNull() {
-                this[this.tabletbusuarios.nombresColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTableUsuarios.nombresColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsapellidosNull() {
-                return this.IsNull(this.tabletbusuarios.apellidosColumn);
+                return this.IsNull(this.tableDataTableUsuarios.apellidosColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetapellidosNull() {
-                this[this.tabletbusuarios.apellidosColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTableUsuarios.apellidosColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsemailNull() {
-                return this.IsNull(this.tabletbusuarios.emailColumn);
+                return this.IsNull(this.tableDataTableUsuarios.emailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetemailNull() {
-                this[this.tabletbusuarios.emailColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTableUsuarios.emailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsempresaNull() {
-                return this.IsNull(this.tabletbusuarios.empresaColumn);
+                return this.IsNull(this.tableDataTableUsuarios.empresaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetempresaNull() {
-                this[this.tabletbusuarios.empresaColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTableUsuarios.empresaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsestadoNull() {
-                return this.IsNull(this.tabletbusuarios.estadoColumn);
+                return this.IsNull(this.tableDataTableUsuarios.estadoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetestadoNull() {
-                this[this.tabletbusuarios.estadoColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTableUsuarios.estadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -809,22 +809,22 @@ namespace FlavorsOfTheHouse.Reportes {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tbusuariosRowChangeEvent : global::System.EventArgs {
+        public class DataTableUsuariosRowChangeEvent : global::System.EventArgs {
             
-            private tbusuariosRow eventRow;
+            private DataTableUsuariosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbusuariosRowChangeEvent(tbusuariosRow row, global::System.Data.DataRowAction action) {
+            public DataTableUsuariosRowChangeEvent(DataTableUsuariosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbusuariosRow Row {
+            public DataTableUsuariosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -852,7 +852,7 @@ namespace FlavorsOfTheHouse.Reportes.DataSetUsuariosTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tbusuariosTableAdapter : global::System.ComponentModel.Component {
+    public partial class DataTableUsuariosTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
         
@@ -866,7 +866,7 @@ namespace FlavorsOfTheHouse.Reportes.DataSetUsuariosTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public tbusuariosTableAdapter() {
+        public DataTableUsuariosTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -963,7 +963,7 @@ namespace FlavorsOfTheHouse.Reportes.DataSetUsuariosTableAdapters {
             this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tbusuarios";
+            tableMapping.DataSetTable = "DataTableUsuarios";
             tableMapping.ColumnMappings.Add("usuario", "usuario");
             tableMapping.ColumnMappings.Add("nombres", "nombres");
             tableMapping.ColumnMappings.Add("apellidos", "apellidos");
@@ -978,26 +978,33 @@ namespace FlavorsOfTheHouse.Reportes.DataSetUsuariosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.Odbc.OdbcConnection();
-            this._connection.ConnectionString = global::FlavorsOfTheHouse.Properties.Settings.Default.dbflavorsConnectionString;
+            this._connection.ConnectionString = global::FlavorsOfTheHouse.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        tu.usuario, tu.nombres, tu.apellidos, tu.email, temp.empresa, test.estado, ttip.tipo_usuario
-FROM            tbusuario tu, tbempresa temp, tbestado test, tbtipo_usuario ttip
-WHERE        tu.id_empresa = temp.id_empresa AND tu.id_estado = test.id_estado AND tu.id_tipousuario = ttip.id_tipo_usuario";
+            this._commandCollection[0].CommandText = @"SELECT        tu.usuario, tu.nombres, tu.apellidos, tu.email, te.empresa, tes.estado, tt.tipo_usuario
+FROM            tbusuario tu, tbempresa te, tbestado tes, tbtipo_usuario tt
+WHERE        te.id_empresa = tu.id_empresa AND tes.id_estado = tu.id_estado AND tt.id_tipo_usuario = tu.id_tipousuario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        tu.usuario, tu.nombres, tu.apellidos, tu.email, te.empresa, tes.estado, tt.tipo_usuario
+FROM            tbusuario tu, tbempresa te, tbestado tes, tbtipo_usuario tt
+WHERE        tu.id_empresa = te.id_empresa AND tu.id_estado = tes.id_estado AND tu.id_tipousuario = tt.id_tipo_usuario AND (tt.id_tipo_usuario = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_tipo_usuario", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_tipo_usuario", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int VerTodosLosUsuarios(DataSetUsuarios.tbusuariosDataTable dataTable) {
+        public virtual int VerTodasLosUsuarios(DataSetUsuarios.DataTableUsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1010,9 +1017,45 @@ WHERE        tu.id_empresa = temp.id_empresa AND tu.id_estado = test.id_estado A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetUsuarios.tbusuariosDataTable GetData() {
+        public virtual DataSetUsuarios.DataTableUsuariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetUsuarios.tbusuariosDataTable dataTable = new DataSetUsuarios.tbusuariosDataTable();
+            DataSetUsuarios.DataTableUsuariosDataTable dataTable = new DataSetUsuarios.DataTableUsuariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ConsultaParametrizada(DataSetUsuarios.DataTableUsuariosDataTable dataTable, global::System.Nullable<int> id_tipo_usuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id_tipo_usuario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_tipo_usuario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetUsuarios.DataTableUsuariosDataTable GetDataBy(global::System.Nullable<int> id_tipo_usuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id_tipo_usuario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_tipo_usuario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            DataSetUsuarios.DataTableUsuariosDataTable dataTable = new DataSetUsuarios.DataTableUsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

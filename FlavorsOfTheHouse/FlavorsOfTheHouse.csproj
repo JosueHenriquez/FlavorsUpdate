@@ -70,6 +70,9 @@
     <Compile Include="Modelo\Validar_Login_Modelo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DataSetEmpresa.cs">
+      <DependentUpon>DataSetEmpresa.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DataSetEmpresa.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,11 +89,11 @@
     <Compile Include="Reportes\ReporteEmpresas.Designer.cs">
       <DependentUpon>ReporteEmpresas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ReporteUsuarios.cs">
+    <Compile Include="Reportes\ReporteUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteUsuarios.Designer.cs">
-      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    <Compile Include="Reportes\ReporteUsuario.Designer.cs">
+      <DependentUpon>ReporteUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmAcercaDe.cs">
       <SubType>Form</SubType>
@@ -221,8 +224,8 @@
     <EmbeddedResource Include="Reportes\ReporteEmpresas.resx">
       <DependentUpon>ReporteEmpresas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteUsuarios.resx">
-      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ReporteUsuario.resx">
+      <DependentUpon>ReporteUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
