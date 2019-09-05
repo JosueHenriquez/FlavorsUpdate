@@ -1,4 +1,5 @@
 ﻿using System;
+using FlavorsOfTheHouse.Reportes;
 using FlavorsOfTheHouse.Controlador;
 using FlavorsOfTheHouse.Modelo;
 using System.Collections.Generic;
@@ -231,6 +232,12 @@ namespace FlavorsOfTheHouse.Vista
                 Eliminar_Producto(Convert.ToInt16(txtId.Text));
                 Cargar_Productos();
             }            
+        }
+
+        private void BtnProductos_Click(object sender, EventArgs e)
+        {
+            ReporteProductos repro = new ReporteProductos();
+            repro.Show();
         }
     }
 }

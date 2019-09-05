@@ -34,6 +34,7 @@
             this.txtId = new System.Windows.Forms.ToolStripTextBox();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.BtnProductos = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,7 +82,8 @@
             this.toolStripButton1,
             this.txtId,
             this.txtBuscar,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.BtnProductos});
             this.BtnCerrar.Location = new System.Drawing.Point(0, 0);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(1055, 25);
@@ -122,6 +124,15 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(62, 22);
             this.toolStripButton2.Text = "Buscar";
+            // 
+            // BtnProductos
+            // 
+            this.BtnProductos.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
+            this.BtnProductos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnProductos.Name = "BtnProductos";
+            this.BtnProductos.Size = new System.Drawing.Size(182, 22);
+            this.BtnProductos.Text = "Generar reporte de productos";
+            this.BtnProductos.Click += new System.EventHandler(this.BtnProductos_Click);
             // 
             // label1
             // 
@@ -625,5 +636,6 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button BtnFiltrar;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolStripButton BtnProductos;
     }
 }
