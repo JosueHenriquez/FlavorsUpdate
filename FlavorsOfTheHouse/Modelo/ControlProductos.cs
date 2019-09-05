@@ -68,7 +68,7 @@ namespace FlavorsOfTheHouse.Modelo
         public static DataTable Cargar_Productos()
         {
             DataTable data = new DataTable();
-            string query = "SELECT * FROM tbproducto";
+            string query = "SELECT DISTINCT tp.*, tc.categoria, te.empresa, ts.estado_producto, CONCAT(tu.nombres,' ',tu.apellidos) FROM tbproducto tp, tbusuario tu, tbcategoria_producto tc, tbempresa te, tbestado_producto ts WHERE tu.id_usuario =  tp.id_usuario AND tp.id_categoria = tc.id_categoria_producto AND tp.id_empresa = te.id_empresa AND tp.id_estado = ts.id_estado_producto";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
@@ -136,6 +136,68 @@ namespace FlavorsOfTheHouse.Modelo
             catch (Exception ex)
             {
                 MessageBox.Show("Oops, ocurrio un error durante la inserción de datos, verifique su conexión a internet. " + ex,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+        public static bool ObtenerUsuarioPro(int idusuario)
+        {
+            bool retorno = false;
+            try
+            {
+                string query = "SELECT CONCAT(nombres,' ',apellidos) As Nombres FROM tbusuario WHERE id_usuario = ?param1";
+                MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToBoolean(cmdselect.ExecuteScalar());
+                if (retorno ==  true)
+                {
+                    MySqlDataReader reader = cmdselect.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Constructor_Producto.usuario = reader.GetString(0);
+                    }
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Los nombres de usuario no pudieron ser recuperados intentelo nuevamente, debido a un problema de conexión","Error de conexión",MessageBoxButtons.RetryCancel,MessageBoxIcon.Information);
+                return retorno;
+            }
+        }
+        public static int Actualizar_Producto(Constructor_Producto cpro)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("UPDATE tbproducto SET nombre_producto = '"+cpro.producto+ "', precio = '" + cpro.precio + "', fecha_empacado = '"+cpro.empacado+ "', fecha_caducidad = '" + cpro.vencimiento+ "', existencia = '"+cpro.cantidad+"', id_categoria = '"+cpro.id_tipo+"', id_empresa = '"+cpro.id_empresa+"', id_estado = '"+cpro.id_estado+"' WHERE id_producto = '"+cpro.id_producto+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
+                if (retorno == 1)
+                {
+                    MessageBox.Show("El producto ha sido actualizado con exito.","Proceso completado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Oops!, ocurrio un error en la actualización de datos del producto, debido a un fallo de conexión, consulte con su administrador.","Error de conexión",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+        public static int Eliminar_Producto(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmddel = new MySqlCommand(string.Format("DELETE FROM tbproducto WHERE id_producto = '"+id+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmddel.ExecuteNonQuery());
+                if (retorno == 1)
+                {
+                    MessageBox.Show("El producto fue eliminado correctamente.","Proceso completado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error de conexión al momento de eliminar el producto, consulte al administrador. " + ex,"Error de conexión",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return retorno;
             }
         }

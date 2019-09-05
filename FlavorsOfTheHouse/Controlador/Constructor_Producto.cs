@@ -13,6 +13,7 @@ namespace FlavorsOfTheHouse.Controlador
         public int codigo_producto { get; set; }
         public string precio { get; set; }
         public int id_usuario { get; set; }
+        public static string usuario { get; set; }
         public int cantidad { get; set; }
         public string empacado { get; set; }
         public string vencimiento { get; set; }

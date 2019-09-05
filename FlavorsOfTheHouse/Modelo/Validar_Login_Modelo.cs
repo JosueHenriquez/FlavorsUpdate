@@ -45,7 +45,7 @@ namespace FlavorsOfTheHouse.Modelo
                             while (reader.Read())
                             {
                                 Constructor_Login_Datos.empresa = reader.GetInt16(9);
-                                Constructor_Login_Datos.nivel = reader.GetInt16(10);
+                                Constructor_Login_Datos.nivel = reader.GetInt16(11);
                                 Constructor_Login_Datos.nombre = reader.GetString(3) + " " + reader.GetString(4);
                                 Constructor_Login.id_usuario = reader.GetInt16(0);
                             }
