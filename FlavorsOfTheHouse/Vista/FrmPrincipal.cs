@@ -294,7 +294,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnFacturacion_Click(object sender, EventArgs e)
         {
-            //FrmActual.Text = BtnUsuarios.Text.Trim();
+            AbrirFormulario<FrmFacturacion>();
             LblFormActual.Text = BtnAdministracion.Text.Trim();
         }
 

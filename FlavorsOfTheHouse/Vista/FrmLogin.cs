@@ -58,8 +58,7 @@ namespace FlavorsOfTheHouse.Vista
                 }
             }
             else
-            {
-                
+            {                
                 //ocultar campos de login
                 lbllogin.Visible = false;
                 txtContrasena.Visible = false;

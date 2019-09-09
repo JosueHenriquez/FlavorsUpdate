@@ -31,8 +31,26 @@ namespace FlavorsOfTheHouse.Config
             {
                 e.Handled = false;
             }
+            else
+            {
+                e.Handled = true;
+            }
         }
-
+        public static void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
         public static void SinEspacios(KeyPressEventArgs e)
         {
             if (char.IsSeparator(e.KeyChar))
