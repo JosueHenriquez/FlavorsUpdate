@@ -17,7 +17,6 @@ namespace FlavorsOfTheHouse.Reportes
         {
             InitializeComponent();
         }
-
         private void ReporteUsuario_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DataSetUsuarios.DataTableUsuarios' Puede moverla o quitarla según sea necesario.
@@ -42,7 +41,6 @@ namespace FlavorsOfTheHouse.Reportes
             this.DataTableUsuariosTableAdapter.ConsultaParametrizada(this.DataSetUsuarios.DataTableUsuarios,Convert.ToInt16(cmbTipoUsuarios.SelectedValue));
             this.reportViewer1.RefreshReport();
         }
-
         private void BtnGeneral_Click(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DataSetUsuarios.DataTableUsuarios' Puede moverla o quitarla según sea necesario.

@@ -569,7 +569,7 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>3.77664in</Height>
+    <Height>3.14122in</Height>
     <Style />
   </Body>
   <Width>9.37462in</Width>
@@ -653,7 +653,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.40229cm</Height>
+      <Height>0.9175cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -674,7 +674,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox23</rd:DefaultName>
-          <Top>0.80229cm</Top>
+          <Top>0.3175cm</Top>
           <Height>0.6cm</Height>
           <Width>23.38098cm</Width>
           <Style>

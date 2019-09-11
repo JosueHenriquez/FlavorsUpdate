@@ -1,4 +1,5 @@
 ﻿using System;
+using FlavorsOfTheHouse.Reportes;
 using FlavorsOfTheHouse.Config;
 using FlavorsOfTheHouse.Controlador;
 using FlavorsOfTheHouse.Modelo;
@@ -299,6 +300,8 @@ namespace FlavorsOfTheHouse.Vista
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             BtnCrearFactura.Enabled = true;
+            ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text),Convert.ToInt16(txtIdusuario.Text));
+            factu.ShowDialog();
         }
         
         //Anular factura

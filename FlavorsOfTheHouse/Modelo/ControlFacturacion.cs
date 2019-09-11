@@ -82,12 +82,38 @@ namespace FlavorsOfTheHouse.Modelo
             int retorno = 0;
             try
             {
-                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbdetalle_factura (id_producto, cantidad, id_factura, total_parcial) VALUES ('"+det.id_producto+"','"+det.cantidad+ "','"+det.id_factura+ "','"+det.total_parcial+"')"),Conexion_Config.ObtenerConexion());
-                retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
-                if (retorno<1)
+                string query1 = "SELECT * FROM tbdetalle_factura WHERE id_factura = ?detalle AND id_producto = ?producto";
+                MySqlCommand cmdselect1 = new MySqlCommand(query1, Conexion_Config.ObtenerConexion());
+                cmdselect1.Parameters.Add(new MySqlParameter("detalle", det.id_factura));
+                cmdselect1.Parameters.Add(new MySqlParameter("producto", det.id_producto));
+                bool existencia = Convert.ToBoolean(cmdselect1.ExecuteScalar());
+                if (existencia == false)
                 {
-                    MessageBox.Show("El detalle no pudo ser agregado a la factura.","Proceso no completado",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbdetalle_factura (id_producto, cantidad, id_factura, total_parcial) VALUES ('" + det.id_producto + "','" + det.cantidad + "','" + det.id_factura + "','" + det.total_parcial + "')"), Conexion_Config.ObtenerConexion());
+                    retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
+                    if (retorno < 1)
+                    {
+                        MessageBox.Show("El detalle no pudo ser agregado a la factura.", "Proceso no completado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+                else
+                {
+                    //Actualizar detalle
+                    MySqlDataReader reader = cmdselect1.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int iddetalle = reader.GetInt16(0);
+                        int cantidad = reader.GetInt16(2);
+                        double pago = reader.GetDouble(4) + det.total_parcial;
+                        int nuevacantidad = cantidad + det.cantidad;
+                        MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbdetalle_factura SET cantidad = '"+nuevacantidad+"', total_parcial = '"+pago+"' WHERE id_detalle_factura = '"+iddetalle+"'"),Conexion_Config.ObtenerConexion());
+                        retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
+                        if (retorno <= 0)
+                        {
+                            MessageBox.Show("El detalle no pudo actualizarse.","Proceso no completado",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        }
+                    }
+                }                
                 return retorno;
             }
             catch (Exception)
@@ -180,19 +206,30 @@ namespace FlavorsOfTheHouse.Modelo
             int retorno = 0;
             try
             {
-                string query = "SELECT SUM(total_parcial) FROM tbdetalle_factura WHERE id_factura = ?param1";
-                MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
-                cmdselect.Parameters.Add(new MySqlParameter("param1",idfactura));
-                MySqlDataReader reader = cmdselect.ExecuteReader();
-                while (reader.Read())
+                string query1 = "SELECT * FROM tbdetalle_factura WHERE id_factura = ?detalle";
+                MySqlCommand cmdselect1 = new MySqlCommand(query1, Conexion_Config.ObtenerConexion());
+                cmdselect1.Parameters.Add(new MySqlParameter("detalle", idfactura));
+                bool existencia = Convert.ToBoolean(cmdselect1.ExecuteScalar());
+                if (existencia == true)
                 {
-                    Constructor_Facturacion.total_pago = reader.GetDouble(0);
+                    string query = "SELECT SUM(total_parcial) FROM tbdetalle_factura WHERE id_factura = ?param1";
+                    MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                    cmdselect.Parameters.Add(new MySqlParameter("param1", idfactura));
+                    MySqlDataReader reader = cmdselect.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Constructor_Facturacion.total_pago = reader.GetDouble(0);
+                    }
+                }
+                else
+                {
+                    Constructor_Facturacion.total_pago = 0;
                 }
                 return retorno;
             }
             catch (Exception)
             {
-                MessageBox.Show("Debido a un fallo de conexión, no pudo calcularse el monto a pagar, consulte con el administrador.","Error de conexión",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Debido a un fallo de conexión, no pudo calcularse el monto a pagar, consulte con el administrador.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return retorno;
             }
         }
