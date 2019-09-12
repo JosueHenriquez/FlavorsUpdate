@@ -27,8 +27,6 @@ namespace FlavorsOfTheHouse.Reportes
             this.DataTableTableAdapter.ObtenerDetalles(this.dataSetFactura.DataTable, idfactura, Convert.ToInt16(Constructor_Login.empresa));
 
             this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
         }
     }
 }

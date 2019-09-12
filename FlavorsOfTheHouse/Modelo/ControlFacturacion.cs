@@ -18,7 +18,7 @@ namespace FlavorsOfTheHouse.Modelo
             int retorno = 0;
             try
             {
-                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbfactura (id_usuario,fecha_factura,id_estado) VALUES ('"+fa.id_usuario+"','"+fa.fecha_factura+"','"+fa.id_estado+"')"),Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbfactura (id_usuario,fecha_factura,id_estado) VALUES ('"+fa.id_usuario+"','"+fa.fecha_factura+"','"+fa.id_estado+"')"),Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                 if (retorno < 1)
                 {
@@ -26,7 +26,7 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 else
                 {
-                    string query = "SELECT MAX(id_factura) FROM tbfactura WHERE id_usuario = ?param1 AND fecha_factura = ?param2";
+                    string query = "SELECT MAX(id_factura)  FROM tbfactura WHERE id_usuario = ?param1 AND fecha_factura = ?param2";
                     MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
                     cmdselect.Parameters.Add(new MySqlParameter("param1",fa.id_usuario));
                     cmdselect.Parameters.Add(new MySqlParameter("param2",fa.fecha_factura));
@@ -230,6 +230,101 @@ namespace FlavorsOfTheHouse.Modelo
             catch (Exception)
             {
                 MessageBox.Show("Debido a un fallo de conexión, no pudo calcularse el monto a pagar, consulte con el administrador.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+
+        public static int Actualizar_Factura_PagoTotal(int idfactura, double monto)
+        {
+            int retorno = 0;
+            try
+            {
+                int activa_finalizada= 1;
+                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbfactura SET total_pago = '"+monto+"', id_estado = '"+ activa_finalizada + "' WHERE id_factura = '"+idfactura+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
+                if (retorno > 0)
+                {
+                    MessageBox.Show("La factura "+idfactura+" ha sido finalizada con exito","Cierre de factura",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La factura " + idfactura + " no pudo ser finalizada, vuelva a intentarlo nuevamente.", "Cierre de factura fallido", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Oops!, ocurrio un error en el cierre de la factura debido a un problema de conexión, consulte con el administrador.", "Cierre de factura fallido.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+
+        public static int Anular_Factura(int idfactura)
+        {
+            int retorno = 0;
+            int mensaje = 0;
+            try
+            {
+                string query = "SELECT COUNT(id_detalle_factura) FROM tbdetalle_factura WHERE id_factura = ?fac";
+                MySqlCommand cmdcount = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
+                cmdcount.Parameters.Add(new MySqlParameter("fac",idfactura));
+                bool verificacion = Convert.ToBoolean(cmdcount.ExecuteScalar());
+                if (verificacion == true)
+                {
+                    MySqlDataReader reader = cmdcount.ExecuteReader();
+                    while (reader.Read())
+                    { 
+                        int repeticion = reader.GetInt16(0);
+                        for (int i = 0; i < repeticion; i++)
+                        {
+                            string query2 = "SELECT MAX(id_detalle_factura), id_producto, cantidad FROM tbdetalle_factura WHERE id_factura = ?param1";
+                            MySqlCommand cmdselect = new MySqlCommand(query2,Conexion_Config.ObtenerConexion());
+                            cmdselect.Parameters.Add(new MySqlParameter("param1",idfactura));
+                            MySqlDataReader reader2 = cmdselect.ExecuteReader();
+                            while (reader2.Read())
+                            {
+                                int detalle = reader2.GetInt16(0);
+                                int idproducto = reader2.GetInt16(1);
+                                int cantidad = reader2.GetInt16(2);
+                                //capturar el numero de productos
+                                string query3 = "SELECT existencia FROM tbproducto WHERE id_producto  = ?param4";
+                                MySqlCommand cmdselect3 = new MySqlCommand(query3,Conexion_Config.ObtenerConexion());
+                                cmdselect3.Parameters.Add(new MySqlParameter("param4",idproducto));
+                                MySqlDataReader reader3 = cmdselect3.ExecuteReader();
+                                while (reader3.Read())
+                                {
+                                    int existencia = reader3.GetInt16(0);
+                                    int nuevacantidad = existencia + cantidad;
+                                    MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbproducto SET existencia = '"+nuevacantidad+"' WHERE id_producto = '"+idproducto+"'"),Conexion_Config.ObtenerConexion());
+                                    retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
+                                    if (retorno > 0)
+                                    {
+                                        //**
+                                        MySqlCommand cmddelete = new MySqlCommand(string.Format("DELETE FROM tbdetalle_factura WHERE id_detalle_factura = '"+detalle+"'"),Conexion_Config.ObtenerConexion());
+                                        retorno = Convert.ToInt16(cmddelete.ExecuteNonQuery());
+                                        if (retorno>0)
+                                        {
+                                            mensaje++;
+                                            if (mensaje == repeticion)
+                                            {
+                                                MessageBox.Show("Detalle eliminado correctamente, los productos han sido devueltos al inventario.", "Detalle eliminado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+                else
+                {
+                    //Solo anular factura ya que no hay detalles
+                }
+                return retorno;   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al eliminar los detalles de la factura debido a un problema de conexión. " + ex,"Error de procesamiento",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return retorno;
             }
         }

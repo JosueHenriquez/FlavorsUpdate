@@ -116,6 +116,7 @@ namespace FlavorsOfTheHouse.Vista
             BtnEliminarProducto.Enabled = false;
             BtnFinalizar.Enabled = false;
             BtnAnularFactura.Enabled = false;
+            BtnActualizarDetalle.Enabled = false;
         }
         void HabilitarBotones()
         {
@@ -123,6 +124,7 @@ namespace FlavorsOfTheHouse.Vista
             BtnEliminarProducto.Enabled = true;
             BtnFinalizar.Enabled = true;
             BtnAnularFactura.Enabled = true;
+            BtnActualizarDetalle.Enabled = true;
         }
         private void BtnCrearFactura_Click(object sender, EventArgs e)
         {
@@ -222,17 +224,33 @@ namespace FlavorsOfTheHouse.Vista
             txtCodigoProducto.Enabled = false;
             int pos = 0;
             pos = dgvDetallesFactura.CurrentRow.Index;
-            txtNombreProducto.Text = dgvDetallesFactura[0, pos].Value.ToString();
-            txtCodigoProducto. Text = dgvDetallesFactura[0, pos].Value.ToString();
-            txtIdDetalleFactura.Text = dgvDetallesFactura[1, pos].Value.ToString();
-            txtIdProducto.Text = dgvDetallesFactura[2, pos].Value.ToString();
-            txtCantidad.Text = dgvDetallesFactura[3, pos].Value.ToString();
-            pedidoantiguo = Convert.ToInt16(dgvDetallesFactura[3,pos].Value);
-            txtIdFactura.Text = dgvDetallesFactura[4, pos].Value.ToString();
-            ControlFacturacion.Buscar_Producto(txtNombreProducto.Text);
-            txtDisponible.Text = DatosProductos.cantidad.ToString();
-            txtPrecio.Text = DatosProductos.precio.ToString();
-            txtCantidad.Enabled = true;
+            if (dgvDetallesFactura.DataSource != null)
+            {
+                int posColum = dgvDetallesFactura.CurrentCell.ColumnIndex;
+                if (dgvDetallesFactura[posColum, pos].Value.ToString() != "")
+                {
+                    txtNombreProducto.Text = dgvDetallesFactura[0, pos].Value.ToString();
+                    txtCodigoProducto.Text = dgvDetallesFactura[0, pos].Value.ToString();
+                    txtIdDetalleFactura.Text = dgvDetallesFactura[1, pos].Value.ToString();
+                    txtIdProducto.Text = dgvDetallesFactura[2, pos].Value.ToString();
+                    txtCantidad.Text = dgvDetallesFactura[3, pos].Value.ToString();
+                    pedidoantiguo = Convert.ToInt16(dgvDetallesFactura[3, pos].Value);
+                    txtIdFactura.Text = dgvDetallesFactura[4, pos].Value.ToString();
+                    ControlFacturacion.Buscar_Producto(txtNombreProducto.Text);
+                    txtDisponible.Text = DatosProductos.cantidad.ToString();
+                    txtPrecio.Text = DatosProductos.precio.ToString();
+                    txtCantidad.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("La celda seleccionada no contiene información, verifique que está seleccionando una celda con datos.", "Selección vacía", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos por cargar en los controles, ingrese un producto al detalle.","Selección vacía",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            
         }
         private void BtnActualizarDetalle_Click(object sender, EventArgs e)
         {
@@ -296,15 +314,41 @@ namespace FlavorsOfTheHouse.Vista
         private void BtnAnularFactura_Click(object sender, EventArgs e)
         {
             BtnCrearFactura.Enabled = true;
+            int anulacion = ControlFacturacion.Anular_Factura(Convert.ToInt16(txtIdFactura.Text));
+            if (anulacion > 0)
+            {
+                ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text), Convert.ToInt16(txtIdusuario.Text));
+                factu.ShowDialog();
+                LimpiarCampos();
+                txtIdFactura.Clear();
+                txtIdDetalleFactura.Clear();
+                DataTable dt = (DataTable)dgvDetallesFactura.DataSource;
+                dt.Clear();
+                DeshabilitarBotones();
+            }
         }
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
-            BtnCrearFactura.Enabled = true;
-            ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text),Convert.ToInt16(txtIdusuario.Text));
-            factu.ShowDialog();
+            if (MessageBox.Show("-> Considere que si finaliza la factura ya no podrá editarla. \n ¿Desea finalizar el proceso de facturación?", "Finalizar factura",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                BtnCrearFactura.Enabled = true;
+                int pago = ControlFacturacion.Actualizar_Factura_PagoTotal(Convert.ToInt16(txtIdFactura.Text), Convert.ToDouble(txtPago.Text));
+                if (pago > 0)
+                {
+                    txtPago.Text = "0.00";
+                    ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text), Convert.ToInt16(txtIdusuario.Text));
+                    factu.ShowDialog();
+                    LimpiarCampos();
+                    txtIdFactura.Clear();
+                    txtIdDetalleFactura.Clear();
+                    DataTable dt = (DataTable)dgvDetallesFactura.DataSource;
+                    dt.Clear();
+                    DeshabilitarBotones();
+                }
+            }         
         }
         
         //Anular factura
-        //Finalizar factura
+
     }
 }
