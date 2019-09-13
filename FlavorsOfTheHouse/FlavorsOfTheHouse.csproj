@@ -93,6 +93,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFactura.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\DataSetFichaEmpresa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFichaEmpresa.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DataSetProducto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,6 +119,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteFacturacion.Designer.cs">
       <DependentUpon>ReporteFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteFichaEmpresarial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFichaEmpresarial.Designer.cs">
+      <DependentUpon>ReporteFichaEmpresarial.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteProductos.cs">
       <SubType>Form</SubType>
@@ -255,11 +266,15 @@
     <EmbeddedResource Include="Reportes\Report2.rdlc" />
     <EmbeddedResource Include="Reportes\Report3.rdlc" />
     <EmbeddedResource Include="Reportes\Report4.rdlc" />
+    <EmbeddedResource Include="Reportes\Report6.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpresas.resx">
       <DependentUpon>ReporteEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteFacturacion.resx">
       <DependentUpon>ReporteFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteFichaEmpresarial.resx">
+      <DependentUpon>ReporteFichaEmpresarial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteProductos.resx">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
@@ -361,6 +376,17 @@
     </None>
     <None Include="Reportes\DataSetFactura.xss">
       <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetFichaEmpresa.xsc">
+      <DependentUpon>DataSetFichaEmpresa.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetFichaEmpresa.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFichaEmpresa.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetFichaEmpresa.xss">
+      <DependentUpon>DataSetFichaEmpresa.xsd</DependentUpon>
     </None>
     <None Include="Reportes\DataSetProducto.xsc">
       <DependentUpon>DataSetProducto.xsd</DependentUpon>

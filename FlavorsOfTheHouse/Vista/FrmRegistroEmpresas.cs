@@ -250,6 +250,7 @@ namespace FlavorsOfTheHouse.Vista
             BtnAgregar.Enabled = false;
             BtnActualizar.Enabled = true;
             BtnEliminar.Enabled = true;
+            BtnFicha.Visible = true;
         }
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
@@ -297,6 +298,12 @@ namespace FlavorsOfTheHouse.Vista
         {
             ReporteEmpresas remp = new ReporteEmpresas();
             remp.Show();
+        }
+
+        private void BtnFicha_Click(object sender, EventArgs e)
+        {
+            ReporteFichaEmpresarial ficha = new ReporteFichaEmpresarial(Convert.ToInt16(txtId.Text));
+            ficha.ShowDialog();
         }
     }
 }

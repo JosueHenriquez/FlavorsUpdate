@@ -706,7 +706,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>3.30812cm</Top>
         <Height>1.67625cm</Height>
-        <Width>20.55812cm</Width>
+        <Width>20.55811cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -750,9 +750,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox51</rd:DefaultName>
         <Top>5.33259cm</Top>
-        <Left>18.05812cm</Left>
+        <Left>17.70886cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>2.84926cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -782,7 +782,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox52</rd:DefaultName>
         <Top>5.33259cm</Top>
-        <Left>15.48757cm</Left>
+        <Left>15.15059cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>

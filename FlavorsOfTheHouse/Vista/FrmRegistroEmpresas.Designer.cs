@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnExaminar = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.TxtEmpresa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,11 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.BtnCerrarFormulario = new System.Windows.Forms.ToolStripButton();
             this.txtId = new System.Windows.Forms.ToolStripTextBox();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
-            this.BtnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -65,10 +61,15 @@
             this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.chkempresas = new System.Windows.Forms.CheckBox();
             this.chkEmpInactivas = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.BtnCerrarFormulario = new System.Windows.Forms.ToolStripButton();
+            this.BtnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.BtnReporte = new System.Windows.Forms.ToolStripButton();
+            this.BtnFicha = new System.Windows.Forms.ToolStripButton();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.grpMantenimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnExaminar
@@ -86,17 +87,6 @@
             this.BtnExaminar.Text = "Examinar";
             this.BtnExaminar.UseVisualStyleBackColor = false;
             this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbLogo.BackColor = System.Drawing.Color.White;
-            this.pbLogo.Location = new System.Drawing.Point(728, 64);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(132, 172);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 17;
-            this.pbLogo.TabStop = false;
             // 
             // TxtDireccion
             // 
@@ -195,7 +185,8 @@
             this.txtId,
             this.txtBuscar,
             this.BtnBuscar,
-            this.BtnReporte});
+            this.BtnReporte,
+            this.BtnFicha});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(892, 25);
@@ -208,15 +199,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(119, 22);
             this.toolStripLabel1.Text = "Registro de Empresas";
             // 
-            // BtnCerrarFormulario
-            // 
-            this.BtnCerrarFormulario.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.BtnCerrarFormulario.Image = global::FlavorsOfTheHouse.Properties.Resources.back_arrow;
-            this.BtnCerrarFormulario.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnCerrarFormulario.Name = "BtnCerrarFormulario";
-            this.BtnCerrarFormulario.Size = new System.Drawing.Size(118, 22);
-            this.BtnCerrarFormulario.Text = "Cerrar formulario";
-            // 
             // txtId
             // 
             this.txtId.Name = "txtId";
@@ -227,23 +209,6 @@
             // 
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(200, 25);
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.Image = global::FlavorsOfTheHouse.Properties.Resources.searching_magnifying_glass;
-            this.BtnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(110, 22);
-            this.BtnBuscar.Text = "Buscar Empresa";
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
-            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(112, 22);
-            this.BtnReporte.Text = "Generar Reporte";
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // label9
             // 
@@ -391,14 +356,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpresas.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmpresas.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dgvEmpresas.Location = new System.Drawing.Point(28, 399);
             this.dgvEmpresas.Name = "dgvEmpresas";
@@ -494,6 +459,53 @@
             this.chkEmpInactivas.UseVisualStyleBackColor = true;
             this.chkEmpInactivas.CheckedChanged += new System.EventHandler(this.chkEmpInactivas_CheckedChanged);
             // 
+            // BtnCerrarFormulario
+            // 
+            this.BtnCerrarFormulario.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnCerrarFormulario.Image = global::FlavorsOfTheHouse.Properties.Resources.back_arrow;
+            this.BtnCerrarFormulario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCerrarFormulario.Name = "BtnCerrarFormulario";
+            this.BtnCerrarFormulario.Size = new System.Drawing.Size(118, 22);
+            this.BtnCerrarFormulario.Text = "Cerrar formulario";
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Image = global::FlavorsOfTheHouse.Properties.Resources.searching_magnifying_glass;
+            this.BtnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(110, 22);
+            this.BtnBuscar.Text = "Buscar Empresa";
+            // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Image = global::FlavorsOfTheHouse.Properties.Resources.clipboard_paste_button;
+            this.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(112, 22);
+            this.BtnReporte.Text = "Generar Reporte";
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
+            // BtnFicha
+            // 
+            this.BtnFicha.Image = global::FlavorsOfTheHouse.Properties.Resources.empresa;
+            this.BtnFicha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnFicha.Name = "BtnFicha";
+            this.BtnFicha.Size = new System.Drawing.Size(119, 20);
+            this.BtnFicha.Text = "Ficha empresarial";
+            this.BtnFicha.Visible = false;
+            this.BtnFicha.Click += new System.EventHandler(this.BtnFicha_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbLogo.BackColor = System.Drawing.Color.White;
+            this.pbLogo.Location = new System.Drawing.Point(728, 64);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(132, 172);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 17;
+            this.pbLogo.TabStop = false;
+            // 
             // FrmRegistroEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,11 +540,11 @@
             this.Opacity = 0.95D;
             this.Text = "FrmRegistroEmpresas";
             this.Load += new System.EventHandler(this.FrmRegistroEmpresas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.grpMantenimientos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,5 +587,6 @@
         private System.Windows.Forms.CheckBox chkempresas;
         private System.Windows.Forms.CheckBox chkEmpInactivas;
         private System.Windows.Forms.ToolStripButton BtnReporte;
+        private System.Windows.Forms.ToolStripButton BtnFicha;
     }
 }
