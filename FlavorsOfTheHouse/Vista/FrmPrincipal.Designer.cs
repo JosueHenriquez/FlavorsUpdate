@@ -45,7 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelInventario = new System.Windows.Forms.Panel();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnInventarios = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnRegProductos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PanelVentas = new System.Windows.Forms.Panel();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -435,7 +435,7 @@
             // 
             this.PanelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.PanelInventario.Controls.Add(this.bunifuFlatButton6);
-            this.PanelInventario.Controls.Add(this.bunifuFlatButton3);
+            this.PanelInventario.Controls.Add(this.BtnInventarios);
             this.PanelInventario.Controls.Add(this.BtnRegProductos);
             this.PanelInventario.Location = new System.Drawing.Point(494, 47);
             this.PanelInventario.Name = "PanelInventario";
@@ -476,39 +476,40 @@
             this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuFlatButton3
+            // BtnInventarios
             // 
-            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton3.BorderRadius = 0;
-            this.bunifuFlatButton3.ButtonText = "      Inventario General";
-            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.Iconimage = global::FlavorsOfTheHouse.Properties.Resources.inventario;
-            this.bunifuFlatButton3.Iconimage_right = null;
-            this.bunifuFlatButton3.Iconimage_right_Selected = null;
-            this.bunifuFlatButton3.Iconimage_Selected = null;
-            this.bunifuFlatButton3.IconMarginLeft = 0;
-            this.bunifuFlatButton3.IconMarginRight = 0;
-            this.bunifuFlatButton3.IconRightVisible = true;
-            this.bunifuFlatButton3.IconRightZoom = 0D;
-            this.bunifuFlatButton3.IconVisible = true;
-            this.bunifuFlatButton3.IconZoom = 35D;
-            this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 44);
-            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.PowderBlue;
-            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.Black;
-            this.bunifuFlatButton3.selected = false;
-            this.bunifuFlatButton3.Size = new System.Drawing.Size(250, 46);
-            this.bunifuFlatButton3.TabIndex = 9;
-            this.bunifuFlatButton3.Text = "      Inventario General";
-            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventarios.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(249)))));
+            this.BtnInventarios.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnInventarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnInventarios.BorderRadius = 0;
+            this.BtnInventarios.ButtonText = "      Inventarios";
+            this.BtnInventarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInventarios.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnInventarios.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnInventarios.Iconimage = global::FlavorsOfTheHouse.Properties.Resources.inventario;
+            this.BtnInventarios.Iconimage_right = null;
+            this.BtnInventarios.Iconimage_right_Selected = null;
+            this.BtnInventarios.Iconimage_Selected = null;
+            this.BtnInventarios.IconMarginLeft = 0;
+            this.BtnInventarios.IconMarginRight = 0;
+            this.BtnInventarios.IconRightVisible = true;
+            this.BtnInventarios.IconRightZoom = 0D;
+            this.BtnInventarios.IconVisible = true;
+            this.BtnInventarios.IconZoom = 35D;
+            this.BtnInventarios.IsTab = false;
+            this.BtnInventarios.Location = new System.Drawing.Point(0, 44);
+            this.BtnInventarios.Name = "BtnInventarios";
+            this.BtnInventarios.Normalcolor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnInventarios.OnHovercolor = System.Drawing.Color.PowderBlue;
+            this.BtnInventarios.OnHoverTextColor = System.Drawing.Color.Black;
+            this.BtnInventarios.selected = false;
+            this.BtnInventarios.Size = new System.Drawing.Size(250, 46);
+            this.BtnInventarios.TabIndex = 9;
+            this.BtnInventarios.Text = "      Inventarios";
+            this.BtnInventarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInventarios.Textcolor = System.Drawing.Color.White;
+            this.BtnInventarios.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventarios.Click += new System.EventHandler(this.BtnInventarios_Click);
             // 
             // BtnRegProductos
             // 
@@ -1041,14 +1042,16 @@
             this.BarraTitulo.Size = new System.Drawing.Size(1284, 25);
             this.BarraTitulo.TabIndex = 0;
             this.BarraTitulo.Text = "toolStrip1";
+            this.BarraTitulo.DoubleClick += new System.EventHandler(this.BarraTitulo_DoubleClick);
             // 
             // BtnMenu
             // 
+            this.BtnMenu.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMenu.ForeColor = System.Drawing.Color.Black;
             this.BtnMenu.Image = global::FlavorsOfTheHouse.Properties.Resources.list_button_with_3_elements;
             this.BtnMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnMenu.Name = "BtnMenu";
-            this.BtnMenu.Size = new System.Drawing.Size(107, 22);
+            this.BtnMenu.Size = new System.Drawing.Size(121, 22);
             this.BtnMenu.Text = "Contraer Menú";
             this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
@@ -1059,9 +1062,10 @@
             // 
             // toolStripLabel1
             // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(69, 22);
             this.toolStripLabel1.Text = "Ricaldone";
             // 
             // BtnCerrar
@@ -1116,17 +1120,19 @@
             // 
             // toolStripLabel2
             // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(102, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(119, 22);
             this.toolStripLabel2.Text = "Sabores de la casa";
             // 
             // toolStripButton2
             // 
+            this.toolStripButton2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripButton2.Image = global::FlavorsOfTheHouse.Properties.Resources.lock_32;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(102, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(114, 22);
             this.toolStripButton2.Text = "Cambiar clave";
             // 
             // FrmPrincipal
@@ -1187,7 +1193,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton BtnGraficos;
         private System.Windows.Forms.ToolStripButton BtnAcercaDe;
         private System.Windows.Forms.Panel PanelInventario;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnInventarios;
         private Bunifu.Framework.UI.BunifuFlatButton BtnRegProductos;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;

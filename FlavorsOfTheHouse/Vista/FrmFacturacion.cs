@@ -141,6 +141,7 @@ namespace FlavorsOfTheHouse.Vista
                     txtIdFactura.Text = fact.id_factura.ToString();
                     BtnCrearFactura.Enabled = false;
                     txtCodigoProducto.Enabled = true;
+                    BtnAnularFactura.Enabled = true;
                 }
                 else
                 {
@@ -313,20 +314,27 @@ namespace FlavorsOfTheHouse.Vista
         }
         private void BtnAnularFactura_Click(object sender, EventArgs e)
         {
-            BtnCrearFactura.Enabled = true;
-            int anulacion = ControlFacturacion.Anular_Factura(Convert.ToInt16(txtIdFactura.Text));
-            if (anulacion > 0)
+            if (MessageBox.Show("¿Está seguro de querer anular la factura?","Confirmación de anulación",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
             {
-                ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text), Convert.ToInt16(txtIdusuario.Text));
-                factu.ShowDialog();
-                LimpiarCampos();
-                txtIdFactura.Clear();
-                txtIdDetalleFactura.Clear();
-                DataTable dt = (DataTable)dgvDetallesFactura.DataSource;
-                dt.Clear();
-                DeshabilitarBotones();
-            }
+                int anulacion = ControlFacturacion.Anular_Factura(Convert.ToInt16(txtIdFactura.Text));
+                if (anulacion > 0)
+                {
+                    BtnCrearFactura.Enabled = true;
+                    LimpiarCampos();
+                    txtIdFactura.Clear();
+                    txtIdDetalleFactura.Clear();
+                    if (dgvDetallesFactura.DataSource != null)
+                    {
+                        DataTable dt = (DataTable)dgvDetallesFactura.DataSource;
+                        dt.Clear();
+                    }
+                    txtPago.Text = "0.00";
+                    DeshabilitarBotones();
+
+                }
+            }            
         }
+
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("-> Considere que si finaliza la factura ya no podrá editarla. \n ¿Desea finalizar el proceso de facturación?", "Finalizar factura",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
@@ -347,8 +355,5 @@ namespace FlavorsOfTheHouse.Vista
                 }
             }         
         }
-        
-        //Anular factura
-
     }
 }

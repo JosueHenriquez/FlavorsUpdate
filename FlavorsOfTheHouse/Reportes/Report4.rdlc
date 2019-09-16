@@ -43,9 +43,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>1.67639cm</Left>
         <Height>1.68479cm</Height>
-        <Width>14.78662cm</Width>
+        <Width>20.55813cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -60,7 +59,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.98708cm</Width>
+              <Width>4.7225cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -171,9 +170,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.86118cm</Top>
+        <Top>1.89646cm</Top>
+        <Left>0.2646cm</Left>
         <Height>1.2cm</Height>
-        <Width>4.98708cm</Width>
+        <Width>4.7225cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -185,7 +185,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.30163cm</Width>
+              <Width>4.92089cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -298,10 +298,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.86118cm</Top>
-        <Left>15.2565cm</Left>
+        <Top>1.89646cm</Top>
+        <Left>15.25652cm</Left>
         <Height>1.2cm</Height>
-        <Width>5.30163cm</Width>
+        <Width>4.92089cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -313,19 +313,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.45237cm</Width>
+              <Width>2.3233cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>9.29335cm</Width>
+              <Width>9.16428cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.08737cm</Width>
+              <Width>2.9583cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.87577cm</Width>
+              <Width>2.7467cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.84925cm</Width>
+              <Width>2.72018cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -376,7 +376,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre del p roducto</Value>
+                              <Value>Nombre del producto</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -586,11 +586,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>$ </Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00;(0.00)</Format>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value>=Fields!precio.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00;(0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -654,11 +658,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>$ </Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00;(0.00)</Format>
+                              </Style>
                             </TextRun>
                             <TextRun>
                               <Value>=Fields!total_parcial.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00;(0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -704,9 +712,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.30812cm</Top>
+        <Top>3.3434cm</Top>
+        <Left>0.2646cm</Left>
         <Height>1.67625cm</Height>
-        <Width>20.55811cm</Width>
+        <Width>19.91278cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -719,6 +728,8 @@
         <Value>saboresdelacasa</Value>
         <MIMEType>image/jpeg</MIMEType>
         <Sizing>FitProportional</Sizing>
+        <Top>0.03528cm</Top>
+        <Left>0.2646cm</Left>
         <Height>1.68479cm</Height>
         <Width>1.67639cm</Width>
         <ZIndex>4</ZIndex>
@@ -736,11 +747,15 @@
             <TextRuns>
               <TextRun>
                 <Value>$ </Value>
-                <Style />
+                <Style>
+                  <Format>0.00;(0.00)</Format>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Sum(Fields!total_parcial.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <Format>0.00;(0.00)</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -749,10 +764,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox51</rd:DefaultName>
-        <Top>5.33259cm</Top>
-        <Left>17.70886cm</Left>
+        <Top>5.36787cm</Top>
+        <Left>17.70888cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.84926cm</Width>
+        <Width>2.46852cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -781,8 +796,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox52</rd:DefaultName>
-        <Top>5.33259cm</Top>
-        <Left>15.15059cm</Left>
+        <Top>5.36787cm</Top>
+        <Left>15.15061cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>
@@ -800,10 +815,9 @@
         <Source>Embedded</Source>
         <Value>ID1</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.29062cm</Top>
-        <Left>16.6394cm</Left>
-        <Height>1.46472cm</Height>
-        <Width>1.43164cm</Width>
+        <Left>18.50102cm</Left>
+        <Height>1.68479cm</Height>
+        <Width>1.67639cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -815,10 +829,10 @@
         <Source>Embedded</Source>
         <Value>TAMTFLogo</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.55314cm</Top>
-        <Left>18.21215cm</Left>
-        <Height>0.74125cm</Height>
-        <Width>2.26729cm</Width>
+        <Top>1.72007cm</Top>
+        <Left>8.87636cm</Left>
+        <Height>0.91778cm</Height>
+        <Width>2.58479cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -826,8 +840,42 @@
           </Border>
         </Style>
       </Image>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Emprendedurismo 2019 - El Salvador, San Salvador</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.61993cm</Top>
+        <Left>6.69078cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.6968cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.51291in</Height>
+    <Height>3.41916in</Height>
     <Style />
   </Body>
   <Width>8.09375in</Width>

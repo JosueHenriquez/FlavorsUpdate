@@ -322,6 +322,7 @@
             this.txtIdProducto.ReadOnly = true;
             this.txtIdProducto.Size = new System.Drawing.Size(42, 25);
             this.txtIdProducto.TabIndex = 7;
+            this.txtIdProducto.Visible = false;
             this.txtIdProducto.TextChanged += new System.EventHandler(this.txtCodigoProducto_TextChanged);
             // 
             // txtNombreProducto
@@ -422,6 +423,7 @@
             this.txtIdusuario.ReadOnly = true;
             this.txtIdusuario.Size = new System.Drawing.Size(43, 25);
             this.txtIdusuario.TabIndex = 2;
+            this.txtIdusuario.Visible = false;
             // 
             // txtPago
             // 
@@ -498,6 +500,7 @@
             this.txtIdDetalleFactura.ReadOnly = true;
             this.txtIdDetalleFactura.Size = new System.Drawing.Size(42, 25);
             this.txtIdDetalleFactura.TabIndex = 7;
+            this.txtIdDetalleFactura.Visible = false;
             this.txtIdDetalleFactura.TextChanged += new System.EventHandler(this.txtCodigoProducto_TextChanged);
             // 
             // FrmFacturacion

@@ -201,5 +201,40 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        public static DataTable Cargar_Productos_PorEmpresa(int idempresa)
+        {
+            DataTable data = new DataTable();
+            string query = "SELECT tp.*, CONCAT(tu.nombres,' ',tu.apellidos) As Nombres FROM tbproducto tp, tbusuario tu WHERE tp.id_empresa = ?param1 AND tp.id_usuario = tu.id_usuario ORDER BY tp.nombre_producto";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                cmdselect.Parameters.Add(new MySqlParameter("param1",idempresa));
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
+                adp.Fill(data);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error critico, no se ha npodido recuperar los productos debido a un fallo en la conexión. " + ex, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+        }
+        public static DataTable Inventario_General()
+        {
+            DataTable data = new DataTable();
+            string query = "SELECT DISTINCT tp.*, CONCAT(tu.nombres,' ',tu.apellidos) As Nombres FROM tbproducto tp, tbusuario tu WHERE tp.id_usuario = tu.id_usuario ORDER BY nombre_producto ASC";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
+                adp.Fill(data);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error critico, no se ha npodido recuperar los productos debido a un fallo en la conexión. " + ex, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+        }
     }
 }

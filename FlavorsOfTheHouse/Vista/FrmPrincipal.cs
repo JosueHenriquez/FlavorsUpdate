@@ -312,5 +312,31 @@ namespace FlavorsOfTheHouse.Vista
         {
             AbrirFormulario<FrmProductos>();
         }
+
+        private void BtnInventarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmInventario>();
+        }
+
+        private void BarraTitulo_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                BtnMaximizar.Visible = false;
+                BtnNormal.Visible = true;
+                Screen screen = Screen.PrimaryScreen;
+                int Height = screen.Bounds.Height;
+                int Width = screen.Bounds.Width;
+                this.MaximumSize = new Size(Width, Height - 37);
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                BtnNormal.Visible = false;
+                BtnMaximizar.Visible = true;
+                this.WindowState = FormWindowState.Normal;
+            }
+           
+        }
     }
 }

@@ -277,7 +277,7 @@ namespace FlavorsOfTheHouse.Modelo
                         int repeticion = reader.GetInt16(0);
                         for (int i = 0; i < repeticion; i++)
                         {
-                            string query2 = "SELECT MAX(id_detalle_factura), id_producto, cantidad FROM tbdetalle_factura WHERE id_factura = ?param1";
+                            string query2 = "SELECT DISTINCT MIN(id_detalle_factura), id_producto, cantidad FROM tbdetalle_factura WHERE id_factura = ?param1";
                             MySqlCommand cmdselect = new MySqlCommand(query2,Conexion_Config.ObtenerConexion());
                             cmdselect.Parameters.Add(new MySqlParameter("param1",idfactura));
                             MySqlDataReader reader2 = cmdselect.ExecuteReader();
@@ -307,7 +307,13 @@ namespace FlavorsOfTheHouse.Modelo
                                             mensaje++;
                                             if (mensaje == repeticion)
                                             {
-                                                MessageBox.Show("Detalle eliminado correctamente, los productos han sido devueltos al inventario.", "Detalle eliminado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                int anulado = 3;
+                                                MySqlCommand cmdupdatenull = new MySqlCommand(string.Format("UPDATE tbfactura SET id_estado = '" + anulado + "' WHERE id_factura = '" + idfactura + "'"), Conexion_Config.ObtenerConexion());
+                                                retorno = Convert.ToInt16(cmdupdatenull.ExecuteNonQuery());
+                                                if (retorno > 0)
+                                                {
+                                                    MessageBox.Show("Los detalles han sido eliminados correctamente y los productos han sido devueltos al inventario.", "Factura anulada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                }
                                             }
                                         }
                                     }
@@ -318,7 +324,14 @@ namespace FlavorsOfTheHouse.Modelo
                 }
                 else
                 {
-                    //Solo anular factura ya que no hay detalles
+                    int anulado = 3;
+                    double pago_anulado = 0.00;
+                    MySqlCommand cmdupdatenull = new MySqlCommand(string.Format("UPDATE tbfactura SET id_estado = '"+anulado+"', total_pago = '"+pago_anulado+"' WHERE id_factura = '"+idfactura+"'"),Conexion_Config.ObtenerConexion());
+                    retorno = Convert.ToInt16(cmdupdatenull.ExecuteNonQuery());
+                    if (retorno > 0)
+                    {
+                        MessageBox.Show("La factura ha sido anulada, y no se procedió al reintegro de los productos debido que no existian productos registrados en la factura.", "Factura anulada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 return retorno;   
             }
