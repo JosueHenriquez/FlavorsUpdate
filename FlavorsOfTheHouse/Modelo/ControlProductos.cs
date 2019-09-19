@@ -68,7 +68,7 @@ namespace FlavorsOfTheHouse.Modelo
         public static DataTable Cargar_Productos()
         {
             DataTable data = new DataTable();
-            string query = "SELECT DISTINCT tp.*, tc.categoria, te.empresa, ts.estado_producto, CONCAT(tu.nombres,' ',tu.apellidos) FROM tbproducto tp, tbusuario tu, tbcategoria_producto tc, tbempresa te, tbestado_producto ts WHERE tu.id_usuario =  tp.id_usuario AND tp.id_categoria = tc.id_categoria_producto AND tp.id_empresa = te.id_empresa AND tp.id_estado = ts.id_estado_producto";
+            string query = "SELECT DISTINCT tp.*, tc.categoria, te.empresa, CONCAT(tu.nombres,' ',tu.apellidos) As Empleado FROM tbproducto tp, tbusuario tu, tbcategoria_producto tc, tbempresa te WHERE tu.id_usuario =  tp.id_usuario AND tp.id_categoria = tc.id_categoria_producto AND tp.id_empresa = te.id_empresa";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
@@ -121,7 +121,7 @@ namespace FlavorsOfTheHouse.Modelo
             int retorno = 0;
             try
             {
-                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbproducto (nombre_producto, codigo_producto, precio , id_usuario, fecha_caducidad, fecha_empacado, existencia, id_categoria, id_empresa, id_estado) VALUES ('"+pro.producto+"','"+pro.codigo_producto+ "','"+pro.precio+ "','"+pro.id_usuario+ "','"+pro.empacado+ "','"+pro.vencimiento+ "','"+pro.cantidad+ "','"+pro.id_tipo+ "','"+pro.id_empresa+ "','"+pro.id_estado+"')"),Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbproducto (nombre_producto, codigo_producto, id_usuario, id_categoria, id_empresa) VALUES ('"+pro.producto+"','"+pro.codigo_producto+ "','"+pro.id_usuario+ "','"+pro.id_tipo+ "','"+pro.id_empresa+ "')"),Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                 if (retorno == 1)
                 {
@@ -168,7 +168,7 @@ namespace FlavorsOfTheHouse.Modelo
             int retorno = 0;
             try
             {
-                MySqlCommand cmdinsert = new MySqlCommand(string.Format("UPDATE tbproducto SET nombre_producto = '"+cpro.producto+ "', precio = '" + cpro.precio + "', fecha_empacado = '"+cpro.empacado+ "', fecha_caducidad = '" + cpro.vencimiento+ "', existencia = '"+cpro.cantidad+"', id_categoria = '"+cpro.id_tipo+"', id_empresa = '"+cpro.id_empresa+"', id_estado = '"+cpro.id_estado+"' WHERE id_producto = '"+cpro.id_producto+"'"),Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("UPDATE tbproducto SET nombre_producto = '"+cpro.producto+ "', id_categoria = '"+cpro.id_tipo+"', id_empresa = '"+cpro.id_empresa+"' WHERE id_producto = '"+cpro.id_producto+"'"),Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                 if (retorno == 1)
                 {
@@ -182,6 +182,27 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+
+        public static int Actualizar_Producto_Historial(Constructor_Producto cpro)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("UPDATE tbhistorial_producto SET precio = '" + cpro.precio + "', fecha_empacado= '" + cpro.empacado+ "', fecha_vencimiento = '" + cpro.vencimiento+ "', existencia = '"+cpro.cantidad+"', id_estado = '"+cpro.id_estado+"' WHERE id_producto = '" + cpro.id_producto + "'"), Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
+                if (retorno == 1)
+                {
+                    MessageBox.Show("El producto ha sido actualizado con exito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Oops!, ocurrio un error en la actualización de datos del producto, debido a un fallo de conexión, consulte con su administrador.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+
         public static int Eliminar_Producto(int id)
         {
             int retorno = 0;

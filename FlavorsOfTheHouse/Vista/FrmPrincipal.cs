@@ -107,6 +107,17 @@ namespace FlavorsOfTheHouse.Vista
             PanelAjustes.Visible = false;
         }
 
+        private void UbicacionBotonesEncargadoEmpresa()
+        {
+            //BtnAdministracion.Location = new Point(0, 128);
+            BtnInventario.Location = new Point(0, 128);
+            BtnVentas.Location = new Point(0, 177);
+            BtnFacturacion.Location = new Point(0, 226);
+        }
+        private void UbicacionBotonesFacturacion()
+        {
+            BtnFacturacion.Location = new Point(0,128);
+        }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblusuario.Text = Constructor_Login.usuario;
@@ -121,15 +132,25 @@ namespace FlavorsOfTheHouse.Vista
                     break;
                 case 3:
                     lblNivel.Text = "Encargado de empresa";
+                    BtnAdministracion.Visible = false;
+                    PanelAdministracion.Visible = false;
+                    BtnConfUsuario.Visible = false;
+                    UbicacionBotonesEncargadoEmpresa();
                     break;
                 case 4:
                     lblNivel.Text = "Asistente Empresarial";
+                    BtnAdministracion.Visible = false;
+                    PanelAdministracion.Visible = false;
+                    BtnConfUsuario.Visible = false;
+                    UbicacionBotonesEncargadoEmpresa();
                     break;
                 case 5:
-                    lblNivel.Text = "Vendedor";
-                    break;
-                case 6:
-                    lblNivel.Text = "Encargado de Facturación";
+                    lblNivel.Text = "Encargado de facturación";
+                    BtnAdministracion.Visible = false;
+                    PanelAdministracion.Visible = false;
+                    BtnInventario.Visible = false;
+                    PanelInventario.Visible = false;
+                    BtnConfUsuario.Visible = false;
                     break;
                 default:
                     break;

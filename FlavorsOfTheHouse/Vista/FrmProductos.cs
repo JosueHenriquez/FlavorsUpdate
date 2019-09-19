@@ -31,7 +31,7 @@ namespace FlavorsOfTheHouse.Vista
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
             BtnAgregar.Enabled = true;
-            BtnFiltrar.Enabled = false;
+            
             txtCodigo.Enabled = true;
         }
         void Ingresar_Producto()
@@ -64,49 +64,44 @@ namespace FlavorsOfTheHouse.Vista
                 pro.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
                 pro.producto = txtProducto.Text;
                 pro.codigo_producto = int.Parse(txtCodigo.Text);
-                pro.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
-                pro.precio = txtPrecio.Text;
-                //MessageBox.Show(""+Convert.ToInt16(cmbEmpresa.SelectedValue));
                 pro.id_empresa = Convert.ToInt16(Constructor_Login.empresa);
-                pro.cantidad = Convert.ToInt16(numCantidad.Text);
                 pro.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
-                pro.empacado = dtEmpacado.Text;
-                pro.vencimiento = dtVencimiento.Text;
-                ControlProductos.Ingresar_Producto(pro);
+                int datos = ControlProductos.Ingresar_Producto(pro);
+                if (datos > 0)
+                {
+                    pro.precio = txtPrecio.Text;
+                    pro.empacado = dtEmpacado.Text;
+                    pro.vencimiento = dtVencimiento.Text;
+                    pro.cantidad = Convert.ToInt16(numCantidad.Text);
+                    pro.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                }      
             }
         }
         void Cargar_Productos()
         {
             if (ControlProductos.Cargar_Productos() != null)
             {
-                BtnFiltrar.Enabled = true;
                 this.dgvProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dgvProductos.DataSource = ControlProductos.Cargar_Productos();
                 lblProductos.Visible = false;
                 this.dgvProductos.Columns[0].Visible = false;
                 this.dgvProductos.Columns[1].HeaderText = "Nombre del producto";
-                this.dgvProductos.Columns[1].Width = 50;
+                this.dgvProductos.Columns[1].Width = 100;
                 this.dgvProductos.Columns[2].HeaderText = "Codigo de producto";
-                this.dgvProductos.Columns[2].Width = 30;
+                this.dgvProductos.Columns[2].Width = 50;
                 this.dgvProductos.Columns[3].Visible = false;
                 this.dgvProductos.Columns[4].Visible = false;
                 this.dgvProductos.Columns[5].Visible = false;
-                this.dgvProductos.Columns[6].Visible = false;
-                this.dgvProductos.Columns[7].HeaderText = "Existencia";
-                this.dgvProductos.Columns[7].Width = 25;
-                this.dgvProductos.Columns[8].Visible = false;
-                this.dgvProductos.Columns[9].Visible = false;
-                this.dgvProductos.Columns[10].Visible = false;
-                this.dgvProductos.Columns[11].Visible = false;
-                this.dgvProductos.Columns[12].Visible = false;
-                this.dgvProductos.Columns[13].Visible = false;
-                this.dgvProductos.Columns[14].HeaderText = "Usuario que agrego el producto";
-                this.dgvProductos.Columns[14].Width = 150;
+                this.dgvProductos.Columns[6].HeaderText = "Tipo de producto";
+                this.dgvProductos.Columns[6].Width = 50;
+                this.dgvProductos.Columns[7].HeaderText = "Empresa";
+                this.dgvProductos.Columns[7].Width = 50;
+                this.dgvProductos.Columns[8].HeaderText = "Usuario que agrego el producto";
+                this.dgvProductos.Columns[8].Width = 150;
             }
             else
             {
                 lblProductos.Visible = true;
-                BtnFiltrar.Enabled = false;
             }
         }
         void Actualizar_Productos()
@@ -115,16 +110,25 @@ namespace FlavorsOfTheHouse.Vista
             prod.id_producto = Convert.ToInt16(txtId.Text);
             prod.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
             prod.producto = txtProducto.Text;
-            //prod.codigo_producto = Convert.ToInt16(txtCodigo.Text);
-            prod.precio = txtPrecio.Text;
-            prod.empacado = dtEmpacado.Text;
-            prod.vencimiento = dtVencimiento.Text;
-            prod.cantidad = Convert.ToInt16(numCantidad.Text);
             prod.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
             prod.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
-            prod.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
             int data = ControlProductos.Actualizar_Producto(prod);
+            if (data > 0)
+            {
+                if (MessageBox.Show("¿Desea cambiar algun dato especifico en alguna puesta en marcha registrada?","Actualizar datos",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    prod.precio = txtPrecio.Text;
+                    prod.empacado = dtEmpacado.Text;
+                    prod.vencimiento = dtVencimiento.Text;
+                    prod.cantidad = Convert.ToInt16(numCantidad.Text);
+                    prod.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                    int datos = ControlProductos.Actualizar_Producto_Historial(prod);
+                    if (datos > 0)
+                    {
 
+                    }
+                }
+            }
         }
         void Eliminar_Producto(int idproducto)
         {
@@ -203,19 +207,13 @@ namespace FlavorsOfTheHouse.Vista
             txtId.Text = this.dgvProductos[0, pos].Value.ToString();
             txtProducto.Text = this.dgvProductos[1, pos].Value.ToString();
             txtCodigo.Text = this.dgvProductos[2, pos].Value.ToString();
-            txtPrecio.Text = this.dgvProductos[3, pos].Value.ToString();
-            txtIdUsuario.Text = this.dgvProductos[4, pos].Value.ToString();
-            dtVencimiento.Text = this.dgvProductos[5, pos].Value.ToString();
-            dtEmpacado.Text = this.dgvProductos[6, pos].Value.ToString();
-            numCantidad.Value = Convert.ToInt16(this.dgvProductos[7, pos].Value.ToString());
-            cmbCategoria.Text = this.dgvProductos[11, pos].Value.ToString();
-            cmbEmpresa.Text = this.dgvProductos[12, pos].Value.ToString();
-            cmbEstado.Text = this.dgvProductos[13, pos].Value.ToString();
-            txtUsuario.Text = this.dgvProductos[14, pos].Value.ToString();
+            txtIdUsuario.Text = this.dgvProductos[3, pos].Value.ToString();           
+            cmbCategoria.Text = this.dgvProductos[6, pos].Value.ToString();
+            cmbEmpresa.Text = this.dgvProductos[7, pos].Value.ToString();
+            txtUsuario.Text = this.dgvProductos[8, pos].Value.ToString();
             BtnAgregar.Enabled = false;
             BtnActualizar.Enabled = true;
             BtnEliminar.Enabled = true;
-            BtnFiltrar.Enabled = true;
             txtCodigo.Enabled = false;
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
