@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>E:\Programas\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -63,11 +66,6 @@
     <Compile Include="Controlador\Constructor_Producto.cs" />
     <Compile Include="Controlador\Constructor_Recuperacion_Clave.cs" />
     <Compile Include="Controlador\Constructor_Usuario.cs" />
-    <Compile Include="DataSetFacturacion.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetFacturacion.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\ControlEmpresas_Modelo.cs" />
     <Compile Include="Modelo\ControlFacturacion.cs" />
     <Compile Include="Modelo\ControlProductos.cs" />
@@ -98,6 +96,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFichaEmpresa.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\DataSetInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DataSetProducto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +128,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteFichaEmpresarial.Designer.cs">
       <DependentUpon>ReporteFichaEmpresarial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteInventario.Designer.cs">
+      <DependentUpon>ReporteInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteProductos.cs">
       <SubType>Form</SubType>
@@ -266,6 +275,7 @@
     <EmbeddedResource Include="Reportes\Report2.rdlc" />
     <EmbeddedResource Include="Reportes\Report3.rdlc" />
     <EmbeddedResource Include="Reportes\Report4.rdlc" />
+    <EmbeddedResource Include="Reportes\Report5.rdlc" />
     <EmbeddedResource Include="Reportes\Report6.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpresas.resx">
       <DependentUpon>ReporteEmpresas.cs</DependentUpon>
@@ -275,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteFichaEmpresarial.resx">
       <DependentUpon>ReporteFichaEmpresarial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteInventario.resx">
+      <DependentUpon>ReporteInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteProductos.resx">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
@@ -327,17 +340,6 @@
     <EmbeddedResource Include="Vista\FrmSplashScreen.resx">
       <DependentUpon>FrmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSetFacturacion.xsc">
-      <DependentUpon>DataSetFacturacion.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetFacturacion.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetFacturacion.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetFacturacion.xss">
-      <DependentUpon>DataSetFacturacion.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -387,6 +389,17 @@
     </None>
     <None Include="Reportes\DataSetFichaEmpresa.xss">
       <DependentUpon>DataSetFichaEmpresa.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetInventario.xsc">
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetInventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetInventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetInventario.xss">
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
     </None>
     <None Include="Reportes\DataSetProducto.xsc">
       <DependentUpon>DataSetProducto.xsd</DependentUpon>
@@ -606,6 +619,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cierre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icono.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

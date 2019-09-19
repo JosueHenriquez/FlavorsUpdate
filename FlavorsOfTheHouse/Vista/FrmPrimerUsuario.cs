@@ -304,5 +304,10 @@ namespace FlavorsOfTheHouse.Vista
         {
             Validaciones.SinEspacios(e);
         }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.CorreoElectronico(e);
+        }
     }
 }

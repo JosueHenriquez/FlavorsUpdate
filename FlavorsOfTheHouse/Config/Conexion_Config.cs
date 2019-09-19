@@ -13,15 +13,15 @@ namespace FlavorsOfTheHouse.Config
         public static MySqlConnection ObtenerConexion()
         {
             MySqlConnection connect;
-            string server = "127.0.0.1";
+            string server = "10.20.1.67";
             string database = "dbflavors";
             string uid = "eMaster";
             string pwd = "123456";
-            //string port = "3306";
+            string port = "3306";
             try
             {
                 connect = new MySqlConnection("server =" + server+
-                                              //"; Port = " + port +
+                                              "; Port = " + port +
                                               "; database = " + database+
                                               "; uid = " + uid+
                                               "; pwd = " + pwd);

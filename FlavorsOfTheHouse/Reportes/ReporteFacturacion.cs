@@ -13,19 +13,17 @@ namespace FlavorsOfTheHouse.Reportes
 {
     public partial class ReporteFacturacion : Form
     {
-        private int idfactura, idusuario;
-        public ReporteFacturacion(int idfactura, int idusuario)
+        private int idfactura;
+        public ReporteFacturacion(int idfactura)
         {
             InitializeComponent();
             this.idfactura = idfactura;
-            this.idusuario = idusuario;
         }
 
         private void ReporteFacturacion_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSetFactura.DataTable' Puede moverla o quitarla según sea necesario.
-            this.DataTableTableAdapter.ObtenerDetalles(this.dataSetFactura.DataTable, idfactura, Convert.ToInt16(Constructor_Login.empresa));
-
+            this.DataTableTableAdapter.ObtenerDetalles(this.dataSetFactura.DataTable, idfactura);
             this.reportViewer1.RefreshReport();
         }
     }

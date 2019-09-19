@@ -1066,23 +1066,20 @@ namespace FlavorsOfTheHouse.Reportes.DataSetFacturaTableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT DISTINCT       a.cantidad, a.id_factura, a.total_parcial, c.fecha_factura, b.nombre_producto, b.precio, d.empresa, d.nit, d.direccion, d.correo
+            this._commandCollection[0].CommandText = @"SELECT DISTINCT a.cantidad, a.id_factura, a.total_parcial, c.fecha_factura, b.nombre_producto, b.precio, d.empresa, d.nit, d.direccion, d.correo
 FROM            tbdetalle_factura a, tbproducto b, tbfactura c, tbempresa d
-WHERE        a.id_producto = b.id_producto AND a.id_factura = c.id_factura AND b.id_empresa = d.id_empresa AND (a.id_factura = ?) AND (b.id_empresa = ?)
-";
+WHERE        a.id_producto = b.id_producto AND a.id_factura = c.id_factura AND b.id_empresa = d.id_empresa AND (a.id_factura = ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_factura", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_factura", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("id_empresa", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_empresa", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int ObtenerDetalles(DataSetFactura.DataTableDataTable dataTable, int id_factura, int id_empresa) {
+        public virtual int ObtenerDetalles(DataSetFactura.DataTableDataTable dataTable, int id_factura) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_factura));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_empresa));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1094,10 +1091,9 @@ WHERE        a.id_producto = b.id_producto AND a.id_factura = c.id_factura AND b
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetFactura.DataTableDataTable GetData(int id_factura, int id_empresa) {
+        public virtual DataSetFactura.DataTableDataTable GetData(int id_factura) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_factura));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_empresa));
             DataSetFactura.DataTableDataTable dataTable = new DataSetFactura.DataTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

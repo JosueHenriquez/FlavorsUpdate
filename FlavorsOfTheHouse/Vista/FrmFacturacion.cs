@@ -344,7 +344,7 @@ namespace FlavorsOfTheHouse.Vista
                 if (pago > 0)
                 {
                     txtPago.Text = "0.00";
-                    ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text), Convert.ToInt16(txtIdusuario.Text));
+                    ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text));
                     factu.ShowDialog();
                     LimpiarCampos();
                     txtIdFactura.Clear();

@@ -31,6 +31,36 @@ namespace FlavorsOfTheHouse.Config
             {
                 e.Handled = false;
             }
+            else if (e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void CorreoElectronico(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == Convert.ToChar('@') ||
+                     e.KeyChar == Convert.ToChar('.') ||
+                     e.KeyChar == Convert.ToChar('_'))
+            {
+                e.Handled = false;
+            }
             else
             {
                 e.Handled = true;

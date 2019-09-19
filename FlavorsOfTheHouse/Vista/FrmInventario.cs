@@ -177,6 +177,7 @@ namespace FlavorsOfTheHouse.Vista
         {
             obtenerEmpresas();
         }
+        //Cards
         private void bunifuCards1_Click(object sender, EventArgs e)
         {
             cargarProductos(Convert.ToInt16(lblid1.Text));
@@ -225,7 +226,7 @@ namespace FlavorsOfTheHouse.Vista
             despintarCards();
             this.bunifuCards7.BackColor = Color.FromArgb(230, 230, 230);
         }
-
+        //Cards click
         private void pic1_Click(object sender, EventArgs e)
         {
             cargarProductos(Convert.ToInt16(lblid1.Text));
@@ -277,8 +278,8 @@ namespace FlavorsOfTheHouse.Vista
         
         private void GenerarReporteInd_Click(object sender, EventArgs e)
         {
-            //ReporteInventarioIndividual repind = new ReporteInventarioIndividual(id);
-            //repind.ShowDialog();
+            ReporteInventario repind = new ReporteInventario(id);
+            repind.ShowDialog();
         }
     }
 }
