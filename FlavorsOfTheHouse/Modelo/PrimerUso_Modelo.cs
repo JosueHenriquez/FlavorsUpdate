@@ -63,5 +63,24 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        public static int CambiarClaveUsuarioPrimerUso(string clave, string usuario)
+        {
+            int retorno = 0;
+            try
+            {
+                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbusuario SET clave = '"+clave+"' WHERE usuario = '"+usuario+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
+                if (retorno < 0)
+                {
+                    MessageBox.Show("La clave no pudo ser reestablecida.","Error al actualizar clave",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexión, consulte con el administrador.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FlavorsOfTheHouse.Config;
+using FlavorsOfTheHouse.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace FlavorsOfTheHouse.Vista
 {
     public partial class FrmPrimerUsoClave : Form
     {
-        public FrmPrimerUsoClave()
+        string usuario;
+        public FrmPrimerUsoClave(string usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -111,6 +115,21 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtClave != txtConfClave)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error en contraseñas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfClave.Clear();
+            }
+            else
+            {
+                int datos = PrimerUso_Modelo.CambiarClaveUsuarioPrimerUso(Validaciones.md5(txtConfClave.Text), usuario);
+                if (datos > 0)
+                {
+                    FrmLogin log = new FrmLogin();
+                    log.Show();
+                    this.Close();
+                }
+            }
             FrmMetodosRecuperacion met = new FrmMetodosRecuperacion();
             met.Show();
             this.Hide();

@@ -94,7 +94,7 @@ namespace FlavorsOfTheHouse.Vista
             bool resultado = Validar_Login_Modelo.Validar_Acceso(log);
             if (resultado == true && txtContrasena.Text == txtUsuario.Text + "primeruso")
             {
-                FrmPrimerUsoClave pu = new FrmPrimerUsoClave();
+                FrmPrimerUsoClave pu = new FrmPrimerUsoClave(txtUsuario.Text);
                 pu.Show();
                 this.Hide();
             }
