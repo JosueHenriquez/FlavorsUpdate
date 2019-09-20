@@ -36,68 +36,65 @@ namespace FlavorsOfTheHouse.Vista
         }
         void Ingresar_Producto()
         {
+            bool resultado = ControlProductos.Verificar_Codigo(txtCodigo.Text);
             DateTime hoy = DateTime.Today;
             if (txtProducto.Text.Trim() == "" ||
                 txtCodigo.Text.Trim() == "")
             {
                 MessageBox.Show("El campo producto o codigo de producto están vacíos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (dtEmpacado.Value.Date > hoy)
-            {
-                MessageBox.Show("La fecha de empacado del producto no puede ser mayor a la fecha actual.", "Error en fecha de empacado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (dtVencimiento.Value.Date < dtEmpacado.Value.Date)
-            {
-                MessageBox.Show("La fecha de vencimiento del producto no puede ser menor a la fecha empacado.", "Error en fecha de vencimiento", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (ControlProductos.Verificar_Codigo(int.Parse(txtCodigo.Text)) == true)
+            else if (resultado == true)
             {
                 MessageBox.Show("El código de producto que desea ingresar ya existe en la base de datos.", "Error de duplicidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (Convert.ToInt16(numCantidad.Text) == 0)
-            {
-                MessageBox.Show("La cantidad de productos que desea agregar no puede ser igual a cero.","Error lógico",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
                 Constructor_Producto pro = new Constructor_Producto();
-                pro.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
                 pro.producto = txtProducto.Text;
-                pro.codigo_producto = int.Parse(txtCodigo.Text);
+                pro.codigo_producto = txtCodigo.Text;
                 pro.id_empresa = Convert.ToInt16(Constructor_Login.empresa);
                 pro.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
                 int datos = ControlProductos.Ingresar_Producto(pro);
                 if (datos > 0)
                 {
-                    pro.precio = txtPrecio.Text;
-                    pro.empacado = dtEmpacado.Text;
-                    pro.vencimiento = dtVencimiento.Text;
-                    pro.cantidad = Convert.ToInt16(numCantidad.Text);
-                    pro.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                    txtId.Text = Constructor_Producto.id_producto.ToString();
+                    grpDetalleProducto.Enabled = true;
+                    dgvProductos.Enabled = false;
+                    grpProducto.Enabled = false;
                 }      
             }
         }
+        void cproductos()
+        {
+            lblProductos.Visible = false;
+            this.dgvProductos.Columns[0].Visible = false;
+            this.dgvProductos.Columns[1].HeaderText = "Nombre del producto";
+            this.dgvProductos.Columns[1].Width = 40;
+            this.dgvProductos.Columns[2].HeaderText = "Codigo de producto";
+            this.dgvProductos.Columns[2].Width = 20;
+            this.dgvProductos.Columns[3].Visible = false;
+            this.dgvProductos.Columns[4].Visible = false;
+            this.dgvProductos.Columns[5].HeaderText = "Tipo de producto";
+            this.dgvProductos.Columns[5].Width = 30;
+            this.dgvProductos.Columns[6].HeaderText = "Empresa";
+            this.dgvProductos.Columns[6].Width = 110;
+        }
         void Cargar_Productos()
         {
-            if (ControlProductos.Cargar_Productos() != null)
+            if (Constructor_Login.empresa == 1)
+            {
+                if (ControlProductos.Cargar_ProductosGeneral() != null)
+                {
+                    this.dgvProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    dgvProductos.DataSource = ControlProductos.Cargar_ProductosGeneral();
+                    cproductos();
+                }                
+            }
+            else if (ControlProductos.Cargar_Productos() != null)
             {
                 this.dgvProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 dgvProductos.DataSource = ControlProductos.Cargar_Productos();
-                lblProductos.Visible = false;
-                this.dgvProductos.Columns[0].Visible = false;
-                this.dgvProductos.Columns[1].HeaderText = "Nombre del producto";
-                this.dgvProductos.Columns[1].Width = 100;
-                this.dgvProductos.Columns[2].HeaderText = "Codigo de producto";
-                this.dgvProductos.Columns[2].Width = 50;
-                this.dgvProductos.Columns[3].Visible = false;
-                this.dgvProductos.Columns[4].Visible = false;
-                this.dgvProductos.Columns[5].Visible = false;
-                this.dgvProductos.Columns[6].HeaderText = "Tipo de producto";
-                this.dgvProductos.Columns[6].Width = 50;
-                this.dgvProductos.Columns[7].HeaderText = "Empresa";
-                this.dgvProductos.Columns[7].Width = 50;
-                this.dgvProductos.Columns[8].HeaderText = "Usuario que agrego el producto";
-                this.dgvProductos.Columns[8].Width = 150;
+                cproductos();
             }
             else
             {
@@ -107,8 +104,7 @@ namespace FlavorsOfTheHouse.Vista
         void Actualizar_Productos()
         {
             Constructor_Producto prod = new Constructor_Producto();
-            prod.id_producto = Convert.ToInt16(txtId.Text);
-            prod.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
+            Constructor_Producto.id_producto = Convert.ToInt16(txtId.Text);
             prod.producto = txtProducto.Text;
             prod.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
             prod.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
@@ -117,6 +113,7 @@ namespace FlavorsOfTheHouse.Vista
             {
                 if (MessageBox.Show("¿Desea cambiar algun dato especifico en alguna puesta en marcha registrada?","Actualizar datos",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
                 {
+                    prod.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
                     prod.precio = txtPrecio.Text;
                     prod.empacado = dtEmpacado.Text;
                     prod.vencimiento = dtVencimiento.Text;
@@ -185,7 +182,6 @@ namespace FlavorsOfTheHouse.Vista
         {
             Ingresar_Producto();
             Cargar_Productos();
-            LimpiarCampos();
         }
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
@@ -207,14 +203,34 @@ namespace FlavorsOfTheHouse.Vista
             txtId.Text = this.dgvProductos[0, pos].Value.ToString();
             txtProducto.Text = this.dgvProductos[1, pos].Value.ToString();
             txtCodigo.Text = this.dgvProductos[2, pos].Value.ToString();
-            txtIdUsuario.Text = this.dgvProductos[3, pos].Value.ToString();           
-            cmbCategoria.Text = this.dgvProductos[6, pos].Value.ToString();
-            cmbEmpresa.Text = this.dgvProductos[7, pos].Value.ToString();
-            txtUsuario.Text = this.dgvProductos[8, pos].Value.ToString();
+            //txtIdUsuario.Text = this.dgvProductos[3, pos].Value.ToString();           
+            cmbCategoria.Text = this.dgvProductos[5, pos].Value.ToString();
+            cmbEmpresa.Text = this.dgvProductos[6, pos].Value.ToString();
+            //txtUsuario.Text = this.dgvProductos[8, pos].Value.ToString();
             BtnAgregar.Enabled = false;
             BtnActualizar.Enabled = true;
             BtnEliminar.Enabled = true;
             txtCodigo.Enabled = false;
+            DataTable resultado = ControlProductos.CargarDetalle_Productos(Convert.ToInt16(txtId.Text));
+            if (resultado != null)
+            {
+                dgvDetallesProducto.DataSource = resultado;
+                lbldetalle.Visible = false;
+                dgvDetallesProducto.Columns[0].Visible = false;
+                dgvDetallesProducto.Columns[1].Visible = true;
+                dgvDetallesProducto.Columns[2].Visible = false;
+                dgvDetallesProducto.Columns[3].Visible = true;
+                dgvDetallesProducto.Columns[4].Visible = false;
+                dgvDetallesProducto.Columns[5].Visible = true;
+                dgvDetallesProducto.Columns[6].Visible = true;
+                dgvDetallesProducto.Columns[7].Visible = false;
+                dgvDetallesProducto.Columns[8].Visible = false;
+                dgvDetallesProducto.Columns[9].Visible = true;
+            }
+            else
+            {
+                lbldetalle.Visible = true;
+            }
         }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
@@ -236,6 +252,33 @@ namespace FlavorsOfTheHouse.Vista
         {
             ReporteProductos repro = new ReporteProductos();
             repro.Show();
+        }
+
+        void AgregarDetalle()
+        {
+            Constructor_Producto detpro = new Constructor_Producto();
+            //ID PRODUCTO ENVIADO DIRECTAMENTE A BASE POR ESO NO SE ENVIA AQUI
+            DateTime now = DateTime.Today;
+            detpro.fecha_ingreso = now.ToString("yyyy-MM-dd");
+            detpro.precio = txtPrecio.Text;
+            detpro.empacado = dtEmpacado.Text;
+            detpro.vencimiento = dtVencimiento.Text;
+            detpro.cantidad = Convert.ToInt16(numCantidad.Text);
+            detpro.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+            detpro.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
+            int datos = ControlProductos.Ingresar_Detalle_Producto(detpro);
+            if (datos > 0)
+            {
+                grpDetalleProducto.Enabled = false;
+                grpProducto.Enabled = true;
+                dgvProductos.Enabled = true;
+                LimpiarCampos();
+            }
+        }
+        private void BtnAgregarDetalle_Click(object sender, EventArgs e)
+        {
+            AgregarDetalle();
+            LimpiarCampos();
         }
     }
 }

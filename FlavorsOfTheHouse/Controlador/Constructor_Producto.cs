@@ -8,9 +8,10 @@ namespace FlavorsOfTheHouse.Controlador
 {
     class Constructor_Producto
     {
-        public int id_producto { get; set; }
+        public static int id_producto { get; set; }
+        public string fecha_ingreso { get; set; }
         public string producto { get; set; }
-        public int codigo_producto { get; set; }
+        public string codigo_producto { get; set; }
         public string precio { get; set; }
         public int id_usuario { get; set; }
         public static string usuario { get; set; }

@@ -13,7 +13,7 @@ namespace FlavorsOfTheHouse.Config
         public static MySqlConnection ObtenerConexion()
         {
             MySqlConnection connect;
-            string server = "10.20.1.67";
+            string server = "127.0.0.1";
             string database = "dbflavors";
             string uid = "eMaster";
             string pwd = "123456";
