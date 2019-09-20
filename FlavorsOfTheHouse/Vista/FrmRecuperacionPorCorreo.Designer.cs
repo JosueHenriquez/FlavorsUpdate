@@ -38,19 +38,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.grpValidacionAdmin = new System.Windows.Forms.GroupBox();
+            this.BtnValidarCredenciales = new System.Windows.Forms.Button();
             this.BtnVerificarCodigo = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUsuarioRecuperar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.BtnValidarCredenciales = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.BtnCerrarFormulario = new System.Windows.Forms.ToolStripButton();
             this.grpNuevaClave.SuspendLayout();
             this.grpValidacionAdmin.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -179,6 +179,22 @@
             this.grpValidacionAdmin.TabStop = false;
             this.grpValidacionAdmin.Text = "Datos para recuperación de clave";
             // 
+            // BtnValidarCredenciales
+            // 
+            this.BtnValidarCredenciales.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnValidarCredenciales.FlatAppearance.BorderSize = 0;
+            this.BtnValidarCredenciales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnValidarCredenciales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnValidarCredenciales.ForeColor = System.Drawing.Color.White;
+            this.BtnValidarCredenciales.Location = new System.Drawing.Point(51, 193);
+            this.BtnValidarCredenciales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnValidarCredenciales.Name = "BtnValidarCredenciales";
+            this.BtnValidarCredenciales.Size = new System.Drawing.Size(335, 40);
+            this.BtnValidarCredenciales.TabIndex = 2;
+            this.BtnValidarCredenciales.Text = "Verificar congruencia de datos";
+            this.BtnValidarCredenciales.UseVisualStyleBackColor = false;
+            this.BtnValidarCredenciales.Click += new System.EventHandler(this.BtnValidarCredenciales_Click);
+            // 
             // BtnVerificarCodigo
             // 
             this.BtnVerificarCodigo.BackColor = System.Drawing.Color.DodgerBlue;
@@ -238,6 +254,28 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Correo electrónico perteneciente al usuario:";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(36, 51);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "sean las correctas.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(36, 34);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(362, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Por motivos de seguridad vamos a verificar que las credenciales";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -252,7 +290,7 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.toolStripButton1});
+            this.BtnCerrarFormulario});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(465, 25);
@@ -265,53 +303,16 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(346, 22);
             this.toolStripLabel1.Text = "Recuperación de contraseñas por intervención de Administrador";
             // 
-            // toolStripButton1
+            // BtnCerrarFormulario
             // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::FlavorsOfTheHouse.Properties.Resources.cancel_button;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Salir";
-            // 
-            // BtnValidarCredenciales
-            // 
-            this.BtnValidarCredenciales.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnValidarCredenciales.FlatAppearance.BorderSize = 0;
-            this.BtnValidarCredenciales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.BtnValidarCredenciales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnValidarCredenciales.ForeColor = System.Drawing.Color.White;
-            this.BtnValidarCredenciales.Location = new System.Drawing.Point(51, 193);
-            this.BtnValidarCredenciales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnValidarCredenciales.Name = "BtnValidarCredenciales";
-            this.BtnValidarCredenciales.Size = new System.Drawing.Size(335, 40);
-            this.BtnValidarCredenciales.TabIndex = 2;
-            this.BtnValidarCredenciales.Text = "Verificar congruencia de datos";
-            this.BtnValidarCredenciales.UseVisualStyleBackColor = false;
-            this.BtnValidarCredenciales.Click += new System.EventHandler(this.BtnValidarCredenciales_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(36, 34);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(362, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Por motivos de seguridad vamos a verificar que las credenciales";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(36, 51);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "sean las correctas.";
+            this.BtnCerrarFormulario.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnCerrarFormulario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnCerrarFormulario.Image = global::FlavorsOfTheHouse.Properties.Resources.cancel_button;
+            this.BtnCerrarFormulario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCerrarFormulario.Name = "BtnCerrarFormulario";
+            this.BtnCerrarFormulario.Size = new System.Drawing.Size(23, 22);
+            this.BtnCerrarFormulario.Text = "Salir";
+            this.BtnCerrarFormulario.Click += new System.EventHandler(this.BtnCerrarFormulario_Click);
             // 
             // FrmRecuperacionPorCorreo
             // 
@@ -364,7 +365,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton BtnCerrarFormulario;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
     }

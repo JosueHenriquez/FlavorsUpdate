@@ -36,15 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picRecuperacionPreguntas = new System.Windows.Forms.PictureBox();
             this.picRegresarLogin = new System.Windows.Forms.PictureBox();
             this.picCorreo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picRecuperacionAdmin = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRecuperacionPreguntas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRegresarLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorreo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRecuperacionAdmin)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -124,15 +124,16 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Regresar al Login";
             // 
-            // pictureBox3
+            // picRecuperacionPreguntas
             // 
-            this.pictureBox3.Image = global::FlavorsOfTheHouse.Properties.Resources.pregunta;
-            this.pictureBox3.Location = new System.Drawing.Point(559, 85);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(153, 156);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.picRecuperacionPreguntas.Image = global::FlavorsOfTheHouse.Properties.Resources.pregunta;
+            this.picRecuperacionPreguntas.Location = new System.Drawing.Point(559, 85);
+            this.picRecuperacionPreguntas.Name = "picRecuperacionPreguntas";
+            this.picRecuperacionPreguntas.Size = new System.Drawing.Size(153, 156);
+            this.picRecuperacionPreguntas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRecuperacionPreguntas.TabIndex = 1;
+            this.picRecuperacionPreguntas.TabStop = false;
+            this.picRecuperacionPreguntas.Click += new System.EventHandler(this.picRecuperacionPreguntas_Click);
             // 
             // picRegresarLogin
             // 
@@ -156,15 +157,16 @@
             this.picCorreo.TabStop = false;
             this.picCorreo.Click += new System.EventHandler(this.picCorreo_Click);
             // 
-            // pictureBox1
+            // picRecuperacionAdmin
             // 
-            this.pictureBox1.Image = global::FlavorsOfTheHouse.Properties.Resources.guapo;
-            this.pictureBox1.Location = new System.Drawing.Point(351, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 156);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.picRecuperacionAdmin.Image = global::FlavorsOfTheHouse.Properties.Resources.guapo;
+            this.picRecuperacionAdmin.Location = new System.Drawing.Point(351, 85);
+            this.picRecuperacionAdmin.Name = "picRecuperacionAdmin";
+            this.picRecuperacionAdmin.Size = new System.Drawing.Size(153, 156);
+            this.picRecuperacionAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRecuperacionAdmin.TabIndex = 1;
+            this.picRecuperacionAdmin.TabStop = false;
+            this.picRecuperacionAdmin.Click += new System.EventHandler(this.picRecuperacionAdmin_Click);
             // 
             // FrmMetodosRecuperacion
             // 
@@ -176,10 +178,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.picRecuperacionPreguntas);
             this.Controls.Add(this.picRegresarLogin);
             this.Controls.Add(this.picCorreo);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picRecuperacionAdmin);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMetodosRecuperacion";
@@ -188,10 +190,10 @@
             this.Text = "FrmMetodosRecuperacion";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRecuperacionPreguntas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRegresarLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCorreo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRecuperacionAdmin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,9 +202,9 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picRecuperacionAdmin;
         private System.Windows.Forms.PictureBox picCorreo;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picRecuperacionPreguntas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

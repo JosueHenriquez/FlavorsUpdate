@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmRecuperarClave2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 385);
+            this.Name = "FrmRecuperarClave2";
             this.Text = "FrmRecuperarClave2";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

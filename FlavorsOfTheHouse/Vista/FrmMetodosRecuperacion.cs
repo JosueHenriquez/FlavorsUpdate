@@ -30,5 +30,19 @@ namespace FlavorsOfTheHouse.Vista
             frmcorreo.Show();
             this.Hide();
         }
+
+        private void picRecuperacionAdmin_Click(object sender, EventArgs e)
+        {
+            FrmRecuperarClave2 frmadmin = new FrmRecuperarClave2();
+            frmadmin.ShowDialog();
+            this.Hide();
+        }
+
+        private void picRecuperacionPreguntas_Click(object sender, EventArgs e)
+        {
+            FrmRecuperarClave3 frmPreguntas = new FrmRecuperarClave3();
+            frmPreguntas.ShowDialog();
+            this.Hide();
+        }
     }
 }

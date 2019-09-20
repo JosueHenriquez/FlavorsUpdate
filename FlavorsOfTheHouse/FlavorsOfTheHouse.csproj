@@ -249,12 +249,6 @@
     <Compile Include="Vista\FrmRecuperacionPorCorreo.Designer.cs">
       <DependentUpon>FrmRecuperacionPorCorreo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FrmRecuperarClave1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\FrmRecuperarClave1.Designer.cs">
-      <DependentUpon>FrmRecuperarClave1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\FrmRecuperarClave2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRecuperacionPorCorreo.resx">
       <DependentUpon>FrmRecuperacionPorCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmRecuperarClave2.resx">
+      <DependentUpon>FrmRecuperarClave2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRegistroEmpresas.resx">
       <DependentUpon>FrmRegistroEmpresas.cs</DependentUpon>
