@@ -40,7 +40,7 @@
             this.grpValidacionAdmin = new System.Windows.Forms.GroupBox();
             this.BtnValidarCredenciales = new System.Windows.Forms.Button();
             this.BtnVerificarCodigo = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUsuarioRecuperar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -162,7 +162,7 @@
             // 
             this.grpValidacionAdmin.Controls.Add(this.BtnValidarCredenciales);
             this.grpValidacionAdmin.Controls.Add(this.BtnVerificarCodigo);
-            this.grpValidacionAdmin.Controls.Add(this.textBox3);
+            this.grpValidacionAdmin.Controls.Add(this.txtCodigo);
             this.grpValidacionAdmin.Controls.Add(this.txtEmail);
             this.grpValidacionAdmin.Controls.Add(this.txtUsuarioRecuperar);
             this.grpValidacionAdmin.Controls.Add(this.label3);
@@ -210,13 +210,13 @@
             this.BtnVerificarCodigo.Text = "Iniciar recuperación";
             this.BtnVerificarCodigo.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // txtCodigo
             // 
-            this.textBox3.Location = new System.Drawing.Point(50, 264);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(334, 24);
-            this.textBox3.TabIndex = 3;
+            this.txtCodigo.Location = new System.Drawing.Point(50, 264);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(334, 24);
+            this.txtCodigo.TabIndex = 3;
             // 
             // txtEmail
             // 
@@ -296,6 +296,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(465, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripLabel1
             // 
@@ -357,7 +358,7 @@
         private System.Windows.Forms.GroupBox grpValidacionAdmin;
         private System.Windows.Forms.Button BtnValidarCredenciales;
         private System.Windows.Forms.Button BtnVerificarCodigo;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtUsuarioRecuperar;
         private System.Windows.Forms.Label label3;

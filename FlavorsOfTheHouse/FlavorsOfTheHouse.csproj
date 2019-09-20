@@ -69,6 +69,7 @@
     <Compile Include="Modelo\ControlEmpresas_Modelo.cs" />
     <Compile Include="Modelo\ControlFacturacion.cs" />
     <Compile Include="Modelo\ControlProductos.cs" />
+    <Compile Include="Modelo\ControlRecuCorreo.cs" />
     <Compile Include="Modelo\ControlUsuarios_Modelo.cs" />
     <Compile Include="Modelo\ObtenerDatos_Modelo.cs" />
     <Compile Include="Modelo\PrimerUso_Modelo.cs" />
