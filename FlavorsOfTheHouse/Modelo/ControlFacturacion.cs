@@ -233,7 +233,6 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
-
         public static int Actualizar_Factura_PagoTotal(int idfactura, double monto)
         {
             int retorno = 0;
@@ -258,7 +257,6 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
-
         public static int Anular_Factura(int idfactura)
         {
             int retorno = 0;
@@ -319,7 +317,7 @@ namespace FlavorsOfTheHouse.Modelo
                                     }
                                 }
                             }
-                        }
+                        }//End for
                     } 
                 }
                 else

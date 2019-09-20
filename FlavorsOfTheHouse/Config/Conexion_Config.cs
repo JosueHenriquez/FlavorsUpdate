@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace FlavorsOfTheHouse.Config
@@ -26,7 +22,6 @@ namespace FlavorsOfTheHouse.Config
                                               "; uid = " + uid+
                                               "; pwd = " + pwd);
                 connect.Open();
-                //MessageBox.Show("Conectado");
                 return connect;
             }
             catch (Exception)

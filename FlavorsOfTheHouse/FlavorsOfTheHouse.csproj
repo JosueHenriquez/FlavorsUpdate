@@ -249,6 +249,24 @@
     <Compile Include="Vista\FrmRecuperacionPorCorreo.Designer.cs">
       <DependentUpon>FrmRecuperacionPorCorreo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmRecuperarClave1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRecuperarClave1.Designer.cs">
+      <DependentUpon>FrmRecuperarClave1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmRecuperarClave2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRecuperarClave2.Designer.cs">
+      <DependentUpon>FrmRecuperarClave2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmRecuperarClave3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmRecuperarClave3.Designer.cs">
+      <DependentUpon>FrmRecuperarClave3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmRegistroEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>

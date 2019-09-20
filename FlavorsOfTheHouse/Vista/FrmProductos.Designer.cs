@@ -69,10 +69,10 @@
             this.dgvDetallesProducto = new System.Windows.Forms.DataGridView();
             this.txtIdHistorial = new System.Windows.Forms.TextBox();
             this.grpDetalleProducto = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.BtnAgregarDetalle = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.grpProducto = new System.Windows.Forms.GroupBox();
             this.lbldetalle = new System.Windows.Forms.Label();
             this.BtnCerrar.SuspendLayout();
@@ -563,6 +563,32 @@
             this.grpDetalleProducto.TabStop = false;
             this.grpDetalleProducto.Text = "Detalles del producto";
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(149, 215);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 36);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Eliminar Detalle";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(22, 216);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 36);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Actualizar detalle";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // BtnAgregarDetalle
             // 
             this.BtnAgregarDetalle.BackColor = System.Drawing.Color.Green;
@@ -589,32 +615,6 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Refrescar tabla de detalles";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(22, 216);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 36);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Actualizar detalle";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(149, 215);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 36);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Eliminar Detalle";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // grpProducto
             // 

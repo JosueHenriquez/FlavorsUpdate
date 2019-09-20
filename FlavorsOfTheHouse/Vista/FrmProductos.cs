@@ -113,17 +113,24 @@ namespace FlavorsOfTheHouse.Vista
             {
                 if (MessageBox.Show("¿Desea cambiar algun dato especifico en alguna puesta en marcha registrada?","Actualizar datos",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
                 {
-                    prod.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
-                    prod.precio = txtPrecio.Text;
-                    prod.empacado = dtEmpacado.Text;
-                    prod.vencimiento = dtVencimiento.Text;
-                    prod.cantidad = Convert.ToInt16(numCantidad.Text);
-                    prod.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
-                    int datos = ControlProductos.Actualizar_Producto_Historial(prod);
-                    if (datos > 0)
-                    {
+                    grpDetalleProducto.Enabled = true;
+                    //prod.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
+                    //prod.precio = txtPrecio.Text;
+                    //prod.empacado = dtEmpacado.Text;
+                    //prod.vencimiento = dtVencimiento.Text;
+                    //prod.cantidad = Convert.ToInt16(numCantidad.Text);
+                    //prod.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                    //int datos = ControlProductos.Actualizar_Producto_Historial(prod);
+                    //if (datos > 0)
+                    //{
 
-                    }
+                    //}
+                }
+                else
+                {
+                    grpDetalleProducto.Enabled = false;
+                    LimpiarCampos();
+                    grpProducto.Enabled = false;
                 }
             }
         }
@@ -194,7 +201,6 @@ namespace FlavorsOfTheHouse.Vista
                 Actualizar_Productos();
                 Cargar_Productos();                
             }
-            LimpiarCampos();
         }
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
