@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FlavorsOfTheHouse.Modelo;
+using FlavorsOfTheHouse.Config;
 
 namespace FlavorsOfTheHouse.Vista
 {
@@ -47,8 +48,8 @@ namespace FlavorsOfTheHouse.Vista
 
                 string codigo = a.ToString() + b.ToString() + c.ToString() + d.ToString() + r.ToString() + f.ToString();
 
-                ConstructorEmpresa_Controlador correo = new ConstructorEmpresa_Controlador();
-                string sending = correo.correo;
+                ConstructorEmpresa_Controlador mail = new ConstructorEmpresa_Controlador();
+                string sending = Constructor_RecuCorreo.correo;
                 Constructor_Usuario recu = new Constructor_Usuario();
                 string email = txtEmail.Text;
                 System.Net.Mail.MailMessage mssg = new System.Net.Mail.MailMessage();
@@ -69,8 +70,16 @@ namespace FlavorsOfTheHouse.Vista
                 cliente.EnableSsl = true;
                 try
                 {
-                    cliente.Send(mssg);
-                    MessageBox.Show("enviado");
+                    if (ControlRecuCorreo.ActualizarContra(Constructor_Usuario.id_usuario, Validaciones.md5(codigo)) == true)
+                    {
+                        cliente.Send(mssg);
+                        txtCodigo.Enabled = true;
+                        BtnVerificarCodigo.Enabled = true;
+                        txtUsuarioRecuperar.Enabled = false;
+                        txtEmail.Enabled = false;
+                        BtnValidarCredenciales.Enabled = false;
+                        MessageBox.Show("Código de verificación enviado exitosamente, ahora ingrese el código de verificación", "Datos enviados exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 catch (Exception)
                 {
@@ -82,12 +91,43 @@ namespace FlavorsOfTheHouse.Vista
 
         private void BtnCerrarFormulario_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void BtnVerificarCodigo_Click(object sender, EventArgs e)
+        {
+            string codigo = Validaciones.md5(txtCodigo.Text);
+            if (ControlRecuCorreo.VerificarCodigo(Constructor_Usuario.id_usuario, codigo)==true)
+            {
+                MessageBox.Show("Los datos comparados son correctos ahora proceda a cambiar su contraseña", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BtnVerificarCodigo.Enabled = false;
+                txtCodigo.Enabled = false;
+                grpNuevaClave.Enabled = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtClave.Text.Trim() == txtConfirmar.Text.Trim())
+            {
+                if (ControlRecuCorreo.ActualizarNueva(Constructor_Usuario.id_usuario, Validaciones.md5(txtClave.Text)) == true)
+                {
+                    FrmLogin log = new FrmLogin();
+                    log.Show();
+                    this.Hide(); 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden, porfavor intentelo de nuevo", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtClave.Clear();
+                txtConfirmar.Clear();
+            }
         }
     }
 }

@@ -31,10 +31,10 @@
             this.LinkMetodos = new System.Windows.Forms.LinkLabel();
             this.LinkLogin = new System.Windows.Forms.LinkLabel();
             this.grpNuevaClave = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnCambiar = new System.Windows.Forms.Button();
+            this.txtClave = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.grpValidacionAdmin = new System.Windows.Forms.GroupBox();
@@ -80,10 +80,10 @@
             // 
             // grpNuevaClave
             // 
-            this.grpNuevaClave.Controls.Add(this.button2);
-            this.grpNuevaClave.Controls.Add(this.textBox4);
+            this.grpNuevaClave.Controls.Add(this.btnCambiar);
+            this.grpNuevaClave.Controls.Add(this.txtClave);
             this.grpNuevaClave.Controls.Add(this.label4);
-            this.grpNuevaClave.Controls.Add(this.textBox5);
+            this.grpNuevaClave.Controls.Add(this.txtConfirmar);
             this.grpNuevaClave.Controls.Add(this.label6);
             this.grpNuevaClave.Controls.Add(this.label5);
             this.grpNuevaClave.Location = new System.Drawing.Point(13, 412);
@@ -95,28 +95,30 @@
             this.grpNuevaClave.TabStop = false;
             this.grpNuevaClave.Text = "Nuevas Credenciales de Acceso";
             // 
-            // button2
+            // btnCambiar
             // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(51, 147);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(335, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Validar Recuperación";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCambiar.BackColor = System.Drawing.Color.Green;
+            this.btnCambiar.FlatAppearance.BorderSize = 0;
+            this.btnCambiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiar.ForeColor = System.Drawing.Color.White;
+            this.btnCambiar.Location = new System.Drawing.Point(51, 147);
+            this.btnCambiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCambiar.Name = "btnCambiar";
+            this.btnCambiar.Size = new System.Drawing.Size(335, 40);
+            this.btnCambiar.TabIndex = 7;
+            this.btnCambiar.Text = "Actualizar contraseña";
+            this.btnCambiar.UseVisualStyleBackColor = false;
+            this.btnCambiar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox4
+            // txtClave
             // 
-            this.textBox4.Location = new System.Drawing.Point(51, 62);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(335, 24);
-            this.textBox4.TabIndex = 5;
+            this.txtClave.Location = new System.Drawing.Point(51, 62);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(335, 24);
+            this.txtClave.TabIndex = 5;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -128,13 +130,14 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Nueva Clave:";
             // 
-            // textBox5
+            // txtConfirmar
             // 
-            this.textBox5.Location = new System.Drawing.Point(51, 114);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(335, 24);
-            this.textBox5.TabIndex = 6;
+            this.txtConfirmar.Location = new System.Drawing.Point(51, 114);
+            this.txtConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtConfirmar.Name = "txtConfirmar";
+            this.txtConfirmar.Size = new System.Drawing.Size(335, 24);
+            this.txtConfirmar.TabIndex = 6;
+            this.txtConfirmar.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -209,6 +212,7 @@
             this.BtnVerificarCodigo.TabIndex = 4;
             this.BtnVerificarCodigo.Text = "Iniciar recuperación";
             this.BtnVerificarCodigo.UseVisualStyleBackColor = false;
+            this.BtnVerificarCodigo.Click += new System.EventHandler(this.BtnVerificarCodigo_Click);
             // 
             // txtCodigo
             // 
@@ -349,10 +353,10 @@
         private System.Windows.Forms.LinkLabel LinkMetodos;
         private System.Windows.Forms.LinkLabel LinkLogin;
         private System.Windows.Forms.GroupBox grpNuevaClave;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnCambiar;
+        private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtConfirmar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox grpValidacionAdmin;

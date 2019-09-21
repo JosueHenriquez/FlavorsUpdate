@@ -64,6 +64,7 @@
     <Compile Include="Controlador\Constructor_Facturacion.cs" />
     <Compile Include="Controlador\Constructor_Login.cs" />
     <Compile Include="Controlador\Constructor_Producto.cs" />
+    <Compile Include="Controlador\Constructor_RecuCorreo.cs" />
     <Compile Include="Controlador\Constructor_Recuperacion_Clave.cs" />
     <Compile Include="Controlador\Constructor_Usuario.cs" />
     <Compile Include="Modelo\ControlEmpresas_Modelo.cs" />
