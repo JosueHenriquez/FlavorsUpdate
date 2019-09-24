@@ -31,26 +31,26 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.grpValidacionAdmin = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.grp1 = new System.Windows.Forms.GroupBox();
+            this.btnVerificar = new System.Windows.Forms.Button();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtClaveAdmin = new System.Windows.Forms.TextBox();
+            this.txtUsuarioAdmin = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.grpNuevaClave = new System.Windows.Forms.GroupBox();
+            this.grp2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNewClave = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
+            this.lbldiferente = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LinkLogin = new System.Windows.Forms.LinkLabel();
             this.LinkMetodos = new System.Windows.Forms.LinkLabel();
             this.toolStrip1.SuspendLayout();
-            this.grpValidacionAdmin.SuspendLayout();
-            this.grpNuevaClave.SuspendLayout();
+            this.grp1.SuspendLayout();
+            this.grp2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -79,57 +79,59 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Salir";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // grpValidacionAdmin
+            // grp1
             // 
-            this.grpValidacionAdmin.Controls.Add(this.button1);
-            this.grpValidacionAdmin.Controls.Add(this.textBox3);
-            this.grpValidacionAdmin.Controls.Add(this.textBox2);
-            this.grpValidacionAdmin.Controls.Add(this.textBox1);
-            this.grpValidacionAdmin.Controls.Add(this.label3);
-            this.grpValidacionAdmin.Controls.Add(this.label2);
-            this.grpValidacionAdmin.Controls.Add(this.label1);
-            this.grpValidacionAdmin.Location = new System.Drawing.Point(30, 41);
-            this.grpValidacionAdmin.Name = "grpValidacionAdmin";
-            this.grpValidacionAdmin.Size = new System.Drawing.Size(390, 259);
-            this.grpValidacionAdmin.TabIndex = 1;
-            this.grpValidacionAdmin.TabStop = false;
-            this.grpValidacionAdmin.Text = "Uso del Administrador";
+            this.grp1.Controls.Add(this.btnVerificar);
+            this.grp1.Controls.Add(this.txtUsuario);
+            this.grp1.Controls.Add(this.txtClaveAdmin);
+            this.grp1.Controls.Add(this.txtUsuarioAdmin);
+            this.grp1.Controls.Add(this.label3);
+            this.grp1.Controls.Add(this.label2);
+            this.grp1.Controls.Add(this.label1);
+            this.grp1.Location = new System.Drawing.Point(30, 41);
+            this.grp1.Name = "grp1";
+            this.grp1.Size = new System.Drawing.Size(390, 259);
+            this.grp1.TabIndex = 1;
+            this.grp1.TabStop = false;
+            this.grp1.Text = "Uso del Administrador";
             // 
-            // button1
+            // btnVerificar
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(46, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(287, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Validar Recuperación";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVerificar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVerificar.FlatAppearance.BorderSize = 0;
+            this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerificar.ForeColor = System.Drawing.Color.White;
+            this.btnVerificar.Location = new System.Drawing.Point(46, 196);
+            this.btnVerificar.Name = "btnVerificar";
+            this.btnVerificar.Size = new System.Drawing.Size(287, 35);
+            this.btnVerificar.TabIndex = 2;
+            this.btnVerificar.Text = "Validar Recuperación";
+            this.btnVerificar.UseVisualStyleBackColor = false;
+            this.btnVerificar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // txtUsuario
             // 
-            this.textBox3.Location = new System.Drawing.Point(46, 148);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(287, 24);
-            this.textBox3.TabIndex = 1;
+            this.txtUsuario.Location = new System.Drawing.Point(46, 148);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(287, 24);
+            this.txtUsuario.TabIndex = 1;
             // 
-            // textBox2
+            // txtClaveAdmin
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 24);
-            this.textBox2.TabIndex = 1;
+            this.txtClaveAdmin.Location = new System.Drawing.Point(46, 101);
+            this.txtClaveAdmin.Name = "txtClaveAdmin";
+            this.txtClaveAdmin.Size = new System.Drawing.Size(287, 24);
+            this.txtClaveAdmin.TabIndex = 1;
             // 
-            // textBox1
+            // txtUsuarioAdmin
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 24);
-            this.textBox1.TabIndex = 1;
+            this.txtUsuarioAdmin.Location = new System.Drawing.Point(46, 56);
+            this.txtUsuarioAdmin.Name = "txtUsuarioAdmin";
+            this.txtUsuarioAdmin.Size = new System.Drawing.Size(287, 24);
+            this.txtUsuarioAdmin.TabIndex = 1;
             // 
             // label3
             // 
@@ -158,20 +160,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario Administrador:";
             // 
-            // grpNuevaClave
+            // grp2
             // 
-            this.grpNuevaClave.Controls.Add(this.button2);
-            this.grpNuevaClave.Controls.Add(this.textBox4);
-            this.grpNuevaClave.Controls.Add(this.label4);
-            this.grpNuevaClave.Controls.Add(this.textBox5);
-            this.grpNuevaClave.Controls.Add(this.label6);
-            this.grpNuevaClave.Controls.Add(this.label5);
-            this.grpNuevaClave.Location = new System.Drawing.Point(453, 41);
-            this.grpNuevaClave.Name = "grpNuevaClave";
-            this.grpNuevaClave.Size = new System.Drawing.Size(390, 259);
-            this.grpNuevaClave.TabIndex = 1;
-            this.grpNuevaClave.TabStop = false;
-            this.grpNuevaClave.Text = "Nuevas Credenciales de Acceso";
+            this.grp2.Controls.Add(this.button2);
+            this.grp2.Controls.Add(this.txtNewClave);
+            this.grp2.Controls.Add(this.label4);
+            this.grp2.Controls.Add(this.txtConfirmarClave);
+            this.grp2.Controls.Add(this.lbldiferente);
+            this.grp2.Controls.Add(this.label5);
+            this.grp2.Location = new System.Drawing.Point(453, 41);
+            this.grp2.Name = "grp2";
+            this.grp2.Size = new System.Drawing.Size(390, 259);
+            this.grp2.TabIndex = 1;
+            this.grp2.TabStop = false;
+            this.grp2.Text = "Nuevas Credenciales de Acceso";
             // 
             // button2
             // 
@@ -186,13 +188,14 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Validar Recuperación";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox4
+            // txtNewClave
             // 
-            this.textBox4.Location = new System.Drawing.Point(52, 56);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(287, 24);
-            this.textBox4.TabIndex = 1;
+            this.txtNewClave.Location = new System.Drawing.Point(52, 56);
+            this.txtNewClave.Name = "txtNewClave";
+            this.txtNewClave.Size = new System.Drawing.Size(287, 24);
+            this.txtNewClave.TabIndex = 1;
             // 
             // label4
             // 
@@ -203,23 +206,23 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Nueva Clave:";
             // 
-            // textBox5
+            // txtConfirmarClave
             // 
-            this.textBox5.Location = new System.Drawing.Point(52, 101);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 24);
-            this.textBox5.TabIndex = 1;
+            this.txtConfirmarClave.Location = new System.Drawing.Point(52, 101);
+            this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.Size = new System.Drawing.Size(287, 24);
+            this.txtConfirmarClave.TabIndex = 1;
             // 
-            // label6
+            // lbldiferente
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(203, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Las claves no coinciden";
-            this.label6.Visible = false;
+            this.lbldiferente.AutoSize = true;
+            this.lbldiferente.ForeColor = System.Drawing.Color.Red;
+            this.lbldiferente.Location = new System.Drawing.Point(203, 83);
+            this.lbldiferente.Name = "lbldiferente";
+            this.lbldiferente.Size = new System.Drawing.Size(136, 17);
+            this.lbldiferente.TabIndex = 0;
+            this.lbldiferente.Text = "Las claves no coinciden";
+            this.lbldiferente.Visible = false;
             // 
             // label5
             // 
@@ -259,8 +262,8 @@
             this.ClientSize = new System.Drawing.Size(878, 391);
             this.Controls.Add(this.LinkMetodos);
             this.Controls.Add(this.LinkLogin);
-            this.Controls.Add(this.grpNuevaClave);
-            this.Controls.Add(this.grpValidacionAdmin);
+            this.Controls.Add(this.grp2);
+            this.Controls.Add(this.grp1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -270,10 +273,10 @@
             this.Load += new System.EventHandler(this.FrmIntervenciondeAdministrador_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.grpValidacionAdmin.ResumeLayout(false);
-            this.grpValidacionAdmin.PerformLayout();
-            this.grpNuevaClave.ResumeLayout(false);
-            this.grpNuevaClave.PerformLayout();
+            this.grp1.ResumeLayout(false);
+            this.grp1.PerformLayout();
+            this.grp2.ResumeLayout(false);
+            this.grp2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,19 +285,19 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.GroupBox grpValidacionAdmin;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox grp1;
+        private System.Windows.Forms.Button btnVerificar;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtClaveAdmin;
+        private System.Windows.Forms.TextBox txtUsuarioAdmin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grpNuevaClave;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.GroupBox grp2;
+        private System.Windows.Forms.TextBox txtNewClave;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtConfirmarClave;
+        private System.Windows.Forms.Label lbldiferente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;

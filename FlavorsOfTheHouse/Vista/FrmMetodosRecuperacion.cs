@@ -33,7 +33,7 @@ namespace FlavorsOfTheHouse.Vista
 
         private void picRecuperacionAdmin_Click(object sender, EventArgs e)
         {
-            FrmRecuperarClave2 frmadmin = new FrmRecuperarClave2();
+            FrmIntervenciondeAdministrador frmadmin = new FrmIntervenciondeAdministrador();
             frmadmin.ShowDialog();
             this.Hide();
         }

@@ -16,5 +16,10 @@ namespace FlavorsOfTheHouse.Vista
         {
             InitializeComponent();
         }
+
+        private void FrmSplashScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
