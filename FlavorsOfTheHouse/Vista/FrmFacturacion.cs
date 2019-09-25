@@ -23,24 +23,29 @@ namespace FlavorsOfTheHouse.Vista
         {
             InitializeComponent();
         }
+        void LimpiarGrid()
+        {
+            DataTable dt = (DataTable)dgvdetalleproductos.DataSource;
+            dt.Clear();
+        }
         void AgregarDetalle()
         {
             if (txtCantidad.Text == "")
             {
                 MessageBox.Show("La cantidad de productos no puede estar vacía.","Error de cantidad",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-            else if(txtCantidad.Text == "0")
+            else if(Convert.ToInt16(txtCantidad.Text) == 0)
             {
                 MessageBox.Show("La cantidad de productos no puede ser igual a cero.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (Convert.ToInt16(txtDisponible.Text) < Convert.ToInt16(txtCantidad.Text))
+            else if (Convert.ToInt16(txtCantidad.Text) > Convert.ToInt16(txtDisponible.Text))
             {
-                MessageBox.Show("No existe la cantidad de productos suficiente para la demanda.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No hay suficientes productos para la cantidad que desea vender.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 Constructor_Detalle_Factura detalle = new Constructor_Detalle_Factura();
-                detalle.id_producto = Convert.ToInt16(txtIdProducto.Text);
+                detalle.id_producto = Convert.ToInt16(txtIdDetalle.Text);
                 detalle.cantidad = Convert.ToInt16(txtCantidad.Text);
                 detalle.id_factura = Convert.ToInt16(txtIdFactura.Text);
                 double pago_parcial = Convert.ToInt16(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
@@ -53,7 +58,8 @@ namespace FlavorsOfTheHouse.Vista
                     int cantidad_saliente = Convert.ToInt16(txtCantidad.Text);
                     int cantidad_nueva = cantidad_antigua - cantidad_saliente;
                     int idproducto = Convert.ToInt16(txtIdProducto.Text);
-                    ControlFacturacion.Actualizar_Cantidad_Productos(idproducto,cantidad_nueva);
+                    int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
+                    ControlFacturacion.Actualizar_Cantidad_Productos(idproducto,cantidad_nueva,iddetalle);
                     LimpiarCampos();
                     Calcular_Pago();
                 }
@@ -73,15 +79,14 @@ namespace FlavorsOfTheHouse.Vista
             DataTable datos = ControlFacturacion.ObtenerDetalles(Convert.ToInt16(txtIdFactura.Text));
             if (datos != null)
             {
-                dgvDetallesFactura.DataSource = ControlFacturacion.ObtenerDetalles(Convert.ToInt16(txtIdFactura.Text));
-                dgvDetallesFactura.Columns[0].HeaderText = "Nombre del producto";
-                dgvDetallesFactura.Columns[1].Visible = false;
-                dgvDetallesFactura.Columns[2].Visible = false;
-                dgvDetallesFactura.Columns[3].HeaderText = "Cantidad";
-                dgvDetallesFactura.Columns[3].Width = 70;
-                dgvDetallesFactura.Columns[4].Visible = false;
-                dgvDetallesFactura.Columns[5].HeaderText = "Sub-Total";
-                dgvDetallesFactura.Columns[5].Width = 70;
+                dgvDetallesFactura.DataSource = ControlFacturacion.ObtenerDetalles(Convert.ToInt16(txtIdFactura.Text));                
+                dgvDetallesFactura.Columns[0].Visible = false;
+                dgvDetallesFactura.Columns[1].HeaderText = "Nombre del producto";
+                dgvDetallesFactura.Columns[2].HeaderText = "Cantidad";
+                dgvDetallesFactura.Columns[2].Width = 70;
+                dgvDetallesFactura.Columns[3].HeaderText = "Precio unitario";
+                dgvDetallesFactura.Columns[4].HeaderText = "Sub-Total";
+                dgvDetallesFactura.Columns[4].Width = 70;
             }
         }
         void Calcular_Pago()
@@ -168,7 +173,8 @@ namespace FlavorsOfTheHouse.Vista
         {
             try
             {
-                if (ControlFacturacion.Buscar_Producto(txtCodigoProducto.Text.ToLower()) == false)
+                DataTable data = ControlFacturacion.Buscar_Detalle_Productos(txtCodigoProducto.Text);
+                if (data == null)
                 {
                     DeshabilitarBotones();
                     //txtCantidad.Enabled = false;
@@ -176,11 +182,15 @@ namespace FlavorsOfTheHouse.Vista
                 else
                 {
                     txtCantidad.Enabled = true;
-                    HabilitarBotones();                    
-                    txtNombreProducto.Text = DatosProductos.nombreproducto;
-                    txtDisponible.Text = DatosProductos.cantidad.ToString();
-                    txtIdProducto.Text = DatosProductos.idpro.ToString();
-                    txtPrecio.Text = DatosProductos.precio.ToString();
+                    HabilitarBotones();
+                    this.dgvdetalleproductos.DataSource = ControlFacturacion.Buscar_Detalle_Productos(txtCodigoProducto.Text);
+                    dgvdetalleproductos.Columns[0].Visible = false;
+                    dgvdetalleproductos.Columns[1].HeaderText = "Nombre del producto";
+                    dgvdetalleproductos.Columns[1].Width = 170;
+                    dgvdetalleproductos.Columns[2].HeaderText = "Producto disponibles";
+                    dgvdetalleproductos.Columns[3].HeaderText = "Precio Unitario";
+                    dgvdetalleproductos.Columns[3].DefaultCellStyle.Format = "N2";
+                    dgvdetalleproductos.Columns[4].Visible = false;
                 }
             }
             catch (Exception)
@@ -192,6 +202,7 @@ namespace FlavorsOfTheHouse.Vista
         {
             AgregarDetalle();
             CargarDetalle();
+            LimpiarGrid();
         }
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -202,7 +213,8 @@ namespace FlavorsOfTheHouse.Vista
         {
             int devolver = Convert.ToInt16(txtCantidad.Text)+ Convert.ToInt16(txtDisponible.Text);
             int idproducto = Convert.ToInt16(txtIdProducto.Text);
-            int dev = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto,devolver);
+            int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
+            int dev = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto,devolver,iddetalle);
             if (dev >= 1)
             {
                 //Eliminar detalle
@@ -237,7 +249,7 @@ namespace FlavorsOfTheHouse.Vista
                     txtCantidad.Text = dgvDetallesFactura[3, pos].Value.ToString();
                     pedidoantiguo = Convert.ToInt16(dgvDetallesFactura[3, pos].Value);
                     txtIdFactura.Text = dgvDetallesFactura[4, pos].Value.ToString();
-                    ControlFacturacion.Buscar_Producto(txtNombreProducto.Text);
+                    ControlFacturacion.Buscar_Detalle_Productos(txtNombreProducto.Text);
                     txtDisponible.Text = DatosProductos.cantidad.ToString();
                     txtPrecio.Text = DatosProductos.precio.ToString();
                     txtCantidad.Enabled = true;
@@ -278,7 +290,8 @@ namespace FlavorsOfTheHouse.Vista
                         Constructor_Producto prod = new Constructor_Producto();
                         int nuevacantidad = Convert.ToInt16(txtDisponible.Text) - temp;
                         int idproducto = Convert.ToInt16(txtIdProducto.Text);
-                        datos = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto, nuevacantidad);
+                        int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
+                        datos = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto, nuevacantidad,iddetalle);
                         if (datos >= 1)
                         {
                             LimpiarCampos();
@@ -302,7 +315,8 @@ namespace FlavorsOfTheHouse.Vista
                     Constructor_Producto prod = new Constructor_Producto();
                     int nuevacantidad = Convert.ToInt16(txtDisponible.Text) + sumar;
                     int idproducto = Convert.ToInt16(txtIdProducto.Text);
-                    datos = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto, nuevacantidad);
+                    int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
+                    datos = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto, nuevacantidad,iddetalle);
                     if (datos >= 1)
                     {
                         LimpiarCampos();
@@ -354,6 +368,17 @@ namespace FlavorsOfTheHouse.Vista
                     DeshabilitarBotones();
                 }
             }         
+        }
+
+        private void dgvdetalleproductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int pos = 0;
+            pos = dgvdetalleproductos.CurrentRow.Index;
+            txtIdProducto.Text = dgvdetalleproductos[0, pos].Value.ToString();
+            txtNombreProducto.Text = dgvdetalleproductos[1, pos].Value.ToString();
+            txtDisponible.Text = dgvdetalleproductos[2, pos].Value.ToString();
+            txtPrecio.Text = dgvdetalleproductos[3, pos].Value.ToString();
+            txtIdDetalle.Text = dgvdetalleproductos[4, pos].Value.ToString();
         }
     }
 }

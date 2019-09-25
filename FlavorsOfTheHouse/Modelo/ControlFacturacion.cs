@@ -44,52 +44,75 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
-        public static bool Buscar_Producto(string producto)
+        public static DataTable Buscar_Detalle_Productos(string producto)
         {
-            bool retorno = false;
+            DataTable data = new DataTable();
             try
             {
-                string query = "SELECT id_producto, nombre_producto, existencia, precio FROM tbproducto WHERE codigo_producto = ?param1 OR nombre_producto = ?param2";
-                MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
-                cmdselect.Parameters.Add(new MySqlParameter("param1", producto));
-                cmdselect.Parameters.Add(new MySqlParameter("param2", producto));
-                retorno = Convert.ToBoolean(cmdselect.ExecuteScalar());
-                if (retorno == true)
-                {
-                    MySqlDataReader reader = cmdselect.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        DatosProductos.idpro = reader.GetInt16(0);
-                        DatosProductos.nombreproducto = reader.GetString(1);
-                        DatosProductos.cantidad = reader.GetInt16(2);
-                        DatosProductos.precio = reader.GetDouble(3);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El producto solicitado no se encuentra registrado, consulte el inventario para ver el codigo de producto o el nombre respectivo.", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                return retorno;
+                DateTime now = DateTime.Today;
+                string ahora = now.ToString("yyyy-MM-dd");
+                string query = "SELECT a.id_producto, CONCAT('(Codigo: ',a.codigo_producto,')',' -> ',a.nombre_producto) As Producto, b.disponible, b.precio, b.id_detalle_producto FROM tbproducto a, tbdetalles_producto b WHERE a.codigo_producto = ?param1 AND a.id_producto = b.id_producto AND b.id_estado = 1 AND fecha_vencimiento > ?param2";
+                MySqlCommand cmdquery = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                cmdquery.Parameters.Add(new MySqlParameter("param1", producto));
+                cmdquery.Parameters.Add(new MySqlParameter("param2", ahora));
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdquery);
+                adp.Fill(data);
+                return data;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error al momento de buscar el producto.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return retorno;
+                MessageBox.Show("Ocurrio un error al consultar los detalles del producto debido a un fallo de conexión, consulte con el administrador. " + ex, "Fallo de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
             }
         }
+        //public static bool Buscar_Producto(string producto)
+        //{
+        //    bool retorno = false;
+        //    try
+        //    {
+        //        int productobueno = 1;
+        //        string query = "SELECT MIN(b.id_detalle_producto), a.id_producto, CONCAT('(Codigo: ',a.codigo_producto,')',' -> ',a.nombre_producto) As Producto, b.disponible, b.precio FROM tbproducto a, tbdetalles_producto b WHERE a.codigo_producto = ?param1 OR a.nombre_producto = ?param2 AND a.id_producto = b.id_producto AND b.id_estado = 1";
+        //        MySqlCommand cmdselect = new MySqlCommand(query,Conexion_Config.ObtenerConexion());
+        //        cmdselect.Parameters.Add(new MySqlParameter("param1", producto));
+        //        cmdselect.Parameters.Add(new MySqlParameter("param2", producto));
+        //        cmdselect.Parameters.Add(new MySqlParameter("param3", productobueno));
+        //        retorno = Convert.ToBoolean(cmdselect.ExecuteScalar());
+        //        if (retorno == true)
+        //        {
+        //            MySqlDataReader reader = cmdselect.ExecuteReader();
+        //            while (reader.Read())
+        //            {
+        //                DatosProductos.idpro = reader.GetInt16(1);
+        //                DatosProductos.nombreproducto = reader.GetString(2);
+        //                DatosProductos.cantidad = reader.GetInt16(3);
+        //                DatosProductos.precio = reader.GetDouble(4);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("El producto solicitado no se encuentra registrado, consulte el inventario para ver el codigo de producto o el nombre respectivo.", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //        return retorno;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Ocurrio un error al momento de buscar el producto.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return retorno;
+        //    }
+        //}
         public static int IngresarDetalle(Constructor_Detalle_Factura det)
         {
             int retorno = 0;
             try
             {
-                string query1 = "SELECT * FROM tbdetalle_factura WHERE id_factura = ?detalle AND id_producto = ?producto";
+                string query1 = "SELECT * FROM tbdetalle_factura a, tbfactura b, tbdetalles_producto c, tbproducto d WHERE a.id_detalle_producto = c.id_detalle_producto AND c.id_producto = d.id_producto AND a.id_factura = b.id_factura AND a.id_factura = ?paramfactura AND c.id_producto = ?paramproducto";
                 MySqlCommand cmdselect1 = new MySqlCommand(query1, Conexion_Config.ObtenerConexion());
-                cmdselect1.Parameters.Add(new MySqlParameter("detalle", det.id_factura));
-                cmdselect1.Parameters.Add(new MySqlParameter("producto", det.id_producto));
+                cmdselect1.Parameters.Add(new MySqlParameter("paramfactura", det.id_factura));
+                cmdselect1.Parameters.Add(new MySqlParameter("paramproducto", det.id_producto));
                 bool existencia = Convert.ToBoolean(cmdselect1.ExecuteScalar());
                 if (existencia == false)
                 {
-                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbdetalle_factura (id_producto, cantidad, id_factura, total_parcial) VALUES ('" + det.id_producto + "','" + det.cantidad + "','" + det.id_factura + "','" + det.total_parcial + "')"), Conexion_Config.ObtenerConexion());
+                    MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbdetalle_factura (id_detalle_producto, cantidad, id_factura, total_parcial) VALUES ('" + det.id_producto + "','" + det.cantidad + "','" + det.id_factura + "','" + det.total_parcial + "')"), Conexion_Config.ObtenerConexion());
                     retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                     if (retorno < 1)
                     {
@@ -116,16 +139,16 @@ namespace FlavorsOfTheHouse.Modelo
                 }                
                 return retorno;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un fallo de conexión durante el ingreso del detalle de compra.", "Proceso no completado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrio un fallo de conexión durante el ingreso del detalle de compra. " + ex, "Proceso no completado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return retorno;
             }
         }
         public static DataTable ObtenerDetalles(int idfactura)
         {
             DataTable data = new DataTable();
-            string query = "SELECT tp.nombre_producto, tf.* FROM tbdetalle_factura tf, tbproducto tp WHERE tf.id_factura = ?param1 AND tp.id_producto = tf.id_producto";
+            string query = "SELECT b.id_detalle_factura, a.nombre_producto, b.cantidad, c.precio, b.total_parcial FROM tbproducto a, tbdetalle_factura b, tbdetalles_producto c, tbfactura d WHERE b.id_detalle_producto = c.id_detalle_producto AND c.id_producto = a.id_producto AND b.id_factura = d.id_factura AND d.id_factura = ?param1";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
@@ -140,12 +163,12 @@ namespace FlavorsOfTheHouse.Modelo
                 return data;
             }
         }
-        public static int Actualizar_Cantidad_Productos(int idproducto, int nuevacantidad)
+        public static int Actualizar_Cantidad_Productos(int idproducto, int nuevacantidad, int iddetalle)
         {
             int retorno = 0;
             try
             {
-                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbproducto SET existencia = '"+nuevacantidad+"' WHERE id_producto = '"+idproducto+"'"),Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbdetalles_producto SET disponible = '"+nuevacantidad+"' WHERE id_producto = '"+idproducto+"' AND id_detalle_producto = '"+iddetalle+"'"),Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
                 if (retorno < 1)
                 {
