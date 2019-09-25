@@ -136,6 +136,7 @@ namespace FlavorsOfTheHouse.Vista
                     PanelAdministracion.Visible = false;
                     BtnConfUsuario.Visible = false;
                     UbicacionBotonesEncargadoEmpresa();
+                    BtnAjustes.Visible = false;
                     break;
                 case 4:
                     lblNivel.Text = "Asistente Empresarial";
@@ -143,6 +144,7 @@ namespace FlavorsOfTheHouse.Vista
                     PanelAdministracion.Visible = false;
                     BtnConfUsuario.Visible = false;
                     UbicacionBotonesEncargadoEmpresa();
+                    BtnAjustes.Visible = false;
                     break;
                 case 5:
                     lblNivel.Text = "Encargado de facturación";
@@ -151,6 +153,13 @@ namespace FlavorsOfTheHouse.Vista
                     BtnInventario.Visible = false;
                     PanelInventario.Visible = false;
                     BtnConfUsuario.Visible = false;
+                    BtnAjustes.Visible = false;
+                    break;
+                case 6:
+                    lblNivel.Text = "Administrador estudiantil";
+                    BtnEmpresas.Enabled = false;
+                    BtnFacturacion.Visible = false;
+                    BtnAjustes.Visible = false;
                     break;
                 default:
                     break;

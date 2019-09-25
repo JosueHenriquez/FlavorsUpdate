@@ -28,11 +28,32 @@ namespace FlavorsOfTheHouse.Vista
             txtCodigo.Clear();
             txtPrecio.Clear();
             numCantidad.Value = 0;
+            txtIdHistorial.Clear();
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
             BtnAgregar.Enabled = true;
-            
             txtCodigo.Enabled = true;
+            Screen screen = Screen.PrimaryScreen;
+            int Width = screen.Bounds.Width;
+            double nuevadimension = Width * 0.71;
+            this.dgvProductos.Width = Convert.ToInt16(nuevadimension);
+            dgvDetallesProducto.Visible = false;
+        }
+        void DeshabilitarBotones()
+        {
+            BtnAgregar.Enabled = false;
+            BtnMostrar.Enabled = false;
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnNuevo.Enabled = false;
+        }
+        void HabilitarBotones()
+        {
+            BtnAgregar.Enabled = true;
+            BtnMostrar.Enabled = true;
+            BtnActualizar.Enabled = true;
+            BtnEliminar.Enabled = true;
+            BtnNuevo.Enabled = true;
         }
         void Ingresar_Producto()
         {
@@ -69,15 +90,31 @@ namespace FlavorsOfTheHouse.Vista
             lblProductos.Visible = false;
             this.dgvProductos.Columns[0].Visible = false;
             this.dgvProductos.Columns[1].HeaderText = "Nombre del producto";
-            this.dgvProductos.Columns[1].Width = 40;
+            this.dgvProductos.Columns[1].Width = 20;
             this.dgvProductos.Columns[2].HeaderText = "Codigo de producto";
-            this.dgvProductos.Columns[2].Width = 20;
+            this.dgvProductos.Columns[2].Width = 10;
             this.dgvProductos.Columns[3].Visible = false;
             this.dgvProductos.Columns[4].Visible = false;
             this.dgvProductos.Columns[5].HeaderText = "Tipo de producto";
-            this.dgvProductos.Columns[5].Width = 30;
+            this.dgvProductos.Columns[5].Width = 20;
             this.dgvProductos.Columns[6].HeaderText = "Empresa";
-            this.dgvProductos.Columns[6].Width = 110;
+            this.dgvProductos.Columns[6].Width = 140;
+        }
+        void cdetalleproducto()
+        {
+            lbldetalle.Visible = false;
+            dgvDetallesProducto.Columns[0].Visible = false;
+            dgvDetallesProducto.Columns[1].HeaderText = "Fecha de registro";
+            dgvDetallesProducto.Columns[2].Visible = false;
+            dgvDetallesProducto.Columns[3].HeaderText = "Precio Unitario";
+            dgvDetallesProducto.Columns[3].DefaultCellStyle.Format = "N2";
+            dgvDetallesProducto.Columns[4].Visible = false;
+            dgvDetallesProducto.Columns[5].HeaderText = "Vencimiento";
+            dgvDetallesProducto.Columns[6].HeaderText = "Cantidad";
+            dgvDetallesProducto.Columns[7].Visible = false;
+            dgvDetallesProducto.Columns[8].Visible = false;
+            dgvDetallesProducto.Columns[9].Visible = false;
+            dgvDetallesProducto.Columns[10].HeaderText = "Estado";
         }
         void Cargar_Productos()
         {
@@ -101,6 +138,16 @@ namespace FlavorsOfTheHouse.Vista
                 lblProductos.Visible = true;
             }
         }
+        void Cargar_Detalles_Producto()
+        {
+            DataTable resultado = ControlProductos.CargarDetalle_Productos(Convert.ToInt16(txtId.Text));
+            if (resultado != null)
+            {
+                dgvDetallesProducto.DataSource = resultado;
+                grpDetalleProducto.Enabled = true;
+                cdetalleproducto();
+            }
+        }
         void Actualizar_Productos()
         {
             Constructor_Producto prod = new Constructor_Producto();
@@ -114,17 +161,6 @@ namespace FlavorsOfTheHouse.Vista
                 if (MessageBox.Show("¿Desea cambiar algun dato especifico en alguna puesta en marcha registrada?","Actualizar datos",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
                 {
                     grpDetalleProducto.Enabled = true;
-                    //prod.id_usuario = Convert.ToInt16(txtIdUsuario.Text);
-                    //prod.precio = txtPrecio.Text;
-                    //prod.empacado = dtEmpacado.Text;
-                    //prod.vencimiento = dtVencimiento.Text;
-                    //prod.cantidad = Convert.ToInt16(numCantidad.Text);
-                    //prod.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
-                    //int datos = ControlProductos.Actualizar_Producto_Historial(prod);
-                    //if (datos > 0)
-                    //{
-
-                    //}
                 }
                 else
                 {
@@ -133,6 +169,18 @@ namespace FlavorsOfTheHouse.Vista
                     grpProducto.Enabled = false;
                 }
             }
+        }
+        void Actualizar_Detalle_Productos()
+        {
+            Constructor_Detalle_Producto detpro = new Constructor_Detalle_Producto();
+            detpro.id_detalle_producto = Convert.ToInt16(txtIdHistorial.Text);
+            detpro.precio = Convert.ToDouble(txtPrecio.Text);
+            detpro.cantidad = Convert.ToInt16(numCantidad.Text);
+            detpro.empacado = dtEmpacado.Text;
+            detpro.vencimiento = dtVencimiento.Text;
+            detpro.id_estado = Convert.ToInt16(cmbEstado.SelectedValue);
+            int resultado = ControlProductos.Actualizar_Producto_Historial(detpro);
+
         }
         void Eliminar_Producto(int idproducto)
         {
@@ -189,6 +237,8 @@ namespace FlavorsOfTheHouse.Vista
         {
             Ingresar_Producto();
             Cargar_Productos();
+            MessageBox.Show("Agregue un detalle del producto recien ingresado, el proceso no finalizará hasta que haya completado el proceso.","Paso 2 - Ingreso de detalle",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            DeshabilitarBotones();
         }
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
@@ -221,17 +271,14 @@ namespace FlavorsOfTheHouse.Vista
             if (resultado != null)
             {
                 dgvDetallesProducto.DataSource = resultado;
-                lbldetalle.Visible = false;
-                dgvDetallesProducto.Columns[0].Visible = false;
-                dgvDetallesProducto.Columns[1].Visible = true;
-                dgvDetallesProducto.Columns[2].Visible = false;
-                dgvDetallesProducto.Columns[3].Visible = true;
-                dgvDetallesProducto.Columns[4].Visible = false;
-                dgvDetallesProducto.Columns[5].Visible = true;
-                dgvDetallesProducto.Columns[6].Visible = true;
-                dgvDetallesProducto.Columns[7].Visible = false;
-                dgvDetallesProducto.Columns[8].Visible = false;
-                dgvDetallesProducto.Columns[9].Visible = true;
+                grpDetalleProducto.Enabled = true;
+                cdetalleproducto();
+                Screen screen = Screen.PrimaryScreen;
+                int Width = screen.Bounds.Width;
+                double nuevadimension = Width * 0.35;
+                this.dgvProductos.Width = Convert.ToInt16(nuevadimension);
+                dgvDetallesProducto.Visible = true;
+                this.dgvDetallesProducto.Width = Convert.ToInt16(nuevadimension);
             }
             else
             {
@@ -243,6 +290,9 @@ namespace FlavorsOfTheHouse.Vista
             if (MessageBox.Show("¿Está seguro de querer limpiar los campos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 LimpiarCampos();
+                DataTable dt = (DataTable)dgvDetallesProducto.DataSource;
+                dt.Clear();
+
             }
         }
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -253,20 +303,19 @@ namespace FlavorsOfTheHouse.Vista
                 Cargar_Productos();
             }            
         }
-
         private void BtnProductos_Click(object sender, EventArgs e)
         {
             ReporteProductos repro = new ReporteProductos();
             repro.Show();
         }
-
         void AgregarDetalle()
         {
-            Constructor_Producto detpro = new Constructor_Producto();
+            Constructor_Detalle_Producto detpro = new Constructor_Detalle_Producto();
             //ID PRODUCTO ENVIADO DIRECTAMENTE A BASE POR ESO NO SE ENVIA AQUI
+            Constructor_Producto.id_producto = Convert.ToInt16(txtId.Text);
             DateTime now = DateTime.Today;
             detpro.fecha_ingreso = now.ToString("yyyy-MM-dd");
-            detpro.precio = txtPrecio.Text;
+            detpro.precio = Convert.ToDouble(txtPrecio.Text);
             detpro.empacado = dtEmpacado.Text;
             detpro.vencimiento = dtVencimiento.Text;
             detpro.cantidad = Convert.ToInt16(numCantidad.Text);
@@ -278,13 +327,51 @@ namespace FlavorsOfTheHouse.Vista
                 grpDetalleProducto.Enabled = false;
                 grpProducto.Enabled = true;
                 dgvProductos.Enabled = true;
-                LimpiarCampos();
             }
         }
         private void BtnAgregarDetalle_Click(object sender, EventArgs e)
         {
             AgregarDetalle();
-            LimpiarCampos();
+            Cargar_Detalles_Producto();
+            if (MessageBox.Show("¿Desea ingresar otro detalle para el producto seleccionado?","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+            {
+                LimpiarCampos();
+            }            
+        }
+        private void dgvDetallesProducto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int posd = 0;
+            posd = this.dgvDetallesProducto.CurrentRow.Index;
+            //MessageBox.Show(""+posd);
+            txtIdHistorial.Text = dgvDetallesProducto[0, posd].Value.ToString();
+            txtPrecio.Text = dgvDetallesProducto[3, posd].Value.ToString();
+            dtEmpacado.Text = dgvDetallesProducto[4, posd].Value.ToString();
+            dtVencimiento.Text = dgvDetallesProducto[5, posd].Value.ToString();
+            numCantidad.Text = dgvDetallesProducto[6, posd].Value.ToString();
+            cmbEstado.Text = dgvDetallesProducto[10, posd].Value.ToString();
+            grpDetalleProducto.Enabled = true;
+            grpProducto.Enabled = false;
+        }
+        private void BtnActualizarDetalle_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro de querer actualizar los detalles del producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Actualizar_Detalle_Productos();
+                Cargar_Detalles_Producto();
+                if (MessageBox.Show("¿Realizará otra modificación?","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    HabilitarBotones();
+                    grpDetalleProducto.Enabled = false;
+                    grpProducto.Enabled = true;
+                    LimpiarCampos();
+                }
+            }
+        }
+
+        private void BtnAnularDetalle_Click(object sender, EventArgs e)
+        {
+            ControlProductos.AnularDetalle(Convert.ToInt16(txtIdHistorial.Text));
+            Cargar_Detalles_Producto();
         }
     }
 }

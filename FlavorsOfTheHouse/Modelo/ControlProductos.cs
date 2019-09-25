@@ -164,12 +164,12 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
-        public static int Ingresar_Detalle_Producto(Constructor_Producto pro)
+        public static int Ingresar_Detalle_Producto(Constructor_Detalle_Producto pro)
         {
             int retorno = 0;
             try
             {
-                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbdetalles_producto (fecha_ingreso, id_producto,precio, fecha_empacado,fecha_vencimiento,existencia,id_estado,id_usuario) VALUES ('"+pro.fecha_ingreso+"','" + Constructor_Producto.id_producto + "','" + pro.precio + "','" + pro.empacado+ "','" + pro.vencimiento+ "','"+pro.cantidad+"','"+pro.id_estado+"','"+pro.id_usuario+"')"), Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("INSERT INTO tbdetalles_producto (fecha_ingreso, id_producto,precio, fecha_empacado,fecha_vencimiento,existencia,disponible,id_estado,id_usuario) VALUES ('"+pro.fecha_ingreso+"','" + Constructor_Producto.id_producto + "','" + pro.precio + "','" + pro.empacado+ "','" + pro.vencimiento+ "','"+pro.cantidad+"','"+pro.cantidad+"','"+pro.id_estado+"','"+pro.id_usuario+"')"), Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                 if (retorno == 1)
                 {
@@ -248,13 +248,12 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
-
-        public static int Actualizar_Producto_Historial(Constructor_Producto cpro)
+        public static int Actualizar_Producto_Historial(Constructor_Detalle_Producto cpro)
         {
             int retorno = 0;
             try
             {
-                MySqlCommand cmdinsert = new MySqlCommand(string.Format("UPDATE tbhistorial_producto SET precio = '" + cpro.precio + "', fecha_empacado= '" + cpro.empacado+ "', fecha_vencimiento = '" + cpro.vencimiento+ "', existencia = '"+cpro.cantidad+"', id_estado = '"+cpro.id_estado+"' WHERE id_producto = '" + Constructor_Producto.id_producto + "'"), Conexion_Config.ObtenerConexion());
+                MySqlCommand cmdinsert = new MySqlCommand(string.Format("UPDATE tbdetalles_producto SET precio = '" + cpro.precio + "', fecha_empacado= '" + cpro.empacado+ "', fecha_vencimiento = '" + cpro.vencimiento+ "', existencia = '"+cpro.cantidad+"', id_estado = '"+cpro.id_estado+"' WHERE id_detalle_producto = '" + cpro.id_detalle_producto + "'"), Conexion_Config.ObtenerConexion());
                 retorno = Convert.ToInt16(cmdinsert.ExecuteNonQuery());
                 if (retorno == 1)
                 {
@@ -268,7 +267,6 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
-
         public static int Eliminar_Producto(int id)
         {
             int retorno = 0;
@@ -323,5 +321,26 @@ namespace FlavorsOfTheHouse.Modelo
                 return data;
             }
         }
+        public static int AnularDetalle(int iddetalle)
+        {
+            int retorno = 0;
+            try
+            {
+                int anulacion = 3;
+                MySqlCommand cmdupdate = new MySqlCommand(string.Format("UPDATE tbdetalles_producto SET id_estado = '"+anulacion+"' WHERE id_detalle_producto = '"+iddetalle+"'"),Conexion_Config.ObtenerConexion());
+                retorno = Convert.ToInt16(cmdupdate.ExecuteNonQuery());
+                if (retorno > 0)
+                {
+                    MessageBox.Show("El detalle fue anulado correctamente.","Detalle anulado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                return retorno;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El detalle no pudo ser anulado debido a un fallo de conexión.", "Error de anulación.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return retorno;
+            }
+        }
+        
     }
 }

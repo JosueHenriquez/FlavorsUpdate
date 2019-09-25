@@ -224,3 +224,4 @@ C:\Users\SEHT\Documents\GitHub\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\Flavors
 C:\Users\SEHT\Documents\GitHub\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.csproj.GenerateResource.Cache
 C:\Users\SEHT\Documents\GitHub\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\RdlCompile.cache
 C:\Users\SEHT\Documents\GitHub\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\RdlCompile.compiled
+C:\Users\josue\Source\Repos\JosueHenriquez\FlavorsUpdate\FlavorsOfTheHouse\obj\Debug\FlavorsOfTheHouse.Vista.FrmRecuperarClave2.resources
