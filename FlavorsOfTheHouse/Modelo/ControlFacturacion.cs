@@ -13,6 +13,7 @@ namespace FlavorsOfTheHouse.Modelo
 {
     class ControlFacturacion
     {
+        //***************************************************************
         public static int Crear_Factura(Constructor_Facturacion fa)
         {
             int retorno = 0;
@@ -44,6 +45,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static DataTable Buscar_Detalle_Productos(string producto)
         {
             DataTable data = new DataTable();
@@ -65,6 +67,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return data;
             }
         }
+        //***************************************************************
         //public static bool Buscar_Producto(string producto)
         //{
         //    bool retorno = false;
@@ -100,6 +103,7 @@ namespace FlavorsOfTheHouse.Modelo
         //        return retorno;
         //    }
         //}
+        //***************************************************************
         public static int IngresarDetalle(Constructor_Detalle_Factura det)
         {
             int retorno = 0;
@@ -145,6 +149,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static DataTable ObtenerDetalles(int idfactura)
         {
             DataTable data = new DataTable();
@@ -163,6 +168,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return data;
             }
         }
+        //***************************************************************
         public static int Actualizar_Cantidad_Productos(int idproducto, int nuevacantidad, int iddetalle)
         {
             int retorno = 0;
@@ -182,6 +188,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static int Actualizar_Detalle_Factura(Constructor_Detalle_Factura det)
         {
             int retorno = 0;
@@ -201,6 +208,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static int Eliminar_Detalle(int iddetalle)
         {
             int retorno = 0;
@@ -224,6 +232,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static int Calcular_Pago(int idfactura)
         {
             int retorno = 0;
@@ -256,6 +265,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static int Actualizar_Factura_PagoTotal(int idfactura, double monto)
         {
             int retorno = 0;
@@ -280,6 +290,7 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
         public static int Anular_Factura(int idfactura)
         {
             int retorno = 0;
@@ -362,5 +373,6 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //***************************************************************
     }
 }
