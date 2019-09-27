@@ -30,40 +30,48 @@ namespace FlavorsOfTheHouse.Vista
         }
         void AgregarDetalle()
         {
-            if (txtCantidad.Text == "")
+            try
             {
-                MessageBox.Show("La cantidad de productos no puede estar vacía.","Error de cantidad",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-            else if(Convert.ToInt16(txtCantidad.Text) == 0)
-            {
-                MessageBox.Show("La cantidad de productos no puede ser igual a cero.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (Convert.ToInt16(txtCantidad.Text) > Convert.ToInt16(txtDisponible.Text))
-            {
-                MessageBox.Show("No hay suficientes productos para la cantidad que desea vender.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                Constructor_Detalle_Factura detalle = new Constructor_Detalle_Factura();
-                detalle.id_producto = Convert.ToInt16(txtIdDetalle.Text);
-                detalle.cantidad = Convert.ToInt16(txtCantidad.Text);
-                detalle.id_factura = Convert.ToInt16(txtIdFactura.Text);
-                double pago_parcial = Convert.ToInt16(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
-                detalle.total_parcial = pago_parcial;
-                int resultado = ControlFacturacion.IngresarDetalle(detalle);
-                if (resultado >= 1)
+                if (txtCantidad.Text == "")
                 {
-                    //Actualizar cantidad disponible
-                    int cantidad_antigua = Convert.ToInt16(txtDisponible.Text);
-                    int cantidad_saliente = Convert.ToInt16(txtCantidad.Text);
-                    int cantidad_nueva = cantidad_antigua - cantidad_saliente;
-                    int idproducto = Convert.ToInt16(txtIdProducto.Text);
-                    int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
-                    ControlFacturacion.Actualizar_Cantidad_Productos(idproducto,cantidad_nueva,iddetalle);
-                    LimpiarCampos();
-                    Calcular_Pago();
+                    MessageBox.Show("La cantidad de productos no puede estar vacía.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }    
+                else if (Convert.ToInt16(txtCantidad.Text) == 0)
+                {
+                    MessageBox.Show("La cantidad de productos no puede ser igual a cero.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (Convert.ToInt16(txtCantidad.Text.Trim()) > Convert.ToInt16(txtDisponible.Text.Trim()))
+                {
+                    MessageBox.Show("No hay suficientes productos para la cantidad que desea vender.", "Error de cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Constructor_Detalle_Factura detalle = new Constructor_Detalle_Factura();
+                    detalle.id_producto = Convert.ToInt16(txtIdDetalle.Text);
+                    detalle.cantidad = Convert.ToInt16(txtCantidad.Text);
+                    detalle.id_factura = Convert.ToInt16(txtIdFactura.Text);
+                    double pago_parcial = Convert.ToInt16(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
+                    detalle.total_parcial = pago_parcial;
+                    int resultado = ControlFacturacion.IngresarDetalle(detalle);
+                    if (resultado >= 1)
+                    {
+                        //Actualizar cantidad disponible
+                        int cantidad_antigua = Convert.ToInt16(txtDisponible.Text);
+                        int cantidad_saliente = Convert.ToInt16(txtCantidad.Text);
+                        int cantidad_nueva = cantidad_antigua - cantidad_saliente;
+                        int idproducto = Convert.ToInt16(txtIdProducto.Text);
+                        int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
+                        ControlFacturacion.Actualizar_Cantidad_Productos(cantidad_nueva, iddetalle);
+                        LimpiarCampos();
+                        Calcular_Pago();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Limite de tiempo superado.","Limite de tiempo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+               
         }
         void LimpiarCampos()
         {
@@ -87,6 +95,7 @@ namespace FlavorsOfTheHouse.Vista
                 dgvDetallesFactura.Columns[3].HeaderText = "Precio unitario";
                 dgvDetallesFactura.Columns[4].HeaderText = "Sub-Total";
                 dgvDetallesFactura.Columns[4].Width = 70;
+
             }
         }
         void Calcular_Pago()
@@ -95,6 +104,7 @@ namespace FlavorsOfTheHouse.Vista
             Constructor_Facturacion pago = new Constructor_Facturacion();
             //Se coloca la N para permitir unicamente dos decimales.
             txtPago.Text = Constructor_Facturacion.total_pago.ToString("N");
+            txtpagoparcial.Text = Constructor_Facturacion.total_pago.ToString("N");
         }
         private void FrmFacturacion_Load(object sender, EventArgs e)
         {
@@ -169,33 +179,70 @@ namespace FlavorsOfTheHouse.Vista
                 txtCantidad.Enabled = false;
             }
         }
+        void cargarDetallesProducto(string codigo)
+        {
+            this.dgvdetalleproductos.DataSource = ControlFacturacion.Buscar_Detalle_Productos(codigo);
+            dgvdetalleproductos.Columns[0].Visible = false;
+            dgvdetalleproductos.Columns[1].Visible = false;
+            dgvdetalleproductos.Columns[2].Visible = false;
+            dgvdetalleproductos.Columns[3].HeaderText = "Precio Unitario";
+            dgvdetalleproductos.Columns[3].DefaultCellStyle.Format = "N2";
+            dgvdetalleproductos.Columns[3].Width = 30;
+            dgvdetalleproductos.Columns[4].Visible = false;
+            dgvdetalleproductos.Columns[5].HeaderText = "Vencimiento";
+            dgvdetalleproductos.Columns[5].Width = 40;
+            dgvdetalleproductos.Columns[6].Visible = false;
+            dgvdetalleproductos.Columns[7].HeaderText = "Disponibles";
+            dgvdetalleproductos.Columns[7].Width = 45;
+            dgvdetalleproductos.Columns[8].Visible = false;
+            dgvdetalleproductos.Columns[9].Visible = false;
+            dgvdetalleproductos.Columns[10].HeaderText = "Nombre del producto";
+            dgvdetalleproductos.Columns[3].Width = 60;
+            dgvdetalleproductos.Columns[11].Visible = false;
+        }
+        void ObtenerPuestasMarcha()
+        {
+            DataTable data = ControlFacturacion.Buscar_Detalle_Productos(txtCodigoProducto.Text);
+            if (data == null)
+            {
+                DeshabilitarBotones();
+            }
+            else
+            {
+                txtCantidad.Enabled = true;
+                HabilitarBotones();
+                dgvdetalleproductos.DataSource = data;
+                dgvdetalleproductos.Columns[0].Visible = false;
+                dgvdetalleproductos.Columns[1].Visible = false;
+                dgvdetalleproductos.Columns[2].Visible = false;
+                dgvdetalleproductos.Columns[3].HeaderText = "Precio Unitario";
+                dgvdetalleproductos.Columns[3].DefaultCellStyle.Format = "N2";
+                dgvdetalleproductos.Columns[3].Width = 30;
+                dgvdetalleproductos.Columns[4].Visible = false;
+                dgvdetalleproductos.Columns[5].HeaderText = "Vencimiento";
+                dgvdetalleproductos.Columns[5].Width = 40;
+                dgvdetalleproductos.Columns[6].Visible = false;
+                dgvdetalleproductos.Columns[7].HeaderText = "Disponibles";
+                dgvdetalleproductos.Columns[7].Width = 45;
+                dgvdetalleproductos.Columns[8].Visible = false;
+                dgvdetalleproductos.Columns[9].Visible = false;
+                dgvdetalleproductos.Columns[10].HeaderText = "Nombre del producto";
+                dgvdetalleproductos.Columns[3].Width = 40;
+                dgvdetalleproductos.Columns[11].Visible = false;
+            }
+        }
         private void txtCodigoProducto_Leave_1(object sender, EventArgs e)
         {
             try
             {
-                DataTable data = ControlFacturacion.Buscar_Detalle_Productos(txtCodigoProducto.Text);
-                if (data == null)
-                {
-                    DeshabilitarBotones();
-                    //txtCantidad.Enabled = false;
-                }
-                else
-                {
-                    txtCantidad.Enabled = true;
-                    HabilitarBotones();
-                    this.dgvdetalleproductos.DataSource = ControlFacturacion.Buscar_Detalle_Productos(txtCodigoProducto.Text);
-                    dgvdetalleproductos.Columns[0].Visible = false;
-                    dgvdetalleproductos.Columns[1].HeaderText = "Nombre del producto";
-                    dgvdetalleproductos.Columns[1].Width = 170;
-                    dgvdetalleproductos.Columns[2].HeaderText = "Producto disponibles";
-                    dgvdetalleproductos.Columns[3].HeaderText = "Precio Unitario";
-                    dgvdetalleproductos.Columns[3].DefaultCellStyle.Format = "N2";
-                    dgvdetalleproductos.Columns[4].Visible = false;
-                }
+                ObtenerPuestasMarcha();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                if (MessageBox.Show("Ocurrio un error al cargar los detalles del producto, reintente cargar los datos nuevamente. " + ex.Message, "Error de carga", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information) == DialogResult.Retry)
+                {
+                    cargarDetallesProducto(txtCodigoProducto.Text.Trim());
+                }                
             }
         }
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -212,9 +259,9 @@ namespace FlavorsOfTheHouse.Vista
         private void BtnEliminarProducto_Click(object sender, EventArgs e)
         {
             int devolver = Convert.ToInt16(txtCantidad.Text)+ Convert.ToInt16(txtDisponible.Text);
-            int idproducto = Convert.ToInt16(txtIdProducto.Text);
+           // int idproducto = Convert.ToInt16(txtIdProducto.Text);
             int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
-            int dev = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto,devolver,iddetalle);
+            int dev = ControlFacturacion.Actualizar_Cantidad_Productos(devolver,iddetalle);
             if (dev >= 1)
             {
                 //Eliminar detalle
@@ -242,17 +289,14 @@ namespace FlavorsOfTheHouse.Vista
                 int posColum = dgvDetallesFactura.CurrentCell.ColumnIndex;
                 if (dgvDetallesFactura[posColum, pos].Value.ToString() != "")
                 {
-                    txtNombreProducto.Text = dgvDetallesFactura[0, pos].Value.ToString();
-                    txtCodigoProducto.Text = dgvDetallesFactura[0, pos].Value.ToString();
-                    txtIdDetalleFactura.Text = dgvDetallesFactura[1, pos].Value.ToString();
-                    txtIdProducto.Text = dgvDetallesFactura[2, pos].Value.ToString();
-                    txtCantidad.Text = dgvDetallesFactura[3, pos].Value.ToString();
-                    pedidoantiguo = Convert.ToInt16(dgvDetallesFactura[3, pos].Value);
-                    txtIdFactura.Text = dgvDetallesFactura[4, pos].Value.ToString();
-                    ControlFacturacion.Buscar_Detalle_Productos(txtNombreProducto.Text);
-                    txtDisponible.Text = DatosProductos.cantidad.ToString();
-                    txtPrecio.Text = DatosProductos.precio.ToString();
-                    txtCantidad.Enabled = true;
+                    txtIdDetalleFactura.Text = dgvDetallesFactura[0, pos].Value.ToString();
+                    txtNombreProducto.Text = dgvDetallesFactura[1, pos].Value.ToString();
+                    txtCodigoProducto.Text = dgvDetallesFactura[1, pos].Value.ToString();
+                    txtCantidad.Text = dgvDetallesFactura[2, pos].Value.ToString();
+                    txtPrecio.Text = dgvDetallesFactura[3, pos].Value.ToString();
+                     ControlFacturacion.Buscar_Detalle(Convert.ToInt32(txtIdDetalle.Text));
+                    txtDisponible.Text = ControlFacturacion.existencia.ToString();
+                    pedidoantiguo = Convert.ToInt16(dgvDetallesFactura[2, pos].Value.ToString());
                 }
                 else
                 {
@@ -272,6 +316,7 @@ namespace FlavorsOfTheHouse.Vista
             {
                 CargarDetalle();
                 LimpiarCampos();
+                txtCodigoProducto.Enabled = true;
                 //MessageBox.Show("NO PASO NADA");
             }
             else if(nuevopedido > pedidoantiguo)
@@ -289,14 +334,15 @@ namespace FlavorsOfTheHouse.Vista
                     {
                         Constructor_Producto prod = new Constructor_Producto();
                         int nuevacantidad = Convert.ToInt16(txtDisponible.Text) - temp;
-                        int idproducto = Convert.ToInt16(txtIdProducto.Text);
+                        //int idproducto = Convert.ToInt16(txtIdDetalle.Text);
                         int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
-                        datos = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto, nuevacantidad,iddetalle);
+                        datos = ControlFacturacion.Actualizar_Cantidad_Productos(nuevacantidad,iddetalle);
                         if (datos >= 1)
                         {
                             LimpiarCampos();
                             CargarDetalle();
                             Calcular_Pago();
+                            txtCodigoProducto.Enabled = true;
                         }
                     }
                 }
@@ -314,14 +360,15 @@ namespace FlavorsOfTheHouse.Vista
                 {
                     Constructor_Producto prod = new Constructor_Producto();
                     int nuevacantidad = Convert.ToInt16(txtDisponible.Text) + sumar;
-                    int idproducto = Convert.ToInt16(txtIdProducto.Text);
+                  //  int idproducto = Convert.ToInt16(txtIdProducto.Text);
                     int iddetalle = Convert.ToInt16(txtIdDetalle.Text);
-                    datos = ControlFacturacion.Actualizar_Cantidad_Productos(idproducto, nuevacantidad,iddetalle);
+                    datos = ControlFacturacion.Actualizar_Cantidad_Productos(nuevacantidad,iddetalle);
                     if (datos >= 1)
                     {
                         LimpiarCampos();
                         CargarDetalle();
                         Calcular_Pago();
+                        txtCodigoProducto.Enabled = true;
                     }
                 }                
             }
@@ -354,12 +401,12 @@ namespace FlavorsOfTheHouse.Vista
             if (MessageBox.Show("-> Considere que si finaliza la factura ya no podrá editarla. \n ¿Desea finalizar el proceso de facturación?", "Finalizar factura",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 BtnCrearFactura.Enabled = true;
-                int pago = ControlFacturacion.Actualizar_Factura_PagoTotal(Convert.ToInt16(txtIdFactura.Text), Convert.ToDouble(txtPago.Text));
+                int pago = ControlFacturacion.Actualizar_Factura_PagoTotal(Convert.ToInt16(txtIdFactura.Text), Convert.ToDouble(txtPago.Text), Convert.ToDouble(txtdescuento.Text.Trim()));
                 if (pago > 0)
                 {
                     txtPago.Text = "0.00";
-                    ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text));
-                    factu.ShowDialog();
+                    //ReporteFacturacion factu = new ReporteFacturacion(Convert.ToInt16(txtIdFactura.Text));
+                    //factu.ShowDialog();
                     LimpiarCampos();
                     txtIdFactura.Clear();
                     txtIdDetalleFactura.Clear();
@@ -374,11 +421,80 @@ namespace FlavorsOfTheHouse.Vista
         {
             int pos = 0;
             pos = dgvdetalleproductos.CurrentRow.Index;
-            txtIdProducto.Text = dgvdetalleproductos[0, pos].Value.ToString();
-            txtNombreProducto.Text = dgvdetalleproductos[1, pos].Value.ToString();
-            txtDisponible.Text = dgvdetalleproductos[2, pos].Value.ToString();
+            txtIdDetalle.Text = dgvdetalleproductos[0, pos].Value.ToString();
+            txtIdProducto.Text = dgvdetalleproductos[2, pos].Value.ToString();
+            txtNombreProducto.Text = dgvdetalleproductos[10, pos].Value.ToString();
+            txtDisponible.Text = dgvdetalleproductos[7, pos].Value.ToString();
             txtPrecio.Text = dgvdetalleproductos[3, pos].Value.ToString();
-            txtIdDetalle.Text = dgvdetalleproductos[4, pos].Value.ToString();
+        }
+
+        private void txtdescuento_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtdescuento.Text.Trim()))
+            {
+                txtdescuento.Text = "0.00";
+            }
+        }
+
+        private void txtdescuento_Enter(object sender, EventArgs e)
+        {
+            if (txtdescuento.Text.Trim() == "0.00")
+            {
+                txtdescuento.Clear();
+            }
+        }
+
+        void recalcularpago_condescuento()
+        {
+            double pagooriginal = Convert.ToDouble(txtpagoparcial.Text);
+            double descuento;
+            double nuevopago;
+            if (txtdescuento.Text.Trim() == "")
+            {
+                descuento = 0;
+                nuevopago = pagooriginal - descuento;
+                txtPago.Text = nuevopago.ToString();
+            }
+            else
+            {
+                descuento = Convert.ToDouble(txtdescuento.Text);
+                nuevopago = pagooriginal - descuento;
+                txtPago.Text = nuevopago.ToString("N2");
+            }
+        }
+        private void txtdescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (!txtdescuento.Text.Contains('.') && e.KeyChar == '.' && txtdescuento.Text.Trim() == "")
+                {
+                    MessageBox.Show("El descuento no puede comenzar con punto, anteponga el cero.","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    e.Handled = true;
+                }
+                else if (txtdescuento.Text.Trim() != "" && txtdescuento.Text.Contains('.')  && e.KeyChar == '.')
+                {
+                    MessageBox.Show("El descuento no puede puede poseer dos puntos decimales", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    e.Handled = true;
+                }
+            }
+            else if (e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == Convert.ToChar(Keys.Enter) || e.KeyChar == Convert.ToChar(Keys.Tab))
+            {
+                recalcularpago_condescuento();
+            }
+            else
+            {
+                e.Handled = true;
+            }        
+        }
+
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+            FrmConsultarProductos cons = new FrmConsultarProductos(Constructor_Login.empresa);
+            cons.Show();
         }
     }
 }

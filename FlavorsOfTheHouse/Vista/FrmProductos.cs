@@ -38,6 +38,7 @@ namespace FlavorsOfTheHouse.Vista
             double nuevadimension = Width * 0.71;
             this.dgvProductos.Width = Convert.ToInt16(nuevadimension);
             dgvDetallesProducto.Visible = false;
+            grpProducto.Enabled = true;
         }
         void DeshabilitarBotones()
         {
@@ -73,7 +74,7 @@ namespace FlavorsOfTheHouse.Vista
                 Constructor_Producto pro = new Constructor_Producto();
                 pro.producto = txtProducto.Text;
                 pro.codigo_producto = txtCodigo.Text;
-                pro.id_empresa = Convert.ToInt16(Constructor_Login.empresa);
+                pro.id_empresa = Convert.ToInt16(cmbEmpresa.SelectedValue);
                 pro.id_tipo = Convert.ToInt16(cmbCategoria.SelectedValue);
                 int datos = ControlProductos.Ingresar_Producto(pro);
                 if (datos > 0)
@@ -166,7 +167,7 @@ namespace FlavorsOfTheHouse.Vista
                 {
                     grpDetalleProducto.Enabled = false;
                     LimpiarCampos();
-                    grpProducto.Enabled = false;
+                    grpProducto.Enabled = true;
                 }
             }
         }

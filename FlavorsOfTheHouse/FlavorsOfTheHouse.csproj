@@ -168,6 +168,12 @@
     <Compile Include="Vista\FrmConfiguracionSistema.Designer.cs">
       <DependentUpon>FrmConfiguracionSistema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmConsultarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmConsultarProductos.Designer.cs">
+      <DependentUpon>FrmConsultarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmControlFinanciero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmConsultarProductos.resx">
+      <DependentUpon>FrmConsultarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmControlUsuarios.resx">
       <DependentUpon>FrmControlUsuarios.cs</DependentUpon>

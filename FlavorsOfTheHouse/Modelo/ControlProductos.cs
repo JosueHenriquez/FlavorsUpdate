@@ -286,14 +286,51 @@ namespace FlavorsOfTheHouse.Modelo
                 return retorno;
             }
         }
+        //******** METODO PARA GENERAR REPORTE DE INVENTARIO
         public static DataTable Cargar_Productos_PorEmpresa(int idempresa)
         {
             DataTable data = new DataTable();
-            string query = "SELECT tp.*, CONCAT(tu.nombres,' ',tu.apellidos) As Nombres FROM tbproducto tp, tbusuario tu WHERE tp.id_empresa = ?param1 AND tp.id_usuario = tu.id_usuario ORDER BY tp.nombre_producto";
+            string query = "SELECT tp.*, CONCAT(tu.nombres,' ',tu.apellidos) As Nombres FROM tbproducto tp, tbusuario tu WHERE tp.id_empresa = ?param1 ORDER BY tp.nombre_producto";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
+                cmdselect.Parameters.Add(new MySqlParameter("param1", idempresa));
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
+                adp.Fill(data);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error critico, no se ha npodido recuperar los productos debido a un fallo en la conexión. " + ex, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+        }
+        //***************************************************************
+        public static DataTable Cargar_Productos_PorEmpresa_Facturacion(int idempresa)
+        {
+            DataTable data = new DataTable();
+            string query = "SELECT DISTINCT tp.*, tc.categoria FROM tbproducto tp, tbcategoria_producto tc WHERE tp.id_empresa = ?param1 AND tc.id_categoria_producto = tp.id_categoria GROUP BY tp.codigo_producto";
             try
             {
                 MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
                 cmdselect.Parameters.Add(new MySqlParameter("param1",idempresa));
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
+                adp.Fill(data);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error critico, no se ha npodido recuperar los productos debido a un fallo en la conexión. " + ex, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return data;
+            }
+        }
+        public static DataTable Cargar_Productos_General_Facturacion()
+        {
+            DataTable data = new DataTable();
+            string query = "SELECT DISTINCT tp.*, tc.categoria FROM tbproducto tp, tbcategoria_producto tc WHERE tc.id_categoria_producto = tp.id_categoria GROUP BY tp.codigo_producto";
+            try
+            {
+                MySqlCommand cmdselect = new MySqlCommand(query, Conexion_Config.ObtenerConexion());
                 MySqlDataAdapter adp = new MySqlDataAdapter(cmdselect);
                 adp.Fill(data);
                 return data;
